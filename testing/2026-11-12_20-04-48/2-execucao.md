@@ -37,3 +37,5 @@ Data: 2026-11-12. Início da fase Test: 20:04:48 de Brasília (`23:04:48Z`). Exe
 O sandbox bloqueou named pipes do runner .NET; a execução autorizada fora dessa restrição aprovou. Um warning de escape Python foi corrigido e a suíte foundation repetida com sucesso. O Playwright emitiu aviso de variáveis de cor do terminal, sem falha de teste.
 
 Não executados nesta leva: CRUD e ACL HTTP de Events, políticas de abertura, concorrência de edição, cursor após restart real da API, carga H-03 de listagem/detalhe/atualização, navegadores em aparelhos físicos e implantação. Esses itens não são considerados aprovados por esta preparação.
+
+Reteste de 20:13–20:14: o bootstrap agora recusa explicitamente `DOCKER_HOST` TCP/SSH e contextos sem socket Unix local. GE-002/003 retornaram para Doing/Test antes da correção; a suíte foundation repetida aprovou, incluindo `remote_docker_rejected`.
