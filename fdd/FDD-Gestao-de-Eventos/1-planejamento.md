@@ -41,7 +41,7 @@ Esta matriz registra o planejamento inicial. O Trello é a referência de status
 
 ## Acompanhamento e relatório
 
-Usar as listas já existentes: Backlog → Todo → Doing → Test → To Deploy, quando aplicável → Done. Este planejamento não cria infraestrutura de publicação nem declara deploy realizado.
+Usar as listas já existentes. Na execução solicitada pelo responsável, cada leva segue Backlog → Todo → Doing → Test → To Deploy. Parar em To Deploy após validar, sem mover automaticamente para Done ou executar deploy.
 
 Ao iniciar, registrar executor e início real; ao terminar, registrar fim, resultado, arquivos e commit/PR quando existirem, comandos executados, ambiente, evidências sanitizadas e pendências. Datas usam ISO 8601 com fuso. Tempo real deve ser informado; data de criação ou permanência numa lista não comprova horas trabalhadas.
 
