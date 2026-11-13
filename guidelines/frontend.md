@@ -26,6 +26,10 @@ Contratos, componentes, hooks e unitários ficam próximos da funcionalidade. `s
 
 Componentes não conhecem schema SQL ou SDK de backend. O adaptador converte respostas nos modelos da tela, sem reproduzir as quatro camadas .NET no React.
 
+### Identidade visual proposta
+
+A [especificação visual](../visual-identity/README.md) de feature/3 cobre todas as jornadas do PRD. Direção escolhida: fotográfico minimalista, fundos neutros e foco nas mídias. Tokens CSS, componentes, medidas, estados, navegação e exemplos são reutilizáveis, mas a proposta aguarda revisão do responsável e decisões de produto/provedor em aberto. Não presumir aprovação visual nem aplicar novas capacidades a partir do catálogo. As telas gerenciadas Cognito exigem validação no provedor.
+
 ## 2. Componentes, composição e hooks
 
 - Renderização pura; não gravar, iniciar upload ou alterar props durante render.
