@@ -1,0 +1,28 @@
+{
+  "story": "PP-STORY-003",
+  "started_at": "2026-11-13T18:57:13.573920+00:00",
+  "environment": "isolated-local-compose",
+  "paper_or_real_device": false,
+  "deployed": false,
+  "http": {
+    "two_responsibles": true,
+    "outsider_denied": true,
+    "host_ignored": true,
+    "configured_https_origin": true,
+    "missing_origin_safe": true,
+    "openapi": true
+  },
+  "browser": {
+    "tests": 10,
+    "projects": [
+      "chromium-desktop",
+      "webkit-mobile"
+    ],
+    "decoder": "jsQR 1.4.0 / pngjs 7.0.0",
+    "real_device": false
+  },
+  "read_only": true,
+  "anonymous_public_private_denied": true,
+  "logs_redacted": true,
+  "finished_at": "2026-11-13T18:58:36.517024+00:00"
+}
