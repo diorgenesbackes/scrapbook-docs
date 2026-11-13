@@ -1,0 +1,59 @@
+{
+  "story": "PP-STORY-002",
+  "started_at": "2026-11-13T19:00:59.982070+00:00",
+  "environment": "isolated-local-compose",
+  "deployed": false,
+  "real_screen_reader": false,
+  "metadata_edit_and_reset": true,
+  "cover_bytes": 823,
+  "openapi": true,
+  "functional": [
+    "public_projection_direct_and_proxy",
+    "invalid_unknown_pk_case_and_padding",
+    "correlation_and_query_validation",
+    "anonymous_in_production_and_private_authorization",
+    "all_application_tables_unchanged_by_reads",
+    "spa_fallback_assets_api_and_migrations"
+  ],
+  "page_performance": {
+    "profile": {
+      "download_mbps": 10,
+      "upload_mbps": 2,
+      "latency_ms": 80,
+      "cpu_slowdown": 4,
+      "width": 390,
+      "height": 844,
+      "cache": "disabled",
+      "samples": 5
+    },
+    "ready_ms": [
+      741,
+      739,
+      742,
+      769,
+      736
+    ],
+    "max_ms": 769,
+    "browser": "158.0.8127.18",
+    "physical_device": false
+  },
+  "api_load": {
+    "events": 1004,
+    "workers": 10,
+    "seconds": 60,
+    "requests": 265946,
+    "errors": 0,
+    "p95_ms": 3.43,
+    "max_ms": 37.018
+  },
+  "read_only": true,
+  "logs_redacted": true,
+  "management_regression": {
+    "projects": [
+      "chromium-desktop/Asia-Tokyo",
+      "webkit-mobile/America-Los_Angeles"
+    ],
+    "physical_devices": false
+  },
+  "finished_at": "2026-11-13T19:03:25.949552+00:00"
+}

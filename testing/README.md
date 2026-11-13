@@ -4,6 +4,7 @@ Execuções manuais usam `AAAA-MM-DD_HH-mm-ss/`, em `America/Sao_Paulo`, com `1-
 
 | Ciclo | Escopo | Resultado |
 | --- | --- | --- |
+| [2026-11-13_15-57-13](2026-11-13_15-57-13/2-execucao.md) | PP-STORY-003: link, QR, PNG, impressão e regressões | 120 backend/62 UI, 41 cenários distintos; página com QR até 769ms; leitura física pendente (PP-003-034). |
 | [2026-11-13_14-47-34](2026-11-13_14-47-34/2-execucao.md) | PP-STORY-002: apresentação pública e regressões | 104 backend/55 UI, 31 cenários distintos; página 4G até 754ms; leitor real pendente (PP-002-029). |
 | [2026-11-13_14-07-57](2026-11-13_14-07-57/2-execucao.md) | PP-STORY-001: consulta pública por código e shell guest | 99 backend/48 UI, seis testes públicos e 14 de regressão; 279801 consultas, zero erros, p95 3,176ms. |
 | [2026-11-12_20-04-48](2026-11-12_20-04-48/2-execucao.md) | Preparação GE-001…GE-008 | Checks e validação local aprovados; Events/carga de negócio pendentes. |
