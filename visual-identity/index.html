@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f2">
+  <meta name="description" content="Proposta de identidade visual fotográfica minimalista do Scrap Book. Catálogo de telas, componentes e decisões para revisão.">
+  <title>Scrap Book — Identidade visual</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="catalog.css">
+  <script type="module" src="catalog.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir para o conteúdo</a>
+  <header class="catalog-header"><div class="catalog-header-inner">
+    <a class="brand" href="#overview"><img src="assets/brand-symbol.svg" alt="" width="32" height="32">Scrap Book</a>
+    <nav class="catalog-nav" aria-label="Catálogo visual">
+      <a href="#overview">Visão geral</a><a href="#foundations">Fundamentos</a><a href="#components">Componentes</a><a href="#S16">Telas</a><a href="#decisions">Decisões</a>
+    </nav>
+  </div></header>
+  <div class="catalog-notice">Proposta para revisão · Fotografias sintéticas · Interações demonstrativas</div>
+  <main id="main" class="catalog-main" tabindex="-1"><p role="status">Carregando o catálogo visual…</p></main>
+  <noscript><p>Este catálogo precisa de JavaScript para navegar pelos exemplos. A especificação completa está no README.md e nos arquivos de screens/.</p></noscript>
+  <footer class="catalog-footer"><div class="sb-between"><span>Scrap Book · Identidade visual 0.1 · Novembro de 2026</span><span>Uma moldura discreta para o que merece ficar.</span></div></footer>
+  <dialog id="demo-dialog" class="sb-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <h2 id="dialog-title">Sair desta página?</h2><p id="dialog-description" style="margin-top:1rem">Você pode perder o trabalho em andamento.</p>
+    <form method="dialog" class="sb-row"><button class="sb-button sb-button--secondary" value="cancel" autofocus>Permanecer</button><button class="sb-button sb-button--danger" value="discard">Sair e descartar</button></form>
+  </dialog>
+  <div id="catalog-feedback" class="sb-sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>
