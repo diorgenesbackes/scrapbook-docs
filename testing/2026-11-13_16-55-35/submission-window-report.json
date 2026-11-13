@@ -1,0 +1,204 @@
+{
+  "story": "PP-STORY-004",
+  "started_at": "2026-11-13T19:54:45.119096+00:00",
+  "environment": "isolated-local-compose-plus-test-only-clock-host",
+  "deployed": false,
+  "physical_devices": false,
+  "openapi": true,
+  "http_temporal_cases": [
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-15T18:59:59.999Z",
+      "state": "not_open"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-15T19:00:00.000Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-15T19:00:00.001Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-16T14:59:59.999Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-16T15:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-16T15:00:00.001Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-16T15:30:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-16T16:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-06-15T18:00:00",
+      "serverTime": "2030-06-16T16:00:00.001Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-01-31T01:29:59.999Z",
+      "state": "not_open"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-01-31T01:30:00.000Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-01-31T01:30:00.001Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-02-01T14:59:59.999Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-02-01T15:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-02-01T15:00:00.001Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-02-01T15:30:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-02-01T16:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-01-31T00:30:00",
+      "serverTime": "2030-02-01T16:00:00.001Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T00:58:59.999Z",
+      "state": "not_open"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T00:59:00.000Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T00:59:00.001Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T14:59:59.999Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T15:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T15:00:00.001Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T15:30:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T16:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2030-12-31T23:59:00",
+      "serverTime": "2031-01-01T16:00:00.001Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-02-29T01:29:59.999Z",
+      "state": "not_open"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-02-29T01:30:00.000Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-02-29T01:30:00.001Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-03-01T14:59:59.999Z",
+      "state": "open"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-03-01T15:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-03-01T15:00:00.001Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-03-01T15:30:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-03-01T16:00:00.000Z",
+      "state": "closed"
+    },
+    {
+      "startsAt": "2028-02-29T00:30:00",
+      "serverTime": "2028-03-01T16:00:00.001Z",
+      "state": "closed"
+    }
+  ],
+  "gallery_independent": true,
+  "browser": {
+    "tests": 10,
+    "projects": [
+      "chromium-desktop/Asia-Tokyo",
+      "webkit-mobile/America-Los_Angeles"
+    ],
+    "controlled_server_clock": true,
+    "physical_devices": false
+  },
+  "read_only_http": true,
+  "service_stop_restart_without_extension": true,
+  "logs_redacted": true,
+  "finished_at": "2026-11-13T19:55:56.848350+00:00"
+}
