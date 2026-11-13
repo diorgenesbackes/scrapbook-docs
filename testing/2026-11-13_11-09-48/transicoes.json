@@ -1,0 +1,251 @@
+{
+  "card": "https://trello.com/c/NCkBjG4R/6-dockerizar-os-projetos",
+  "branch": "feature/6",
+  "timezone": "UTC",
+  "transitions": [
+    {
+      "task": "story",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:18.564Z"
+    },
+    {
+      "task": "DK-001",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:21.092Z"
+    },
+    {
+      "task": "DK-002",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:22.629Z"
+    },
+    {
+      "task": "DK-003",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:24.123Z"
+    },
+    {
+      "task": "DK-004",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:25.302Z"
+    },
+    {
+      "task": "DK-005",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:26.379Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:27.875Z"
+    },
+    {
+      "task": "DK-007",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:04:29.888Z"
+    },
+    {
+      "task": "story",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:04:31.334Z"
+    },
+    {
+      "task": "DK-001",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:04:32.775Z"
+    },
+    {
+      "task": "DK-002",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:06:14.546Z"
+    },
+    {
+      "task": "DK-003",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:06:16.034Z"
+    },
+    {
+      "task": "DK-004",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:06:17.343Z"
+    },
+    {
+      "task": "DK-005",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:09:18.463Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:09:19.708Z"
+    },
+    {
+      "task": "DK-007",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:09:21.256Z"
+    },
+    {
+      "task": "DK-001",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:11:07.387Z"
+    },
+    {
+      "task": "DK-002",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:11:09.124Z"
+    },
+    {
+      "task": "DK-003",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:11:10.923Z"
+    },
+    {
+      "task": "DK-004",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:11:12.478Z"
+    },
+    {
+      "task": "DK-005",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:11:14.117Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:11:15.261Z"
+    },
+    {
+      "task": "DK-005",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:13:05.486Z"
+    },
+    {
+      "task": "DK-005",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:14:03.083Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:16:16.418Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:16:18.568Z"
+    },
+    {
+      "task": "DK-007",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:18:47.814Z"
+    },
+    {
+      "task": "story",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:18:49.169Z"
+    },
+    {
+      "task": "DK-002",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:19:37.203Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:19:38.689Z"
+    },
+    {
+      "task": "DK-002",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:20:57.237Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "Test",
+      "timestamp": "2026-11-13T14:20:58.939Z"
+    },
+    {
+      "task": "DK-001",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:26:58.909Z"
+    },
+    {
+      "task": "DK-002",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:27:01.911Z"
+    },
+    {
+      "task": "DK-003",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:27:05.200Z"
+    },
+    {
+      "task": "DK-004",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:27:07.390Z"
+    },
+    {
+      "task": "DK-005",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:27:09.857Z"
+    },
+    {
+      "task": "DK-006",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:27:13.077Z"
+    },
+    {
+      "task": "DK-007",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:27:15.698Z"
+    },
+    {
+      "task": "story",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T14:27:21.793Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "DK-001",
+      "title": "Criar imagem Docker da API",
+      "url": "https://trello.com/c/tQVRF3AP/146-dk-001-criar-imagem-docker-da-api",
+      "state": "To Deploy"
+    },
+    {
+      "id": "DK-002",
+      "title": "Criar imagem Docker da UI e proxy HTTP",
+      "url": "https://trello.com/c/naZpNawi/147-dk-002-criar-imagem-docker-da-ui-e-proxy-http",
+      "state": "To Deploy"
+    },
+    {
+      "id": "DK-003",
+      "title": "Integrar API, UI e PostgreSQL no Compose",
+      "url": "https://trello.com/c/iLUJvfIk/148-dk-003-integrar-api-ui-e-postgresql-no-compose",
+      "state": "To Deploy"
+    },
+    {
+      "id": "DK-004",
+      "title": "Adaptar identidade local e operação da stack",
+      "url": "https://trello.com/c/IBrMM5bt/149-dk-004-adaptar-identidade-local-e-opera%C3%A7%C3%A3o-da-stack",
+      "state": "To Deploy"
+    },
+    {
+      "id": "DK-005",
+      "title": "Validar imagens e integração funcional",
+      "url": "https://trello.com/c/zeOYKmAw/150-dk-005-validar-imagens-e-integra%C3%A7%C3%A3o-funcional",
+      "state": "To Deploy"
+    },
+    {
+      "id": "DK-006",
+      "title": "Validar persistência, navegador e carga em containers",
+      "url": "https://trello.com/c/NLOsfLyp/151-dk-006-validar-persist%C3%AAncia-navegador-e-carga-em-containers",
+      "state": "To Deploy"
+    },
+    {
+      "id": "DK-007",
+      "title": "Documentar stack e evidências da entrega",
+      "url": "https://trello.com/c/xtcPY7mK/152-dk-007-documentar-stack-e-evid%C3%AAncias-da-entrega",
+      "state": "To Deploy"
+    }
+  ]
+}

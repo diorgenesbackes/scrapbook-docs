@@ -66,3 +66,7 @@ O índice de FDDs e a especificação de Gestão de Eventos já existem; suas et
 Os repositórios de backend/frontend manterão somente testes unitários. Integração, HTTP, navegador, segurança, carga e recuperação pertencerão ao repositório de testes, com acionamento manual conforme o HLD. O Liquibase terá suas próprias validações.
 
 Ao criar uma especificação, incluí-la neste índice. Ao mover arquivos, atualizar links relativos e preservar datas e evidências originais.
+
+## Containers locais
+
+O cartão [dockerizar os projetos](https://trello.com/c/NCkBjG4R) entrega Dockerfiles da API/UI e stack Compose em feature/6, dependente de GE-STORY-001/RF-STORY-001. [Operação e comandos](https://github.com/diorgenesbackes/scrapbook-infrastructure/blob/feature/6/README.md) e [evidência do ciclo](testing/2026-11-13_11-09-48/2-execucao.md). Rede interna UI→service→postgres, portas loopback e volumes preservados; identidade simulada desativada por padrão. Sem publicação AWS.

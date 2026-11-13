@@ -156,3 +156,9 @@ Na pasta `scrapbook-ui`, usar `npm ci` para instalação reproduzível, `npm run
 - [ ] Sessão/cache isolam contas e eventos; bloqueio limpa a exibição.
 - [ ] Reprodução e avanço exigem ação; telas têm teclado, foco e labels.
 - [ ] Build, análise estática, unitários e verificações manuais pertinentes registrados.
+
+## Containers locais
+
+Dockerfile multi-stage usa Node 26.13.0 para npm ci/build e Nginx unprivileged 1.30.2 para servir somente dist, com imagens fixadas por digest. Não incluir node_modules, .env ou segredos no contexto/runtime. A aplicação usa caminhos relativos; Nginx encaminha /api e /health para service:8080 na rede bridge do Compose e reconsulta o DNS após recriação. Manter query/status/headers da API e não repetir escritas. Usar upstream com pool keepalive/HTTP 1.1 e resolução DNS dinâmica, evitando conexões descartáveis por chamada. Rotas SPA usam fallback index.html; assets ausentes retornam 404. /ui-health mede Nginx, enquanto /health consulta a API.
+
+Compose publica UI em loopback:5173, configura /tmp temporário e filesystem somente leitura, e aguarda saúde da API. Sem credenciais do banco ou URLs privadas no bundle. Scripts Vite continuam como alternativa de desenvolvimento. Publicação Amplify prevista no HLD permanece separada. [Operação local](https://github.com/diorgenesbackes/scrapbook-infrastructure/blob/feature/6/README.md); Playwright/carga continuam manuais em scrapbook-tests.
