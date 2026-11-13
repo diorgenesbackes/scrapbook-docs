@@ -1,0 +1,42 @@
+[
+  {
+    "repo": "scrapbook-service",
+    "main": "7319673d65af497ea21d7dcf717acbc02201725b",
+    "feature": "9ee00415a53b8c1841a5c627c64d5de05c3b8748",
+    "commits": "0\t1",
+    "workflows": [],
+    "mergedMain": "850dbed9d5c030f26d1ee2a968f977cc66c3b89e"
+  },
+  {
+    "repo": "scrapbook-ui",
+    "main": "15fb8a32ccffe7bef621008ceddb8e3c6c1deedf",
+    "feature": "6194750e67bc16ab28fbe28546536c1200d6959e",
+    "commits": "0\t1",
+    "workflows": [],
+    "mergedMain": "3add2b55dd84dd91c4deed4a836aaff179efa0d2"
+  },
+  {
+    "repo": "scrapbook-tests",
+    "main": "9d8133f3de4857261255e5d2a53ff31329c7fffe",
+    "feature": "16b9686330974b9806e10960b15fc2f574dd09f5",
+    "commits": "0\t1",
+    "workflows": [],
+    "mergedMain": "24711a7a739c2c22776f6599c9448b6917fdc5d2"
+  },
+  {
+    "repo": "scrapbook-infrastructure",
+    "main": "77bc21088089d7c6116c8f398dd752f9f33b169a",
+    "feature": "bf3dba123fe6d199a7c4292361e8a39e0d6e5e30",
+    "commits": "0\t1",
+    "workflows": [],
+    "mergedMain": "757fe70b5c01af67ddc287fccf5b380d10f8c3d2"
+  },
+  {
+    "repo": "scrapbook-docs",
+    "main": "4ff688f239a7bc08ee5cb402e5dfd04a912f843c",
+    "feature": "52f2c0c3bcaf3eb4ea733aa861e037ce20147d69",
+    "commits": "0\t1",
+    "workflows": [],
+    "mergedMain": "6f42c201bd40aa03cafceee0ee0f3f4e028c9b6d"
+  }
+]
