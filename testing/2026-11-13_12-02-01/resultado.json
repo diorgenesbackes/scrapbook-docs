@@ -1,0 +1,30 @@
+{
+  "direction": "Fotográfico minimalista, escolhido pelo responsável",
+  "stats": {
+    "startTime": "2026-11-13T16:07:49.492Z",
+    "duration": 73414.092,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "screens": 38,
+  "states": 178,
+  "requirements": 22,
+  "state_render_checks": 712,
+  "browsers": [
+    "Chromium 158.0.8127.18",
+    "WebKit 27.2"
+  ],
+  "viewports": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "contrast_pairs": 20,
+  "text_200_percent": true,
+  "reduced_motion": true,
+  "human_design_approval": false,
+  "wcag_full_audit": false
+}

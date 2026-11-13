@@ -1,0 +1,464 @@
+{
+  "card": "https://trello.com/c/0YAjwM8m/3-create-the-projects-visual-identity",
+  "branch": "feature/3",
+  "timezone": "UTC",
+  "human_approval": false,
+  "transitions": [
+    {
+      "task": "story",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:39.686Z"
+    },
+    {
+      "task": "VI-001",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:41.068Z"
+    },
+    {
+      "task": "VI-002",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:42.687Z"
+    },
+    {
+      "task": "VI-003",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:43.804Z"
+    },
+    {
+      "task": "VI-004",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:44.919Z"
+    },
+    {
+      "task": "VI-005",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:46.015Z"
+    },
+    {
+      "task": "VI-006",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:47.215Z"
+    },
+    {
+      "task": "VI-007",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:48.688Z"
+    },
+    {
+      "task": "VI-008",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:50.173Z"
+    },
+    {
+      "task": "VI-009",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:51.137Z"
+    },
+    {
+      "task": "VI-010",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:52.163Z"
+    },
+    {
+      "task": "VI-011",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:53.594Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:54.972Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:56.323Z"
+    },
+    {
+      "task": "VI-014",
+      "state": "Todo",
+      "timestamp": "2026-11-13T14:57:57.856Z"
+    },
+    {
+      "task": "story",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:57:58.984Z"
+    },
+    {
+      "task": "VI-001",
+      "state": "Doing",
+      "timestamp": "2026-11-13T14:58:00.415Z"
+    },
+    {
+      "task": "VI-002",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:19.580Z"
+    },
+    {
+      "task": "VI-003",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:20.683Z"
+    },
+    {
+      "task": "VI-004",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:21.845Z"
+    },
+    {
+      "task": "VI-005",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:23.406Z"
+    },
+    {
+      "task": "VI-006",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:24.718Z"
+    },
+    {
+      "task": "VI-007",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:25.966Z"
+    },
+    {
+      "task": "VI-008",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:27.267Z"
+    },
+    {
+      "task": "VI-009",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:28.847Z"
+    },
+    {
+      "task": "VI-010",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:30.024Z"
+    },
+    {
+      "task": "VI-011",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:31.085Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:32.505Z"
+    },
+    {
+      "task": "VI-014",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:01:34.351Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "Doing",
+      "timestamp": "2026-11-13T15:58:14.026Z"
+    },
+    {
+      "task": "VI-001",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:14.635Z"
+    },
+    {
+      "task": "VI-002",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:16.195Z"
+    },
+    {
+      "task": "VI-003",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:18.136Z"
+    },
+    {
+      "task": "VI-004",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:19.468Z"
+    },
+    {
+      "task": "VI-005",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:20.869Z"
+    },
+    {
+      "task": "VI-006",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:22.174Z"
+    },
+    {
+      "task": "VI-007",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:23.603Z"
+    },
+    {
+      "task": "VI-008",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:25.339Z"
+    },
+    {
+      "task": "VI-009",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:27.128Z"
+    },
+    {
+      "task": "VI-010",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:28.850Z"
+    },
+    {
+      "task": "VI-011",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:30.672Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:32.614Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:33.962Z"
+    },
+    {
+      "task": "VI-014",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:35.660Z"
+    },
+    {
+      "task": "story",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:00:37.080Z"
+    },
+    {
+      "task": "VI-004",
+      "state": "Doing",
+      "timestamp": "2026-11-13T16:02:28.265Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "Doing",
+      "timestamp": "2026-11-13T16:02:29.808Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "Doing",
+      "timestamp": "2026-11-13T16:02:31.662Z"
+    },
+    {
+      "task": "VI-004",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:02:33.108Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:02:34.703Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:02:36.238Z"
+    },
+    {
+      "task": "VI-003",
+      "state": "Doing",
+      "timestamp": "2026-11-13T16:05:15.148Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "Doing",
+      "timestamp": "2026-11-13T16:05:16.721Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "Doing",
+      "timestamp": "2026-11-13T16:05:17.926Z"
+    },
+    {
+      "task": "VI-009",
+      "state": "Doing",
+      "timestamp": "2026-11-13T16:07:13.181Z"
+    },
+    {
+      "task": "VI-003",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:07:14.386Z"
+    },
+    {
+      "task": "VI-009",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:07:15.726Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:07:16.886Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "Test",
+      "timestamp": "2026-11-13T16:07:18.059Z"
+    },
+    {
+      "task": "VI-001",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:36.568Z"
+    },
+    {
+      "task": "VI-002",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:39.392Z"
+    },
+    {
+      "task": "VI-003",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:41.981Z"
+    },
+    {
+      "task": "VI-004",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:44.895Z"
+    },
+    {
+      "task": "VI-005",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:47.692Z"
+    },
+    {
+      "task": "VI-006",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:50.807Z"
+    },
+    {
+      "task": "VI-007",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:53.621Z"
+    },
+    {
+      "task": "VI-008",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:56.631Z"
+    },
+    {
+      "task": "VI-009",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:11:59.109Z"
+    },
+    {
+      "task": "VI-010",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:12:01.903Z"
+    },
+    {
+      "task": "VI-011",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:12:06.098Z"
+    },
+    {
+      "task": "VI-012",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:12:09.576Z"
+    },
+    {
+      "task": "VI-013",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:12:13.185Z"
+    },
+    {
+      "task": "VI-014",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:12:17.172Z"
+    },
+    {
+      "task": "story",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T16:12:20.026Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "VI-001",
+      "title": "Inventariar telas e estados do PRD",
+      "url": "https://trello.com/c/vNIDkZGb/153-vi-001-inventariar-telas-e-estados-do-prd",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-002",
+      "title": "Definir marca e ativos vetoriais",
+      "url": "https://trello.com/c/hE0SAWgP/154-vi-002-definir-marca-e-ativos-vetoriais",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-003",
+      "title": "Definir tokens visuais e contraste",
+      "url": "https://trello.com/c/ELBduslD/155-vi-003-definir-tokens-visuais-e-contraste",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-004",
+      "title": "Especificar componentes e estados",
+      "url": "https://trello.com/c/wLBIdvHK/156-vi-004-especificar-componentes-e-estados",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-005",
+      "title": "Especificar navegação e responsividade",
+      "url": "https://trello.com/c/Tdlkf4sy/157-vi-005-especificar-navega%C3%A7%C3%A3o-e-responsividade",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-006",
+      "title": "Especificar telas de conta e autenticação gerenciada",
+      "url": "https://trello.com/c/hHqYNair/158-vi-006-especificar-telas-de-conta-e-autentica%C3%A7%C3%A3o-gerenciada",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-007",
+      "title": "Especificar eventos, responsáveis e convites",
+      "url": "https://trello.com/c/4oPuhnMm/159-vi-007-especificar-eventos-respons%C3%A1veis-e-convites",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-008",
+      "title": "Especificar participação e captura",
+      "url": "https://trello.com/c/y6E5Um8C/160-vi-008-especificar-participa%C3%A7%C3%A3o-e-captura",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-009",
+      "title": "Especificar revisão e estados de envio",
+      "url": "https://trello.com/c/HJJ6MXFu/161-vi-009-especificar-revis%C3%A3o-e-estados-de-envio",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-010",
+      "title": "Especificar bloqueio, galeria e reprodução",
+      "url": "https://trello.com/c/5gXJ447L/162-vi-010-especificar-bloqueio-galeria-e-reprodu%C3%A7%C3%A3o",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-011",
+      "title": "Especificar e-mails e estados operacionais",
+      "url": "https://trello.com/c/PbvTwL6P/163-vi-011-especificar-e-mails-e-estados-operacionais",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-012",
+      "title": "Construir catálogo HTML/CSS navegável",
+      "url": "https://trello.com/c/NpTeZOQ0/164-vi-012-construir-cat%C3%A1logo-html-css-naveg%C3%A1vel",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-013",
+      "title": "Validar catálogo e acessibilidade visual",
+      "url": "https://trello.com/c/3KakQWCw/165-vi-013-validar-cat%C3%A1logo-e-acessibilidade-visual",
+      "state": "To Deploy"
+    },
+    {
+      "id": "VI-014",
+      "title": "Consolidar guia e decisões para revisão",
+      "url": "https://trello.com/c/mf0EGV0y/166-vi-014-consolidar-guia-e-decis%C3%B5es-para-revis%C3%A3o",
+      "state": "To Deploy"
+    }
+  ]
+}
