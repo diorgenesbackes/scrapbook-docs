@@ -4,6 +4,7 @@ Este diretório reúne as especificações técnicas de funcionalidades, seguind
 
 | Funcionalidade | Versão / status | Escopo | Planejamento |
 | --- | --- | --- | --- |
+| [Compartilhamento do evento](FDD-Compartilhamento-do-Evento/FDD-Compartilhamento-do-Evento.md) | 0.1, implementada/validada localmente; leitura física pendente | Link canônico, QR público, PNG e impressão. | [36 subtarefas](https://trello.com/c/yUy0Yq2f), [relatório](FDD-Compartilhamento-do-Evento/relatorio.md) |
 | [Apresentação pública](FDD-Apresentacao-Publica-do-Evento/FDD-Apresentacao-Publica-do-Evento.md) | 0.1, implementada/validada localmente; leitor real pendente | Nome, mensagem efetiva, capa padrão, fallback e revalidação. | [33 subtarefas](https://trello.com/c/rVrM2pbn), [relatório](FDD-Apresentacao-Publica-do-Evento/relatorio.md) |
 | [Acesso público ao evento](FDD-Acesso-Publico-do-Evento/FDD-Acesso-Publico-do-Evento.md) | 0.1, implementada/validada localmente na feature PP-STORY-001; sem deploy | Consulta anônima mínima por código, shell guest e isolamento. | [História e 32 subtarefas](https://trello.com/c/LkDStr6e), [relatório](FDD-Acesso-Publico-do-Evento/relatorio.md) |
 | [Gestão de Eventos](FDD-Gestao-de-Eventos/FDD-Gestao-de-Eventos.md) | 0.2, implementada/validada localmente na feature; sem deploy | Criar/listar/consultar/editar, abertura, identidade local e capa padrão. | [112 tasks](FDD-Gestao-de-Eventos/1-planejamento.md), [testes](FDD-Gestao-de-Eventos/3-testes.md), [operação](FDD-Gestao-de-Eventos/4-operacao.md), [relatório](FDD-Gestao-de-Eventos/5-relatorio.md) |

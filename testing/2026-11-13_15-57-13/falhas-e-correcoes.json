@@ -1,0 +1,26 @@
+[
+  {
+    "stage": "frontend-unit",
+    "observedAt": "2026-11-13T18:33:47.032Z",
+    "failure": "Export test expected anchor click spy; global mock restoration removed the module-scope spy. 61/62 tests passed.",
+    "fix": "Create the anchor spy in beforeEach; product download call was executed."
+  },
+  {
+    "stage": "fixture-http",
+    "observedAt": "2026-11-13T18:47:49.001Z",
+    "failure": "Disposable second-responsible membership insert omitted required joined_at; stopped before QR browser tests.",
+    "fix": "Explicit CURRENT_TIMESTAMP for the synthetic membership, matching the existing schema."
+  },
+  {
+    "stage": "fixture-http",
+    "observedAt": "2026-11-13T18:51:35.273Z",
+    "failure": "Existing deferred invariant requires an accepted invitation for slot 2; the membership-only fixture was rejected.",
+    "fix": "Use the valid synthetic accepted-invitation transaction already used by the existing HTTP suite. No production schema or invitation feature changed."
+  },
+  {
+    "stage": "regression-proxy-readiness",
+    "observedAt": "2026-11-13T18:57:10.298Z",
+    "failure": "Immediately after API container recreation, the UI proxy returned a transient non-JSON response before DNS/keepalive convergence.",
+    "fix": "Bounded GET /health readiness through Nginx after test reconfiguration; no retry of writes or business assertions."
+  }
+]
