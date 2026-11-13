@@ -1,0 +1,13 @@
+{
+  "cycle": 2,
+  "reason": "revalidation_after_skip_link_focus_change",
+  "stats": {
+    "startTime": "2026-11-13T17:12:18.744Z",
+    "duration": 7970.089999999999,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failure": "WebKit mobile Shift+Tab did not focus the skip link; functional contracts passed; stopped before load/management regression."
+}
