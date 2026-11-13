@@ -4,6 +4,8 @@ Versão: 0.2 (implementada e validada localmente na feature GE-STORY-001; sem pu
 Data: 2026-11-12
 Responsável: Diórgenes Backes
 
+Nota posterior — 2026-11-13: a [RF-STORY-001](../../refactoring/RF-STORY-001.md) altera a organização do código para Clean Architecture por conceito, sem módulos, com Controllers MVC e DbContext único, conforme [ADR-001](../../adr/ADR-001-backend-clean-architecture.md). As referências abaixo a Modules/contextos separados descrevem a implementação validada na GE e são preservadas como histórico; regras/contratos continuam sendo verificados pela nova regressão.
+
 ---
 
 ### 1. Contexto e motivação técnica

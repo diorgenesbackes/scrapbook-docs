@@ -4,20 +4,22 @@
 
 Aplicação: C#/.NET e ASP.NET Core 10. SDK 10.0.401, runtime validado 10.0.12, solution `ScrapBook.sln` e xUnit 2.9.3. A feature Gestão de Eventos fixa EF Core 10.0.15, Npgsql/provider 10.0.3 e Microsoft.AspNetCore.OpenApi 10.0.15, com lockfiles. Consulte o [backend na feature](https://github.com/diorgenesbackes/scrapbook-service/blob/feature/GE-STORY-001/README.md). Integrações AWS permanecem pendentes; essa branch não representa publicação.
 
-## 1. Camadas e módulos
+## 1. Clean Architecture por conceito
+
+Decisão do responsável em **2026-11-13**: serviço único organizado por camadas e conceitos, registrado no [ADR-001](../adr/ADR-001-backend-clean-architecture.md). Retirar Modules, Endpoints e subpastas funcionais. A API utiliza controllers MVC reais, derivados de ControllerBase, com ApiController e rotas por atributos; composição por AddControllers/MapControllers.
 
 | Responsabilidade | Conteúdo | Dependências permitidas |
 | --- | --- | --- |
-| Domain | Entidades, valores, invariantes e transições. | Biblioteca base; sem HTTP, EF Core ou SDK AWS. |
+| Domain | Entidades POCO, políticas, contratos e transformações independentes de frameworks. | Somente biblioteca base do .NET; sem pacotes/referências ASP.NET, EF Core, Npgsql, AWS ou demais projetos. |
 | Application | Casos de uso, autorização, coordenação, portas e resultados. | Domain e contratos internos explicitamente definidos. |
 | Infrastructure | EF Core e adaptadores Cognito/S3/SQS/SNS/SES/MediaConvert. | Domain/Application cujas portas implementa. |
-| API / host | DTOs HTTP, endpoints, autenticação, erros, composição e hospedagem dos consumidores. | Application; Infrastructure no ponto de composição. |
+| API / host | Controllers, adaptação HTTP/MVC/OpenAPI, proteção de dados, erros e composição. | Domain/Application; Infrastructure no ponto de composição. |
 | UnitTests | Testes unitários com dependências substituídas. | Unidades sob teste. |
 | Repositório de testes | Integração, HTTP, banco, navegador, carga, segurança e recuperação. | Componentes necessários ao cenário, por acionamento manual. |
 
-Organizar por **Contas e Acesso**, **Eventos e Convites**, **Registros e Mídias** e **Notificações**, com nomes de código `Identity`, `Events`, `Records` e `Notifications`. Manter esses limites dentro das camadas.
+Agrupar todas as classes do mesmo conceito no diretório correspondente da camada, por exemplo API/Controllers, Application/Services e Infrastructure/Repositories. Não criar Services/Events, Repositories/Identity ou divisões funcionais equivalentes.
 
-Os diretórios `ScrapBook.Api`, `ScrapBook.Application`, `ScrapBook.Domain`, `ScrapBook.Infrastructure` e `ScrapBook.UnitTests` devem ficar diretamente na raiz de `scrapbook-service`, junto de `ScrapBook.sln`. Não criar diretórios intermediários `src/`, `test/` ou `tests/`, nem pastas virtuais correspondentes na solution. Cada projeto reserva `Modules/Identity`, `Modules/Events`, `Modules/Records` e `Modules/Notifications`. Funcionalidades serão implementadas nesses limites; os diretórios reservados não significam integrações concluídas.
+Os cinco diretórios de projeto ficam diretamente na raiz de scrapbook-service, junto de ScrapBook.sln. Não criar intermediários src/test/tests, pastas virtuais correspondentes nem diretórios vazios de reserva.
 
 ```text
 scrapbook-service/
@@ -31,11 +33,29 @@ scrapbook-service/
 
 Executar a API a partir dessa raiz com `dotnet run --project ScrapBook.Api --launch-profile http`. Referências entre projetos usam os diretórios irmãos; o projeto de testes unitários segue a mesma organização dos demais.
 
-Cada módulo possui schema, `DbContext`, domínio, casos de uso e infraestrutura próprios. Comunicação síncrona usa contratos internos, sem HTTP para a própria aplicação; comunicação eventual segue mensagens. Não ler/gravar tabelas de outro módulo diretamente nem compartilhar uma entidade EF entre contextos para contornar o contrato.
+| Camada | Diretórios por conceito |
+| --- | --- |
+| API | Controllers, Middlewares, Validators, Options, Readers, Writers, InputFormatters, Transformers, DataProtectors, Extensions |
+| Application | Interfaces, Services, Commands, Exceptions, Scopes |
+| Domain | Entities, Policies, Models, Requests, Responses, Mappers, Readers, Builders, Exceptions, Enums, Clocks |
+| Infrastructure | Repositories, DbContexts, Configurations, Mappers, UnitOfWorks, Extensions |
+| UnitTests | Conceito testado, com doubles em Stubs e providers em Providers |
 
-Não exigir transação única entre módulos. Operação e Outbox são atômicas dentro do módulo. Projeções ou referências de outro domínio precisam de fonte e consistência documentadas.
+EventController depende de IEventService; EventService utiliza IEventRepository e IUnitOfWork. Infraestrutura implementa repositórios e um ScrapBookDbContext scoped, compartilhado na requisição, com IEntityTypeConfiguration separado por entidade. O modelo atual mapeia cinco entidades usadas pelas funcionalidades existentes. Os schemas físicos identity/events/records/notifications e as chaves existentes de configuração/telemetria não definem módulos de código e continuam compatíveis.
 
-DTOs HTTP pertencem à API; entradas/resultados independentes de transporte, a Application. Não serializar entidade EF como resposta nem colocar contrato HTTP em Domain.
+Operação local e Outbox, quando aplicável, compartilham transação curta. Integrações externas não participam de locks/transações do banco. Liquibase permanece o executor exclusivo de DDL; startup não migra ou prepara dados.
+
+### Contratos puros e adaptadores técnicos
+
+Ajuste do responsável em **2026-11-13**: concentrar Models, Requests, Responses, Builders, Enums, Entities e mappers/readers/transformers/writers independentes de frameworks em Domain. Uma classe não pertence a Domain apenas por seu sufixo. **Não adicionar dependências para viabilizar uma movimentação.** Extrair o comportamento puro e manter somente a adaptação necessária na camada técnica; não criar diretórios vazios para conceitos ainda inexistentes.
+
+- Requests/Responses são records de dados em Domain; atributos de System.Text.Json, parte da biblioteca base, são permitidos. HttpContext, binding MVC, headers, status, ProblemDetails e OpenAPI ficam na API. Não serializar entidades rastreadas como resposta.
+- JsonBodyReader recebe Stream, Type e CancellationToken, sem conhecer HTTP. API/Readers/HttpJsonBodyReader valida mídia/tamanho e traduz erros; EventMvcJsonInputFormatter conecta esse adaptador ao MVC. HealthHttpResponseWriter escreve a resposta HTTP; EventOpenApiDocumentTransformer adapta o documento OpenAPI.
+- EventResponseMapper e EventAuditBuilder são puros em Domain. Infrastructure/Mappers/EfPostgresExceptionMapper traduz exceções EF/Npgsql para falhas da aplicação; não levar essas bibliotecas ao domínio.
+- Entities contém EventEntity e os POCOs com sufixo PersistenceEntity. Os últimos representam o formato persistido, sem atributos EF ou geração de schema. DbContext, tracking, IEntityTypeConfiguration, concorrência e acesso ao banco permanecem em Infrastructure.
+- **Services existem exclusivamente em Application**, inclusive EventService, EventTelemetryService, EventCursorService e DevelopmentCurrentActorService. Dependem de portas quando precisam de recursos externos. EventCursorService valida payload/conta/validade do cursor pela porta IEventCursorProtector; API/DataProtectors/EventCursorDataProtector implementa a proteção ASP.NET. Manter propósito, chaves e duração compatíveis. Application também não referencia ASP.NET ou EF.
+
+Nomes técnicos devem explicitar protocolo/framework e terminar no conceito (HttpJsonBodyReader, EventMvcJsonInputFormatter, HealthHttpResponseWriter, EfPostgresExceptionMapper, EventCursorDataProtector). Interfaces mantêm I e a responsabilidade, como IEventCursorProtector. Evitar serviços técnicos chamados Service fora de Application.
 
 ## 2. Fluxo de um caso de uso
 
@@ -52,6 +72,9 @@ Validação é complementar:
 Mapear explicitamente campos sensíveis, horários e enums. Biblioteca de mapper só quando houver benefício concreto, sem esconder conversão de fuso ou disponibilizar dados bloqueados.
 
 ### Convenções C#
+
+- Uma classe/record por arquivo, com filename igual ao tipo, sempre com sufixo do conceito: EventController, EventService, EventRepository, EventEntity, CreateEventCommand, EventDetailsModel, CreateEventRequest, EventResponse, EventResponseMapper, EventRequestValidator, EventRequestMiddleware, EventEntityConfiguration, DevelopmentIdentityOptions, EventPolicy, BusinessClock, JsonBodyReader, HttpJsonBodyReader, HealthHttpResponseWriter, EventMvcJsonInputFormatter, EventOpenApiDocumentTransformer e EventCursorDataProtector.
+- Extensions, Exception e Enum identificam extensões, exceções e enums. Interfaces usam I e mantêm o conceito (IEventService/IEventRepository/IUnitOfWork); unitários usam Tests e doubles usam Stub. Program.cs é o ponto de composição convencional.
 
 - Nullable reference types habilitados; ausência tratada sem espalhar `!`.
 - Quatro espaços; PascalCase em tipos/membros públicos, camelCase em parâmetros/locais e `Async` nos métodos assíncronos.
@@ -91,7 +114,7 @@ Consultas devem ter:
 
 Não expor `IQueryable` pela porta do caso de uso. Não executar contagem para tela bloqueada nem buscar conteúdo apenas para descartá-lo depois no mapper.
 
-Escritas relacionadas do módulo compartilham unidade de trabalho. Delimitar transação explícita quando envolver leituras protegidas, múltiplas etapas ou concorrência. Manter curta e não aguardar S3/Cognito/SES com locks abertos.
+Escritas relacionadas da operação compartilham unidade de trabalho. Delimitar transação explícita quando envolver leituras protegidas, múltiplas etapas ou concorrência. Manter curta e não aguardar S3/Cognito/SES com locks abertos.
 
 ## 5. Concorrência, idempotência e estados
 
@@ -167,7 +190,8 @@ Somente unitários no backend, com xUnit 2.9.3. Executar `dotnet build ScrapBook
 
 Não usar EF InMemory ou SQLite como comprovação de SQL, locks, constraints ou datas do PostgreSQL. Simulações locais aceleram desenvolvimento, mas não comprovam integração real com Cognito/MediaConvert/SQS.
 
-- [ ] Casos de uso independem de HTTP/AWS e mantêm fronteiras entre módulos.
+- [ ] Serviços e políticas independem de HTTP/AWS; interfaces e implementações respeitam as camadas.
+- [ ] Diretórios e sufixos representam conceitos, sem Modules/Endpoints ou subpastas funcionais.
 - [ ] Lifetimes, cancelamento e concorrência protegem contexto/pool/API.
 - [ ] Vínculo, abertura e prazo são verificados no servidor.
 - [ ] Confirmação, transação local, Outbox e idempotência estão alinhadas.

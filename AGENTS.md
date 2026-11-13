@@ -1,55 +1,35 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Project Structure
 
-Read [index](README.md), [PRD](PRD.md), [HLD](HLD.md), and [guidelines](guidelines/README.md). Frontend: `scrapbook-ui/src/{app,features,shared,test}`. Backend: `ScrapBook.sln` and five project directories, directly under `scrapbook-service/`. Module folders: Identity, Events, Records, Notifications.
+Read [index](README.md), [PRD](PRD.md), [HLD](HLD.md), and [guidelines](guidelines/README.md). The workspace has six independent repositories: service, UI, docs, tests, Liquibase and infrastructure. Their default branch is main.
 
-Also: `scrapbook-docs`, `scrapbook-tests`, `scrapbook-liquibase`, and `scrapbook-infrastructure`. All use `main`.
+ScrapBook.sln and five project directories sit directly under scrapbook-service, without src/test wrappers. Frontend uses scrapbook-ui/src/{app,features,shared,test}.
 
-## Build, Test, and Development Commands
+## Architecture and Naming
 
-Inside `scrapbook-ui/` (Node 26.13.0, npm 11.20.0):
+Use one backend service with Clean Architecture. Domain holds pure entities, policies, models, requests, responses, builders, enums, mappers and readers using only .NET base libraries. Application exclusively owns Services and defines ports/commands. Neither references ASP.NET or EF. Infrastructure implements persistence/integrations; API contains controllers and technical HTTP adapters.
 
-- `npm ci`: install locked dependencies.
-- `npm run dev`: start Vite at `http://127.0.0.1:5173`.
-- `npm run check`: lint, type checking, build, and unit tests.
-- `npm test`: unit tests once.
+Group classes by concept, without Modules or functional subfolders. Extract pure behavior into Domain; keep framework adapters in API/Infrastructure with explicit names: HttpJsonBodyReader, EventMvcJsonInputFormatter, HealthHttpResponseWriter, EfPostgresExceptionMapper. POCO PersistenceEntity types live in Domain; EF mappings and the single scoped ScrapBookDbContext stay in Infrastructure. Never move framework dependencies into Domain.
 
-Inside `scrapbook-service/` (SDK 10.0.401):
+Every declared type has its concept suffix: EventController, EventService, EventRepository, EventEntity, CreateEventRequest, EventResponse, EventPolicy, EventApplicationException. Keep one type per matching filename. Interfaces retain I plus their service/repository concept; tests end in Tests. Program.cs is the composition entry point.
 
-- `dotnet restore ScrapBook.sln --locked-mode`: restore pinned dependencies.
-- `dotnet build ScrapBook.sln --no-restore`: build all projects.
-- `dotnet test ScrapBook.sln --no-build --no-restore`: run unit tests.
-- `dotnet run --project ScrapBook.Api --launch-profile http`: API on port 5080.
+C# uses four spaces, PascalCase types/methods, camelCase locals and Async methods. TypeScript uses strict mode, two spaces and single quotes. Document in Portuguese with relative links; guideline filenames stay lowercase.
 
-## Coding Style & Naming Conventions
+## Build and Tests
 
-Use Markdown headings, relative links, and Portuguese documentation. Keep guideline filenames lowercase, including `git-flow.md`. Preserve PRD/HLD filenames.
+Backend, SDK 10.0.401:
 
-Use English identifiers, strict TypeScript, single-quoted strings, and two-space TypeScript/YAML indentation. Oxlint checks hooks, accessibility, and shared imports. C# uses four spaces, PascalCase types/methods, camelCase locals, and `Async` suffixes.
+- dotnet restore ScrapBook.sln --locked-mode
+- dotnet build ScrapBook.sln --no-restore
+- dotnet test ScrapBook.sln --no-build --no-restore
 
-## Architecture & Documentation Decisions
+Frontend, Node 26.13.0/npm 11.20.0: npm ci, npm run dev and npm run check.
 
-Preserve the modular .NET monolith: Accounts/Access, Events/Invitations, Records/Media, and Notifications. API and consumers share one application; module-local transactions include Outbox messages. Liquibase exclusively manages schema changes.
+Use xUnit and Vitest/Testing Library for unit tests. Keep HTTP/PostgreSQL/Playwright/load tests manual in scrapbook-tests. Liquibase owns migrations and its disposable validation suite. Report failures and skipped scenarios; no coverage threshold exists.
 
-Follow [SQL conventions](guidelines/sql.md): integer identity PKs, safe replay, and rollback. Question changes without viable reversal.
+## Contribution and Security
 
-Follow the PRD/HLD compatibility matrix. Distinguish proposed, implemented, and validated behavior; preserve historical evidence. Business timestamps represent `America/Sao_Paulo`.
+Track work exclusively in [Scrap Book](https://trello.com/b/6QX5TIHS/scrap-book): Todo → Doing → Test → To Deploy. Use Conventional Commits and [Git Flow](guidelines/git-flow.md); identify dependent features and their base. Preserve historical evidence and distinguish local validation from deployment.
 
-## Testing Guidelines
-
-Keep unit tests in backend/frontend; run non-unit suites manually from scrapbook-tests. In scrapbook-liquibase, `python3 tests/verify.py` validates migrations in disposable Docker PostgreSQL.
-
-Frontend: Vitest/React Testing Library with `*.test.ts(x)`; backend: xUnit with `*Tests` classes. Playwright runs manually in scrapbook-tests; k6 is not installed. No coverage threshold exists. Prioritize authorization, isolation, upload atomicity, retries, duplicates, and recovery. Report skipped tests.
-
-## Commit & Pull Request Guidelines
-
-Use exclusively the [Scrap Book Trello board](https://trello.com/b/6QX5TIHS/scrap-book). Link tasks, dependencies, acceptance criteria, and execution evidence to their story.
-
-Use Conventional Commits, e.g. `docs(guidelines): clarify upload confirmation`. Commit manifests and lockfiles; exclude installed libraries, generated artifacts, and secrets.
-
-Follow [Git Flow](guidelines/git-flow.md): features originate from main and promote separately to dev, hlg, then main. PRs link Trello and document behavior, dependencies, validation, migrations, and recovery.
-
-## Security & Configuration
-
-Keep credentials, tokens, signed URLs, and guest content out of commits and examples. Authorize event access and opening dates server-side; protect blocked content, sender identities, and counts.
+Commit manifests/lockfiles; exclude libraries, builds, credentials and private state. Follow [SQL](guidelines/sql.md), preserve business dates in America/Sao_Paulo, and authorize event access server-side. Development identity is explicit, local and disabled by default.

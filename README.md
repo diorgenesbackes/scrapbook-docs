@@ -17,6 +17,7 @@ Este diretório reúne requisitos, arquitetura e padrões de desenvolvimento do 
 | [Guidelines](guidelines/README.md) | Regras de implementação e revisão adaptadas ao Scrap Book. |
 | [Frontend](https://github.com/diorgenesbackes/scrapbook-ui/blob/main/README.md) | Projeto inicial, instalação, execução, build e testes unitários. |
 | [Backend](https://github.com/diorgenesbackes/scrapbook-service/blob/main/README.md) | Solution, camadas, módulos, execução, testes unitários e contrato de saúde. |
+| [Refatoração do backend](refactoring/RF-STORY-001.md) | Clean Architecture sem módulos, classes por conceito, validação e rastreabilidade. |
 | [Princípios](guidelines/principios.md) | Responsabilidades, Clean Architecture, SOLID e decisões. |
 | [Git Flow](guidelines/git-flow.md) | Promoção seletiva, componentes, versões, publicação e recuperação. |
 | [APIs síncronas](guidelines/api.md) | Contratos HTTP, erros, cursor, autorização e idempotência. |

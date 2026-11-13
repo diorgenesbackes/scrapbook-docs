@@ -1,0 +1,331 @@
+{
+  "source": "Trello UTC; transições, não horas ativas.",
+  "tasks": 14,
+  "state": "To Deploy",
+  "transitions": [
+    {
+      "task": "RF-001",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:36.733Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-002",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:37.897Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-003",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:39.323Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-004",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:41.189Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-005",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:42.629Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-006",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:43.702Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-007",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:45.551Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-008",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:47.286Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-009",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:48.782Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-010",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:49.828Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-011",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:51.414Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-012",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:52.884Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-013",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:54.313Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-014",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:43:55.469Z",
+      "source": "Criado diretamente em Todo; timestamp retornado pelo Trello."
+    },
+    {
+      "task": "RF-001",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:22.219Z"
+    },
+    {
+      "task": "RF-002",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:23.383Z"
+    },
+    {
+      "task": "RF-003",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:24.456Z"
+    },
+    {
+      "task": "RF-004",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:26.308Z"
+    },
+    {
+      "task": "RF-005",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:27.449Z"
+    },
+    {
+      "task": "RF-006",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:29.101Z"
+    },
+    {
+      "task": "RF-007",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:30.984Z"
+    },
+    {
+      "task": "RF-008",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:32.441Z"
+    },
+    {
+      "task": "RF-009",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:34.140Z"
+    },
+    {
+      "task": "RF-010",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:35.589Z"
+    },
+    {
+      "task": "RF-011",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:36.849Z"
+    },
+    {
+      "task": "RF-012",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:38.281Z"
+    },
+    {
+      "task": "RF-013",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:41.480Z"
+    },
+    {
+      "task": "RF-014",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:50:42.882Z"
+    },
+    {
+      "task": "RF-001",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:40.330Z"
+    },
+    {
+      "task": "RF-002",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:41.930Z"
+    },
+    {
+      "task": "RF-003",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:43.271Z"
+    },
+    {
+      "task": "RF-004",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:44.790Z"
+    },
+    {
+      "task": "RF-005",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:46.037Z"
+    },
+    {
+      "task": "RF-006",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:47.405Z"
+    },
+    {
+      "task": "RF-007",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:48.898Z"
+    },
+    {
+      "task": "RF-008",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:50.269Z"
+    },
+    {
+      "task": "RF-009",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:51.748Z"
+    },
+    {
+      "task": "RF-010",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:53.058Z"
+    },
+    {
+      "task": "RF-011",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:54.245Z"
+    },
+    {
+      "task": "RF-012",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:55.427Z"
+    },
+    {
+      "task": "RF-014",
+      "state": "Test",
+      "timestamp": "2026-11-13T11:58:56.689Z"
+    },
+    {
+      "task": "RF-012",
+      "state": "Doing",
+      "timestamp": "2026-11-13T11:59:28.364Z"
+    },
+    {
+      "task": "RF-012",
+      "state": "Test",
+      "timestamp": "2026-11-13T12:00:54.898Z"
+    },
+    {
+      "task": "RF-010",
+      "state": "Doing",
+      "timestamp": "2026-11-13T12:03:33.051Z"
+    },
+    {
+      "task": "RF-014",
+      "state": "Doing",
+      "timestamp": "2026-11-13T12:03:34.288Z"
+    },
+    {
+      "task": "RF-010",
+      "state": "Test",
+      "timestamp": "2026-11-13T12:05:56.023Z"
+    },
+    {
+      "task": "RF-014",
+      "state": "Test",
+      "timestamp": "2026-11-13T12:05:57.487Z"
+    },
+    {
+      "task": "RF-013",
+      "state": "Test",
+      "timestamp": "2026-11-13T12:16:11.384Z"
+    },
+    {
+      "task": "RF-001",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:01.982Z"
+    },
+    {
+      "task": "RF-002",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:03.757Z"
+    },
+    {
+      "task": "RF-003",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:05.295Z"
+    },
+    {
+      "task": "RF-004",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:06.646Z"
+    },
+    {
+      "task": "RF-005",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:08.140Z"
+    },
+    {
+      "task": "RF-006",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:09.882Z"
+    },
+    {
+      "task": "RF-007",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:11.461Z"
+    },
+    {
+      "task": "RF-008",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:13.073Z"
+    },
+    {
+      "task": "RF-009",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:14.685Z"
+    },
+    {
+      "task": "RF-010",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:16.221Z"
+    },
+    {
+      "task": "RF-011",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:17.812Z"
+    },
+    {
+      "task": "RF-012",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:19.219Z"
+    },
+    {
+      "task": "RF-013",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:20.537Z"
+    },
+    {
+      "task": "RF-014",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T12:18:22.350Z"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ Gestão de Eventos implementa a base local em `ActivitySource`/`Meter` `ScrapBoo
 | Trace | Dependências e tempo entre etapas. | Contexto conectado ou relacionado, sem spans duplicados. |
 | Auditoria | Alterações sensíveis e autoria. | Persistência e controle de acesso próprios, sem substituir por log amostrado. |
 
-Backend permanece um serviço modular: nome lógico proposto `scrapbook-backend`; API, Outbox e consumidores distinguem componente/operação, sem criar serviços fictícios por módulo.
+Backend é um serviço único em Clean Architecture, sem módulos: nome lógico proposto `scrapbook-backend`; API, Outbox e consumidores distinguem componente/operação, sem criar serviços fictícios por responsabilidade.
 
 Telemetria não pode ser um caminho alternativo para descobrir conteúdo, remetentes ou quantidade de lembranças bloqueadas. Acesso operacional habitual deve receber sinais técnicos minimizados; correlação com evento específico exige canal restrito e finalidade documentada, sem conceder leitura da mídia.
 
@@ -226,3 +226,5 @@ Liquibase/pipeline registra `executionId`, versão, ambiente, mudanças, duraç�
 - [ ] Alertas de 2 minutos e três envios em 5 minutos foram ensaiados.
 - [ ] Retenção de 180 dias, acesso e política real de traces estão documentados e configurados.
 - [ ] Falha da coleta é observável sem derrubar o negócio.
+
+Após RF-STORY-001, a propriedade técnica legada module=events permanece no contrato de telemetria para compatibilidade; não representa uma pasta, namespace ou DbContext de módulo. Controllers, serviços e repositórios seguem os conceitos do guideline de backend.
