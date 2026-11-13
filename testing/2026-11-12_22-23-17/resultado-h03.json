@@ -1,0 +1,86 @@
+{
+  "started_at": "2026-11-12T22:41:09.868900-03:00",
+  "target": "disposable local container",
+  "migrations": 47,
+  "http": [
+    "GE-036/088 creation_event_member_audit_commit",
+    "GE-089/090 identity_origin_preflight_and_account_isolation",
+    "GE-091 equivalent_second_responsible_permissions",
+    "GE-048/051/092 strict_json_unicode_bigint_and_body_limit",
+    "GE-041/044/045/096 optimistic_race_noop_null_reset_final_trigger_state",
+    "GE-093/094/095 real_clock_window_12_13_and_irreversible_access_policy",
+    "GE-046/088/097 early_and_deferred_commit_failures_rollback_all_effects",
+    "GE-042/099 cancel_obsolete_dispatches_atomically_preserve_dispatched",
+    "GE-037/038/098 keyset_pagination_account_binding_and_process_restart",
+    "GE-059 openapi_five_operations_and_strict_nullable_contracts"
+  ],
+  "browser": {
+    "projects": [
+      "chromium-desktop/Asia-Tokyo",
+      "webkit-mobile/America-Los_Angeles"
+    ],
+    "physical_devices": false
+  },
+  "failures_and_privacy": {
+    "runtime_outage_503_ms": 2.79,
+    "lock_timeout_503_ms": 4974.508,
+    "private_markers_absent": true,
+    "audit_allowlist": [
+      "access_state",
+      "access_version",
+      "opening_mode",
+      "opens_at",
+      "starts_at",
+      "submission_closes_at"
+    ],
+    "structured_log_rows": 159
+  },
+  "performance": {
+    "profile": "H-03",
+    "seconds": 60,
+    "concurrency": 10,
+    "events": 200,
+    "warmup_cycles_per_worker": 3,
+    "network": "HTTP host loopback; PostgreSQL Docker Desktop VM loopback",
+    "machine": "arm64",
+    "cpu_count": 12,
+    "os": "26.6.2",
+    "operations": {
+      "list": {
+        "requests": 43624,
+        "errors": 0,
+        "p95_ms": 3.146
+      },
+      "detail": {
+        "requests": 43624,
+        "errors": 0,
+        "p95_ms": 3.007
+      },
+      "update": {
+        "requests": 43624,
+        "errors": 0,
+        "p95_ms": 11.223
+      }
+    }
+  },
+  "finished_at": "2026-11-12T22:42:34.494010-03:00",
+  "passed": true,
+  "hardware": {
+    "cpu": "Apple M4 Pro",
+    "logical_cpus": 12,
+    "memory_bytes": 25769803776
+  },
+  "limits": [
+    "Somente loopback e Docker Desktop, sem AWS/dispositivos físicos.",
+    "12h exato em unitários; integração usa clock real e eventos já encerrados.",
+    "Sem carga de uploads, disponibilidade global ou auditoria WCAG completa."
+  ],
+  "delivery_reference_revisions": {
+    "service": "6bad53c0db33a301918fd28c814b750f12baf3c9",
+    "ui": "fd473d8c1a0e9e632eb8cb1e4366c53f0ee29f83",
+    "tests": "f7bc7f352febf0c8fccd2a297abf98e0f53c3fb0",
+    "infrastructure": "f2a249e79f1cf57b05ba4be9d0c173571b9c1bf2"
+  },
+  "performance_backend_revision": "6bad53c0db33a301918fd28c814b750f12baf3c9",
+  "revision_note": "Revisões entregáveis de referência; navegador teve retestes posteriores. A carga mede somente a API, sem tráfego UI."
+}

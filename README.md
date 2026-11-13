@@ -42,15 +42,15 @@ Cada componente possui repositório Git independente, com branch inicial/padrão
 | Testes não unitários | [scrapbook-tests](https://github.com/diorgenesbackes/scrapbook-tests) |
 | Frontend React | [scrapbook-ui](https://github.com/diorgenesbackes/scrapbook-ui) |
 
-Os links entre repositórios apontam para o GitHub em `main`; links internos continuam relativos. O guia e o prompt de FDD são versionados neste repositório. Os arquivos de mesmo nome na raiz do workspace são mantidos localmente para compatibilidade com o ambiente de trabalho.
+Links da base apontam para main; evidências da story usam commits ou feature/GE-STORY-001 enquanto aguardam promoção. Links internos são relativos. O guia e o prompt de FDD são versionados neste repositório. Os arquivos de mesmo nome na raiz do workspace são mantidos localmente para compatibilidade com o ambiente de trabalho.
 
 Versionar código-fonte, documentação, configuração pública, manifests e lockfiles. Dependências instaladas, bibliotecas compiladas, arquivos gerados, credenciais, `.env`, dados do PostgreSQL e estados privados de infraestrutura ficam fora do Git, conforme o `.gitignore` de cada componente.
 
 - `scrapbook-docs/`: requisitos, arquitetura, guidelines e modelagem em `db/`.
 - `scrapbook-ui/`: projeto React/TypeScript com Vite e testes unitários.
-- `scrapbook-service/`: solution .NET em camadas, módulos reservados, `/health` e testes unitários.
+- `scrapbook-service/`: solution .NET em camadas, gestão de eventos na feature, `/health` e unitários.
 - `scrapbook-liquibase/`: base inicial de migrations, rollbacks e validações próprias.
-- `scrapbook-tests/`: diretório reservado aos testes não unitários.
+- `scrapbook-tests/`: suítes manuais HTTP/PostgreSQL, Playwright, falhas e carga H-03.
 - `scrapbook-infrastructure/`: Compose e operação do PostgreSQL local; configuração AWS manual permanece pendente. Componente acrescentado por definição do responsável em 2026-11-11.
 
 ## Organização dos próximos documentos
@@ -58,9 +58,9 @@ Versionar código-fonte, documentação, configuração pública, manifests e lo
 - `fdd/FDD-<Funcionalidade>/`: especificação `FDD-<Funcionalidade>.md` e etapas `1-planejamento.md`, `2-desenvolvimento.md`, `3-testes.md` e `4-operacao.md`, criadas conforme o trabalho avançar. A primeira especificação está em [Gestão de Eventos](fdd/FDD-Gestao-de-Eventos/FDD-Gestao-de-Eventos.md).
 - `db/`: modelagem documentada em [DB-Modelagem.md](db/DB-Modelagem.md), [DB-Diagrama.md](db/DB-Diagrama.md) e [DB-Modelo-Fisico.md](db/DB-Modelo-Fisico.md), com scripts correspondentes em [scrapbook-liquibase](https://github.com/diorgenesbackes/scrapbook-liquibase/blob/main/README.md).
 - `adr/`: decisões individuais, reutilizando os números ADR-001 a ADR-016 reservados no HLD.
-- `testing/`: futuro padrão em `README.md` e ciclos `AAAA-MM-DD_HH-mm-ss/`, no fuso `America/Sao_Paulo`, contendo `1-plano.md` e `2-execucao.md`.
+- `testing/`: índice em `README.md` e ciclos `AAAA-MM-DD_HH-mm-ss/`, no fuso `America/Sao_Paulo`, contendo `1-plano.md` e `2-execucao.md`.
 
-O índice de FDDs e a especificação de Gestão de Eventos já existem; suas etapas de execução, os ADRs e a estrutura de testes serão criados conforme o avanço. A modelagem em `db/` já está documentada. Cada FDD deve apontar para seus ciclos de teste quando existirem, sem duplicar resultados. Preservar histórico datado nas etapas e distinguir planejado, executado, aprovado, falhou e não executado.
+O índice de FDDs e a especificação de Gestão de Eventos já existem; suas etapas de execução e ciclos de teste estão registrados; ADRs individuais serão criados conforme o avanço. A modelagem em `db/` já está documentada. Cada FDD deve apontar para seus ciclos de teste quando existirem, sem duplicar resultados. Preservar histórico datado nas etapas e distinguir planejado, executado, aprovado, falhou e não executado.
 
 Os repositórios de backend/frontend manterão somente testes unitários. Integração, HTTP, navegador, segurança, carga e recuperação pertencerão ao repositório de testes, com acionamento manual conforme o HLD. O Liquibase terá suas próprias validações.
 

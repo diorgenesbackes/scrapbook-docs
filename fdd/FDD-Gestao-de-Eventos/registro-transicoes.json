@@ -1,0 +1,2459 @@
+{
+  "source": "Transições observadas no Trello; UTC; não representa horas ativas.",
+  "taskCount": 112,
+  "finalState": "To Deploy",
+  "transitions": [
+    {
+      "task": "GE-001",
+      "state": "Doing",
+      "timestamp": "2026-11-12 22:48:07 UTC"
+    },
+    {
+      "task": "GE-002",
+      "state": "Doing",
+      "timestamp": "2026-11-12T22:52:39.624Z"
+    },
+    {
+      "task": "GE-003",
+      "state": "Doing",
+      "timestamp": "2026-11-12T22:55:24.603Z"
+    },
+    {
+      "task": "GE-004",
+      "state": "Doing",
+      "timestamp": "2026-11-12T22:57:48.986Z"
+    },
+    {
+      "task": "GE-005",
+      "state": "Doing",
+      "timestamp": "2026-11-12T22:57:50.341Z"
+    },
+    {
+      "task": "GE-006",
+      "state": "Doing",
+      "timestamp": "2026-11-12T22:59:35.249Z"
+    },
+    {
+      "task": "GE-007",
+      "state": "Doing",
+      "timestamp": "2026-11-12T22:59:43.057Z"
+    },
+    {
+      "task": "GE-008",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:01:12.867Z"
+    },
+    {
+      "task": "GE-001",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:04:48.224Z"
+    },
+    {
+      "task": "GE-002",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:04:50.091Z"
+    },
+    {
+      "task": "GE-003",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:04:51.704Z"
+    },
+    {
+      "task": "GE-004",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:04:53.863Z"
+    },
+    {
+      "task": "GE-005",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:05:20.747Z"
+    },
+    {
+      "task": "GE-006",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:05:22.556Z"
+    },
+    {
+      "task": "GE-007",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:05:23.935Z"
+    },
+    {
+      "task": "GE-008",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:05:25.538Z"
+    },
+    {
+      "task": "GE-001",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:11:23.657Z"
+    },
+    {
+      "task": "GE-002",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:11:24.838Z"
+    },
+    {
+      "task": "GE-003",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:11:25.986Z"
+    },
+    {
+      "task": "GE-004",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:11:27.233Z"
+    },
+    {
+      "task": "GE-005",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:12:01.166Z"
+    },
+    {
+      "task": "GE-006",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:12:02.662Z"
+    },
+    {
+      "task": "GE-007",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:12:04.431Z"
+    },
+    {
+      "task": "GE-008",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:12:05.703Z"
+    },
+    {
+      "task": "GE-002",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:13:24.924Z"
+    },
+    {
+      "task": "GE-003",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:13:26.986Z"
+    },
+    {
+      "task": "GE-002",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:13:28.182Z"
+    },
+    {
+      "task": "GE-003",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:13:29.286Z"
+    },
+    {
+      "task": "GE-002",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:15:23.481Z"
+    },
+    {
+      "task": "GE-003",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:15:25.243Z"
+    },
+    {
+      "task": "GE-009",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:15:36.080Z"
+    },
+    {
+      "task": "GE-010",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:15:37.480Z"
+    },
+    {
+      "task": "GE-011",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:15:39.599Z"
+    },
+    {
+      "task": "GE-012",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:15:40.876Z"
+    },
+    {
+      "task": "GE-013",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:19:44.291Z"
+    },
+    {
+      "task": "GE-014",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:19:45.772Z"
+    },
+    {
+      "task": "GE-015",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:19:47.222Z"
+    },
+    {
+      "task": "GE-016",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:19:49.069Z"
+    },
+    {
+      "task": "GE-017",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:20:52.389Z"
+    },
+    {
+      "task": "GE-018",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:20:53.590Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:20:55.104Z"
+    },
+    {
+      "task": "GE-020",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:20:56.334Z"
+    },
+    {
+      "task": "GE-021",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:21:55.952Z"
+    },
+    {
+      "task": "GE-022",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:21:57.333Z"
+    },
+    {
+      "task": "GE-023",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:21:58.647Z"
+    },
+    {
+      "task": "GE-024",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:21:59.847Z"
+    },
+    {
+      "task": "GE-025",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:47.451Z"
+    },
+    {
+      "task": "GE-026",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:48.918Z"
+    },
+    {
+      "task": "GE-027",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:50.453Z"
+    },
+    {
+      "task": "GE-028",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:51.741Z"
+    },
+    {
+      "task": "GE-029",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:53.330Z"
+    },
+    {
+      "task": "GE-030",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:54.978Z"
+    },
+    {
+      "task": "GE-031",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:56.194Z"
+    },
+    {
+      "task": "GE-032",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:57.709Z"
+    },
+    {
+      "task": "GE-033",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:22:59.025Z"
+    },
+    {
+      "task": "GE-034",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:23:00.311Z"
+    },
+    {
+      "task": "GE-009",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:25:44.710Z"
+    },
+    {
+      "task": "GE-010",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:25:46.252Z"
+    },
+    {
+      "task": "GE-011",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:25:47.678Z"
+    },
+    {
+      "task": "GE-012",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:25:49.051Z"
+    },
+    {
+      "task": "GE-013",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:25:50.173Z"
+    },
+    {
+      "task": "GE-014",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:27:25.832Z"
+    },
+    {
+      "task": "GE-015",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:27:27.072Z"
+    },
+    {
+      "task": "GE-016",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:27:28.518Z"
+    },
+    {
+      "task": "GE-017",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:27:30.043Z"
+    },
+    {
+      "task": "GE-018",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:44.841Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:46.185Z"
+    },
+    {
+      "task": "GE-020",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:47.431Z"
+    },
+    {
+      "task": "GE-021",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:48.613Z"
+    },
+    {
+      "task": "GE-022",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:49.752Z"
+    },
+    {
+      "task": "GE-023",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:52.514Z"
+    },
+    {
+      "task": "GE-024",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:53.975Z"
+    },
+    {
+      "task": "GE-025",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:55.123Z"
+    },
+    {
+      "task": "GE-026",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:57.242Z"
+    },
+    {
+      "task": "GE-027",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:29:58.902Z"
+    },
+    {
+      "task": "GE-028",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:31:43.828Z"
+    },
+    {
+      "task": "GE-029",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:31:45.398Z"
+    },
+    {
+      "task": "GE-030",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:31:46.673Z"
+    },
+    {
+      "task": "GE-031",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:31:47.822Z"
+    },
+    {
+      "task": "GE-032",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:31:49.166Z"
+    },
+    {
+      "task": "GE-033",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:33:41.553Z"
+    },
+    {
+      "task": "GE-034",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:33:43.157Z"
+    },
+    {
+      "task": "GE-009",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:36:51.034Z"
+    },
+    {
+      "task": "GE-010",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:36:52.765Z"
+    },
+    {
+      "task": "GE-011",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:36:53.960Z"
+    },
+    {
+      "task": "GE-012",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:36:55.402Z"
+    },
+    {
+      "task": "GE-013",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:36:56.595Z"
+    },
+    {
+      "task": "GE-047",
+      "state": "Todo",
+      "timestamp": "2026-11-12T23:39:28.212Z"
+    },
+    {
+      "task": "GE-047",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:39:29.450Z"
+    },
+    {
+      "task": "GE-014",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:31.383Z"
+    },
+    {
+      "task": "GE-015",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:33.073Z"
+    },
+    {
+      "task": "GE-016",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:34.475Z"
+    },
+    {
+      "task": "GE-017",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:36.231Z"
+    },
+    {
+      "task": "GE-018",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:38.155Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:39.892Z"
+    },
+    {
+      "task": "GE-020",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:41.119Z"
+    },
+    {
+      "task": "GE-021",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:43.069Z"
+    },
+    {
+      "task": "GE-022",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:44.635Z"
+    },
+    {
+      "task": "GE-023",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:39:46.608Z"
+    },
+    {
+      "task": "GE-024",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:40:57.326Z"
+    },
+    {
+      "task": "GE-025",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:40:59.113Z"
+    },
+    {
+      "task": "GE-026",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:01.068Z"
+    },
+    {
+      "task": "GE-027",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:03.132Z"
+    },
+    {
+      "task": "GE-028",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:04.401Z"
+    },
+    {
+      "task": "GE-029",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:05.861Z"
+    },
+    {
+      "task": "GE-030",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:07.725Z"
+    },
+    {
+      "task": "GE-031",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:09.316Z"
+    },
+    {
+      "task": "GE-032",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:10.684Z"
+    },
+    {
+      "task": "GE-033",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:11.996Z"
+    },
+    {
+      "task": "GE-034",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:13.655Z"
+    },
+    {
+      "task": "GE-047",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:41:15.229Z"
+    },
+    {
+      "task": "GE-010",
+      "state": "Doing",
+      "timestamp": "2026-11-12T23:42:17.656Z"
+    },
+    {
+      "task": "GE-010",
+      "state": "Test",
+      "timestamp": "2026-11-12T23:42:19.029Z"
+    },
+    {
+      "task": "GE-009",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:55:44.767Z"
+    },
+    {
+      "task": "GE-010",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:55:46.223Z"
+    },
+    {
+      "task": "GE-011",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:55:47.763Z"
+    },
+    {
+      "task": "GE-012",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:55:49.580Z"
+    },
+    {
+      "task": "GE-042",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:40.804Z"
+    },
+    {
+      "task": "GE-043",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:43.119Z"
+    },
+    {
+      "task": "GE-044",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:44.484Z"
+    },
+    {
+      "task": "GE-045",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:46.179Z"
+    },
+    {
+      "task": "GE-046",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:47.800Z"
+    },
+    {
+      "task": "GE-048",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:49.409Z"
+    },
+    {
+      "task": "GE-049",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:50.962Z"
+    },
+    {
+      "task": "GE-050",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:52.881Z"
+    },
+    {
+      "task": "GE-051",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:54.204Z"
+    },
+    {
+      "task": "GE-052",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:47:56.118Z"
+    },
+    {
+      "task": "GE-013",
+      "state": "To Deploy",
+      "timestamp": "2026-11-12T23:55:50.989Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-014",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:39.975Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-015",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.038Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-016",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.165Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-017",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:39.881Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-018",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:42.093Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-019",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:41.938Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-020",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:42.115Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-021",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:41.723Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-022",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:41.557Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-023",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:41.747Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-024",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:41.283Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-025",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:41.514Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-026",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.979Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-027",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:41.151Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-028",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.890Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-029",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.920Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-030",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.764Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-031",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.663Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-032",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.526Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-033",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.439Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-034",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T00:35:40.412Z",
+      "source": "verified after reconnect"
+    },
+    {
+      "task": "GE-053",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:48:45.819Z"
+    },
+    {
+      "task": "GE-054",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:48:47.015Z"
+    },
+    {
+      "task": "GE-055",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:48:48.361Z"
+    },
+    {
+      "task": "GE-056",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:48:49.496Z"
+    },
+    {
+      "task": "GE-057",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:48:50.764Z"
+    },
+    {
+      "task": "GE-058",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:48:52.351Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:48:53.958Z"
+    },
+    {
+      "task": "GE-035",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:48:55.892Z"
+    },
+    {
+      "task": "GE-036",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:48:57.532Z"
+    },
+    {
+      "task": "GE-037",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:48:58.766Z"
+    },
+    {
+      "task": "GE-038",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:49:00.487Z"
+    },
+    {
+      "task": "GE-039",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:49:01.867Z"
+    },
+    {
+      "task": "GE-040",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:51:22.285Z"
+    },
+    {
+      "task": "GE-041",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:51:24.418Z"
+    },
+    {
+      "task": "GE-042",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:51:26.196Z"
+    },
+    {
+      "task": "GE-043",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:51:27.407Z"
+    },
+    {
+      "task": "GE-044",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:51:28.634Z"
+    },
+    {
+      "task": "GE-045",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:51:30.172Z"
+    },
+    {
+      "task": "GE-046",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:51:32.591Z"
+    },
+    {
+      "task": "GE-048",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:55:04.369Z"
+    },
+    {
+      "task": "GE-049",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:55:06.124Z"
+    },
+    {
+      "task": "GE-050",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:55:07.514Z"
+    },
+    {
+      "task": "GE-051",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:55:09.141Z"
+    },
+    {
+      "task": "GE-052",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:55:10.860Z"
+    },
+    {
+      "task": "GE-086",
+      "state": "Todo",
+      "timestamp": "2026-11-13T00:55:12.893Z"
+    },
+    {
+      "task": "GE-086",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:55:14.272Z"
+    },
+    {
+      "task": "GE-053",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:58:50.568Z"
+    },
+    {
+      "task": "GE-054",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:58:52.882Z"
+    },
+    {
+      "task": "GE-055",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:58:54.610Z"
+    },
+    {
+      "task": "GE-056",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:58:55.816Z"
+    },
+    {
+      "task": "GE-057",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:58:57.129Z"
+    },
+    {
+      "task": "GE-058",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:58:58.652Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Doing",
+      "timestamp": "2026-11-13T00:58:59.841Z"
+    },
+    {
+      "task": "GE-087",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:02.090Z"
+    },
+    {
+      "task": "GE-088",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:03.395Z"
+    },
+    {
+      "task": "GE-089",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:04.799Z"
+    },
+    {
+      "task": "GE-090",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:06.080Z"
+    },
+    {
+      "task": "GE-091",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:07.400Z"
+    },
+    {
+      "task": "GE-092",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:08.980Z"
+    },
+    {
+      "task": "GE-093",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:10.923Z"
+    },
+    {
+      "task": "GE-094",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:12.042Z"
+    },
+    {
+      "task": "GE-095",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:13.519Z"
+    },
+    {
+      "task": "GE-096",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:15.023Z"
+    },
+    {
+      "task": "GE-097",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:17.776Z"
+    },
+    {
+      "task": "GE-098",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:19.143Z"
+    },
+    {
+      "task": "GE-099",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:06:20.409Z"
+    },
+    {
+      "task": "GE-087",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:06:32.875Z"
+    },
+    {
+      "task": "GE-035",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:07:53.046Z"
+    },
+    {
+      "task": "GE-036",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:07:54.552Z"
+    },
+    {
+      "task": "GE-037",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:07:55.821Z"
+    },
+    {
+      "task": "GE-038",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:07:57.046Z"
+    },
+    {
+      "task": "GE-039",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:07:58.621Z"
+    },
+    {
+      "task": "GE-040",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:07:59.954Z"
+    },
+    {
+      "task": "GE-041",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:01.144Z"
+    },
+    {
+      "task": "GE-042",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:02.341Z"
+    },
+    {
+      "task": "GE-043",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:03.452Z"
+    },
+    {
+      "task": "GE-044",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:05.073Z"
+    },
+    {
+      "task": "GE-045",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:06.234Z"
+    },
+    {
+      "task": "GE-046",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:07.468Z"
+    },
+    {
+      "task": "GE-048",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:08.672Z"
+    },
+    {
+      "task": "GE-049",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:09.805Z"
+    },
+    {
+      "task": "GE-050",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:11.116Z"
+    },
+    {
+      "task": "GE-051",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:13.348Z"
+    },
+    {
+      "task": "GE-052",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:14.661Z"
+    },
+    {
+      "task": "GE-053",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:16.054Z"
+    },
+    {
+      "task": "GE-054",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:17.665Z"
+    },
+    {
+      "task": "GE-055",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:19.303Z"
+    },
+    {
+      "task": "GE-056",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:20.530Z"
+    },
+    {
+      "task": "GE-057",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:22.389Z"
+    },
+    {
+      "task": "GE-058",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:23.772Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:25.210Z"
+    },
+    {
+      "task": "GE-086",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:26.808Z"
+    },
+    {
+      "task": "GE-087",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:08:28.401Z"
+    },
+    {
+      "task": "GE-088",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:41.031Z"
+    },
+    {
+      "task": "GE-089",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:42.934Z"
+    },
+    {
+      "task": "GE-090",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:44.786Z"
+    },
+    {
+      "task": "GE-091",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:46.338Z"
+    },
+    {
+      "task": "GE-092",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:47.810Z"
+    },
+    {
+      "task": "GE-093",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:49.329Z"
+    },
+    {
+      "task": "GE-094",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:50.509Z"
+    },
+    {
+      "task": "GE-095",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:51.663Z"
+    },
+    {
+      "task": "GE-096",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:53.074Z"
+    },
+    {
+      "task": "GE-097",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:54.863Z"
+    },
+    {
+      "task": "GE-098",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:56.038Z"
+    },
+    {
+      "task": "GE-099",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:08:57.603Z"
+    },
+    {
+      "task": "GE-087",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:09:06.667Z"
+    },
+    {
+      "task": "GE-087",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:09:19.318Z"
+    },
+    {
+      "task": "GE-088",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:40.515Z"
+    },
+    {
+      "task": "GE-089",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:41.735Z"
+    },
+    {
+      "task": "GE-090",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:42.872Z"
+    },
+    {
+      "task": "GE-091",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:43.952Z"
+    },
+    {
+      "task": "GE-092",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:45.055Z"
+    },
+    {
+      "task": "GE-093",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:46.314Z"
+    },
+    {
+      "task": "GE-094",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:47.851Z"
+    },
+    {
+      "task": "GE-095",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:49.026Z"
+    },
+    {
+      "task": "GE-096",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:50.201Z"
+    },
+    {
+      "task": "GE-097",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:51.770Z"
+    },
+    {
+      "task": "GE-098",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:53.311Z"
+    },
+    {
+      "task": "GE-099",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:11:55.339Z"
+    },
+    {
+      "task": "GE-051",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:12:30.002Z"
+    },
+    {
+      "task": "GE-060",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:34.986Z"
+    },
+    {
+      "task": "GE-061",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:36.349Z"
+    },
+    {
+      "task": "GE-062",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:37.709Z"
+    },
+    {
+      "task": "GE-063",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:38.985Z"
+    },
+    {
+      "task": "GE-064",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:40.511Z"
+    },
+    {
+      "task": "GE-065",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:41.657Z"
+    },
+    {
+      "task": "GE-066",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:44.690Z"
+    },
+    {
+      "task": "GE-067",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:45.874Z"
+    },
+    {
+      "task": "GE-068",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:47.159Z"
+    },
+    {
+      "task": "GE-069",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:48.826Z"
+    },
+    {
+      "task": "GE-070",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:50.022Z"
+    },
+    {
+      "task": "GE-071",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:51.161Z"
+    },
+    {
+      "task": "GE-072",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:53.408Z"
+    },
+    {
+      "task": "GE-073",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:54.702Z"
+    },
+    {
+      "task": "GE-074",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:56.121Z"
+    },
+    {
+      "task": "GE-075",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:57.749Z"
+    },
+    {
+      "task": "GE-076",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:12:58.891Z"
+    },
+    {
+      "task": "GE-077",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:13:00.174Z"
+    },
+    {
+      "task": "GE-078",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:13:02.046Z"
+    },
+    {
+      "task": "GE-079",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:13:04.170Z"
+    },
+    {
+      "task": "GE-080",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:13:05.308Z"
+    },
+    {
+      "task": "GE-081",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:13:06.490Z"
+    },
+    {
+      "task": "GE-082",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:13:07.639Z"
+    },
+    {
+      "task": "GE-051",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:14:00.533Z"
+    },
+    {
+      "task": "GE-060",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:14:05.909Z"
+    },
+    {
+      "task": "GE-061",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:14:07.800Z"
+    },
+    {
+      "task": "GE-062",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:14:09.165Z"
+    },
+    {
+      "task": "GE-063",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:14:10.796Z"
+    },
+    {
+      "task": "GE-064",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:14:12.131Z"
+    },
+    {
+      "task": "GE-070",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:14:13.468Z"
+    },
+    {
+      "task": "GE-079",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:14:15.063Z"
+    },
+    {
+      "task": "GE-065",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:43.436Z"
+    },
+    {
+      "task": "GE-066",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:45.391Z"
+    },
+    {
+      "task": "GE-067",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:47.131Z"
+    },
+    {
+      "task": "GE-068",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:48.660Z"
+    },
+    {
+      "task": "GE-069",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:50.334Z"
+    },
+    {
+      "task": "GE-071",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:51.589Z"
+    },
+    {
+      "task": "GE-072",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:52.737Z"
+    },
+    {
+      "task": "GE-073",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:54.614Z"
+    },
+    {
+      "task": "GE-074",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:56.899Z"
+    },
+    {
+      "task": "GE-075",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:58.408Z"
+    },
+    {
+      "task": "GE-076",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:15:59.589Z"
+    },
+    {
+      "task": "GE-077",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:16:00.855Z"
+    },
+    {
+      "task": "GE-078",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:16:02.321Z"
+    },
+    {
+      "task": "GE-080",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:16:03.500Z"
+    },
+    {
+      "task": "GE-081",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:16:04.995Z"
+    },
+    {
+      "task": "GE-082",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:16:06.906Z"
+    },
+    {
+      "task": "GE-083",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:22:44.468Z"
+    },
+    {
+      "task": "GE-084",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:22:45.944Z"
+    },
+    {
+      "task": "GE-085",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:22:47.469Z"
+    },
+    {
+      "task": "GE-083",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:22:48.656Z"
+    },
+    {
+      "task": "GE-084",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:22:50.011Z"
+    },
+    {
+      "task": "GE-085",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:22:51.210Z"
+    },
+    {
+      "task": "GE-060",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:28.400Z"
+    },
+    {
+      "task": "GE-061",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:29.978Z"
+    },
+    {
+      "task": "GE-062",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:31.636Z"
+    },
+    {
+      "task": "GE-063",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:33.615Z"
+    },
+    {
+      "task": "GE-064",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:34.888Z"
+    },
+    {
+      "task": "GE-065",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:36.695Z"
+    },
+    {
+      "task": "GE-066",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:38.674Z"
+    },
+    {
+      "task": "GE-067",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:39.881Z"
+    },
+    {
+      "task": "GE-068",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:41.215Z"
+    },
+    {
+      "task": "GE-069",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:42.748Z"
+    },
+    {
+      "task": "GE-070",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:44.594Z"
+    },
+    {
+      "task": "GE-071",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:46.375Z"
+    },
+    {
+      "task": "GE-072",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:47.883Z"
+    },
+    {
+      "task": "GE-073",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:49.844Z"
+    },
+    {
+      "task": "GE-074",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:51.596Z"
+    },
+    {
+      "task": "GE-075",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:52.810Z"
+    },
+    {
+      "task": "GE-076",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:53.964Z"
+    },
+    {
+      "task": "GE-077",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:55.783Z"
+    },
+    {
+      "task": "GE-078",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:57.332Z"
+    },
+    {
+      "task": "GE-079",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:23:58.689Z"
+    },
+    {
+      "task": "GE-080",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:24:00.088Z"
+    },
+    {
+      "task": "GE-081",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:24:01.248Z"
+    },
+    {
+      "task": "GE-082",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:24:03.517Z"
+    },
+    {
+      "task": "GE-050",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:25:55.249Z"
+    },
+    {
+      "task": "GE-100",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:00.597Z"
+    },
+    {
+      "task": "GE-101",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:02.290Z"
+    },
+    {
+      "task": "GE-102",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:03.451Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:05.034Z"
+    },
+    {
+      "task": "GE-104",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:06.317Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:07.523Z"
+    },
+    {
+      "task": "GE-106",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:09.487Z"
+    },
+    {
+      "task": "GE-107",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:11.428Z"
+    },
+    {
+      "task": "GE-108",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:26:12.555Z"
+    },
+    {
+      "task": "GE-050",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:26:30.450Z"
+    },
+    {
+      "task": "GE-083",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:26:32.155Z"
+    },
+    {
+      "task": "GE-084",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:26:33.445Z"
+    },
+    {
+      "task": "GE-085",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:26:34.885Z"
+    },
+    {
+      "task": "GE-100",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:35.977Z"
+    },
+    {
+      "task": "GE-101",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:37.180Z"
+    },
+    {
+      "task": "GE-102",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:38.247Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:39.979Z"
+    },
+    {
+      "task": "GE-104",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:41.427Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:43.784Z"
+    },
+    {
+      "task": "GE-106",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:45.181Z"
+    },
+    {
+      "task": "GE-107",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:46.306Z"
+    },
+    {
+      "task": "GE-108",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:26:47.782Z"
+    },
+    {
+      "task": "GE-100",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:02.253Z"
+    },
+    {
+      "task": "GE-101",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:03.676Z"
+    },
+    {
+      "task": "GE-102",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:05.191Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:07.253Z"
+    },
+    {
+      "task": "GE-104",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:08.838Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:10.406Z"
+    },
+    {
+      "task": "GE-106",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:11.832Z"
+    },
+    {
+      "task": "GE-107",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:13.294Z"
+    },
+    {
+      "task": "GE-108",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:31:15.241Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:31:16.753Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:31:18.510Z"
+    },
+    {
+      "task": "GE-069",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:32:33.551Z"
+    },
+    {
+      "task": "GE-073",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:32:35.499Z"
+    },
+    {
+      "task": "GE-074",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:32:36.777Z"
+    },
+    {
+      "task": "GE-102",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:32:38.296Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:32:39.458Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:33:38.012Z"
+    },
+    {
+      "task": "GE-069",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:33:39.446Z"
+    },
+    {
+      "task": "GE-073",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:33:40.650Z"
+    },
+    {
+      "task": "GE-074",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:33:41.843Z"
+    },
+    {
+      "task": "GE-102",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:33:43.531Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:33:45.129Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:34:22.513Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:35:09.100Z"
+    },
+    {
+      "task": "GE-049",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:35:10.711Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:36:23.458Z"
+    },
+    {
+      "task": "GE-049",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:36:25.745Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:36:27.487Z"
+    },
+    {
+      "task": "GE-109",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:36:57.535Z"
+    },
+    {
+      "task": "GE-110",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:36:59.021Z"
+    },
+    {
+      "task": "GE-111",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:37:00.284Z"
+    },
+    {
+      "task": "GE-112",
+      "state": "Todo",
+      "timestamp": "2026-11-13T01:37:01.883Z"
+    },
+    {
+      "task": "GE-109",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:37:03.103Z"
+    },
+    {
+      "task": "GE-110",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:37:04.495Z"
+    },
+    {
+      "task": "GE-111",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:37:05.875Z"
+    },
+    {
+      "task": "GE-112",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:37:07.379Z"
+    },
+    {
+      "task": "GE-048",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:39:56.346Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:39:57.903Z"
+    },
+    {
+      "task": "GE-083",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:39:59.094Z"
+    },
+    {
+      "task": "GE-084",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:40:00.232Z"
+    },
+    {
+      "task": "GE-101",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:40:01.502Z"
+    },
+    {
+      "task": "GE-048",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:40:32.448Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:40:34.525Z"
+    },
+    {
+      "task": "GE-083",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:40:36.587Z"
+    },
+    {
+      "task": "GE-084",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:40:38.212Z"
+    },
+    {
+      "task": "GE-101",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:40:39.823Z"
+    },
+    {
+      "task": "GE-080",
+      "state": "Doing",
+      "timestamp": "2026-11-13T01:45:02.852Z"
+    },
+    {
+      "task": "GE-080",
+      "state": "Test",
+      "timestamp": "2026-11-13T01:47:25.345Z"
+    },
+    {
+      "task": "GE-019",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:49:56.793Z"
+    },
+    {
+      "task": "GE-035",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:49:58.282Z"
+    },
+    {
+      "task": "GE-036",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:49:59.565Z"
+    },
+    {
+      "task": "GE-037",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:01.142Z"
+    },
+    {
+      "task": "GE-038",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:02.384Z"
+    },
+    {
+      "task": "GE-039",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:03.670Z"
+    },
+    {
+      "task": "GE-040",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:05.385Z"
+    },
+    {
+      "task": "GE-041",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:06.830Z"
+    },
+    {
+      "task": "GE-042",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:08.756Z"
+    },
+    {
+      "task": "GE-043",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:10.324Z"
+    },
+    {
+      "task": "GE-044",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:11.562Z"
+    },
+    {
+      "task": "GE-045",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:12.887Z"
+    },
+    {
+      "task": "GE-046",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:14.111Z"
+    },
+    {
+      "task": "GE-048",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:15.582Z"
+    },
+    {
+      "task": "GE-049",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:17.726Z"
+    },
+    {
+      "task": "GE-050",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:19.543Z"
+    },
+    {
+      "task": "GE-051",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:21.198Z"
+    },
+    {
+      "task": "GE-052",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:50:22.490Z"
+    },
+    {
+      "task": "GE-053",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:28.550Z"
+    },
+    {
+      "task": "GE-054",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:30.079Z"
+    },
+    {
+      "task": "GE-055",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:31.305Z"
+    },
+    {
+      "task": "GE-056",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:32.583Z"
+    },
+    {
+      "task": "GE-057",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:33.883Z"
+    },
+    {
+      "task": "GE-058",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:35.171Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:36.300Z"
+    },
+    {
+      "task": "GE-060",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:51:37.646Z"
+    },
+    {
+      "task": "GE-061",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:34.880Z"
+    },
+    {
+      "task": "GE-062",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:36.486Z"
+    },
+    {
+      "task": "GE-063",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:37.809Z"
+    },
+    {
+      "task": "GE-064",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:39.048Z"
+    },
+    {
+      "task": "GE-065",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:40.701Z"
+    },
+    {
+      "task": "GE-066",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:42.095Z"
+    },
+    {
+      "task": "GE-067",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:44.541Z"
+    },
+    {
+      "task": "GE-068",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:46.150Z"
+    },
+    {
+      "task": "GE-069",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:47.853Z"
+    },
+    {
+      "task": "GE-070",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:52:49.092Z"
+    },
+    {
+      "task": "GE-071",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:09.641Z"
+    },
+    {
+      "task": "GE-072",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:11.683Z"
+    },
+    {
+      "task": "GE-073",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:13.490Z"
+    },
+    {
+      "task": "GE-074",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:14.761Z"
+    },
+    {
+      "task": "GE-075",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:16.589Z"
+    },
+    {
+      "task": "GE-076",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:17.870Z"
+    },
+    {
+      "task": "GE-077",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:19.784Z"
+    },
+    {
+      "task": "GE-078",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:21.047Z"
+    },
+    {
+      "task": "GE-079",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:22.636Z"
+    },
+    {
+      "task": "GE-080",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:23.982Z"
+    },
+    {
+      "task": "GE-081",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:25.587Z"
+    },
+    {
+      "task": "GE-082",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:27.680Z"
+    },
+    {
+      "task": "GE-083",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:29.361Z"
+    },
+    {
+      "task": "GE-084",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:30.409Z"
+    },
+    {
+      "task": "GE-085",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:31.679Z"
+    },
+    {
+      "task": "GE-086",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:32.935Z"
+    },
+    {
+      "task": "GE-087",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:35.166Z"
+    },
+    {
+      "task": "GE-088",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:53:36.657Z"
+    },
+    {
+      "task": "GE-089",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:32.610Z"
+    },
+    {
+      "task": "GE-090",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:34.107Z"
+    },
+    {
+      "task": "GE-091",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:35.634Z"
+    },
+    {
+      "task": "GE-092",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:37.396Z"
+    },
+    {
+      "task": "GE-093",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:39.017Z"
+    },
+    {
+      "task": "GE-094",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:40.214Z"
+    },
+    {
+      "task": "GE-095",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:41.835Z"
+    },
+    {
+      "task": "GE-096",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:43.162Z"
+    },
+    {
+      "task": "GE-097",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:44.342Z"
+    },
+    {
+      "task": "GE-098",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:46.787Z"
+    },
+    {
+      "task": "GE-099",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:48.084Z"
+    },
+    {
+      "task": "GE-100",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:49.797Z"
+    },
+    {
+      "task": "GE-101",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:51.579Z"
+    },
+    {
+      "task": "GE-102",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:52.809Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:55.515Z"
+    },
+    {
+      "task": "GE-104",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:57.331Z"
+    },
+    {
+      "task": "GE-105",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:54:58.655Z"
+    },
+    {
+      "task": "GE-106",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:55:00.061Z"
+    },
+    {
+      "task": "GE-107",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:55:01.587Z"
+    },
+    {
+      "task": "GE-108",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T01:55:03.222Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:00:50.363Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "Todo",
+      "timestamp": "2026-11-13T02:00:52.179Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Doing",
+      "timestamp": "2026-11-13T02:00:53.493Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "Doing",
+      "timestamp": "2026-11-13T02:00:54.903Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "Test",
+      "timestamp": "2026-11-13T02:02:56.037Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "Test",
+      "timestamp": "2026-11-13T02:02:57.228Z"
+    },
+    {
+      "task": "GE-059",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T02:05:41.795Z"
+    },
+    {
+      "task": "GE-103",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T02:05:43.175Z"
+    },
+    {
+      "task": "GE-109",
+      "state": "Test",
+      "timestamp": "2026-11-13T02:05:44.919Z"
+    },
+    {
+      "task": "GE-110",
+      "state": "Test",
+      "timestamp": "2026-11-13T02:05:46.761Z"
+    },
+    {
+      "task": "GE-111",
+      "state": "Test",
+      "timestamp": "2026-11-13T02:05:48.086Z"
+    },
+    {
+      "task": "GE-112",
+      "state": "Test",
+      "timestamp": "2026-11-13T02:05:49.587Z"
+    },
+    {
+      "task": "GE-109",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T02:07:26.269Z"
+    },
+    {
+      "task": "GE-110",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T02:07:27.473Z"
+    },
+    {
+      "task": "GE-111",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T02:07:28.689Z"
+    },
+    {
+      "task": "GE-112",
+      "state": "To Deploy",
+      "timestamp": "2026-11-13T02:07:30.902Z"
+    }
+  ]
+}

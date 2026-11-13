@@ -1,6 +1,6 @@
 ### FDD: Gestão de Eventos
 
-Versão: 0.1 (proposta para revisão)
+Versão: 0.2 (implementada e validada localmente na feature GE-STORY-001; sem publicação)
 Data: 2026-11-12
 Responsável: Diórgenes Backes
 
@@ -8,9 +8,9 @@ Responsável: Diórgenes Backes
 
 ### 1. Contexto e motivação técnica
 
-A primeira entrega funcional será criar, listar, consultar e editar eventos, com boas-vindas e configuração de abertura. O requisito principal é [FR-003](../../PRD.md#fr-003-criação-e-gestão-de-múltiplos-eventos), com as regras necessárias de FR-006, FR-016, FR-017 e FR-018. A personalização da capa fica para uma entrega posterior; esta especificação não representa atendimento integral do FR-003.
+Esta entrega permite criar, listar, consultar e editar eventos, com boas-vindas e configuração de abertura. O requisito principal é [FR-003](../../PRD.md#fr-003-criação-e-gestão-de-múltiplos-eventos), com as regras necessárias de FR-006, FR-016, FR-017 e FR-018. Capa customizada permanece posterior; isso não representa atendimento integral do FR-003.
 
-O backend possui a API `/health` e cinco projetos diretamente na raiz de `scrapbook-service/`. O frontend possui a base React e a consulta de saúde. O PostgreSQL local contém as 33 tabelas e os 47 changesets iniciais aplicados. A integração EF, os casos de uso e as telas desta feature ainda não existem.
+Backend, telas React e testes manuais estão implementados na branch `feature/GE-STORY-001`, com EF/PostgreSQL, casos de uso e cinco endpoints. A API mantém cinco projetos diretamente na raiz e `/health` independente. A base física continua com 33 tabelas/47 changesets, sem alteração de histórico. Consulte [desenvolvimento](2-desenvolvimento.md), [testes e matriz de aceites](3-testes.md) e [operação local](4-operacao.md). Esta revisão documenta implementação/validação local, sem homologação ou deploy.
 
 Por orientação do responsável, autenticação real será desenvolvida depois. O desenho propõe uma identidade simulada exclusivamente local, preservando o vínculo de responsável e as FKs, sem exigir Cognito, SES, S3 ou MediaConvert nesta entrega.
 
@@ -32,13 +32,13 @@ Por orientação do responsável, autenticação real será desenvolvida depois.
 
 | Referência | Proposta desta versão |
 | --- | --- |
-| H-01 | Rotas, DTOs, paginação e organização das telas da seção 5 são contratos propostos; ainda não são endpoints implementados. |
+| H-01 | Cinco rotas/DTOs e telas da seção 5 implementados. OpenAPI em `/openapi/v1.json` somente em Development. Listagem inclui `serverTime` UTC, adição explícita à proposta 0.1. |
 | H-02 | Identidade de desenvolvimento fixa por configuração do servidor, com fixture sintética local e ativação explícita. Não há escolha de conta por header, query ou body. |
-| H-03 | Body de até 32 KiB; listagem com 20 itens por padrão e máximo 50; cursor protegido válido por 24h; orçamento API de 5s e frontend de 10s por ação. São parâmetros técnicos propostos, não resultados medidos. |
-| H-04 | Capa padrão `event-cover-default-v1` e mensagem “Seja bem-vindo! Compartilhe uma lembrança deste evento.” são conteúdo proposto para revisão. Após publicação, os defaults v1 permanecem imutáveis para preservar eventos já travados. |
+| H-03 | Implementados 32 KiB, páginas 20/máximo 50, cursor 24h, API 5s compartilhados e UI 10s incluindo um retry GET transitório após 250ms. Carga local 200 eventos/10 concorrentes/60s aprovada; resultado e limites em `3-testes.md`. |
+| H-04 | Capa `event-cover-default-v1.svg` local e mensagem “Seja bem-vindo! Compartilhe uma lembrança deste evento.” implementadas como defaults v1. Preservar seu conteúdo após publicação. |
 | H-05 | Criação não terá idempotência persistente nesta primeira entrega. Resposta perdida terá recuperação assistida pela listagem, sem repetição automática do POST. Uma garantia de criação idempotente exige especificação e persistência próprias em Events. |
 
-Os limites de nome de 120 caracteres e boas-vindas de 2.000 seguem P-01 do modelo. IDs e versões bigint são strings decimais no HTTP. Datas de negócio representam Brasília, sem offset. Os detalhes acima não alteram a arquitetura aprovada e ficam sujeitos à revisão do FDD.
+Nome até 120 e boas-vindas até 2.000 escalares seguem P-01. Trim Unicode inclui BOM/NEL; NUL e surrogate isolado são rejeitados. IDs/versões bigint são strings decimais; datas civis representam Brasília sem offset. Implementação permanece sujeita à revisão/aceite antes de promoção; autenticação real foi adiada.
 
 ---
 
@@ -205,7 +205,7 @@ stateDiagram-v2
 
 ### 5. Contratos públicos (assinaturas, endpoints, headers, exemplos)
 
-Todos os contratos abaixo são propostas H-01 para `/api/v1`. As respostas de exemplo são sintéticas. Os mesmos nomes serão registrados no OpenAPI.
+Contratos H-01 implementados em `/api/v1`, registrados no OpenAPI gerado pelo host (`GET /openapi/v1.json`, somente Development). Exemplos abaixo são sintéticos. Entradas são case-sensitive e rejeitam campos desconhecidos; expectedVersion é string obrigatória e não nula. A consulta/decisão usa somente conta resolvida no servidor.
 
 **Semântica comum de campos, headers e limites**
 
@@ -318,7 +318,8 @@ Accept: application/json
     }
   ],
   "nextCursor": null,
-  "hasMore": false
+  "hasMore": false,
+  "serverTime": "2026-11-12T18:00:00.000Z"
 }
 ```
 
@@ -587,19 +588,20 @@ Em erros de validação, acrescentar `errors` por campo; em todos os erros, devo
 | Componente | Versão mínima | Observações |
 | --- | --- | --- |
 | Backend | .NET/ASP.NET Core 10; SDK 10.0.401 | Baseline existente; manter projetos na raiz e pacotes fixados. |
-| EF Core | Linha 10.0 proposta | Ainda não instalado; selecionar patch estável compatível e fixar antes da implementação. |
-| Npgsql.EntityFrameworkCore.PostgreSQL | Linha 10.0 proposta, compatível com EF 10 | Alvo PostgreSQL 18; selecionar/fixar patch e dependências transitivas. Nenhuma migration EF. |
+| EF Core/Relational | 10.0.15 | Instalados, fixados e validados; lockfiles versionados. |
+| Npgsql.EntityFrameworkCore.PostgreSQL / Npgsql | 10.0.3 / 10.0.3 | Alvo explícito PostgreSQL 18; nenhuma migration EF ou retry de transação. |
+| Microsoft.AspNetCore.OpenApi | 10.0.15 | OpenAPI gerado e enriquecido por transformer; contrato validado contra HTTP. |
 | PostgreSQL | 18.x; local 18.6 | Compose persistente em `127.0.0.1:55432`; runtime com credencial DML própria. |
 | Schema | Base inicial com 47 changesets | Eventos, membros, auditoria e obrigações já existem; não editar histórico aplicado. |
 | Liquibase | 4.33.0 | Alterações estruturais futuras exigem novo changeset e rollback, se demonstradas necessárias. |
-| Frontend | React 19.3.1, TypeScript 7.0.2, Vite 8.3.6 | Versões atuais do projeto; qualquer nova biblioteca de roteamento/contrato deve ser escolhida e fixada explicitamente. |
+| Frontend | React 19.3.1, React Router 8.5.1, TypeScript 7.0.2, Vite 8.3.6 | Modo declarativo, parsing de respostas em runtime e datas civis sem dependência do fuso do dispositivo. |
 | Node/npm | Node 26.13.0 e npm 11.20.0 | Baseline validada no workspace. |
 | Testes unitários | xUnit 2.9.3; Vitest 5.1.0 e React Testing Library 16.3.3 | Conforme projetos existentes. |
-| Validações não unitárias | PostgreSQL real, cliente HTTP, navegador; Playwright/k6 planejados | Em `scrapbook-tests/`, execução manual; fixar ferramentas ao criar as suítes. |
+| Validações não unitárias | Python 3.13.15 stdlib, probes .NET e Playwright 1.65.0 | Manual, PostgreSQL 18.6 descartável; Chromium/WebKit. Carga por threads HTTP Python; k6 não instalado. |
 | Identidade local | Contrato H-02 e fixture reservada | Não depende de User Pool, sessão real ou e-mail externo. |
 | Chaves de cursor | Proteção local persistente e privada | Necessária para manter cursor válido após restart; produção compartilhada entre réplicas será definida depois. |
 
-A linha EF Core 10 pertence à plataforma .NET 10; o provider Npgsql 10 documenta suporte de configuração para PostgreSQL 18. As versões de patch não são presumidas como instaladas. Referências primárias: [EF Core 10](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew) e [Npgsql EF 10](https://www.npgsql.org/efcore/release-notes/10.0.html).
+Versões exatas estão nos manifests/lockfiles, com restore locked e builds validados. Referências primárias: [EF Core 10](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew), [Npgsql EF 10](https://www.npgsql.org/efcore/release-notes/10.0.html), [OpenAPI/transformers](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/customize-openapi?view=aspnetcore-10.0) e [React Router](https://reactrouter.com/api/declarative-routers/BrowserRouter).
 
 **Garantias de compatibilidade**
 
@@ -617,34 +619,34 @@ A linha EF Core 10 pertence à plataforma .NET 10; o provider Npgsql 10 document
 
 ### 9. Critérios de aceite técnicos
 
-Todos os itens abaixo são **planejados e não executados** nesta geração do FDD. A validação anterior do Liquibase e de `/health` não comprova esta feature.
+Os itens são rastreados como AC-01…AC-26, na ordem abaixo, na [matriz de testes](3-testes.md). As evidências locais identificam escopo, revisão e limites. Aceite de homologação/publicação permanece separado; emulação não equivale a dispositivos físicos. O marco exato de 12h foi exercitado com tempo substituível nos unitários, complementado por PostgreSQL real com janela 12h/13h e eventos encerrados; não houve integração executada no minuto real do meio-dia.
 
-- [ ] Frontend permite criar, listar, consultar e editar eventos usando a API e o PostgreSQL real.
-- [ ] Criação bem-sucedida persiste evento, slot 1 e auditoria no mesmo commit; falha deliberada em um passo não deixa dados parciais.
-- [ ] Duas contas sintéticas, preparadas de forma válida, não consultam nem modificam eventos uma da outra. Ausente e alheio retornam o mesmo `404`.
-- [ ] Criador e segundo responsável já vinculados possuem permissões equivalentes, sem criar fluxo de convite.
-- [ ] Fixtures/identidade simulada só funcionam com ativação explícita em Development/local; requisição não escolhe a conta e fora desse modo as rotas negam acesso.
-- [ ] Runtime usa usuário DML sem DDL; migrador permanece separado e a aplicação não altera schema no startup.
-- [ ] Nome, boas-vindas, Unicode, campos desconhecidos, enum, body de 32 KiB, formatos de data e bigint são validados de forma consistente entre UI/API/banco.
-- [ ] Capa e boas-vindas padrão funcionam sem S3; mensagem personalizada pode ser criada/editada e restaurada a NULL enquanto permitido.
-- [ ] Abertura padrão sugere um ano, resolve 29/02 e rejeita datas incompatíveis. Timezone diferente no host/navegador não muda a data civil persistida.
-- [ ] Janela calculada corresponde a duas horas antes, 12h e 13h do dia seguinte; seus campos não são editáveis pelo cliente.
-- [ ] Estrutura travada rejeita atualização; configuração de acesso continua seguindo FR-017.
-- [ ] Testes cobrem imediatamente antes, no marco e após 12h; a tolerância até 13h não permite troca livre adicional.
-- [ ] Mover a data de evento sem registros após o encerramento anterior não restaura `flexible` nem apaga o marco de congelamento.
-- [ ] Modo imediato após encerramento admite uma única mudança válida para futuro; modo/data ficam travados depois.
-- [ ] Duas edições com a mesma versão não se sobrescrevem: uma vence e a outra conflita. No-op efetivo não avança versão.
-- [ ] Campos reescritos pelos triggers retornam com os valores finais; constraints diferíveis são verificadas antes da resposta de sucesso.
-- [ ] Resposta perdida de POST/PUT não provoca retry automático; a UI apresenta resultado indeterminado e recuperação por consulta.
-- [ ] Listagem respeita vínculos, limite, ordem e cursor; cursor inválido/adulterado/de outra conta falha sem ampliar acesso. Atualização da lista recupera eventos novos.
-- [ ] Obrigações de abertura antigas ainda pendentes são canceladas quando a política muda, sem escrita em Notifications ou envio externo.
-- [ ] HTTP, UI, logs e auditoria não retornam dados de contribuições, remetentes, contagens ou detalhes do primeiro registro.
-- [ ] Erros usam Problem Details, códigos estáveis e correlação; não há stack trace, SQL, senha ou body sensível em logs.
-- [ ] Navegação móvel, teclado, foco e mensagens de erro são avaliados; a UI não anuncia salvamento antes do commit confirmado.
-- [ ] Unitários passam no backend/frontend. HTTP, PostgreSQL, concorrência e navegador são executados manualmente em `scrapbook-tests/`, com evidência e ambiente identificados.
-- [ ] Perfil de performance proposto H-03: uma conta com 200 eventos sintéticos, 10 requisições concorrentes por 60s após aquecimento, avaliando listagem/detalhe e atualização com versões válidas. Registrar carga, hardware, rede, massa, erros e p95 por operação; meta de até 500ms. Isso não valida os 200 uploads simultâneos do PRD.
-- [ ] Usar relógio substituível nos unitários. Na integração, alinhar fixtures ao relógio real do PostgreSQL e testar sua validação temporal; um clock fake somente na API não controla `clock_timestamp()` dos triggers.
-- [ ] Atualizar README/OpenAPI, registrar escolhas de patch/dependências e vincular o FDD aos ciclos em `scrapbook-docs/testing/` quando esses ciclos existirem.
+- [x] Frontend permite criar, listar, consultar e editar eventos usando a API e o PostgreSQL real.
+- [x] Criação bem-sucedida persiste evento, slot 1 e auditoria no mesmo commit; falha deliberada em um passo não deixa dados parciais.
+- [x] Duas contas sintéticas, preparadas de forma válida, não consultam nem modificam eventos uma da outra. Ausente e alheio retornam o mesmo `404`.
+- [x] Criador e segundo responsável já vinculados possuem permissões equivalentes, sem criar fluxo de convite.
+- [x] Fixtures/identidade simulada só funcionam com ativação explícita em Development/local; requisição não escolhe a conta e fora desse modo as rotas negam acesso.
+- [x] Runtime usa usuário DML sem DDL; migrador permanece separado e a aplicação não altera schema no startup.
+- [x] Nome, boas-vindas, Unicode, campos desconhecidos, enum, body de 32 KiB, formatos de data e bigint são validados de forma consistente entre UI/API/banco.
+- [x] Capa e boas-vindas padrão funcionam sem S3; mensagem personalizada pode ser criada/editada e restaurada a NULL enquanto permitido.
+- [x] Abertura padrão sugere um ano, resolve 29/02 e rejeita datas incompatíveis. Timezone diferente no host/navegador não muda a data civil persistida.
+- [x] Janela calculada corresponde a duas horas antes, 12h e 13h do dia seguinte; seus campos não são editáveis pelo cliente.
+- [x] Estrutura travada rejeita atualização; configuração de acesso continua seguindo FR-017.
+- [x] Testes cobrem imediatamente antes, no marco e após 12h; a tolerância até 13h não permite troca livre adicional.
+- [x] Mover a data de evento sem registros após o encerramento anterior não restaura `flexible` nem apaga o marco de congelamento.
+- [x] Modo imediato após encerramento admite uma única mudança válida para futuro; modo/data ficam travados depois.
+- [x] Duas edições com a mesma versão não se sobrescrevem: uma vence e a outra conflita. No-op efetivo não avança versão.
+- [x] Campos reescritos pelos triggers retornam com os valores finais; constraints diferíveis são verificadas antes da resposta de sucesso.
+- [x] Resposta perdida de POST/PUT não provoca retry automático; a UI apresenta resultado indeterminado e recuperação por consulta.
+- [x] Listagem respeita vínculos, limite, ordem e cursor; cursor inválido/adulterado/de outra conta falha sem ampliar acesso. Atualização da lista recupera eventos novos.
+- [x] Obrigações de abertura antigas ainda pendentes são canceladas quando a política muda, sem escrita em Notifications ou envio externo.
+- [x] HTTP, UI, logs e auditoria não retornam dados de contribuições, remetentes, contagens ou detalhes do primeiro registro.
+- [x] Erros usam Problem Details, códigos estáveis e correlação; não há stack trace, SQL, senha ou body sensível em logs.
+- [x] Navegação móvel, teclado, foco e mensagens de erro são avaliados; a UI não anuncia salvamento antes do commit confirmado.
+- [x] Unitários passam no backend/frontend. HTTP, PostgreSQL, concorrência e navegador são executados manualmente em `scrapbook-tests/`, com evidência e ambiente identificados.
+- [x] Perfil de performance proposto H-03: uma conta com 200 eventos sintéticos, 10 requisições concorrentes por 60s após aquecimento, avaliando listagem/detalhe e atualização com versões válidas. Registrar carga, hardware, rede, massa, erros e p95 por operação; meta de até 500ms. Isso não valida os 200 uploads simultâneos do PRD.
+- [x] Usar relógio substituível nos unitários. Na integração, alinhar fixtures ao relógio real do PostgreSQL e testar sua validação temporal; um clock fake somente na API não controla `clock_timestamp()` dos triggers.
+- [x] Atualizar README/OpenAPI, registrar escolhas de patch/dependências e vincular o FDD aos ciclos em `scrapbook-docs/testing/` quando esses ciclos existirem.
 
 ---
 

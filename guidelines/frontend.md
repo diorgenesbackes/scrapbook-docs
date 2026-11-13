@@ -2,7 +2,7 @@
 
 [Índice](README.md) · [Princípios](principios.md) · [API](api.md) · [Mensageria e mídias](mensageria.md)
 
-Aplicação: React e TypeScript, frontend estático no Amplify Hosting, prioritariamente móvel e em português do Brasil. A base em `scrapbook-ui` usa React 19.3.1, TypeScript 7.0.2, Vite 8.3.6, Oxlint 1.90.0 e Vitest 5.1.0 com React Testing Library e jsdom. Node 26.13.0 e npm 11.20.0 são as versões validadas. Consultar [execução e configuração](https://github.com/diorgenesbackes/scrapbook-ui/blob/main/README.md) e o lockfile para as dependências exatas. Playwright permanece previsto para o projeto de testes.
+Aplicação: React e TypeScript, frontend estático previsto no Amplify, prioritariamente móvel e em português do Brasil. React 19.3.1, React Router 8.5.1, TypeScript 7.0.2, Vite 8.3.6, Oxlint 1.90.0 e Vitest 5.1.0/Testing Library/jsdom estão fixados. Node 26.13.0/npm 11.20.0 são as versões validadas. Consulte [execução e configuração na feature](https://github.com/diorgenesbackes/scrapbook-ui/blob/feature/GE-STORY-001/README.md) e lockfile. Playwright 1.65.0 é manual em scrapbook-tests; publicação ainda não configurada.
 
 ## 1. Organização por funcionalidade
 

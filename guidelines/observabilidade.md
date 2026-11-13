@@ -4,6 +4,8 @@
 
 **Status:** especificação para implementação. O HLD prevê CloudWatch, OpenTelemetry, X-Ray e alertas SNS por e-mail. Nenhum coletor, dashboard ou alarme foi criado neste trabalho.
 
+Gestão de Eventos implementa a base local em `ActivitySource`/`Meter` `ScrapBook.Events` e JSON Console do .NET, sem exportador externo. O formato atual usa `Timestamp`, `LogLevel`, `EventId` e propriedades nomeadas em `State` (ex.: `Module`, `Operation`, `RouteTemplate`, `CorrelationId`). O futuro coletor deve mapear esses campos ao schema abaixo, sem gerar novo contexto. Catálogo local: 4000 EventsRequestCompleted, 4002 EventsRequestRejected, 4003 EventsUnexpectedFailure. Interrupção do cliente registra `client_aborted` com status ausente, sem inventar HTTP 499.
+
 ## 1. Sinais e responsabilidades
 
 | Sinal | Finalidade | Regra |
@@ -119,6 +121,8 @@ Auditoria de mudança de acesso mantém autoria, momento, transição e correla�
 ## 4. Métricas: nomes, unidades e cardinalidade
 
 Reutilizar instrumentos nativos antes de criar equivalentes. Namespace proposto `scrapbook.*`; duração em **segundos** nos histogramas, milissegundos em `durationMs` dos logs. Confirmar nomes e tipos dos instrumentos nativos na versão adotada.
+
+Exceção explícita do [FDD de Gestão de Eventos](../fdd/FDD-Gestao-de-Eventos/FDD-Gestao-de-Eventos.md#7-observabilidade): suas famílias `scrapbook.events.duration_ms` e `scrapbook.events.dependency.duration_ms` usam `ms`, indicado no nome/unidade. Preservar o contrato dessa primeira instrumentação; converter na integração futura se necessário, sem duplicar a mesma série em unidades diferentes. Não declarar coleta CloudWatch nem retenção de logs locais comprovadas pela existência dos instrumentos.
 
 | Instrumento / visão proposta | Tipo / unidade | Finalidade |
 | --- | --- | --- |
