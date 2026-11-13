@@ -2,7 +2,7 @@
 
 [Índice](README.md) · [Princípios](principios.md) · [Contratos HTTP](api.md) · [Mensageria e mídias](mensageria.md) · [Observabilidade](observabilidade.md)
 
-Aplicação: C#/.NET e ASP.NET Core 10. A base em `scrapbook-service` usa SDK 10.0.401, runtime validado 10.0.12, solution `ScrapBook.sln` e xUnit 2.9.3. Consultar [estrutura, execução e testes](https://github.com/diorgenesbackes/scrapbook-service/blob/main/README.md). EF Core, provider PostgreSQL e demais integrações terão versões definidas quando a persistência for implementada.
+Aplicação: C#/.NET e ASP.NET Core 10. SDK 10.0.401, runtime validado 10.0.12, solution `ScrapBook.sln` e xUnit 2.9.3. A feature Gestão de Eventos fixa EF Core 10.0.15, Npgsql/provider 10.0.3 e Microsoft.AspNetCore.OpenApi 10.0.15, com lockfiles. Consulte o [backend na feature](https://github.com/diorgenesbackes/scrapbook-service/blob/feature/GE-STORY-001/README.md). Integrações AWS permanecem pendentes; essa branch não representa publicação.
 
 ## 1. Camadas e módulos
 

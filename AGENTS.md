@@ -2,9 +2,9 @@
 
 ## Project Structure & Module Organization
 
-Read [index](README.md), [PRD](PRD.md), [HLD](HLD.md), and [guidelines](guidelines/README.md). Frontend: `scrapbook-ui/src/{app,features,shared,test}`. Backend: `ScrapBook.sln` and five project directories, including UnitTests, directly under `scrapbook-service/`. Module folders: Identity, Events, Records, Notifications.
+Read [index](README.md), [PRD](PRD.md), [HLD](HLD.md), and [guidelines](guidelines/README.md). Frontend: `scrapbook-ui/src/{app,features,shared,test}`. Backend: `ScrapBook.sln` and five project directories, directly under `scrapbook-service/`. Module folders: Identity, Events, Records, Notifications.
 
-Other components: `scrapbook-docs`, `scrapbook-tests`, `scrapbook-liquibase`, and `scrapbook-infrastructure`. Each repository uses `main`.
+Also: `scrapbook-docs`, `scrapbook-tests`, `scrapbook-liquibase`, and `scrapbook-infrastructure`. All use `main`.
 
 ## Build, Test, and Development Commands
 
@@ -40,7 +40,7 @@ Follow the PRD/HLD compatibility matrix. Distinguish proposed, implemented, and 
 
 Keep unit tests in backend/frontend; run non-unit suites manually from scrapbook-tests. In scrapbook-liquibase, `python3 tests/verify.py` validates migrations in disposable Docker PostgreSQL.
 
-Frontend: Vitest/React Testing Library with `*.test.ts(x)`; backend: xUnit with `*Tests` classes. Playwright/k6 remain planned. No coverage threshold exists. Prioritize authorization, isolation, upload atomicity, retries, duplicates, and recovery. Report skipped tests.
+Frontend: Vitest/React Testing Library with `*.test.ts(x)`; backend: xUnit with `*Tests` classes. Playwright runs manually in scrapbook-tests; k6 is not installed. No coverage threshold exists. Prioritize authorization, isolation, upload atomicity, retries, duplicates, and recovery. Report skipped tests.
 
 ## Commit & Pull Request Guidelines
 
@@ -52,4 +52,4 @@ Follow [Git Flow](guidelines/git-flow.md): features originate from main and prom
 
 ## Security & Configuration
 
-Keep credentials, tokens, usable signed URLs, and real guest content out of commits and examples. Authorize event access and opening dates server-side; protect blocked content, sender identities, and counts.
+Keep credentials, tokens, signed URLs, and guest content out of commits and examples. Authorize event access and opening dates server-side; protect blocked content, sender identities, and counts.

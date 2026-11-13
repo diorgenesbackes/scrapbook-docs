@@ -38,4 +38,4 @@ O sandbox bloqueou named pipes do runner .NET; a execução autorizada fora dess
 
 Não executados nesta leva: CRUD e ACL HTTP de Events, políticas de abertura, concorrência de edição, cursor após restart real da API, carga H-03 de listagem/detalhe/atualização, navegadores em aparelhos físicos e implantação. Esses itens não são considerados aprovados por esta preparação.
 
-Reteste de 20:13–20:14: o bootstrap agora recusa explicitamente `DOCKER_HOST` TCP/SSH e contextos sem socket Unix local. GE-002/003 retornaram para Doing/Test antes da correção; a suíte foundation repetida aprovou, incluindo `remote_docker_rejected`.
+Reteste iniciado às 20:13, com retorno para To Deploy às 20:15: o bootstrap agora recusa explicitamente `DOCKER_HOST` TCP/SSH e contextos sem socket Unix local. GE-002/003 retornaram para Doing/Test antes da correção; a suíte foundation repetida aprovou, incluindo `remote_docker_rejected`.
