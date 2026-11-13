@@ -1,0 +1,143 @@
+{
+  "scrapbook-service": {
+    "mainBefore": "cdbbd804ab408b9ae6086a77540a7388f12eafd7",
+    "originMainBefore": "cdbbd804ab408b9ae6086a77540a7388f12eafd7",
+    "unmerged": [
+      {
+        "ref": "feature/PP-STORY-003",
+        "sha": "bda12c53d7c43d3ec9f8c76125fde9bbd52fc9cb",
+        "commits": 1
+      },
+      {
+        "ref": "feature/PP-STORY-004",
+        "sha": "fb92142126bafbc8856f85b401c97e5d9484a97d",
+        "commits": 3
+      },
+      {
+        "ref": "origin/feature/PP-STORY-003",
+        "sha": "bda12c53d7c43d3ec9f8c76125fde9bbd52fc9cb",
+        "commits": 1
+      },
+      {
+        "ref": "origin/feature/PP-STORY-004",
+        "sha": "fb92142126bafbc8856f85b401c97e5d9484a97d",
+        "commits": 3
+      }
+    ],
+    "workflowFiles": []
+  },
+  "scrapbook-ui": {
+    "mainBefore": "642ee656d7fb1bd2cfb8e1271ff6fab51ac079f5",
+    "originMainBefore": "642ee656d7fb1bd2cfb8e1271ff6fab51ac079f5",
+    "unmerged": [
+      {
+        "ref": "feature/PP-STORY-003",
+        "sha": "d15eed7dba3999af0cd6d1c0b1c5a7f5c1efda6a",
+        "commits": 1
+      },
+      {
+        "ref": "feature/PP-STORY-004",
+        "sha": "f09714abc041fea17f0d61ac223804044ad39321",
+        "commits": 3
+      },
+      {
+        "ref": "origin/feature/PP-STORY-003",
+        "sha": "d15eed7dba3999af0cd6d1c0b1c5a7f5c1efda6a",
+        "commits": 1
+      },
+      {
+        "ref": "origin/feature/PP-STORY-004",
+        "sha": "f09714abc041fea17f0d61ac223804044ad39321",
+        "commits": 3
+      }
+    ],
+    "workflowFiles": []
+  },
+  "scrapbook-tests": {
+    "mainBefore": "b063c1d5945aee3b46b5ccd00f39cf0aa74b7559",
+    "originMainBefore": "b063c1d5945aee3b46b5ccd00f39cf0aa74b7559",
+    "unmerged": [
+      {
+        "ref": "feature/PP-STORY-003",
+        "sha": "34695be8a430ef70562a2b4b5e783057b62385e5",
+        "commits": 1
+      },
+      {
+        "ref": "feature/PP-STORY-004",
+        "sha": "dc7b3f2eae8fe4d79e0c8d8a12cf981f50b3cc14",
+        "commits": 3
+      },
+      {
+        "ref": "origin/feature/PP-STORY-003",
+        "sha": "34695be8a430ef70562a2b4b5e783057b62385e5",
+        "commits": 1
+      },
+      {
+        "ref": "origin/feature/PP-STORY-004",
+        "sha": "dc7b3f2eae8fe4d79e0c8d8a12cf981f50b3cc14",
+        "commits": 3
+      }
+    ],
+    "workflowFiles": []
+  },
+  "scrapbook-docs": {
+    "mainBefore": "24b3f8fb9a39f1dd2c1ac74efbf69157c9a314ea",
+    "originMainBefore": "24b3f8fb9a39f1dd2c1ac74efbf69157c9a314ea",
+    "unmerged": [
+      {
+        "ref": "feature/PP-STORY-003",
+        "sha": "14388b3bfe17f503cc9abc4762fade31cda915cb",
+        "commits": 1
+      },
+      {
+        "ref": "feature/PP-STORY-004",
+        "sha": "cdb77ecbe9080ecda8d220c12c25e7650c9b2010",
+        "commits": 3
+      },
+      {
+        "ref": "origin/feature/PP-STORY-003",
+        "sha": "14388b3bfe17f503cc9abc4762fade31cda915cb",
+        "commits": 1
+      },
+      {
+        "ref": "origin/feature/PP-STORY-004",
+        "sha": "cdb77ecbe9080ecda8d220c12c25e7650c9b2010",
+        "commits": 3
+      }
+    ],
+    "workflowFiles": []
+  },
+  "scrapbook-infrastructure": {
+    "mainBefore": "757fe70b5c01af67ddc287fccf5b380d10f8c3d2",
+    "originMainBefore": "757fe70b5c01af67ddc287fccf5b380d10f8c3d2",
+    "unmerged": [
+      {
+        "ref": "feature/PP-STORY-003",
+        "sha": "0cb1462a7f0d2b4233475b60cf57381f2a8aa081",
+        "commits": 1
+      },
+      {
+        "ref": "feature/PP-STORY-004",
+        "sha": "9ea8b1b16fc3dddeeff5ef1fa72a6c9780c032e6",
+        "commits": 3
+      },
+      {
+        "ref": "origin/feature/PP-STORY-003",
+        "sha": "0cb1462a7f0d2b4233475b60cf57381f2a8aa081",
+        "commits": 1
+      },
+      {
+        "ref": "origin/feature/PP-STORY-004",
+        "sha": "9ea8b1b16fc3dddeeff5ef1fa72a6c9780c032e6",
+        "commits": 3
+      }
+    ],
+    "workflowFiles": []
+  },
+  "scrapbook-liquibase": {
+    "mainBefore": "7bef13ce00b13c1beb0de5b2727d5419fd071135",
+    "originMainBefore": "7bef13ce00b13c1beb0de5b2727d5419fd071135",
+    "unmerged": [],
+    "workflowFiles": []
+  }
+}

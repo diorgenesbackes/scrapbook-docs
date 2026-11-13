@@ -1,0 +1,32 @@
+[
+  {
+    "stage": "frontend-build",
+    "failure": "TS1294: parameter property não é permitida com erasableSyntaxOnly. Compilação parou antes dos testes.",
+    "fix": "Campo kind declarado e atribuído explicitamente no construtor de ReadFailure.",
+    "retest": "144 backend/85 frontend e execução final HTTP + 12 browser aprovados; detalhes nos relatórios."
+  },
+  {
+    "stage": "frontend-unit",
+    "failure": "69/71: testes antigos exigiam identidade do AbortSignal original e texto técnico de contrato inválido.",
+    "fix": "Verificar propagação real de cancelamento ao sinal composto e ReadFailure inesperada sanitizada; coberturas novas de timeout/cancelamento adicionadas.",
+    "retest": "144 backend/85 frontend e execução final HTTP + 12 browser aprovados; detalhes nos relatórios."
+  },
+  {
+    "stage": "http-invalid-encoding",
+    "failure": "O runner tentou ler JSON em rejeição de URI pelo proxy antes da API. Handlers alcançados pela API retornaram 404 sanitizado.",
+    "fix": "Distinguir explicitamente o caso %GG recusado com 400 pelo Nginx, conforme limite de transporte documentado; demais caminhos continuam exigindo 404 Problem Details. Acrescentar diagnóstico por caso.",
+    "retest": "144 backend/85 frontend e execução final HTTP + 12 browser aprovados; detalhes nos relatórios."
+  },
+  {
+    "stage": "browser-recovery",
+    "failure": "7/12 aprovados: dois documentos de URI inválida recebiam 400 HTML padrão; dois waits usavam 5s antes do timeout de 6s; WebKit Tab padrão não focou o controle na navegação inicial.",
+    "fix": "Página 400 interna segura; matcher em 10s; foco manual explicitamente preservado. Diagnóstico seguinte identificou Tab inicial do perfil WebKit.",
+    "retest": "144 backend/85 frontend e execução final HTTP + 12 browser aprovados; detalhes nos relatórios."
+  },
+  {
+    "stage": "webkit-keyboard",
+    "failure": "Reteste 11/12: falha somente no foco inicial com Tab padrão, antes do retry. Não foi perda observada após retry.",
+    "fix": "Usar Option+Tab no WebKit, conforme a convenção já validada nas suítes do projeto.",
+    "retest": "144 backend/85 frontend e execução final HTTP + 12 browser aprovados; detalhes nos relatórios."
+  }
+]

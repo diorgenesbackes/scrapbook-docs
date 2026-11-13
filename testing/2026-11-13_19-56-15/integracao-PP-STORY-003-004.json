@@ -1,0 +1,90 @@
+{
+  "recordedAt": "2026-11-13T22:48:59.471166+00:00",
+  "repositories": {
+    "scrapbook-service": {
+      "mainBefore": "cdbbd804ab408b9ae6086a77540a7388f12eafd7",
+      "integrations": [
+        {
+          "story": "PP-STORY-003",
+          "source": "bda12c53d7c43d3ec9f8c76125fde9bbd52fc9cb",
+          "merge": "558f3387c5824273ae1396161fa24cbecd15b2ea"
+        },
+        {
+          "story": "PP-STORY-004",
+          "source": "fb92142126bafbc8856f85b401c97e5d9484a97d",
+          "merge": "6c848a353818773b44924ab9d969b8da4d221a5b"
+        }
+      ],
+      "mainAfter": "6c848a353818773b44924ab9d969b8da4d221a5b",
+      "treeMatchesValidatedPP4": true
+    },
+    "scrapbook-ui": {
+      "mainBefore": "642ee656d7fb1bd2cfb8e1271ff6fab51ac079f5",
+      "integrations": [
+        {
+          "story": "PP-STORY-003",
+          "source": "d15eed7dba3999af0cd6d1c0b1c5a7f5c1efda6a",
+          "merge": "02638274380e9e3e0ece953a1284003c77b25e01"
+        },
+        {
+          "story": "PP-STORY-004",
+          "source": "f09714abc041fea17f0d61ac223804044ad39321",
+          "merge": "bee32d586cd8da6ecf706f4d6ef59eb294cd3715"
+        }
+      ],
+      "mainAfter": "bee32d586cd8da6ecf706f4d6ef59eb294cd3715",
+      "treeMatchesValidatedPP4": true
+    },
+    "scrapbook-tests": {
+      "mainBefore": "b063c1d5945aee3b46b5ccd00f39cf0aa74b7559",
+      "integrations": [
+        {
+          "story": "PP-STORY-003",
+          "source": "34695be8a430ef70562a2b4b5e783057b62385e5",
+          "merge": "861c11a11eff9e18567668236a48a6ae6b7f6654"
+        },
+        {
+          "story": "PP-STORY-004",
+          "source": "dc7b3f2eae8fe4d79e0c8d8a12cf981f50b3cc14",
+          "merge": "910ce178b74f43c569dc7ab732705ab56efa76cf"
+        }
+      ],
+      "mainAfter": "910ce178b74f43c569dc7ab732705ab56efa76cf",
+      "treeMatchesValidatedPP4": true
+    },
+    "scrapbook-docs": {
+      "mainBefore": "24b3f8fb9a39f1dd2c1ac74efbf69157c9a314ea",
+      "integrations": [
+        {
+          "story": "PP-STORY-003",
+          "source": "14388b3bfe17f503cc9abc4762fade31cda915cb",
+          "merge": "aef89c4159c8069b1befa3418dd720cd8a64d769"
+        },
+        {
+          "story": "PP-STORY-004",
+          "source": "cdb77ecbe9080ecda8d220c12c25e7650c9b2010",
+          "merge": "a8bf2f889976335b5053c271eea4e73471d62425"
+        }
+      ],
+      "mainAfter": "a8bf2f889976335b5053c271eea4e73471d62425",
+      "treeMatchesValidatedPP4": true
+    },
+    "scrapbook-infrastructure": {
+      "mainBefore": "757fe70b5c01af67ddc287fccf5b380d10f8c3d2",
+      "integrations": [
+        {
+          "story": "PP-STORY-003",
+          "source": "0cb1462a7f0d2b4233475b60cf57381f2a8aa081",
+          "merge": "cd94fb900c9de8b1cbae6d105f516eacf106120a"
+        },
+        {
+          "story": "PP-STORY-004",
+          "source": "9ea8b1b16fc3dddeeff5ef1fa72a6c9780c032e6",
+          "merge": "37c508bc0c3ca5bf1d6e8df51961257ca68e889a"
+        }
+      ],
+      "mainAfter": "37c508bc0c3ca5bf1d6e8df51961257ca68e889a",
+      "treeMatchesValidatedPP4": true
+    }
+  }
+}

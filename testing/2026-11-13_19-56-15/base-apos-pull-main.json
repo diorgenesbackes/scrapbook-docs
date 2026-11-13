@@ -1,0 +1,38 @@
+{
+  "scrapbook-service": {
+    "main": "6c848a353818773b44924ab9d969b8da4d221a5b",
+    "allExistingBranchesMerged": true,
+    "pullAfterMerges": true,
+    "observedAt": "2026-11-13T22:50:11.639257+00:00"
+  },
+  "scrapbook-ui": {
+    "main": "bee32d586cd8da6ecf706f4d6ef59eb294cd3715",
+    "allExistingBranchesMerged": true,
+    "pullAfterMerges": true,
+    "observedAt": "2026-11-13T22:50:11.731902+00:00"
+  },
+  "scrapbook-tests": {
+    "main": "910ce178b74f43c569dc7ab732705ab56efa76cf",
+    "allExistingBranchesMerged": true,
+    "pullAfterMerges": true,
+    "observedAt": "2026-11-13T22:50:11.841330+00:00"
+  },
+  "scrapbook-docs": {
+    "main": "a8bf2f889976335b5053c271eea4e73471d62425",
+    "allExistingBranchesMerged": true,
+    "pullAfterMerges": true,
+    "observedAt": "2026-11-13T22:50:11.953507+00:00"
+  },
+  "scrapbook-infrastructure": {
+    "main": "37c508bc0c3ca5bf1d6e8df51961257ca68e889a",
+    "allExistingBranchesMerged": true,
+    "pullAfterMerges": true,
+    "observedAt": "2026-11-13T22:50:12.033944+00:00"
+  },
+  "scrapbook-liquibase": {
+    "main": "7bef13ce00b13c1beb0de5b2727d5419fd071135",
+    "allExistingBranchesMerged": true,
+    "pullAfterMerges": true,
+    "observedAt": "2026-11-13T22:50:12.073655+00:00"
+  }
+}
