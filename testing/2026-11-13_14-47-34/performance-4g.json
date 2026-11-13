@@ -1,0 +1,22 @@
+{
+  "profile": {
+    "download_mbps": 10,
+    "upload_mbps": 2,
+    "latency_ms": 80,
+    "cpu_slowdown": 4,
+    "width": 390,
+    "height": 844,
+    "cache": "disabled",
+    "samples": 5
+  },
+  "ready_ms": [
+    752,
+    754,
+    751,
+    739,
+    747
+  ],
+  "max_ms": 754,
+  "browser": "158.0.8127.18",
+  "physical_device": false
+}
