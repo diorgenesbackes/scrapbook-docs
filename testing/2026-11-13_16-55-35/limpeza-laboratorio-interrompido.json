@@ -1,0 +1,14 @@
+{
+  "project": "scrapbook-docker-test-ebfa9e928ffa",
+  "containers_removed": [
+    "scrapbook-docker-test-ebfa9e928ffa-service-1",
+    "scrapbook-docker-test-ebfa9e928ffa-ui-1",
+    "scrapbook-docker-test-ebfa9e928ffa-postgres-1"
+  ],
+  "volumes_removed": [
+    "scrapbook-docker-test-ebfa9e928ffa_cursor_keys",
+    "scrapbook-docker-test-ebfa9e928ffa_postgres_data"
+  ],
+  "networks_removed": 1,
+  "persistent_project_untouched": true
+}

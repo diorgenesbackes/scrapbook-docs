@@ -1,0 +1,39 @@
+{
+  "story": "PP-STORY-001",
+  "started_at": "2026-11-13T22:28:48.834273+00:00",
+  "python": "3.13.15",
+  "environment": "isolated-local-compose",
+  "deployed": false,
+  "existing_code_index_used": true,
+  "openapi": true,
+  "functional": [
+    "public_projection_direct_and_proxy",
+    "invalid_unknown_pk_case_and_padding",
+    "correlation_and_query_validation",
+    "anonymous_in_production_and_private_authorization",
+    "all_application_tables_unchanged_by_reads",
+    "spa_fallback_assets_api_and_migrations"
+  ],
+  "browser": {
+    "tests": 6,
+    "projects": [
+      "chromium-desktop",
+      "webkit-mobile"
+    ],
+    "physical_devices": false
+  },
+  "load": {
+    "executed": false,
+    "reason": "functional-only"
+  },
+  "logs_redacted": true,
+  "tables_unchanged_after_browser_and_load": true,
+  "management_browser_regression": {
+    "projects": [
+      "chromium-desktop/Asia-Tokyo",
+      "webkit-mobile/America-Los_Angeles"
+    ],
+    "physical_devices": false
+  },
+  "finished_at": "2026-11-13T22:30:05.882285+00:00"
+}

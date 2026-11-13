@@ -1,0 +1,29 @@
+[
+  {
+    "stage": "backend-build",
+    "failure": "Novo teste de independência da galeria referenciou EventChangeModel.Configuration, propriedade inexistente. A compilação falhou antes dos testes.",
+    "fix": "Usar a propriedade State existente; build sem avisos/erros e 137 testes aprovados.",
+    "failed_attempts": 1
+  },
+  {
+    "stage": "frontend-lint",
+    "failure": "Div role=status foi recusado pela regra de lint que prefere o elemento semântico nativo.",
+    "fix": "Usar output com aria-live/aria-atomic; lint/build e 71 testes aprovados na versão final.",
+    "failed_attempts": 1
+  },
+  {
+    "stage": "temporal-host-readiness",
+    "failure": "Host de probes registrava GET /health além do HealthController descoberto; a rota ambígua impediu readiness e as jornadas não foram iniciadas.",
+    "fix": "Registrar HealthChecks e usar somente o controller real. Health isolado retornou 200; matriz HTTP e browser aprovados, incluindo reteste final.",
+    "failed_attempts": 2
+  },
+  {
+    "stage": "public-regression-docker-daemon",
+    "failure": "Docker Desktop deixou de responder após preparar 1000 fixtures; socket local inexistente interrompeu snapshots e o cleanup do laboratório. Nenhum browser dessa execução foi aprovado.",
+    "fix": "Docker Desktop reaberto; três containers, dois volumes e rede do laboratório interrompido removidos por labels exclusivos. Reteste aprovou seis cenários públicos e 14 de gestão; cleanup final concluído.",
+    "status": "passed_retest",
+    "failed_attempts": 1,
+    "retest_started_at": "2026-11-13T22:28:48.834273+00:00",
+    "retest_finished_at": "2026-11-13T22:30:05.882285+00:00"
+  }
+]

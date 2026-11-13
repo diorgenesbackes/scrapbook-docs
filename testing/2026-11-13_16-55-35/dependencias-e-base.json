@@ -1,0 +1,27 @@
+{
+  "scrapbook-service": {
+    "main": "cdbbd804ab408b9ae6086a77540a7388f12eafd7",
+    "dependency": "bda12c53d7c43d3ec9f8c76125fde9bbd52fc9cb",
+    "featureBase": "d062cc34d2498bb298407f395e79c0a47009e7b7"
+  },
+  "scrapbook-ui": {
+    "main": "642ee656d7fb1bd2cfb8e1271ff6fab51ac079f5",
+    "dependency": "d15eed7dba3999af0cd6d1c0b1c5a7f5c1efda6a",
+    "featureBase": "f1c4ac182c983b2573161b2f784c2c70454e2600"
+  },
+  "scrapbook-tests": {
+    "main": "b063c1d5945aee3b46b5ccd00f39cf0aa74b7559",
+    "dependency": "34695be8a430ef70562a2b4b5e783057b62385e5",
+    "featureBase": "1f51e333359caa02fc82bc60a7883612460c3d61"
+  },
+  "scrapbook-docs": {
+    "main": "24b3f8fb9a39f1dd2c1ac74efbf69157c9a314ea",
+    "dependency": "14388b3bfe17f503cc9abc4762fade31cda915cb",
+    "featureBase": "b5f6b28f77df18c83fccbb1eea9e5d38600edec8"
+  },
+  "scrapbook-infrastructure": {
+    "main": "757fe70b5c01af67ddc287fccf5b380d10f8c3d2",
+    "dependency": "0cb1462a7f0d2b4233475b60cf57381f2a8aa081",
+    "featureBase": "e50f25c90e8948ef79c6fdc8853ac5a324b26c4c"
+  }
+}
