@@ -1,6 +1,6 @@
 ### HLD: Scrap Book
 
-Versão: 1.1
+Versão: 1.2
 Data: 2026-11-13
 Responsável: Diórgenes Backes
 
@@ -9,6 +9,8 @@ Adendo de organização — 2026-11-11: por definição posterior do responsáve
 Adendo de dados — 2026-11-11: por definição posterior do responsável, todas as tabelas terão PK inteira simples `id`, com padrão `bigint GENERATED ALWAYS AS IDENTITY`. Essa decisão substitui UUID como PK relacional. Identificadores técnicos de mensagem, correlação e idempotência mantêm os formatos definidos em seus contratos. Nomenclatura, repetição segura e rollback obrigatório seguem o [guideline SQL](guidelines/sql.md).
 
 Adendo de arquitetura — 2026-11-13: o responsável determinou a retirada da modularização do backend. O serviço passa a Clean Architecture por camadas/conceitos, com Controllers MVC, sufixos obrigatórios, repositórios e ScrapBookDbContext único. Essa decisão substitui a organização modular da versão 1.0; veja [ADR-001](adr/ADR-001-backend-clean-architecture.md). Os nomes das capacidades de negócio e os schemas existentes não representam módulos de código. As demais decisões de infraestrutura e contratos permanecem sujeitas às validações registradas.
+
+Adendo de dependências — 2026-11-13: Domain concentra contratos e comportamento puros usando somente a biblioteca base do .NET; Models, Requests, Responses, Builders, Enums, Entities POCO, mapper de resposta e leitor JSON ficam nessa camada. Services pertencem exclusivamente a Application, também sem ASP.NET/EF. Adaptadores HTTP/MVC/OpenAPI/Data Protection e EF/PostgreSQL permanecem nas camadas externas com nomes explícitos, extraindo o comportamento independente. Não transferir dependências de framework para Domain. Veja [backend](guidelines/backend.md#contratos-puros-e-adaptadores-técnicos) e ADR-001.
 
 ---
 

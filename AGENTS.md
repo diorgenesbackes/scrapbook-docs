@@ -8,9 +8,9 @@ ScrapBook.sln and five project directories sit directly under scrapbook-service,
 
 ## Architecture and Naming
 
-Use one backend service with Clean Architecture: Domain holds entities/policies; Application defines interfaces/services/commands/models; Infrastructure implements repositories, persistence and integrations; API contains MVC controllers and HTTP adapters. Keep business rules independent of HTTP, EF and AWS.
+Use one backend service with Clean Architecture. Domain holds pure entities, policies, models, requests, responses, builders, enums, mappers and readers using only .NET base libraries. Application exclusively owns Services and defines ports/commands. Neither references ASP.NET or EF. Infrastructure implements persistence/integrations; API contains controllers and technical HTTP adapters.
 
-Group classes by concept within each layer, without Modules or functional subfolders. API uses Controllers, Requests, Responses, Middlewares, Validators and Mappers. Infrastructure uses Repositories, DbContexts, Configurations and Entities. Use one scoped ScrapBookDbContext with separate EF configurations.
+Group classes by concept, without Modules or functional subfolders. Extract pure behavior into Domain; keep framework adapters in API/Infrastructure with explicit names: HttpJsonBodyReader, EventMvcJsonInputFormatter, HealthHttpResponseWriter, EfPostgresExceptionMapper. POCO PersistenceEntity types live in Domain; EF mappings and the single scoped ScrapBookDbContext stay in Infrastructure. Never move framework dependencies into Domain.
 
 Every declared type has its concept suffix: EventController, EventService, EventRepository, EventEntity, CreateEventRequest, EventResponse, EventPolicy, EventApplicationException. Keep one type per matching filename. Interfaces retain I plus their service/repository concept; tests end in Tests. Program.cs is the composition entry point.
 

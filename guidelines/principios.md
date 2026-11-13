@@ -6,7 +6,9 @@
 
 **DEVE:** manter regras de negócio independentes de HTTP, React, EF Core e SDKs AWS. Domain expressa invariantes; Application coordena casos de uso e define portas; Infrastructure implementa persistência e integrações; API traduz HTTP e compõe a aplicação.
 
-O backend é um serviço único em Clean Architecture, com diretórios por conceito e sufixo obrigatório. Não criar módulos funcionais nem um projeto por tabela. A direção das dependências protege regras de contas, eventos e registros. Uma pasta chamada Domain não demonstra isolamento se suas classes dependem de `HttpContext` ou S3.
+O backend é um serviço único em Clean Architecture, com diretórios por conceito e sufixo obrigatório. Não criar módulos funcionais nem um projeto por tabela. A direção das dependências protege regras de contas, eventos e registros. Uma pasta chamada Domain não demonstra isolamento se suas classes dependem de `HttpContext` ou S3. Domain concentra contratos e operações puros (Models, Requests, Responses, Entities POCO, Enums, Builders, Mappers e Readers), usando somente a biblioteca base do .NET. Não mover pacotes ASP.NET/EF junto das classes. Extrair a parte pura e manter o adaptador na API/Infrastructure, com nome técnico explícito; ver a [distribuição detalhada](backend.md#contratos-puros-e-adaptadores-técnicos).
+
+Services pertencem exclusivamente a Application, sem referências ASP.NET/EF. Recursos técnicos são acessados por portas; por exemplo, EventCursorService usa IEventCursorProtector, implementado por EventCursorDataProtector na API. Configurações EF e DbContext continuam na Infrastructure, mesmo quando mapeiam POCOs de Domain.
 
 No Scrap Book:
 

@@ -2,7 +2,27 @@
 
 [Story no Trello](https://trello.com/c/sLATq4Hy/120-story-rf-story-001-refatorar-service-para-clean-architecture-sem-m%C3%B3dulos) · [decisão ADR-001](../adr/ADR-001-backend-clean-architecture.md) · [guideline backend](../guidelines/backend.md).
 
-## Entrega
+## Complemento — Domain puro e Services em Application
+
+Solicitação posterior de 2026-11-13: concentrar contratos/comportamento independentes em Domain, sem transferir dependências ASP.NET/EF. Services pertencem exclusivamente a Application. Nenhuma tarefa ou movimentação nova no Trello foi feita para este complemento, conforme orientação expressa; o histórico abaixo descreve a entrega inicial.
+
+| Responsabilidade atual | Localização |
+| --- | --- |
+| Requests, Responses, Models, Enums, EventAuditBuilder e EventResponseMapper | Domain, usando biblioteca base do .NET |
+| EventEntity e cinco POCOs PersistenceEntity | Domain/Entities; configurações EF continuam em Infrastructure |
+| Leitura JSON estrita independente de HTTP | Domain/Readers/JsonBodyReader, recebendo Stream/Type/cancelamento |
+| Serviços de evento, cursor, telemetria e ator local | Application/Services, sem ASP.NET/EF |
+| Proteção criptográfica de cursor | Application/Interfaces/IEventCursorProtector e API/DataProtectors/EventCursorDataProtector |
+| Mídia/limites HTTP, MVC, OpenAPI e health | API/Readers/HttpJsonBodyReader, InputFormatters/EventMvcJsonInputFormatter, Transformers/EventOpenApiDocumentTransformer e Writers/HealthHttpResponseWriter |
+| Tradução de falhas dos providers | Infrastructure/Mappers/EfPostgresExceptionMapper |
+
+Domain continua sem PackageReference, FrameworkReference ou ProjectReference; Application referencia apenas Domain. Manifests/lockfiles não mudaram. Dois testes de arquitetura verificam as dependências compiladas e a localização das implementações Service. Nomes técnicos explicitam a exceção de camada; não há pastas vazias reservadas.
+
+[Plano e evidências do complemento](../testing/2026-11-13_10-03-49/2-execucao.md). HLD 1.2, ADR-001, AGENTS e guidelines descrevem a distribuição atual. As seções seguintes preservam revisões, números e tarefas da primeira execução.
+
+Backend: [9aa159f43a5a18f36999395488e6967ec376a6e4](https://github.com/diorgenesbackes/scrapbook-service/commit/9aa159f43a5a18f36999395488e6967ec376a6e4). Probes: [1ed8d2f296a06392b6133b7583aaddf6874f7f4f](https://github.com/diorgenesbackes/scrapbook-tests/commit/1ed8d2f296a06392b6133b7583aaddf6874f7f4f). Documentação: este complemento e seu commit na mesma feature.
+
+## Entrega inicial
 
 Solicitação explícita do responsável em 2026-11-13. Backend reorganizado por camadas/conceitos: Controllers MVC, Services, Repositories, Entities, Requests/Responses, mappers, validators e configurações. Todos os tipos declarados possuem arquivo próprio e sufixo do conceito; 83 declarações conferidas. Modules/Endpoints e namespaces funcionais foram removidos, inclusive reservas vazias.
 

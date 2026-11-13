@@ -10,10 +10,10 @@ Decisão do responsável em **2026-11-13**: serviço único organizado por camad
 
 | Responsabilidade | Conteúdo | Dependências permitidas |
 | --- | --- | --- |
-| Domain | Entidades, valores, invariantes e transições. | Biblioteca base; sem HTTP, EF Core ou SDK AWS. |
+| Domain | Entidades POCO, políticas, contratos e transformações independentes de frameworks. | Somente biblioteca base do .NET; sem pacotes/referências ASP.NET, EF Core, Npgsql, AWS ou demais projetos. |
 | Application | Casos de uso, autorização, coordenação, portas e resultados. | Domain e contratos internos explicitamente definidos. |
 | Infrastructure | EF Core e adaptadores Cognito/S3/SQS/SNS/SES/MediaConvert. | Domain/Application cujas portas implementa. |
-| API / host | DTOs HTTP, endpoints, autenticação, erros, composição e hospedagem dos consumidores. | Application; Infrastructure no ponto de composição. |
+| API / host | Controllers, adaptação HTTP/MVC/OpenAPI, proteção de dados, erros e composição. | Domain/Application; Infrastructure no ponto de composição. |
 | UnitTests | Testes unitários com dependências substituídas. | Unidades sob teste. |
 | Repositório de testes | Integração, HTTP, banco, navegador, carga, segurança e recuperação. | Componentes necessários ao cenário, por acionamento manual. |
 
@@ -35,17 +35,27 @@ Executar a API a partir dessa raiz com `dotnet run --project ScrapBook.Api --lau
 
 | Camada | Diretórios por conceito |
 | --- | --- |
-| API | Controllers, Requests, Responses, Middlewares, Validators, Mappers, Options, Services, Readers, Writers, InputFormatters, Transformers, Models, Extensions |
-| Application | Interfaces, Services, Commands, Models, Builders, Exceptions, Enums, Scopes |
-| Domain | Entities, Policies, Models, Exceptions, Enums, Clocks |
-| Infrastructure | Repositories, DbContexts, Configurations, Entities, Services, Mappers, UnitOfWorks, Extensions |
+| API | Controllers, Middlewares, Validators, Options, Readers, Writers, InputFormatters, Transformers, DataProtectors, Extensions |
+| Application | Interfaces, Services, Commands, Exceptions, Scopes |
+| Domain | Entities, Policies, Models, Requests, Responses, Mappers, Readers, Builders, Exceptions, Enums, Clocks |
+| Infrastructure | Repositories, DbContexts, Configurations, Mappers, UnitOfWorks, Extensions |
 | UnitTests | Conceito testado, com doubles em Stubs e providers em Providers |
 
 EventController depende de IEventService; EventService utiliza IEventRepository e IUnitOfWork. Infraestrutura implementa repositórios e um ScrapBookDbContext scoped, compartilhado na requisição, com IEntityTypeConfiguration separado por entidade. O modelo atual mapeia cinco entidades usadas pelas funcionalidades existentes. Os schemas físicos identity/events/records/notifications e as chaves existentes de configuração/telemetria não definem módulos de código e continuam compatíveis.
 
 Operação local e Outbox, quando aplicável, compartilham transação curta. Integrações externas não participam de locks/transações do banco. Liquibase permanece o executor exclusivo de DDL; startup não migra ou prepara dados.
 
-DTOs HTTP pertencem à API; entradas/resultados independentes de transporte, a Application. Não serializar entidade EF como resposta nem colocar contrato HTTP em Domain.
+### Contratos puros e adaptadores técnicos
+
+Ajuste do responsável em **2026-11-13**: concentrar Models, Requests, Responses, Builders, Enums, Entities e mappers/readers/transformers/writers independentes de frameworks em Domain. Uma classe não pertence a Domain apenas por seu sufixo. **Não adicionar dependências para viabilizar uma movimentação.** Extrair o comportamento puro e manter somente a adaptação necessária na camada técnica; não criar diretórios vazios para conceitos ainda inexistentes.
+
+- Requests/Responses são records de dados em Domain; atributos de System.Text.Json, parte da biblioteca base, são permitidos. HttpContext, binding MVC, headers, status, ProblemDetails e OpenAPI ficam na API. Não serializar entidades rastreadas como resposta.
+- JsonBodyReader recebe Stream, Type e CancellationToken, sem conhecer HTTP. API/Readers/HttpJsonBodyReader valida mídia/tamanho e traduz erros; EventMvcJsonInputFormatter conecta esse adaptador ao MVC. HealthHttpResponseWriter escreve a resposta HTTP; EventOpenApiDocumentTransformer adapta o documento OpenAPI.
+- EventResponseMapper e EventAuditBuilder são puros em Domain. Infrastructure/Mappers/EfPostgresExceptionMapper traduz exceções EF/Npgsql para falhas da aplicação; não levar essas bibliotecas ao domínio.
+- Entities contém EventEntity e os POCOs com sufixo PersistenceEntity. Os últimos representam o formato persistido, sem atributos EF ou geração de schema. DbContext, tracking, IEntityTypeConfiguration, concorrência e acesso ao banco permanecem em Infrastructure.
+- **Services existem exclusivamente em Application**, inclusive EventService, EventTelemetryService, EventCursorService e DevelopmentCurrentActorService. Dependem de portas quando precisam de recursos externos. EventCursorService valida payload/conta/validade do cursor pela porta IEventCursorProtector; API/DataProtectors/EventCursorDataProtector implementa a proteção ASP.NET. Manter propósito, chaves e duração compatíveis. Application também não referencia ASP.NET ou EF.
+
+Nomes técnicos devem explicitar protocolo/framework e terminar no conceito (HttpJsonBodyReader, EventMvcJsonInputFormatter, HealthHttpResponseWriter, EfPostgresExceptionMapper, EventCursorDataProtector). Interfaces mantêm I e a responsabilidade, como IEventCursorProtector. Evitar serviços técnicos chamados Service fora de Application.
 
 ## 2. Fluxo de um caso de uso
 
@@ -63,7 +73,7 @@ Mapear explicitamente campos sensíveis, horários e enums. Biblioteca de mapper
 
 ### Convenções C#
 
-- Uma classe/record por arquivo, com filename igual ao tipo, sempre com sufixo do conceito: EventController, EventService, EventRepository, EventEntity, CreateEventCommand, EventDetailsModel, CreateEventRequest, EventResponse, EventResponseMapper, EventRequestValidator, EventRequestMiddleware, EventEntityConfiguration, DevelopmentIdentityOptions, EventPolicy, BusinessClock, JsonBodyReader, HealthResponseWriter, EventJsonInputFormatter e EventOpenApiDocumentTransformer.
+- Uma classe/record por arquivo, com filename igual ao tipo, sempre com sufixo do conceito: EventController, EventService, EventRepository, EventEntity, CreateEventCommand, EventDetailsModel, CreateEventRequest, EventResponse, EventResponseMapper, EventRequestValidator, EventRequestMiddleware, EventEntityConfiguration, DevelopmentIdentityOptions, EventPolicy, BusinessClock, JsonBodyReader, HttpJsonBodyReader, HealthHttpResponseWriter, EventMvcJsonInputFormatter, EventOpenApiDocumentTransformer e EventCursorDataProtector.
 - Extensions, Exception e Enum identificam extensões, exceções e enums. Interfaces usam I e mantêm o conceito (IEventService/IEventRepository/IUnitOfWork); unitários usam Tests e doubles usam Stub. Program.cs é o ponto de composição convencional.
 
 - Nullable reference types habilitados; ausência tratada sem espalhar `!`.

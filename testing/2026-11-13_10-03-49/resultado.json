@@ -1,0 +1,69 @@
+{
+  "started_at": "2026-11-13T10:05:43.476683-03:00",
+  "target": "disposable local container",
+  "migrations": 47,
+  "models": "unified scoped DbContext, five mappings, repository and rollback passed",
+  "http": [
+    "GE-036/088 creation_event_member_audit_commit",
+    "GE-089/090 identity_origin_preflight_and_account_isolation",
+    "GE-091 equivalent_second_responsible_permissions",
+    "GE-048/051/092 strict_json_unicode_bigint_and_body_limit",
+    "GE-041/044/045/096 optimistic_race_noop_null_reset_final_trigger_state",
+    "GE-093/094/095 real_clock_window_12_13_and_irreversible_access_policy",
+    "GE-046/088/097 early_and_deferred_commit_failures_rollback_all_effects",
+    "GE-042/099 cancel_obsolete_dispatches_atomically_preserve_dispatched",
+    "GE-037/038/098 keyset_pagination_account_binding_and_process_restart",
+    "GE-059 openapi_five_operations_and_strict_nullable_contracts"
+  ],
+  "browser": {
+    "projects": [
+      "chromium-desktop/Asia-Tokyo",
+      "webkit-mobile/America-Los_Angeles"
+    ],
+    "physical_devices": false
+  },
+  "failures_and_privacy": {
+    "runtime_outage_503_ms": 3.254,
+    "lock_timeout_503_ms": 4978.406,
+    "private_markers_absent": true,
+    "audit_allowlist": [
+      "access_state",
+      "access_version",
+      "opening_mode",
+      "opens_at",
+      "starts_at",
+      "submission_closes_at"
+    ],
+    "structured_log_rows": 163
+  },
+  "performance": {
+    "profile": "H-03",
+    "seconds": 60,
+    "concurrency": 10,
+    "events": 200,
+    "warmup_cycles_per_worker": 3,
+    "network": "HTTP host loopback; PostgreSQL Docker Desktop VM loopback",
+    "machine": "arm64",
+    "cpu_count": 12,
+    "os": "26.6.2",
+    "operations": {
+      "list": {
+        "requests": 42877,
+        "errors": 0,
+        "p95_ms": 3.321
+      },
+      "detail": {
+        "requests": 42877,
+        "errors": 0,
+        "p95_ms": 3.187
+      },
+      "update": {
+        "requests": 42877,
+        "errors": 0,
+        "p95_ms": 12.026
+      }
+    }
+  },
+  "finished_at": "2026-11-13T10:07:12.406269-03:00",
+  "passed": true
+}
