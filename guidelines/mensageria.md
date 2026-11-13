@@ -6,18 +6,18 @@ Este guia complementa a estrutura herdada do Expenses, cuja execução de negóc
 
 ## 1. Responsabilidades e entrega
 
-- Cada módulo é dono de suas mensagens, Outbox, deduplicação e efeitos persistentes.
-- Eventos internos são distribuídos pelo SNS às filas dos módulos interessados; trabalhos específicos podem usar SQS diretamente conforme o contrato.
+- Cada fluxo explicita seus contratos de mensagem, Outbox, deduplicação e efeitos persistentes; as classes ficam agrupadas por conceito no serviço único.
+- Eventos internos são distribuídos pelo SNS às filas dos consumidores interessados; trabalhos específicos podem usar SQS diretamente conforme o contrato.
 - Usar SQS Standard, admitindo mensagens repetidas e fora de ordem. Não depender de entrega exatamente uma vez.
 - Manter DLQ por fila, concorrência limitada e recuperação documentada.
 - Filas não substituem registros confirmados no PostgreSQL e arquivos no S3.
 - Não criar serviço genérico de workers separado; API, publicador e consumidores compartilham o serviço ECS.
 
-Interações que precisam de resposta imediata usam contratos internos. O travamento após o primeiro registro é explicitamente eventual, com meta de até 5 segundos em condições normais. Não prometer atomicidade entre módulos para eliminar essa janela sem nova decisão.
+Interações que precisam de resposta imediata usam contratos internos. O travamento após o primeiro registro é explicitamente eventual, com meta de até 5 segundos em condições normais. Não prometer atomicidade entre processos assíncronos para eliminar essa janela sem nova decisão.
 
 ## 2. Envelope de mensagem
 
-Proposta de formato, a formalizar nos contratos de cada módulo:
+Proposta de formato, a formalizar nos contratos de cada fluxo:
 
 ```json
 {
@@ -41,7 +41,7 @@ Republicar a mesma mensagem mantém `messageId`. Mensagem nova derivada recebe o
 
 ## 3. Outbox transacional local
 
-1. Validar o caso de uso no módulo e abrir sua transação.
+1. Validar o caso de uso no serviço e abrir sua transação.
 2. Persistir alteração, auditoria pertinente e mensagem de Outbox na mesma unidade.
 3. Confirmar a transação; não depender de publicação bem-sucedida para preservar a intenção.
 4. Publicador reivindica trabalho de forma persistente e segura entre réplicas.
@@ -110,7 +110,7 @@ O fluxo deve separar recepção, validação, promoção do original e confirma�
 1. Receber na área temporária privada e registrar evidências.
 2. Validar todos os arquivos esperados e dados obrigatórios.
 3. Assegurar a persistência dos originais e metadados necessários.
-4. Confirmar o registro e sua Outbox na transação do módulo.
+4. Confirmar o registro e sua Outbox na transação da operação.
 5. Responder/atualizar status como confirmado e agendar preparação.
 
 S3 e banco não têm commit conjunto. A implementação deve reconciliar queda entre cópia/persistência de objetos e commit local, sem confirmar referências ausentes. Para conjuntos, nenhuma foto entra na galeria como recebida antes da confirmação integral. Objetos órfãos precisam de limpeza segura; não apagar arquivos de um registro confirmado.

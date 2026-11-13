@@ -6,7 +6,7 @@
 
 **DEVE:** manter regras de negócio independentes de HTTP, React, EF Core e SDKs AWS. Domain expressa invariantes; Application coordena casos de uso e define portas; Infrastructure implementa persistência e integrações; API traduz HTTP e compõe a aplicação.
 
-Cada módulo tem essas responsabilidades, sem exigir um projeto por tabela. A direção das dependências protege regras de contas, eventos e registros. Uma pasta chamada Domain não demonstra isolamento se suas classes dependem de `HttpContext` ou S3.
+O backend é um serviço único em Clean Architecture, com diretórios por conceito e sufixo obrigatório. Não criar módulos funcionais nem um projeto por tabela. A direção das dependências protege regras de contas, eventos e registros. Uma pasta chamada Domain não demonstra isolamento se suas classes dependem de `HttpContext` ou S3.
 
 No Scrap Book:
 
@@ -16,7 +16,7 @@ No Scrap Book:
 - PostgreSQL mantém estados e controles persistentes; S3 mantém os arquivos; filas transportam referências.
 - Liquibase evolui o schema; a aplicação não o cria no startup.
 
-Comunicação síncrona interna usa contratos no processo. A consistência eventual aprovada usa Outbox e mensagens. Não acessar o `DbContext` de outro módulo por conveniência nem simular atomicidade distribuída.
+Comunicação síncrona interna usa contratos no processo. A consistência eventual aprovada usa Outbox e mensagens. Repositórios compartilham um DbContext scoped; não simular atomicidade distribuída.
 
 ## 2. Clean Code como critério de manutenção
 
@@ -33,7 +33,7 @@ Comunicação síncrona interna usa contratos no processo. A consistência event
 
 Código e identificadores em inglês; documentação e mensagens ao usuário em português do Brasil. Preservar nomes de contratos publicados e vocabulário consistente: evento, responsável, convidado, depoimento, momento, registro, arquivo e variante.
 
-Não manter código morto comentado, credenciais, limites de negócio sem nome ou utilitários genéricos acumulando regras de módulos diferentes. Simplicidade não dispensa autorização, recuperação e idempotência exigidas pelo produto.
+Não manter código morto comentado, credenciais, limites de negócio sem nome ou utilitários genéricos acumulando responsabilidades diferentes. Simplicidade não dispensa autorização, recuperação e idempotência exigidas pelo produto.
 
 ## 3. SOLID aplicado ao contexto
 
@@ -53,7 +53,7 @@ No React, composição e funções atendem a esses objetivos sem hierarquias de 
 | --- | --- | --- |
 | Dependency Injection | Composição, lifetimes e substituição de adaptadores. | Sem Service Locator no negócio. |
 | Repository / consultas | Operações persistentes com significado para o caso de uso. | Não duplicar todo o EF nem expor `IQueryable` para HTTP. |
-| Unit of Work | Confirmar alterações e Outbox do módulo. | `DbContext` já fornece a base; abstração adicional exige motivo. |
+| Unit of Work | Confirmar alterações e Outbox da operação. | `DbContext` já fornece a base; abstração adicional exige motivo. |
 | Adapter | Isolar Cognito, S3, SES, SQS, MediaConvert e transporte HTTP. | Sem camadas que apenas renomeiem chamadas. |
 | Strategy | Validadores/processadores efetivamente distintos. | Não generalizar antes da necessidade. |
 | Factory | Criação com invariantes e seleção relevante. | Construtor simples basta quando expressa a regra. |
@@ -64,7 +64,7 @@ No React, composição e funções atendem a esses objetivos sem hierarquias de 
 | Outbox | Persistir intenção de publicação junto do negócio. | Publicação e consumo ainda podem repetir. |
 | Deduplicação / idempotência | Evitar efeitos repetidos em HTTP e consumidores. | Estado em memória ou botão desabilitado não garante unicidade entre réplicas. |
 
-Não introduzir microsserviços, service mesh, event sourcing, Redis ou coordenador de transações distribuídas nesta versão. Os workers dos módulos permanecem na aplicação do backend, conforme o HLD.
+Organizar o backend como um serviço simples em Clean Architecture. API e consumidores permanecem na mesma aplicação, organizados por conceito. Service mesh, event sourcing, Redis e coordenação distribuída não fazem parte desta decisão.
 
 ## 5. Contratos, dados e segurança
 
@@ -86,7 +86,7 @@ Definir timezone, unidade, ausência versus `null`, ordenação, limites e idemp
 
 ## 6. Registro de decisão
 
-Registrar ADR quando houver mudança de limite de módulo, consistência, autenticação, contrato transversal, persistência, processamento ou implantação. Decisões pequenas podem ficar na FDD e no PR.
+Registrar ADR quando houver mudança de limites entre camadas/responsabilidades, consistência, autenticação, contrato transversal, persistência, processamento ou implantação. Decisões pequenas podem ficar na FDD e no PR.
 
 Usar futuramente `adr/ADR-<numero>-<assunto>.md`, preservando a numeração ADR-001 a ADR-016 já enumerada no HLD:
 

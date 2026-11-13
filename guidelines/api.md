@@ -182,7 +182,7 @@ Escritas de evento/convite precisam de transação e atualização condicional o
 
 ## 6. Registro mínimo e compatibilidade
 
-Cada endpoint deve documentar: método/rota/`operationId`, finalidade, módulo, acesso público ou autenticado, autorização por evento/data, CSRF, schemas, headers, cache, limites, tempos, sucesso, erros, estados, cursor, concorrência e idempotência. Definir também operação de telemetria e classificação dos dados.
+Cada endpoint deve documentar: método/rota/`operationId`, finalidade, responsabilidade/serviço, acesso público ou autenticado, autorização por evento/data, CSRF, schemas, headers, cache, limites, tempos, sucesso, erros, estados, cursor, concorrência e idempotência. Definir também operação de telemetria e classificação dos dados.
 
 Mudanças incompatíveis exigem versão ou transição explícita. Analisar novos valores de enum, propriedades obrigatórias e mensagens ainda em processamento; adicionar campo opcional não autoriza vazar metadados bloqueados.
 

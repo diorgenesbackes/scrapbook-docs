@@ -6,6 +6,8 @@ Base: todos os nove documentos disponíveis em `Finances/expenses-docs/guideline
 
 Estes guias orientam novas implementações e revisões. O workspace contém a base do frontend, a solution do backend e a consulta operacional `/health` entre eles. A [base Liquibase](https://github.com/diorgenesbackes/scrapbook-liquibase/blob/main/README.md) foi criada em 2026-11-12, com validação local e rollbacks, e aplicada ao [PostgreSQL local via Compose](https://github.com/diorgenesbackes/scrapbook-infrastructure/blob/main/README.md). Funcionalidades de negócio, persistência EF, integrações, infraestrutura AWS e pipelines ainda serão implementados. Os exemplos dessas funcionalidades permanecem ilustrativos.
 
+Atualização de arquitetura — **2026-11-13**: por solicitação do responsável, o backend passa a serviço simples em Clean Architecture, sem módulos. Classes são agrupadas por conceito e recebem seu sufixo; API usa Controllers MVC, Infrastructure usa repositórios e um ScrapBookDbContext scoped. [ADR-001](../adr/ADR-001-backend-clean-architecture.md) e [backend](backend.md) substituem as referências antigas a módulos por camada/contexto. As evidências da primeira entrega permanecem históricas. A GE já implementa Events/EF e suítes manuais; AWS, autenticação real e publicação continuam posteriores.
+
 ## Ordem de leitura
 
 | Documento | Conteúdo |
@@ -15,7 +17,7 @@ Estes guias orientam novas implementações e revisões. O workspace contém a b
 | [APIs síncronas](api.md) | Requests, responses, paginação por cursor, erros, concorrência e repetição. |
 | [Mensageria e mídias](mensageria.md) | Complemento do Scrap Book para Outbox, SQS/SNS, upload e preparação das mídias. |
 | [Observabilidade](observabilidade.md) | Logs, métricas, tracing, auditoria, SLOs e alertas. |
-| [Backend](backend.md) | C#, módulos, DI, EF Core, autorização, transações e testes. |
+| [Backend](backend.md) | C#, camadas/conceitos, Controllers, DI, EF Core, autorização, transações e testes. |
 | [Frontend](frontend.md) | React/TypeScript, estado, captura, upload, galeria, acessibilidade e testes. |
 | [Liquibase e PostgreSQL](liquibase.md) | Changelogs, SQL, integridade, evolução, entrega e recuperação. |
 | [Scripts SQL](sql.md) | PK inteira, tipos e tamanhos, nomenclatura, idempotência, concorrência e rollback obrigatório. |
@@ -37,7 +39,7 @@ Os exemplos não criam endpoints, tabelas, filas ou dependências. Nomes físico
 | --- | --- | --- |
 | Backend | .NET/ASP.NET Core 10, SDK 10.0.401 e runtime validado 10.0.12; solution em camadas e `/health`. | EF Core, provider PostgreSQL, persistência e integrações. |
 | Frontend | React 19.3.1, TypeScript 7.0.2, Vite 8.3.6, Oxlint 1.90.0 e Vitest 5.1.0; Node 26.13.0/npm 11.20.0. Publicação estática prevista no Amplify. | Roteamento, funcionalidades, integração real e configuração de publicação. |
-| Dados | RDS PostgreSQL, schemas e `DbContext` por módulo; PKs inteiras e Liquibase exclusivo. [Modelagem](../db/README.md) e [base inicial](https://github.com/diorgenesbackes/scrapbook-liquibase/blob/main/README.md) com Liquibase 4.33.0/PostgreSQL 18.6 local. | Provisionamento/patch RDS, identidade DDL/DML e mappings EF. |
+| Dados | RDS PostgreSQL, schemas físicos existentes e DbContext único; PKs inteiras e Liquibase exclusivo. [Modelagem](../db/README.md) e [base inicial](https://github.com/diorgenesbackes/scrapbook-liquibase/blob/main/README.md) com Liquibase 4.33.0/PostgreSQL 18.6 local. | Provisionamento/patch RDS, identidade DDL/DML e mappings EF. |
 | Assíncrono | Outbox, SNS, SQS Standard, DLQ, EventBridge e MediaConvert. | Contratos detalhados, concorrência, tentativas, retenção e perfis. |
 | Operação | AWS `us-east-1`, GitHub Actions/OIDC, ECS Fargate/ECR e configuração manual da infraestrutura. | Dimensionamento, domínios, segredos, certificados e runbooks. |
 | Testes | Backend com xUnit 2.9.3; frontend com Vitest, React Testing Library e jsdom. Demais testes manuais em projeto separado; Playwright e k6 previstos. | Inventário, suítes não unitárias e dados de teste. |

@@ -1,18 +1,20 @@
 ### HLD: Scrap Book
 
-Versão: 1.0
-Data: 2026-11-11
+Versão: 1.1
+Data: 2026-11-13
 Responsável: Diórgenes Backes
 
 Adendo de organização — 2026-11-11: por definição posterior do responsável, a estrutura passa a seis componentes com a inclusão de `scrapbook-infrastructure`. A criação dessa área não altera a configuração manual da infraestrutura nem as demais decisões de implantação deste HLD.
 
 Adendo de dados — 2026-11-11: por definição posterior do responsável, todas as tabelas terão PK inteira simples `id`, com padrão `bigint GENERATED ALWAYS AS IDENTITY`. Essa decisão substitui UUID como PK relacional. Identificadores técnicos de mensagem, correlação e idempotência mantêm os formatos definidos em seus contratos. Nomenclatura, repetição segura e rollback obrigatório seguem o [guideline SQL](guidelines/sql.md).
 
+Adendo de arquitetura — 2026-11-13: o responsável determinou a retirada da modularização do backend. O serviço passa a Clean Architecture por camadas/conceitos, com Controllers MVC, sufixos obrigatórios, repositórios e ScrapBookDbContext único. Essa decisão substitui a organização modular da versão 1.0; veja [ADR-001](adr/ADR-001-backend-clean-architecture.md). Os nomes das capacidades de negócio e os schemas existentes não representam módulos de código. As demais decisões de infraestrutura e contratos permanecem sujeitas às validações registradas.
+
 ---
 
 ### Objetivo técnico
 
-Estruturar o Scrap Book como uma aplicação web com backend modular, capaz de receber registros de eventos, preservar arquivos originais, preparar mídias para reprodução e controlar o acesso conforme permissões e datas de abertura.
+Estruturar o Scrap Book como uma aplicação web com backend em Clean Architecture, capaz de receber registros de eventos, preservar arquivos originais, preparar mídias para reprodução e controlar o acesso conforme permissões e datas de abertura.
 
 A solução será desenvolvida do zero. A arquitetura deverá suportar 200 envios simultâneos, separar dados de eventos e ambientes, executar tarefas assíncronas com recuperação de falhas e permitir operação por um único responsável.
 
@@ -32,7 +34,7 @@ Dependências com outros sistemas
 
 ### Arquitetura geral
 
-O backend será um monólito modular em .NET, seguindo Clean Architecture. Os módulos serão organizados por responsabilidade de domínio:
+O backend será um serviço .NET simples em Clean Architecture, organizado por camadas/conceitos. Suas capacidades de negócio incluem:
 
 - Contas e Acesso.
 - Eventos e Convites.
@@ -41,9 +43,9 @@ O backend será um monólito modular em .NET, seguindo Clean Architecture. Os m�
 
 API, produtores e consumidores de mensagens executarão na mesma aplicação e no mesmo serviço ECS. Não haverá um serviço genérico de workers separado dos domínios. As réplicas compartilharão o banco e disputarão mensagens das respectivas filas.
 
-Cada módulo terá domínio, casos de uso, contratos e implementações de infraestrutura separados. Interações síncronas ocorrerão por contratos internos; processos que admitirem consistência eventual usarão mensagens.
+Domain, Application, Infrastructure e API contêm diretórios por conceito, sem Modules ou subpastas funcionais. Controllers chamam serviços de Application; contratos de repositório são implementados em Infrastructure. Processos com consistência eventual continuam usando mensagens.
 
-A primeira versão não exigirá transações distribuídas nem transações únicas entre módulos. Operações locais que precisam de atomicidade utilizarão transações do próprio módulo, incluindo a persistência de mensagens na Outbox.
+Operações locais usam o ScrapBookDbContext scoped e transações curtas, incluindo Outbox quando aplicável. Integrações externas não participam dessas transações; não se exige transação distribuída.
 
 Ambiente de implantação
 
@@ -79,12 +81,12 @@ Tecnologias principais
 
 Padrões adotados
 
-- Clean Architecture e monólito modular orientado a domínios.
+- Clean Architecture em serviço único, com diretórios/sufixos por conceito e Controllers MVC.
 - REST/JSON com prefixo `/api/v1` e documentação OpenAPI.
 - Backend intermediando autenticação e sessões do frontend.
 - Outbox transacional local.
 - Consumidores idempotentes.
-- Consistência eventual entre módulos quando aprovada.
+- Consistência eventual entre processos/capacidades quando aprovada.
 - Contratos de mensagens versionados.
 - Upload direto ao S3, com autorização temporária.
 - Paginação por cursor.
@@ -273,7 +275,7 @@ Fonte de verdade
 - S3 para o conteúdo dos arquivos.
 - SQS e SNS são transporte, não fonte exclusiva da verdade de registros confirmados.
 - Não haverá Redis ou cache distribuído de dados de negócio.
-- Cada ambiente terá seu banco, com schemas e `DbContext` separados por módulo.
+- Cada ambiente terá seu banco e um ScrapBookDbContext scoped. Schemas físicos existentes são preservados; configurações EF ficam em classes por entidade.
 - Mudanças estruturais ocorrerão exclusivamente pelo pipeline Liquibase.
 
 ---
@@ -583,7 +585,7 @@ ADRs associados
 
 Os itens abaixo são decisões aprovadas nesta entrevista e propostas para documentos ADR individuais no repositório `docs`. Ainda não foram criados como arquivos separados.
 
-- ADR-001: monólito modular com Clean Architecture e API/consumidores na mesma aplicação.
+- ADR-001: serviço único em Clean Architecture, sem módulos, por conceito/sufixo, Controllers MVC e DbContext único; API/consumidores na mesma aplicação.
 - ADR-002: frontend estático React/TypeScript no Amplify Hosting.
 - ADR-003: ECS Fargate com ALB, duas tarefas mínimas em produção e escalabilidade conjunta.
 - ADR-004: tarefas com IP público, entrada restrita e RDS privado, sem NAT inicial.
