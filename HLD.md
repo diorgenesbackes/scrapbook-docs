@@ -1,6 +1,6 @@
 ### HLD: Scrap Book
 
-Versão: 1.2
+Versão: 1.3
 Data: 2026-11-13
 Responsável: Diórgenes Backes
 
@@ -11,6 +11,8 @@ Adendo de dados — 2026-11-11: por definição posterior do responsável, todas
 Adendo de arquitetura — 2026-11-13: o responsável determinou a retirada da modularização do backend. O serviço passa a Clean Architecture por camadas/conceitos, com Controllers MVC, sufixos obrigatórios, repositórios e ScrapBookDbContext único. Essa decisão substitui a organização modular da versão 1.0; veja [ADR-001](adr/ADR-001-backend-clean-architecture.md). Os nomes das capacidades de negócio e os schemas existentes não representam módulos de código. As demais decisões de infraestrutura e contratos permanecem sujeitas às validações registradas.
 
 Adendo de dependências — 2026-11-13: Domain concentra contratos e comportamento puros usando somente a biblioteca base do .NET; Models, Requests, Responses, Builders, Enums, Entities POCO, mapper de resposta e leitor JSON ficam nessa camada. Services pertencem exclusivamente a Application, também sem ASP.NET/EF. Adaptadores HTTP/MVC/OpenAPI/Data Protection e EF/PostgreSQL permanecem nas camadas externas com nomes explícitos, extraindo o comportamento independente. Não transferir dependências de framework para Domain. Veja [backend](guidelines/backend.md#contratos-puros-e-adaptadores-técnicos) e ADR-001.
+
+Adendo de execução local — 2026-11-13: o cartão [dockerizar os projetos](https://trello.com/c/NCkBjG4R) adiciona Dockerfiles multi-stage da API/UI e a stack Compose da infraestrutura. Nginx serve a UI e encaminha /api e /health a service:8080; API acessa postgres:5432 pelo DNS da rede bridge. Publicação local em loopback (5173/5080/55432), volumes de banco/chaves preservados e identidade simulada desativada por padrão. Migrations continuam explícitas via Liquibase, fora do startup. Essa decisão não altera os destinos de publicação Amplify/ECS nem configura pipelines AWS.
 
 ---
 

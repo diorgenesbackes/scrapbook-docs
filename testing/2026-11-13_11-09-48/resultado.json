@@ -1,0 +1,65 @@
+{
+  "started_at": "2026-11-13T11:21:28.604694-03:00",
+  "target": "exclusive disposable Compose project",
+  "contracts": {
+    "proxy_crud": true,
+    "optimistic_version": true,
+    "strict_json": true,
+    "spa_assets": true,
+    "internal_dns": true,
+    "non_root_read_only": true,
+    "runtime_without_build_tools": true,
+    "default_identity_disabled": true,
+    "runtime_credential_separated": true
+  },
+  "persistence": {
+    "event_after_down_up": true,
+    "cursor_after_down_up": true,
+    "migrations": 47,
+    "tables": 33
+  },
+  "browser_fixture_events": 25,
+  "browser": {
+    "projects": [
+      "chromium-desktop/Asia-Tokyo",
+      "webkit-mobile/America-Los_Angeles"
+    ],
+    "physical_devices": false
+  },
+  "performance": {
+    "profile": "H-03",
+    "seconds": 60,
+    "concurrency": 10,
+    "events": 200,
+    "warmup_cycles_per_worker": 3,
+    "network": "host loopback → Nginx → service:8080 → postgres:5432, Docker bridge",
+    "machine": "arm64",
+    "cpu_count": 12,
+    "os": "26.6.2",
+    "operations": {
+      "list": {
+        "requests": 44065,
+        "errors": 0,
+        "p95_ms": 4.947
+      },
+      "detail": {
+        "requests": 44065,
+        "errors": 0,
+        "p95_ms": 4.546
+      },
+      "update": {
+        "requests": 44065,
+        "errors": 0,
+        "p95_ms": 10.02
+      }
+    }
+  },
+  "images": {
+    "service": "sha256:f85ba3e05bc7a3d46bfcb586a40877325d564f0080635c9c4eab5b7855abeca7",
+    "ui": "sha256:7546e31d01e1dcd09f9d7db59aca4a6dc2aa82c07f00e892b26bda37cd116e22",
+    "postgres": "sha256:9ba53c7d41ea093baf5c1ba635ba5434c4f979880527d49bb7d9237d3193085b"
+  },
+  "compose_version": "5.6.0",
+  "passed": true,
+  "finished_at": "2026-11-13T11:23:26.604263-03:00"
+}

@@ -184,6 +184,14 @@ Segredos locais em configuração privada ignorada; ambientes AWS via Secrets Ma
 
 Logs estruturados, correlação e instrumentos seguem [Observabilidade](observabilidade.md). Não habilitar logging de dados sensíveis do EF. Confirmar nomes de métricas e comportamento do handler na versão escolhida, sem transportar regras específicas do .NET 10 como fato já verificado.
 
+### Containers locais
+
+API possui Dockerfile multi-stage com SDK 10.0.401 e runtime ASP.NET 10.0.12/noble fixados por digest. Restaurar com --locked-mode e publicar Release; runtime sem SDK, usuário app, porta interna 8080 e healthcheck HTTP. Preservar timezone/ICU necessários ao BusinessClock. Contexto de build exclui bibliotecas locais, chaves e configuração privada.
+
+Compose em scrapbook-infrastructure conecta service a postgres:5432 com credencial DML própria; nunca usar administrador/migrador no backend. API/UI têm filesystem somente leitura e /tmp temporário. Chaves de cursor usam volume persistente independente do banco. Não migrar ou criar fixture no startup. Identidade local em 0.0.0.0 exige opt-in AllowContainerBinding, indicação de container e Development; manter desligada por padrão, com publicação somente em loopback. Produção continua recusando a simulação.
+
+Construção/operação local em feature/6: [infraestrutura](https://github.com/diorgenesbackes/scrapbook-infrastructure/blob/feature/6/README.md). Validação manual da stack em scrapbook-tests/docker_stack.py, com rede/volumes descartáveis próprios. Não confundir essa entrega com deploy ECS/AWS.
+
 ## 10. Testes e revisão
 
 Somente unitários no backend, com xUnit 2.9.3. Executar `dotnet build ScrapBook.sln` e `dotnet test ScrapBook.sln --no-build` em `scrapbook-service`. Os testes iniciais exercitam a resposta de saúde em memória, sem iniciar servidor HTTP, e verificam a ausência de detalhes sensíveis. Testes HTTP com host de teste, PostgreSQL real, serviços AWS e falhas de integração ficam no repositório de testes, acionados manualmente; `WebApplicationFactory` permanece uma opção para essa futura suíte.
