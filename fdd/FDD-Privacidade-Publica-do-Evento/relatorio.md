@@ -1,5 +1,9 @@
 # Relatório: PP-STORY-006
 
+## Integração posterior autorizada
+
+Após a validação registrada abaixo, o responsável solicitou integrar todas as branches pendentes em main. PP-STORY-005 e depois PP-STORY-006 foram integradas nos cinco repositórios envolvidos, sem conflitos. [Auditoria, SHAs e checks do candidato](../../testing/2026-11-13_22-21-56/2-execucao.md). A narrativa abaixo permanece histórica. Serviços continuam parados; merge não comprova deploy nem encerra QA humano anterior.
+
 [História](https://trello.com/c/IV6uDrPq) · [FDD](FDD-Privacidade-Publica-do-Evento.md) · [Matriz das seis histórias](matriz-de-aceite-publico.md) · [Execução](../../testing/2026-11-13_21-42-37/2-execucao.md)
 
 ## Resultado

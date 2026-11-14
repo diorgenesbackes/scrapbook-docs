@@ -1,5 +1,9 @@
 # Relatório: PP-STORY-005
 
+## Integração posterior autorizada
+
+Após a validação registrada abaixo, o responsável solicitou integrar todas as branches pendentes em main. PP-STORY-005 foi integrada antes de PP-STORY-006 nos cinco repositórios envolvidos, sem conflitos. [Auditoria, SHAs e validação do candidato](../../testing/2026-11-13_22-21-56/2-execucao.md). A narrativa abaixo registra o estado original da entrega; o merge não comprova deploy.
+
 [História](https://trello.com/c/QhI07Cia) · [Contrato](FDD-Recuperacao-da-Pagina-Publica.md) · [Execução](../../testing/2026-11-13_19-56-15/2-execucao.md)
 
 ## Resultado e base

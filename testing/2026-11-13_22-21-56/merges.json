@@ -1,0 +1,141 @@
+{
+  "startedAt": "2026-11-14T01:21:25.776060+00:00",
+  "repositories": {
+    "scrapbook-service": {
+      "before": "6c848a353818773b44924ab9d969b8da4d221a5b",
+      "after": "5f2ba3031b6ea473e22d9a1d3a0b9814afb56c0c",
+      "tree": "26a91701701b412b213654c8e094394d118edb69",
+      "merges": [
+        {
+          "story": "PP-STORY-005",
+          "source": "49a60a94513fc628c5acfb5e4e7848ea9850b00b",
+          "merge": "e55cc30f6627cc0008c33b4ae42dbe469e613cba",
+          "parents": [
+            "6c848a353818773b44924ab9d969b8da4d221a5b",
+            "49a60a94513fc628c5acfb5e4e7848ea9850b00b"
+          ],
+          "tree_matches_feature": true
+        },
+        {
+          "story": "PP-STORY-006",
+          "source": "24df36d1dff03e0f3b90c2c95432655b3e686114",
+          "merge": "5f2ba3031b6ea473e22d9a1d3a0b9814afb56c0c",
+          "parents": [
+            "e55cc30f6627cc0008c33b4ae42dbe469e613cba",
+            "24df36d1dff03e0f3b90c2c95432655b3e686114"
+          ],
+          "tree_matches_feature": true
+        }
+      ]
+    },
+    "scrapbook-ui": {
+      "before": "bee32d586cd8da6ecf706f4d6ef59eb294cd3715",
+      "after": "7f7caa704b1acefaf76afedfb8801b2e89398263",
+      "tree": "92ae231ca963c972b1a8ae95ae1353fa70e81218",
+      "merges": [
+        {
+          "story": "PP-STORY-005",
+          "source": "b80ff23a1ccce9d6053a2087c7077406594075a3",
+          "merge": "72b6269e229de7dc118a6cebdd12986b51747224",
+          "parents": [
+            "bee32d586cd8da6ecf706f4d6ef59eb294cd3715",
+            "b80ff23a1ccce9d6053a2087c7077406594075a3"
+          ],
+          "tree_matches_feature": true
+        },
+        {
+          "story": "PP-STORY-006",
+          "source": "c5fc91e17f08127115ceeb5c354b23103ae77c57",
+          "merge": "7f7caa704b1acefaf76afedfb8801b2e89398263",
+          "parents": [
+            "72b6269e229de7dc118a6cebdd12986b51747224",
+            "c5fc91e17f08127115ceeb5c354b23103ae77c57"
+          ],
+          "tree_matches_feature": true
+        }
+      ]
+    },
+    "scrapbook-tests": {
+      "before": "910ce178b74f43c569dc7ab732705ab56efa76cf",
+      "after": "d075fc1b06c665d7801e0953d94347314fdff2ca",
+      "tree": "77bea7b7ea3b52ab4775b040f1063de92e732e02",
+      "merges": [
+        {
+          "story": "PP-STORY-005",
+          "source": "153640f8b446b5c326b0a642743c91f01ab78835",
+          "merge": "ff6f279d25c77b02f8dcff623fe74636f1a3ee1d",
+          "parents": [
+            "910ce178b74f43c569dc7ab732705ab56efa76cf",
+            "153640f8b446b5c326b0a642743c91f01ab78835"
+          ],
+          "tree_matches_feature": true
+        },
+        {
+          "story": "PP-STORY-006",
+          "source": "f6a0b7efada66b9052bcaf6e86a5f3425dd3743c",
+          "merge": "d075fc1b06c665d7801e0953d94347314fdff2ca",
+          "parents": [
+            "ff6f279d25c77b02f8dcff623fe74636f1a3ee1d",
+            "f6a0b7efada66b9052bcaf6e86a5f3425dd3743c"
+          ],
+          "tree_matches_feature": true
+        }
+      ]
+    },
+    "scrapbook-infrastructure": {
+      "before": "37c508bc0c3ca5bf1d6e8df51961257ca68e889a",
+      "after": "523d00bdb3839bb3fe4c3bd023e2aadba68696f4",
+      "tree": "ccaa054117cb4efef04d8165722884a9b91b9dfa",
+      "merges": [
+        {
+          "story": "PP-STORY-005",
+          "source": "db11a5ae95c50b95c7ae1001a3c46e27c663297a",
+          "merge": "770188f0c3c8a60ff6da1758a90872d026dbc7b5",
+          "parents": [
+            "37c508bc0c3ca5bf1d6e8df51961257ca68e889a",
+            "db11a5ae95c50b95c7ae1001a3c46e27c663297a"
+          ],
+          "tree_matches_feature": true
+        },
+        {
+          "story": "PP-STORY-006",
+          "source": "78c72767283653dfc28f23f94247a57ce6d4cce7",
+          "merge": "523d00bdb3839bb3fe4c3bd023e2aadba68696f4",
+          "parents": [
+            "770188f0c3c8a60ff6da1758a90872d026dbc7b5",
+            "78c72767283653dfc28f23f94247a57ce6d4cce7"
+          ],
+          "tree_matches_feature": true
+        }
+      ]
+    },
+    "scrapbook-docs": {
+      "before": "a8bf2f889976335b5053c271eea4e73471d62425",
+      "after": "4b0c98bf9033a0bd4341348c24668ded092e7c39",
+      "tree": "9e4b1b9206dc9746dc6a797d68c3182f778362ab",
+      "merges": [
+        {
+          "story": "PP-STORY-005",
+          "source": "d9230ec4899d34c19eee3dfea692572d095ddf92",
+          "merge": "d2a8c1b12fb9003d59ab40918a82dea70cd93241",
+          "parents": [
+            "a8bf2f889976335b5053c271eea4e73471d62425",
+            "d9230ec4899d34c19eee3dfea692572d095ddf92"
+          ],
+          "tree_matches_feature": true
+        },
+        {
+          "story": "PP-STORY-006",
+          "source": "6bc42979339d346cd40aadb57a36a2d528bda539",
+          "merge": "4b0c98bf9033a0bd4341348c24668ded092e7c39",
+          "parents": [
+            "d2a8c1b12fb9003d59ab40918a82dea70cd93241",
+            "6bc42979339d346cd40aadb57a36a2d528bda539"
+          ],
+          "tree_matches_feature": true
+        }
+      ]
+    }
+  },
+  "finishedAt": "2026-11-14T01:21:26.472806+00:00"
+}

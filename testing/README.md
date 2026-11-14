@@ -4,6 +4,7 @@ Execuções manuais usam `AAAA-MM-DD_HH-mm-ss/`, em `America/Sao_Paulo`, com `1-
 
 | Ciclo | Escopo | Resultado |
 | --- | --- | --- |
+| [2026-11-13_22-21-56](2026-11-13_22-21-56/2-execucao.md) | Todas as branches pendentes: PP-005 antes de PP-006 em main | Dez merges sem conflitos; árvores das features preservadas; 146 backend/87 UI aprovados novamente. Liquibase sem pendência. |
 | [2026-11-13_21-42-37](2026-11-13_21-42-37/2-execucao.md) | PP-STORY-006: privacidade pública, SQL/sinais reais, fixtures privadas e regressões | 146 backend/87 UI, 57 browser; contrato igual antes/depois de registros, 4G até 749ms; 249941 consultas/zero erros, p95 3,698ms. |
 | [2026-11-13_19-56-15](2026-11-13_19-56-15/2-execucao.md) | PP-STORY-005: erros/recuperação e regressões; auditoria/merges/pull antes de codificar | 144 backend/86 UI, 63 cenários browser; 4G até 734ms; 269467 consultas/zero erros, p95 3,343ms. |
 | [2026-11-13_16-55-35](2026-11-13_16-55-35/2-execucao.md) | PP-STORY-004: janela pelo servidor e regressões | 137 backend/71 UI, 36 casos HTTP, 51 cenários browser; 4G até 747ms; carga sem erros, p95 3,437ms. |
