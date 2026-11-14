@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-11-14T00:38:09.019698+00:00",
+  "beforeCoding": true,
+  "repos": {
+    "scrapbook-service": {
+      "main": "6c848a353818773b44924ab9d969b8da4d221a5b",
+      "dependency": "49a60a94513fc628c5acfb5e4e7848ea9850b00b"
+    },
+    "scrapbook-ui": {
+      "main": "bee32d586cd8da6ecf706f4d6ef59eb294cd3715",
+      "dependency": "b80ff23a1ccce9d6053a2087c7077406594075a3"
+    },
+    "scrapbook-tests": {
+      "main": "910ce178b74f43c569dc7ab732705ab56efa76cf",
+      "dependency": "153640f8b446b5c326b0a642743c91f01ab78835"
+    },
+    "scrapbook-docs": {
+      "main": "a8bf2f889976335b5053c271eea4e73471d62425",
+      "dependency": "d9230ec4899d34c19eee3dfea692572d095ddf92"
+    },
+    "scrapbook-infrastructure": {
+      "main": "37c508bc0c3ca5bf1d6e8df51961257ca68e889a",
+      "dependency": "db11a5ae95c50b95c7ae1001a3c46e27c663297a"
+    },
+    "scrapbook-liquibase": {
+      "main": "7bef13ce00b13c1beb0de5b2727d5419fd071135",
+      "dependency": null
+    }
+  }
+}

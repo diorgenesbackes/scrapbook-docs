@@ -8,6 +8,10 @@ Gestão de Eventos implementa a base local em `ActivitySource`/`Meter` `ScrapBoo
 
 ## 1. Sinais e responsabilidades
 
+PP-STORY-006 reforça a implementação local: logs/spans próprios usam rotas nominais; métodos desconhecidos são OTHER e não labels livres. O Nginx emite somente componente, operação/método categorizados, status e duração. Seu error_log padrão do servidor é suprimido porque inclui URI, mantendo falhas observáveis por status e pelos sinais sanitizados da API. Não registrar Referer, cookies, Authorization ou URLs de evento. Os headers no-referrer reduzem propagação pelo navegador.
+
+O probe manual public_privacy.py inspeciona SQL EF e sinais próprios ScrapBook.Events, sem habilitar coletor externo. Essa evidência não aprova spans automáticos de ASP.NET/Npgsql, baggage nem logs de ALB/WAF/Amplify: configurar redação e repetir os testes antes de habilitar exportação remota. [Contrato e limites](../fdd/FDD-Privacidade-Publica-do-Evento/FDD-Privacidade-Publica-do-Evento.md).
+
 | Sinal | Finalidade | Regra |
 | --- | --- | --- |
 | Métrica | Volume, taxa, latência, capacidade e atraso. | Agregação, unidade explícita e dimensões limitadas. |

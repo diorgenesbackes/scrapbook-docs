@@ -1,0 +1,37 @@
+[
+  {
+    "phase": "backend-build-1",
+    "result": "CS8604 e xUnit2028: Assert.Empty com StringValues",
+    "correction": "Verificar Count explicitamente."
+  },
+  {
+    "phase": "ui-check-1",
+    "result": "85/87 aprovados: duas expectativas exatas de fetch sem referrerPolicy",
+    "correction": "Incluir no-referrer nas expectativas do contrato."
+  },
+  {
+    "phase": "backend-unit-2",
+    "result": "145/146 aprovados: coleta List de métricas alterada durante enumeração paralela",
+    "correction": "ConcurrentBag no coletor existente, preservando paralelismo e asserções."
+  },
+  {
+    "phase": "privacy-http-1",
+    "result": "Operação PUT de terceiro não atingiu o resultado de autorização esperado; fixture omitia welcomeMessage obrigatório no contrato estrito.",
+    "correction": "Enviar payload completo e registrar status/código sanitizado na asserção; sem mudar autorização de produção."
+  },
+  {
+    "phase": "privacy-http-2",
+    "result": "Teste esperava 403 no GET com Origin externa, mas a regra existente restringe escritas; CORS omite Access-Control-Allow-Origin nas leituras.",
+    "correction": "Conferir ausência do header em GET e 403 em POST. Não ampliar o escopo da autenticação ou alterar o contrato existente."
+  },
+  {
+    "phase": "privacy-browser-3",
+    "result": "9/10 aprovados: WebKit não permite route.fulfill com status 302; erro do mecanismo de interceptação antes de testar a aplicação.",
+    "correction": "Servidor HTTP 302 real em loopback com CORS explícito, fechado em finally; verificar que houve resposta de redirect e nenhuma consulta privada."
+  },
+  {
+    "phase": "privacy-edge-4",
+    "result": "10/10 browser aprovados; asserção final exigia exatamente 502 para backend parado. O primeiro status diferente não foi registrado.",
+    "correction": "Aceitar erro 5xx de upstream e registrar o status observado; reteste final retornou 504, headers seguros e log estruturado sem URI. A revisão também reforçou a captura de cookies com Request.allHeaders, pois headers() omite headers sensíveis."
+  }
+]
