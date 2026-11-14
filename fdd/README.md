@@ -4,6 +4,7 @@ Este diretório reúne as especificações técnicas de funcionalidades, seguind
 
 | Funcionalidade | Versão / status | Escopo | Planejamento |
 | --- | --- | --- | --- |
+| [Recuperação da página pública](FDD-Recuperacao-da-Pagina-Publica/FDD-Recuperacao-da-Pagina-Publica.md) | 0.1, implementada/validada localmente; sem merge/deploy | Links inválidos, erros seguros e retry de consultas. | [33 subtarefas](https://trello.com/c/QhI07Cia), [relatório](FDD-Recuperacao-da-Pagina-Publica/relatorio.md) |
 | [Disponibilidade dos envios](FDD-Disponibilidade-dos-Envios/FDD-Disponibilidade-dos-Envios.md) | 0.1, implementada/validada localmente; sem merge/deploy | Estado do servidor, janela de Brasília e revalidação. | [35 subtarefas](https://trello.com/c/lDmeo2EA), [relatório](FDD-Disponibilidade-dos-Envios/relatorio.md) |
 | [Compartilhamento do evento](FDD-Compartilhamento-do-Evento/FDD-Compartilhamento-do-Evento.md) | 0.1, implementada/validada localmente; leitura física pendente | Link canônico, QR público, PNG e impressão. | [36 subtarefas](https://trello.com/c/yUy0Yq2f), [relatório](FDD-Compartilhamento-do-Evento/relatorio.md) |
 | [Apresentação pública](FDD-Apresentacao-Publica-do-Evento/FDD-Apresentacao-Publica-do-Evento.md) | 0.1, implementada/validada localmente; leitor real pendente | Nome, mensagem efetiva, capa padrão, fallback e revalidação. | [33 subtarefas](https://trello.com/c/rVrM2pbn), [relatório](FDD-Apresentacao-Publica-do-Evento/relatorio.md) |
