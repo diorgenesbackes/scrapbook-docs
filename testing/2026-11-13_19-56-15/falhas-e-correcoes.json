@@ -28,5 +28,13 @@
     "failure": "Reteste 11/12: falha somente no foco inicial com Tab padrão, antes do retry. Não foi perda observada após retry.",
     "fix": "Usar Option+Tab no WebKit, conforme a convenção já validada nas suítes do projeto.",
     "retest": "144 backend/85 frontend e execução final HTTP + 12 browser aprovados; detalhes nos relatórios."
+  },
+  {
+    "stage": "final-review-rate-limit-background",
+    "failure": "Inspeção identificou que estado stale ao ocultar aba com evento conhecido substituía a mensagem/cooldown visual de 429. O hook continuava bloqueando a consulta, mas a ação podia parecer disponível.",
+    "fix": "Preservar ReadFailure existente ao apresentar stale; cobertura de estado conhecido, ocultação/retorno e Retry-After.",
+    "retest": "Lint/build e 86 unitários frontend; HTTP e 12 jornadas de recuperação aprovados na UI final.",
+    "retest_started_at": "2026-11-13T23:50:36.763410+00:00",
+    "retest_finished_at": "2026-11-13T23:51:41.215225+00:00"
   }
 ]

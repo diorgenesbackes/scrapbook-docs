@@ -15,14 +15,14 @@ Situação técnica: 33 subtarefas prontas para To Deploy. A nova história não
 | Verificação | Resultado |
 | --- | --- |
 | Backend | Build sem avisos/erros; 144 unitários aprovados. Novos casos verificam Problem Details, correlação, log nominal e abandono sem falha de negócio. |
-| Frontend | Lint/build e 85 unitários aprovados; sinal composto, timeout, cooldown, foco, duplicação e limite de refresh vencido cobertos. |
+| Frontend | Lint/build e 86 unitários aprovados; sinal composto, timeout, cooldown, foco, duplicação e limite de refresh vencido cobertos. |
 | HTTP real | 13 verificações nomeadas e casos adicionais de correlação; 404, 500 por ACL, 503 por conexão e lock/timeout, com recuperação e hashes preservados após leituras. |
-| Recuperação no browser | 12 cenários aprovados em 21,7s; Chromium/WebKit, sem skips/retry automático. |
+| Recuperação no browser | 12 cenários aprovados em 22,1s; Chromium/WebKit, sem skips/retry automático. |
 | Regressões | Dez janela, dez QR, 11 apresentação/performance, seis acesso público e 14 gestão/health. Total com recuperação: 63 cenários distintos. |
 | Perfil 4G | Apresentação/capa/QR/janela prontos em 730/734/722/723/721ms; máximo 734ms, limite 3000ms. |
 | Carga de leitura pública | 1004 eventos, dez clientes/60s: 269467 consultas, zero erros, p95 3,343ms, máximo 26,761ms. |
 
-O lock real resultou em 503 sanitizado em 4,017s, dentro do orçamento de 5s; timeout local de 6s validado separadamente com resposta atrasada e cancelada. READ_TIMEOUT_MS não altera o orçamento do servidor nem o prazo de envio. Revogação/restauração de SELECT e NOLOGIN/LOGIN ocorreram somente no runtime/banco aleatórios, com finally e cleanup. Nenhuma permissão/role persistente foi alterada.
+O lock real resultou em 503 sanitizado em 4,018s, dentro do orçamento de 5s; timeout local de 6s validado separadamente com resposta atrasada e cancelada. READ_TIMEOUT_MS não altera o orçamento do servidor nem o prazo de envio. Revogação/restauração de SELECT e NOLOGIN/LOGIN ocorreram somente no runtime/banco aleatórios, com finally e cleanup. Nenhuma permissão/role persistente foi alterada.
 
 Chromium 158.0.8127.18/WebKit 27.2 emulados. Perfil 4G customizado: 10/2Mbps decimais, latência mínima de headers 80ms, CPU 4×, 390×844, cinco contextos novos/cache desligado. Gestão foi executada em dois laboratórios e contada uma vez. Não extrapolar para AWS, upload, aparelho físico ou rede comercial.
 
@@ -76,7 +76,9 @@ Chromium 158.0.8127.18/WebKit 27.2 emulados. Perfil 4G customizado: 10/2Mbps dec
 
 ## Falhas, limites e recuperação
 
-[Cinco grupos de ocorrências preservados](../../testing/2026-11-13_19-56-15/falhas-e-correcoes.json): sintaxe TS incompatível com erasableSyntaxOnly; dois testes antigos de sinal/texto; suposição de JSON em 400 do proxy; primeira rodada de browser 7/12; segundo reteste 11/12 pelo Tab inicial no perfil WebKit. Option+Tab segue a convenção já usada no projeto. O diagnóstico final não atribui essa falha inicial a perda de foco após retry. Execução final 12/12 aprovada sem retry automático; timestamps individuais não foram inventados.
+[Falhas e ajuste de revisão preservados](../../testing/2026-11-13_19-56-15/falhas-e-correcoes.json): sintaxe TS incompatível com erasableSyntaxOnly; dois testes antigos de sinal/texto; suposição de JSON em 400 do proxy; primeira rodada de browser 7/12; segundo reteste 11/12 pelo Tab inicial no perfil WebKit. Option+Tab segue a convenção já usada no projeto. O diagnóstico final não atribui essa falha inicial a perda de foco após retry. Uma revisão posterior identificou que ocultar uma aba com evento conhecido podia substituir visualmente o erro 429 por estado genérico, embora a consulta continuasse bloqueada. A UI agora preserva mensagem/cooldown; um novo unitário cobre ocultação, retorno e retry. Execução de recuperação final 12/12 aprovada sem retry automático; timestamps individuais não foram inventados.
+
+As regressões completas e a medição 4G usaram a UI 85097c2, registrada em [revisões iniciais](../../testing/2026-11-13_19-56-15/revisoes-regressoes-iniciais.json). O ajuste final b80ff23 altera somente a preservação do erro no estado stale: lint/build, 86 unitários e as 12 jornadas de recuperação foram retestados. Não se repetiu a carga da API, cujo código permaneceu 49a60a9, nem a medição da apresentação saudável; não afirmar equivalência binária entre os bundles. Os itens afetados voltaram a Doing/Test no Trello antes da conclusão.
 
 Capturas selecionadas foram inspecionadas. Teclado/árvore semântica não comprovam leitor real ou acessibilidade integral. Nginx local em 400 não comprova configuração de Amplify/WAF externos. Correlacionar erro do edge depende dos headers realmente disponíveis; não gerar referência fictícia. Logs/snapshots são amostras locais, sem alegar SLA.
 

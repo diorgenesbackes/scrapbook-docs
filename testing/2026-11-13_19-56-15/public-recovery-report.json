@@ -1,6 +1,6 @@
 {
   "story": "PP-STORY-005",
-  "started_at": "2026-11-13T23:26:28.113828+00:00",
+  "started_at": "2026-11-13T23:50:36.763410+00:00",
   "environment": "isolated-local-compose",
   "deployed": false,
   "physical_devices": false,
@@ -21,7 +21,7 @@
       "connection_outage_sanitized_and_recovered",
       "lock_timeout_sanitized_and_recovered"
     ],
-    "timeout_seconds": 4.017,
+    "timeout_seconds": 4.018,
     "read_only": true
   },
   "browser": {
@@ -35,5 +35,5 @@
   },
   "metadata_restored": true,
   "logs_redacted": true,
-  "finished_at": "2026-11-13T23:27:31.693354+00:00"
+  "finished_at": "2026-11-13T23:51:41.215225+00:00"
 }

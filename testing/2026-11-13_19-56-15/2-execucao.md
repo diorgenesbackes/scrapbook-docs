@@ -10,12 +10,12 @@
 
 ## Revisões e comandos
 
-[Revisões finais](revisoes.json): service 49a60a9, UI 85097c2, infrastructure db11a5a e tests 153640f. Documentação em commit posterior da mesma feature.
+[Revisões finais](revisoes.json): service 49a60a9, UI b80ff23, infrastructure db11a5a e tests 153640f. Documentação em commit posterior da mesma feature.
 
 - `dotnet build ScrapBook.sln --no-restore --disable-build-servers` e `dotnet test ScrapBook.sln --no-build --no-restore`: zero avisos/erros, 144 unitários aprovados.
-- `npm run check`: lint/build e 85 testes aprovados na versão final. Alterações posteriores de interface/fallback foram construídas em Docker e retestadas em browser.
+- `npm run check`: lint/build e 86 testes aprovados na versão final. Alterações posteriores de interface/fallback foram construídas em Docker e retestadas em browser.
 - `python3 scripts/stack_local.py build`: imagens finais, sem subir a stack persistente.
-- `python3 public_recovery.py`: [resultado original](public-recovery-report.json), 23:26:28–23:27:31 UTC. HTTP: 13 verificações nomeadas, correlação adicional, ACL/NOLOGIN/lock e recuperação. Timeout de lock 4,017s. Doze testes browser aprovados em 21,7s, sem skips/retry automático. [Resumo](recovery-browser-summary.json).
+- `python3 public_recovery.py`: [resultado original](public-recovery-report.json), 23:50:36–23:51:41 UTC. HTTP: 13 verificações nomeadas, correlação adicional, ACL/NOLOGIN/lock e recuperação. Timeout de lock 4,018s. Doze testes browser aprovados em 22,1s, sem skips/retry automático. [Resumo](recovery-browser-summary.json).
 - `dotnet build probes/ScrapBook.Probes.csproj --no-restore --disable-build-servers`: aprovado, atualizando o host exclusivo temporal para a API corrente.
 - `python3 submission_window.py`: [regressão temporal](regressao-janela.json), 36 casos HTTP e dez browser aprovados, incluindo parada/retorno de service sem extensão de prazo. Host de testes por arquivo privado, sem controle de relógio na API de produção.
 - `python3 event_sharing.py`: [regressão de compartilhamento](regressao-compartilhamento.json), dez browser aprovados; dois responsáveis/outsider, origem/Host, QR/PNG/print digital e leitura sem escrita preservados.
@@ -28,6 +28,10 @@ Total: 63 cenários distintos (12 recuperação + 10 janela + 10 QR + 11 apresen
 ## Falhas e recuperação observada
 
 [Registro](falhas-e-correcoes.json): TS1294 no construtor do novo erro, corrigido com campo explícito; 69/71 unitários iniciais, dois exigindo sinal original/texto técnico; JSON esperado em rejeição %GG do proxy; primeira rodada browser 7/12 e reteste 11/12. Correções: fallback estático Nginx 400, timeout do matcher para aguardar os 6s e Option+Tab no WebKit. A falha WebKit era no foco inicial, antes do retry, não perda observada após retry. Versão final 12/12; nenhum resultado foi aprovado por retry automático.
+
+Uma revisão final identificou que ocultar/retornar a aba com evento conhecido e 429 mantinha o bloqueio de consultas no hook, mas podia perder a indicação visual de espera. O erro/cooldown agora é preservado também em stale, com novo unitário e 86 aprovados. Os itens 019/028/033 voltaram a Doing/Test para o ajuste e a documentação. A UI final b80ff23 passou novamente nas 12 jornadas de recuperação.
+
+As regressões completas/perfil 4G usaram a UI 85097c2, com [revisões iniciais](revisoes-regressoes-iniciais.json). O ajuste final atinge somente a exibição do erro em stale; não repetiu a medição saudável ou a carga da API 49a60a9 inalterada. As revisões finais não implicam bundles binariamente iguais aos iniciais.
 
 API direta aceita o caminho %GG até seu handler e retorna 404 sanitizado; o Nginx o recusa antes da API com 400. Documento inválido recebe HTML estático em português sem scripts/URI refletida, mantendo status/no-store. API 400 JSON continua sem interceptação pelo proxy. Isso não equivale a configurar WAF/Amplify remotos.
 
