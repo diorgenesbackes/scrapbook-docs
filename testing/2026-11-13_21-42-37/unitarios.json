@@ -1,0 +1,22 @@
+{
+  "backend": {
+    "command": "dotnet build ScrapBook.sln --no-restore --disable-build-servers; dotnet test ScrapBook.sln --no-build --no-restore",
+    "passed": 146,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 0,
+    "errors": 0
+  },
+  "frontend": {
+    "command": "npm run check",
+    "passed": 87,
+    "failed": 0,
+    "lint": "passed",
+    "build": "passed"
+  },
+  "probes": {
+    "command": "dotnet build probes/ScrapBook.Probes.csproj --no-restore --disable-build-servers",
+    "warnings": 0,
+    "errors": 0
+  }
+}

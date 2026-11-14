@@ -1,0 +1,39 @@
+{
+  "story": "PP-STORY-005",
+  "started_at": "2026-11-14T00:59:03.554202+00:00",
+  "environment": "isolated-local-compose",
+  "deployed": false,
+  "physical_devices": false,
+  "real_screen_reader": false,
+  "http": {
+    "cases": [
+      "empty",
+      "empty_slash",
+      "malformed",
+      "long",
+      "encoded_slash",
+      "extra_segment",
+      "invalid_escape_proxy_transport_400",
+      "invalid_escape",
+      "absent_canonical",
+      "invalid_utf8_api_or_transport_404",
+      "unexpected_provider_error_sanitized_and_recovered",
+      "connection_outage_sanitized_and_recovered",
+      "lock_timeout_sanitized_and_recovered"
+    ],
+    "timeout_seconds": 4.021,
+    "read_only": true
+  },
+  "browser": {
+    "tests": 12,
+    "projects": [
+      "chromium-desktop",
+      "webkit-mobile"
+    ],
+    "physical_devices": false,
+    "real_screen_reader": false
+  },
+  "metadata_restored": true,
+  "logs_redacted": true,
+  "finished_at": "2026-11-14T01:00:06.992978+00:00"
+}

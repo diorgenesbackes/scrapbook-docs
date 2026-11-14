@@ -4,6 +4,7 @@ Este diretório reúne as especificações técnicas de funcionalidades, seguind
 
 | Funcionalidade | Versão / status | Escopo | Planejamento |
 | --- | --- | --- | --- |
+| [Privacidade pública](FDD-Privacidade-Publica-do-Evento/FDD-Privacidade-Publica-do-Evento.md) | 0.1, implementada/validada localmente; sem merge/deploy | Contrato mínimo, isolamento, Referer, cache e sinais sanitizados. | [35 subtarefas](https://trello.com/c/IV6uDrPq), [relatório](FDD-Privacidade-Publica-do-Evento/relatorio.md), [matriz das seis histórias](FDD-Privacidade-Publica-do-Evento/matriz-de-aceite-publico.md) |
 | [Recuperação da página pública](FDD-Recuperacao-da-Pagina-Publica/FDD-Recuperacao-da-Pagina-Publica.md) | 0.1, implementada/validada localmente; sem merge/deploy | Links inválidos, erros seguros e retry de consultas. | [33 subtarefas](https://trello.com/c/QhI07Cia), [relatório](FDD-Recuperacao-da-Pagina-Publica/relatorio.md) |
 | [Disponibilidade dos envios](FDD-Disponibilidade-dos-Envios/FDD-Disponibilidade-dos-Envios.md) | 0.1, implementada/validada localmente; sem merge/deploy | Estado do servidor, janela de Brasília e revalidação. | [35 subtarefas](https://trello.com/c/lDmeo2EA), [relatório](FDD-Disponibilidade-dos-Envios/relatorio.md) |
 | [Compartilhamento do evento](FDD-Compartilhamento-do-Evento/FDD-Compartilhamento-do-Evento.md) | 0.1, implementada/validada localmente; leitura física pendente | Link canônico, QR público, PNG e impressão. | [36 subtarefas](https://trello.com/c/yUy0Yq2f), [relatório](FDD-Compartilhamento-do-Evento/relatorio.md) |

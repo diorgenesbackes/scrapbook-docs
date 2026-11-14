@@ -1,0 +1,124 @@
+{
+  "story": "PP-STORY-006",
+  "started_at": "2026-11-14T01:01:08.425083+00:00",
+  "deployed": false,
+  "environment": "isolated-local-compose",
+  "physical_devices": false,
+  "real_screen_reader": false,
+  "remote_telemetry": false,
+  "openapi_exact_schemas": true,
+  "temporal_contracts": {
+    "cases": 12,
+    "states": [
+      "not_open",
+      "open",
+      "closed"
+    ],
+    "same_before_after_private_records": true,
+    "gallery_modes": [
+      "immediate",
+      "scheduled"
+    ]
+  },
+  "fixtures": {
+    "confirmed_texts": 2,
+    "provisional_photos": 2,
+    "private_storage_metadata": 2,
+    "constraints_enabled": true,
+    "actual_s3_files": false
+  },
+  "identity_contracts": [
+    {
+      "actor": "anonymous",
+      "gallery_mode": "immediate",
+      "public_status": 200,
+      "private_status": 401
+    },
+    {
+      "actor": "anonymous",
+      "gallery_mode": "scheduled",
+      "public_status": 200,
+      "private_status": 401
+    },
+    {
+      "actor": "owner",
+      "gallery_mode": "immediate",
+      "public_status": 200,
+      "private_status": 200
+    },
+    {
+      "actor": "owner",
+      "gallery_mode": "scheduled",
+      "public_status": 200,
+      "private_status": 200
+    },
+    {
+      "actor": "outsider",
+      "gallery_mode": "immediate",
+      "public_status": 200,
+      "private_status": 404
+    },
+    {
+      "actor": "outsider",
+      "gallery_mode": "scheduled",
+      "public_status": 200,
+      "private_status": 404
+    }
+  ],
+  "query_and_signals": {
+    "probe": "public_privacy",
+    "passed": true,
+    "sql": "SELECT e.code, e.name, e.welcome_message, e.starts_at\nFROM events.events AS e\nWHERE e.code = @code\nLIMIT 2",
+    "columns": [
+      "code",
+      "name",
+      "starts_at",
+      "welcome_message"
+    ],
+    "spans": [
+      {
+        "operation": "events.sql.public_get",
+        "tags": {
+          "module": "events",
+          "dependency": "postgresql"
+        }
+      }
+    ],
+    "measurements": [
+      {
+        "instrument": "scrapbook.events.dependency.duration_ms",
+        "tags": {
+          "dependency": "postgresql",
+          "operation": "events.sql.public_get",
+          "outcome": "success",
+          "environment": "Testing"
+        }
+      }
+    ],
+    "automatic_exporters": false,
+    "remote_tracing_validated": false
+  },
+  "browser": {
+    "tests": 10,
+    "projects": [
+      "chromium-desktop",
+      "webkit-mobile"
+    ],
+    "retries": 0
+  },
+  "edge_signals": {
+    "events": 187,
+    "fields": [
+      "component",
+      "operation",
+      "method",
+      "status",
+      "durationSeconds"
+    ],
+    "upstream_error_status": 504,
+    "safe_upstream_error_observed": true,
+    "arbitrary_method_categorized": true
+  },
+  "read_only_snapshots": true,
+  "finished_at": "2026-11-14T01:02:33.154211+00:00"
+}

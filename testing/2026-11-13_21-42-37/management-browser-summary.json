@@ -1,0 +1,13 @@
+{
+  "source": "Saída de python3 public_presentation.py: 14 passed (7.2s), execução encerrada com exit 0",
+  "tests": 14,
+  "passed": 14,
+  "skipped": 0,
+  "retries": 0,
+  "projects": [
+    "chromium-desktop/Asia-Tokyo",
+    "webkit-mobile/America-Los_Angeles"
+  ],
+  "physical_devices": false,
+  "real_screen_reader": false
+}
