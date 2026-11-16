@@ -1,0 +1,724 @@
+[
+  {
+    "id": "S01",
+    "name": "Boas-vindas",
+    "audience": "shared",
+    "requirements": "FR-001, FR-003",
+    "states": [
+      "default",
+      "loading",
+      "error"
+    ],
+    "layout": "Entrada breve, valor do produto, entrar/criar conta, exemplo visual sintético.",
+    "shell": "auth",
+    "next": [
+      "S02",
+      "S03",
+      "S09"
+    ]
+  },
+  {
+    "id": "S02",
+    "name": "Entrar",
+    "audience": "account",
+    "requirements": "FR-001",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "expired",
+      "rate-limit"
+    ],
+    "layout": "Ponte para login gerenciado; identidade, e-mail/senha, recuperação e retorno seguro.",
+    "shell": "auth",
+    "next": [
+      "S03",
+      "S05",
+      "S08",
+      "S09"
+    ]
+  },
+  {
+    "id": "S03",
+    "name": "Criar conta",
+    "audience": "account",
+    "requirements": "FR-001",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "success"
+    ],
+    "layout": "Nome/e-mail/senha e regra mínima; estrutura visual para Cognito.",
+    "shell": "auth",
+    "next": [
+      "S04",
+      "S02"
+    ]
+  },
+  {
+    "id": "S04",
+    "name": "Confirmar e-mail",
+    "audience": "account",
+    "requirements": "FR-001, FR-002 + HLD",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "expired",
+      "success"
+    ],
+    "layout": "Confirmar cadastro ou novo endereço; envio/reenvio de código sob regras do provedor.",
+    "shell": "auth",
+    "next": [
+      "S02",
+      "S07"
+    ]
+  },
+  {
+    "id": "S05",
+    "name": "Recuperar acesso",
+    "audience": "account",
+    "requirements": "FR-002 + HLD",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "rate-limit",
+      "success"
+    ],
+    "layout": "Solicitar código por e-mail, resposta genérica e caminho para definir nova senha.",
+    "shell": "auth",
+    "next": [
+      "S06",
+      "S02"
+    ]
+  },
+  {
+    "id": "S06",
+    "name": "Definir nova senha",
+    "audience": "account",
+    "requirements": "FR-002 + HLD",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "expired",
+      "success"
+    ],
+    "layout": "Código de uma hora e nova senha; depois revogar sessões e entrar novamente.",
+    "shell": "auth",
+    "next": [
+      "S02",
+      "S05"
+    ]
+  },
+  {
+    "id": "S07",
+    "name": "Minha conta",
+    "audience": "account",
+    "requirements": "FR-002",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "success",
+      "expired"
+    ],
+    "layout": "Nome, e-mail verificado, trocar e-mail/senha com senha atual; sem exclusão de conta na UI.",
+    "shell": "account",
+    "next": [
+      "S04",
+      "S02",
+      "S09"
+    ]
+  },
+  {
+    "id": "S08",
+    "name": "Retorno da autenticação",
+    "audience": "account",
+    "requirements": "FR-001 + HLD",
+    "states": [
+      "loading",
+      "error",
+      "expired",
+      "success"
+    ],
+    "layout": "Concluir retorno e sessão; falha oferece entrar novamente sem expor tokens.",
+    "shell": "auth",
+    "next": [
+      "S02",
+      "S09"
+    ]
+  },
+  {
+    "id": "S09",
+    "name": "Meus eventos",
+    "audience": "owner",
+    "requirements": "FR-003",
+    "states": [
+      "default",
+      "loading",
+      "empty",
+      "error",
+      "expired"
+    ],
+    "layout": "Título, novo evento, cards autorizados sem conteúdo bloqueado, paginação.",
+    "shell": "owner",
+    "next": [
+      "S10",
+      "S11",
+      "S07"
+    ]
+  },
+  {
+    "id": "S10",
+    "name": "Criar evento",
+    "audience": "owner",
+    "requirements": "FR-003, FR-017",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "success",
+      "uncertain"
+    ],
+    "layout": "Nome/data civil, boas-vindas, capa e acesso; futuro padrão e sugestão de um ano.",
+    "shell": "form",
+    "next": [
+      "S09",
+      "S11",
+      "S12"
+    ]
+  },
+  {
+    "id": "S11",
+    "name": "Configuração do evento",
+    "audience": "owner",
+    "requirements": "FR-003, FR-016, FR-017",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "locked",
+      "conflict",
+      "uncertain",
+      "success"
+    ],
+    "layout": "Informações e abertura em formulários separados; permissão operacional sem revelar recebimentos.",
+    "shell": "owner",
+    "next": [
+      "S12",
+      "S13",
+      "S15",
+      "S28",
+      "S29"
+    ]
+  },
+  {
+    "id": "S12",
+    "name": "Personalizar capa",
+    "audience": "owner",
+    "requirements": "FR-003, FR-011, FR-016",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "locked",
+      "success"
+    ],
+    "layout": "Escolher capa, prévia e restaurar padrão; sem prometer crop/editor. Limites aguardam decisão.",
+    "shell": "form",
+    "next": [
+      "S10",
+      "S11"
+    ]
+  },
+  {
+    "id": "S13",
+    "name": "Convidar responsável",
+    "audience": "owner",
+    "requirements": "FR-004, FR-016",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "locked",
+      "success"
+    ],
+    "layout": "Até dois responsáveis equivalentes; gerar/substituir convite e oferecer e-mail/QR.",
+    "shell": "owner",
+    "next": [
+      "S14",
+      "S11"
+    ]
+  },
+  {
+    "id": "S14",
+    "name": "Aceitar convite",
+    "audience": "account",
+    "requirements": "FR-004, FR-016",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "expired",
+      "used",
+      "replaced",
+      "full",
+      "locked",
+      "success"
+    ],
+    "layout": "Identificar evento, entrar/criar conta e aceitar; estados inválidos sem permitir vínculo.",
+    "shell": "auth",
+    "next": [
+      "S02",
+      "S03",
+      "S11"
+    ]
+  },
+  {
+    "id": "S15",
+    "name": "Compartilhar evento e imprimir QR",
+    "audience": "owner",
+    "requirements": "FR-005",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "print"
+    ],
+    "layout": "Link público, copiar, QR/link para baixar/imprimir; QR real pertence à implementação.",
+    "shell": "owner",
+    "next": [
+      "S16",
+      "S11"
+    ]
+  },
+  {
+    "id": "S16",
+    "name": "Página dos convidados",
+    "audience": "guest",
+    "requirements": "FR-005, FR-006",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "before",
+      "closed"
+    ],
+    "layout": "Capa/nome/boas-vindas, depoimento/momento, QR e janela; sem galeria pública.",
+    "shell": "guest",
+    "next": [
+      "S17",
+      "S18",
+      "S19"
+    ]
+  },
+  {
+    "id": "S17",
+    "name": "Identificação e concordância",
+    "audience": "guest",
+    "requirements": "FR-007",
+    "states": [
+      "default",
+      "error",
+      "returning",
+      "changed-name"
+    ],
+    "layout": "Nome/apelido por evento, aviso e check obrigatório. Alterar nome reinicia concordância.",
+    "shell": "guest",
+    "next": [
+      "S18",
+      "S19",
+      "S25"
+    ]
+  },
+  {
+    "id": "S18",
+    "name": "Escolher depoimento",
+    "audience": "guest",
+    "requirements": "FR-008, FR-011",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "closed"
+    ],
+    "layout": "Foto, vídeo, áudio ou texto, um formato por envio.",
+    "shell": "guest",
+    "next": [
+      "S20",
+      "S21",
+      "S22",
+      "S23"
+    ]
+  },
+  {
+    "id": "S19",
+    "name": "Escolher momento",
+    "audience": "guest",
+    "requirements": "FR-009, FR-011",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "closed"
+    ],
+    "layout": "Até dez fotos ou um vídeo; informar limites junto à escolha.",
+    "shell": "guest",
+    "next": [
+      "S20",
+      "S21"
+    ]
+  },
+  {
+    "id": "S20",
+    "name": "Fotografar ou selecionar fotos",
+    "audience": "guest",
+    "requirements": "FR-008, FR-009, FR-010, FR-011",
+    "states": [
+      "default",
+      "permission",
+      "unsupported",
+      "error",
+      "selected",
+      "limit"
+    ],
+    "layout": "Depoimento uma foto; momentos até dez; seleção é alternativa à câmera.",
+    "shell": "capture",
+    "next": [
+      "S25",
+      "S18",
+      "S19"
+    ]
+  },
+  {
+    "id": "S21",
+    "name": "Gravar ou selecionar vídeo",
+    "audience": "guest",
+    "requirements": "FR-008, FR-009, FR-010, FR-011",
+    "states": [
+      "default",
+      "recording",
+      "permission",
+      "unsupported",
+      "error",
+      "limit"
+    ],
+    "layout": "Depoimento cinco minutos; momento um minuto; máximo 500 MB; parar no limite e revisar.",
+    "shell": "capture",
+    "next": [
+      "S25"
+    ]
+  },
+  {
+    "id": "S22",
+    "name": "Gravar ou selecionar áudio",
+    "audience": "guest",
+    "requirements": "FR-008, FR-010, FR-011",
+    "states": [
+      "default",
+      "recording",
+      "permission",
+      "unsupported",
+      "error",
+      "limit"
+    ],
+    "layout": "Áudio de depoimento, cinco minutos/50 MB; mostrar restante e alternativa de arquivo.",
+    "shell": "capture",
+    "next": [
+      "S25"
+    ]
+  },
+  {
+    "id": "S23",
+    "name": "Escrever depoimento",
+    "audience": "guest",
+    "requirements": "FR-008, FR-011, FR-012",
+    "states": [
+      "default",
+      "near-limit",
+      "limit",
+      "error"
+    ],
+    "layout": "Texto até cinco mil; contador só a quinhentos restantes; preservar edição/remoção.",
+    "shell": "guest",
+    "next": [
+      "S25"
+    ]
+  },
+  {
+    "id": "S24",
+    "name": "Adicionar legenda",
+    "audience": "guest",
+    "requirements": "FR-011, FR-012",
+    "states": [
+      "default",
+      "expanded",
+      "near-limit",
+      "limit",
+      "error"
+    ],
+    "layout": "Abrir por escolha explícita, até quinhentos; contador a cem; legenda única do conjunto.",
+    "shell": "guest",
+    "next": [
+      "S25"
+    ]
+  },
+  {
+    "id": "S25",
+    "name": "Revisar antes de enviar",
+    "audience": "guest",
+    "requirements": "FR-007, FR-013, FR-014",
+    "states": [
+      "default",
+      "preview-error",
+      "error",
+      "closed"
+    ],
+    "layout": "Prévia, nome, concordância e legenda; refazer/trocar/editar/descartar e Enviar explícito.",
+    "shell": "guest",
+    "next": [
+      "S17",
+      "S24",
+      "S26",
+      "D01"
+    ]
+  },
+  {
+    "id": "S26",
+    "name": "Enviar e confirmar recebimento",
+    "audience": "guest",
+    "requirements": "FR-006, FR-009, FR-014",
+    "states": [
+      "default",
+      "progress",
+      "validating",
+      "offline",
+      "error",
+      "uncertain",
+      "deadline",
+      "success"
+    ],
+    "layout": "Transferência real versus validação; mesma tentativa no retry; conjunto indivisível; prazo pelo servidor.",
+    "shell": "guest",
+    "next": [
+      "S27",
+      "S25"
+    ]
+  },
+  {
+    "id": "S27",
+    "name": "Recebimento confirmado",
+    "audience": "guest",
+    "requirements": "FR-015",
+    "states": [
+      "default",
+      "closed"
+    ],
+    "layout": "Somente confirmação e próximos envios quando permitidos; sem prévia, link de conteúdo ou excluir.",
+    "shell": "guest",
+    "next": [
+      "S18",
+      "S19",
+      "S16"
+    ]
+  },
+  {
+    "id": "S28",
+    "name": "Lembranças guardadas",
+    "audience": "owner",
+    "requirements": "FR-017, FR-018",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "opening"
+    ],
+    "layout": "Somente data e contagem dias/horas/minutos; zero nomes/contagens/miniaturas no DOM.",
+    "shell": "owner",
+    "next": [
+      "S29",
+      "S11"
+    ]
+  },
+  {
+    "id": "S29",
+    "name": "Galeria liberada",
+    "audience": "owner",
+    "requirements": "FR-018, FR-019, FR-020",
+    "states": [
+      "default",
+      "loading",
+      "empty",
+      "error",
+      "processing",
+      "unavailable",
+      "blocked"
+    ],
+    "layout": "Tudo/Depoimentos/Momentos; primeiro→último; dez por página/cursor; autores e legendas autorizados.",
+    "shell": "owner",
+    "next": [
+      "S30",
+      "S11",
+      "S28"
+    ]
+  },
+  {
+    "id": "S30",
+    "name": "Visualização em sequência",
+    "audience": "owner",
+    "requirements": "FR-019, FR-020",
+    "states": [
+      "default",
+      "photo",
+      "video",
+      "audio",
+      "text",
+      "processing",
+      "unavailable",
+      "expired-url",
+      "blocked"
+    ],
+    "layout": "Próximo/Anterior manuais; Reproduzir explícito; sem autoplay/download/excluir/avanço automático.",
+    "shell": "viewer",
+    "next": [
+      "S29",
+      "S28"
+    ]
+  },
+  {
+    "id": "S31",
+    "name": "Convite por e-mail",
+    "audience": "email",
+    "requirements": "FR-004, FR-021",
+    "states": [
+      "default",
+      "failed",
+      "expired"
+    ],
+    "layout": "E-mail de convite com prazo, evento, aceite e link alternativo; sem lembranças.",
+    "shell": "email",
+    "next": [
+      "S14"
+    ]
+  },
+  {
+    "id": "S32",
+    "name": "Código e confirmação por e-mail",
+    "audience": "email",
+    "requirements": "FR-001, FR-002, FR-021 + HLD",
+    "states": [
+      "default",
+      "expired",
+      "failed"
+    ],
+    "layout": "Template gerenciado Cognito: código/validade; não reutilizar o link antigo de trinta minutos.",
+    "shell": "email",
+    "next": [
+      "S04",
+      "S06"
+    ]
+  },
+  {
+    "id": "S33",
+    "name": "Lembranças disponíveis por e-mail",
+    "audience": "email",
+    "requirements": "FR-017, FR-018, FR-021",
+    "states": [
+      "default",
+      "failed"
+    ],
+    "layout": "Informar abertura e acesso autenticado; sem miniaturas, remetentes ou contagem.",
+    "shell": "email",
+    "next": [
+      "S02",
+      "S29"
+    ]
+  },
+  {
+    "id": "S34",
+    "name": "Alerta técnico por e-mail",
+    "audience": "operations",
+    "requirements": "FR-020, FR-022",
+    "states": [
+      "default",
+      "failed"
+    ],
+    "layout": "Ambiente, horário UTC, código, correlação e ação de runbook; sem conteúdo/autor/URL utilizável.",
+    "shell": "email",
+    "next": [
+      "S35"
+    ]
+  },
+  {
+    "id": "S35",
+    "name": "Indisponibilidade e suporte",
+    "audience": "shared",
+    "requirements": "FR-022 e RNF",
+    "states": [
+      "default",
+      "offline",
+      "not-found",
+      "forbidden",
+      "error",
+      "rate-limit",
+      "maintenance"
+    ],
+    "layout": "Mensagem segura e ação de recuperação; correlação copiável. Monitoramento permanece externo.",
+    "shell": "status",
+    "next": [
+      "S01",
+      "S09",
+      "S16"
+    ]
+  },
+  {
+    "id": "D01",
+    "name": "Sair ou descartar rascunho",
+    "audience": "shared",
+    "requirements": "FR-013",
+    "states": [
+      "default"
+    ],
+    "layout": "Diálogo destrutivo local: Você pode perder o trabalho em andamento. Permanecer/Sair e descartar.",
+    "shell": "dialog",
+    "next": [
+      "S25"
+    ]
+  },
+  {
+    "id": "D02",
+    "name": "Alterar para abertura futura",
+    "audience": "owner",
+    "requirements": "FR-017, FR-018",
+    "states": [
+      "default",
+      "error",
+      "pending"
+    ],
+    "layout": "Informar bloqueio das autorizações e limite do conteúdo já entregue; confirmação explícita.",
+    "shell": "dialog",
+    "next": [
+      "S11",
+      "S28"
+    ]
+  },
+  {
+    "id": "D03",
+    "name": "Sair da conta",
+    "audience": "account",
+    "requirements": "FR-001",
+    "states": [
+      "default",
+      "pending",
+      "error"
+    ],
+    "layout": "Sair revoga sessão atual; feedback e caminho para nova entrada.",
+    "shell": "dialog",
+    "next": [
+      "S02"
+    ]
+  }
+]

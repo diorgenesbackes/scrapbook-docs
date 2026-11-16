@@ -1,0 +1,142 @@
+[
+  {
+    "foreground": "ink",
+    "background": "surface",
+    "ratio": 14.93,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "ink",
+    "background": "canvas",
+    "ratio": 13.7,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "muted",
+    "background": "surface",
+    "ratio": 5.9,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "muted",
+    "background": "canvas",
+    "ratio": 5.41,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "surface",
+    "background": "primary",
+    "ratio": 14.93,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "surface",
+    "background": "primary-hover",
+    "ratio": 10.37,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "surface",
+    "background": "primary-active",
+    "ratio": 17.92,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "ink",
+    "background": "selected",
+    "ratio": 12.75,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "success",
+    "background": "success-bg",
+    "ratio": 6.23,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "warning",
+    "background": "warning-bg",
+    "ratio": 6.36,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "error",
+    "background": "error-bg",
+    "ratio": 5.77,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "control-border",
+    "background": "surface",
+    "ratio": 3.69,
+    "minimum": 3,
+    "passed": true
+  },
+  {
+    "foreground": "control-border",
+    "background": "canvas",
+    "ratio": 3.39,
+    "minimum": 3,
+    "passed": true
+  },
+  {
+    "foreground": "focus",
+    "background": "surface",
+    "ratio": 6.52,
+    "minimum": 3,
+    "passed": true
+  },
+  {
+    "foreground": "focus",
+    "background": "canvas",
+    "ratio": 5.98,
+    "minimum": 3,
+    "passed": true
+  },
+  {
+    "foreground": "disabled",
+    "background": "disabled-bg",
+    "ratio": 4.73,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "surface",
+    "background": "error",
+    "ratio": 6.59,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "surface",
+    "background": "error-hover",
+    "ratio": 8.81,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "foreground": "control-border",
+    "background": "selected",
+    "ratio": 3.15,
+    "minimum": 3,
+    "passed": true
+  },
+  {
+    "foreground": "focus",
+    "background": "selected",
+    "ratio": 5.57,
+    "minimum": 3,
+    "passed": true
+  }
+]
