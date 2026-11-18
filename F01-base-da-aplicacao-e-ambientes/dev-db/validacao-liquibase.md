@@ -22,3 +22,13 @@ A primeira execução identificou que o cliente psql incluía o resumo do comand
 ## Alcance
 
 A validação cobre o changelog `f01-story-001-base` e as permissões locais de banco para o modelo inicial. Os procedimentos e os detalhes do catálogo estão no [modelo vigente](modelo-vigente.md). Configuração de ambientes AWS, validações da aplicação e promoção são acompanhadas nas histórias correspondentes.
+
+## Revalidação após o code review
+
+`python3 tests/test_baseline.py` concluiu com código 0 e **14 cenários aprovados** em PostgreSQL 18.6 descartável e Liquibase 4.33.0. Os oito cenários originais continuaram passando e seis novos testes cobrem as regressões abaixo.
+
+| Achado | Resultado observado |
+| --- | --- |
+| Privilégios preexistentes | O bootstrap recusou associação a uma role de leitura ampla e defaults de SELECT globais ou do schema para PUBLIC. A instalação abortou quando um grant padrão posterior ampliou as permissões de runtime. A reaplicação recusou SELECT indevido sobre uma coluna no controle do Liquibase. |
+| Evolução de catálogo | Um changeset seguinte registrou sua geração na mesma transação do DDL. Repetir `update` preservou os dois registros no histórico. Reverter a evolução restaurou a assinatura e o histórico da geração anterior e permitiu novo `update`. |
+| Sequências identity | Mudar o incremento da sequência bloqueou `update` e rollback, preservando as 24 tabelas e o histórico. Inserir dados e avançar a sequência normalmente preservou a validade da assinatura. |
