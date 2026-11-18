@@ -45,3 +45,13 @@ A validação cobre o changelog `f01-story-001-base` e as permissões locais de 
 | Aplicação e reversão completas | Dois ciclos da mesma evolução preservaram as assinaturas históricas. Após cada rollback, o catálogo conferiu com a assinatura inicial e o histórico voltou a conter somente o changeset inicial. |
 
 Uma verificação adicional confirmou os comandos documentados com descoberta automática do JDK e do driver. `update-sql` gerou o SQL sem criar tabelas de aplicação. Após a instalação, `status` informou que o banco estava atualizado e o histórico manteve um único registro.
+
+## Revalidação dos três achados técnicos
+
+A execução direcionada passou com 4 testes. A suíte completa `python3 tests/test_baseline.py` concluiu com código 0 e **18 testes aprovados** em PostgreSQL 18.6 descartável e Liquibase 4.33.0.
+
+| Cenário | Resultado observado |
+| --- | --- |
+| Mudança no modo de persistência | Mudar `audit_entries` para `UNLOGGED` alterou a assinatura e bloqueou `update` e rollback. As 24 tabelas e o histórico foram preservados. Restaurar `LOGGED` recuperou a assinatura original e permitiu reaplicar. |
+| Histórico alheio antes da instalação inicial | Um changelog sintético foi executado pelo Liquibase em banco sem tabelas de aplicação. A instalação da base foi recusada e o registro anterior foi preservado. O fluxo normal em banco vazio passou por `validate`, `update-sql` e instalação. O rollback da base vazia e a reaplicação também passaram. |
+| Grants em controles fora da matriz | A pré-validação recusou um grant de tabela em `databasechangelog` e um grant de coluna em `databasechangeloglock` para uma role fora da matriz. O inventário e o histórico foram preservados. A reaplicação voltou a passar após as revogações. |

@@ -61,3 +61,53 @@ Os 14 testes versionados passaram. As duas sondagens acima confirmaram os proble
 ## Reteste da segunda revisão
 
 Os dois achados passaram no reteste local. O comando de migração verifica privilégios por JDBC antes de iniciar a CLI. A reversão compara o catálogo resultante com a assinatura histórica do destino dentro da transação do changeset. A suíte completa passou com 15 testes, incluindo a recusa da instalação antes de criar os controles e a preservação do histórico após uma tentativa de rollback incompleto. [Evidência do reteste](../dev-db/validacao-liquibase.md#revalidação-após-a-segunda-revisão)
+
+## Terceira revisão
+
+**Parecer. Solicitar alterações antes do push.** Candidatos `dbdbf6f` no Liquibase e `318c2fe` na documentação, na branch `feature/F01-STORY-001`. As bases observadas continuam `origin/dev` `fc0b2d1` e `43d6685`. A revisão usou a spec da F01 disponível no diretório de trabalho e verificou o provisionamento, os controles do Liquibase, a assinatura do catálogo, a instalação e a reversão. A spec e o plano seguem como arquivos locais, com alterações locais já existentes no PRD e no índice de documentação. [Spec da F01](../spec.md#6-modelo-de-dados)
+
+### P2. A assinatura aceita uma tabela de auditoria sem WAL
+
+A assinatura da relação omite `pg_class.relpersistence`. Em um PostgreSQL descartável, mudar `audit_entries` de permanente para `UNLOGGED` manteve a mesma assinatura. Tanto o `update` quanto o rollback da base vazia terminaram com código 0. A reaplicação pode confirmar um estado em que os registros da auditoria podem ser perdidos após uma parada abrupta. A lacuna vem da assinatura original e também afeta a comparação com assinaturas históricas. Incluir a persistência das relações na assinatura e verificar que a mudança bloqueia a reaplicação e a reversão. [Assinatura de relações, linha 29](../../../scrapbook-liquibase/changelogs/sprint-1/sql/007-assinatura-do-catalogo.sql#L29) · [Integridade da auditoria](../../guidelines/observabilidade.md#integridade-e-correção-da-auditoria)
+
+### P2. A instalação aceita histórico de outro changelog
+
+O ramo de instalação verifica a ausência do changeset inicial e de objetos gerenciados. Ele aceita outros registros no histórico. Em banco descartável, o próprio Liquibase aplicou um changelog sintético sem DDL. A instalação da F01 terminou com código 0 e manteve os dois registros em `databasechangelog`. Isso permite adotar um alvo de origem desconhecida sem a transição exigida pelo plano. Exigir histórico vazio para instalar a base ou validar uma transição explícita. A lacuna existe desde o changelog inicial. [Verificação de instalação, linha 19](../../../scrapbook-liquibase/db.changelog-master.yaml#L19) · [Pré-requisitos do plano](../plan.md#pré-requisitos)
+
+### P2. A pré-validação aceita acesso ao histórico fora da matriz
+
+A pré-validação de controles consulta apenas `scrapbook_app` e `scrapbook_audit_reader`. Em banco descartável, uma role sintética recebeu `USAGE` no schema antes da instalação e, depois, recebeu `SELECT` em `databasechangelog`. O PostgreSQL confirmou ambos os privilégios e o `update` terminou com código 0. A matriz do repositório reserva os controles à proprietária e à sessão de migração. Conferir os grants de tabela e coluna dos controles para os beneficiários autorizados. A omissão já existia na checagem efetiva da assinatura e continua no fluxo introduzido em `dbdbf6f`. [Pré-validação, linha 39](../../../scrapbook-liquibase/config/preflight.sql#L39) · [Matriz documentada, linha 9](../../../scrapbook-liquibase/README.md#L9)
+
+| Verificação | Resultado |
+| --- | --- |
+| `python3 tests/test_baseline.py` | Código 0. Os 15 testes passaram em PostgreSQL 18.6 descartável com Liquibase 4.33.0. A recusa antes de criar os controles e a rejeição do rollback que deixa uma coluna residual foram confirmadas. |
+| Sondagens locais adicionais | Os três casos acima foram reproduzidos em PostgreSQL descartável. |
+| `git diff origin/dev...<SHA> --check` | Código 0 e sem diagnósticos nos dois candidatos. |
+| `ast.parse` para os dois arquivos Python e `javac -Xlint:all` para `MigrationPreflight.java` | Código 0 nas duas verificações. O compilador Java não emitiu warnings. |
+| Lint e build de frontend e backend | Indisponíveis. As cópias locais contêm apenas a base documental e arquivos Git. |
+
+A execução cobre o banco descartável. Pipelines e ambientes publicados ficam fora do escopo desta história.
+
+## Revisão técnica com a skill atualizada
+
+**Parecer. Corrigir os três achados técnicos P2 antes do push.** O código permanece no commit `dbdbf6f`, comparado à base `origin/dev` `fc0b2d1`. A documentação está no commit `318c2fe`, com as alterações locais já registradas na terceira revisão. Esta rodada verificou as preconditions, a assinatura do catálogo, o rollback, o launcher JDBC e as permissões dos controles. A spec e o plano serviram de referência para o estado técnico esperado da migração. [Guideline de Liquibase](../../guidelines/liquibase.md) · [Guideline de SQL](../../guidelines/sql.md)
+
+| Achado técnico confirmado | Evidência desta rodada | Ajuste |
+| --- | --- | --- |
+| P2. Persistência fora da assinatura | A alteração de `audit_entries` para `UNLOGGED` manteve a assinatura. A reaplicação e o rollback da base vazia retornaram código 0. | Incluir a persistência das relações na assinatura. [Código](../../../scrapbook-liquibase/changelogs/sprint-1/sql/007-assinatura-do-catalogo.sql#L29) · [Validação de estado](../../guidelines/sql.md#6-idempotência-com-validação-de-estado) |
+| P2. Histórico anterior aceito na primeira instalação | O Liquibase registrou um changelog sintético em um banco sem tabelas de aplicação. O `update` instalou as 24 tabelas e manteve os dois registros no histórico. | Exigir histórico vazio na instalação inicial ou validar uma transição explícita. [Código](../../../scrapbook-liquibase/db.changelog-master.yaml#L19) · [Pré-requisitos](../plan.md#pré-requisitos) |
+| P2. Grant nos controles fora da matriz | Uma role sintética com `USAGE` no schema obteve `SELECT` em `databasechangelog`. A reaplicação terminou com código 0. | Conferir os beneficiários dos grants de tabela e coluna dos controles conforme a matriz. [Código](../../../scrapbook-liquibase/config/preflight.sql#L39) · [Ownership e grants](../../guidelines/liquibase.md#ownership-grants-e-permissões-padrão) |
+
+Nenhum achado técnico novo nesta rodada. As origens dos três desvios estão registradas na [terceira revisão](#terceira-revisão).
+
+| Check | Resultado |
+| --- | --- |
+| `python3 tests/test_baseline.py` | Código 0. Os 15 testes passaram em PostgreSQL 18.6 descartável com Liquibase 4.33.0. |
+| Três sondagens técnicas em PostgreSQL descartável | Código 0. Cada sondagem reproduziu o comportamento descrito no achado correspondente. |
+| Sintaxe Python com `ast.parse` e compilação Java com `javac -Xlint:all` | Código 0 em ambos. Java 26.0.1, sem warnings de compilação. |
+| `git diff origin/dev...<SHA> --check` | Código 0 e sem diagnósticos para Liquibase e documentação. |
+| Lint e build de frontend e backend | Indisponíveis pela ausência de projetos nas cópias locais. |
+
+### Reteste dos três achados técnicos
+
+A assinatura passou a incluir o modo de persistência das relações. A instalação inicial exige histórico vazio, e a pré-validação recusa grants de tabela e coluna dos controles para beneficiários fora da matriz. Os 18 testes da suíte passaram em PostgreSQL descartável. [Evidências do reteste](../dev-db/validacao-liquibase.md#revalidação-dos-três-achados-técnicos)
