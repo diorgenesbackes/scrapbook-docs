@@ -111,3 +111,19 @@ Nenhum achado técnico novo nesta rodada. As origens dos três desvios estão re
 ### Reteste dos três achados técnicos
 
 A assinatura passou a incluir o modo de persistência das relações. A instalação inicial exige histórico vazio, e a pré-validação recusa grants de tabela e coluna dos controles para beneficiários fora da matriz. Os 18 testes da suíte passaram em PostgreSQL descartável. [Evidências do reteste](../dev-db/validacao-liquibase.md#revalidação-dos-três-achados-técnicos)
+
+## Revisão técnica do commit 107b5cb
+
+**Parecer. As três regressões P2 passaram. Resta um achado P3 na verificação de grants.** Foram revisados o Liquibase em `107b5cb` e a documentação em `e42254e`, na branch `feature/F01-STORY-001`. As bases locais de comparação são `origin/dev` `fc0b2d1` e `43d6685`. A assinatura rejeitou a mudança para `UNLOGGED`, a instalação recusou o histórico alheio e a pré-validação bloqueou os grants de tabela e coluna de aplicação fora da matriz. [Reteste do desenvolvimento](../dev-db/validacao-liquibase.md#revalidação-dos-três-achados-técnicos)
+
+### P3. A verificação de grants ignora colunas de sistema
+
+A condição `attribute.attnum > 0` restringe a busca de ACLs a colunas de aplicação. Em banco descartável, após uma concessão administrativa explícita de SELECT sobre a coluna de sistema `ctid` de `databasechangelog`, uma role sintética fora da matriz conseguiu ler a posição física da linha e o `update` terminou com código 0. O acesso observado ficou restrito a esse metadado. A lacuna é residual no achado de grants. O filtro foi introduzido em `107b5cb`. Incluir as colunas de sistema na inspeção de ACL para aplicar a matriz a todos os grants de coluna. [Filtro, linha 55](../../../scrapbook-liquibase/config/preflight.sql#L55) · [Ownership e grants](../../guidelines/liquibase.md#ownership-grants-e-permissões-padrão)
+
+| Check | Resultado |
+| --- | --- |
+| `python3 tests/test_baseline.py` | Código 0. Os 18 testes passaram com PostgreSQL 18.6 descartável e Liquibase 4.33.0. |
+| Sondagem de grants | A pré-validação bloqueou SELECT de tabela para PUBLIC e aceitou o grant de coluna de sistema descrito acima. |
+| Sintaxe Python com `ast.parse` e Java com `javac -Xlint:all` | Código 0 em ambos. Java 26.0.1, sem warnings de compilação. |
+| `git diff origin/dev...HEAD --check` | Código 0 e sem diagnósticos em Liquibase e documentação. |
+| Lint e build de frontend e backend | Indisponíveis pela ausência de projetos nas cópias locais. |
