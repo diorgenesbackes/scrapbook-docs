@@ -39,3 +39,25 @@ Os cenários originais confirmam o inventário de 24 tabelas, o rollback em banc
 ## Reteste das correções
 
 Os três achados foram corrigidos e revalidados em PostgreSQL 18.6 descartável com Liquibase 4.33.0. Os 14 testes passaram. O preparo valida associações e defaults, o checkpoint confere os privilégios efetivos e registra a geração de cada changeset de catálogo, e a assinatura distingue a definição da sequência do seu valor corrente. [Evidência do reteste](../dev-db/validacao-liquibase.md#revalidação-após-o-code-review)
+
+## Segunda revisão
+
+**Parecer. Solicitar alterações antes do push.** Candidatos `3bf9f0a` no Liquibase e `8931c47` na documentação. A revisão manteve as mesmas bases `origin/dev` e executou sondagens adicionais em PostgreSQL 18.6 descartável com Liquibase 4.33.0.
+
+### P1. O Liquibase deixa as tabelas de controle com acesso indevido após recusar a instalação
+
+O bloqueio de privilégios efetivos ocorre na última etapa do changeset, depois de o próprio Liquibase criar `databasechangelog` e `databasechangeloglock`. Em uma sondagem, um default inadequado de SELECT e UPDATE foi configurado depois do bootstrap. A instalação falhou, as tabelas de aplicação foram revertidas e o histórico ficou vazio, mas a role `scrapbook_app` manteve SELECT e UPDATE nas duas tabelas de controle. A verificação versionada desse cenário confirma as 24 tabelas de aplicação ausentes e o histórico vazio. Ela não verifica os privilégios remanescentes.
+
+Verificar os defaults antes da criação dos controles e assegurar a matriz efetiva também nos controles já existentes. Acrescentar a pós-condição de que uma instalação recusada não deixa esses objetos acessíveis à aplicação. Achado residual reproduzido localmente. [Ordem do changeset, linha 38](../../../scrapbook-liquibase/changelogs/sprint-1/changelog.yaml) · [Validação de privilégios, linha 97](../../../scrapbook-liquibase/changelogs/sprint-1/sql/007-assinatura-do-catalogo.sql) · [Teste do alvo recusado, linha 185](../../../scrapbook-liquibase/tests/test_baseline.py)
+
+### P2. A reversão pode aceitar um catálogo diferente como a geração anterior
+
+`checkpoint_catalog` valida o nome da geração de origem e grava o hash corrente sob o nome da geração de destino. Em um changeset sintético, o rollback removeu apenas uma das duas colunas que o update criou. O Liquibase aceitou a reversão, gravou o catálogo residual como `f01-story-001-base` e aceitou um `update` da base. A aplicação seguinte da evolução falhou porque a segunda coluna ainda existia.
+
+Preservar a assinatura original de cada geração e exigir que o catálogo revertido corresponda a ela antes de confirmar o rollback. O teste de uma reversão incompleta deve verificar erro, preservação da geração vigente e histórico intacto. Achado reproduzido localmente no protocolo introduzido pela correção. [Gravação do checkpoint, linha 101](../../../scrapbook-liquibase/changelogs/sprint-1/sql/007-assinatura-do-catalogo.sql) · [Precondition de reaplicação, linha 46](../../../scrapbook-liquibase/db.changelog-master.yaml)
+
+Os 14 testes versionados passaram. As duas sondagens acima confirmaram os problemas adicionais. `git diff --check` passou nos dois candidatos. O lint e o build de frontend e backend seguem indisponíveis porque esses repositórios ainda não têm arquivos de projeto.
+
+## Reteste da segunda revisão
+
+Os dois achados passaram no reteste local. O comando de migração verifica privilégios por JDBC antes de iniciar a CLI. A reversão compara o catálogo resultante com a assinatura histórica do destino dentro da transação do changeset. A suíte completa passou com 15 testes, incluindo a recusa da instalação antes de criar os controles e a preservação do histórico após uma tentativa de rollback incompleto. [Evidência do reteste](../dev-db/validacao-liquibase.md#revalidação-após-a-segunda-revisão)

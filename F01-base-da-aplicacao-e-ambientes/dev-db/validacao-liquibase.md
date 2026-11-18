@@ -32,3 +32,16 @@ A validação cobre o changelog `f01-story-001-base` e as permissões locais de 
 | Privilégios preexistentes | O bootstrap recusou associação a uma role de leitura ampla e defaults de SELECT globais ou do schema para PUBLIC. A instalação abortou quando um grant padrão posterior ampliou as permissões de runtime. A reaplicação recusou SELECT indevido sobre uma coluna no controle do Liquibase. |
 | Evolução de catálogo | Um changeset seguinte registrou sua geração na mesma transação do DDL. Repetir `update` preservou os dois registros no histórico. Reverter a evolução restaurou a assinatura e o histórico da geração anterior e permitiu novo `update`. |
 | Sequências identity | Mudar o incremento da sequência bloqueou `update` e rollback, preservando as 24 tabelas e o histórico. Inserir dados e avançar a sequência normalmente preservou a validade da assinatura. |
+
+## Revalidação após a segunda revisão
+
+`python3 tests/test_baseline.py` concluiu com código 0. Os **15 testes** passaram com PostgreSQL 18.6 descartável, Liquibase 4.33.0 e driver JDBC PostgreSQL 42.7.7.
+
+| Cenário | Resultado observado |
+| --- | --- |
+| Default indevido após o bootstrap | A pré-validação recusou SELECT e UPDATE padrão para `scrapbook_app` antes de iniciar a CLI. O banco ficou sem tabelas da aplicação, `databasechangelog` e `databasechangeloglock`. |
+| Controle do Liquibase preexistente | A reaplicação recusou um grant de SELECT em uma coluna de `databasechangelog` e preservou o histórico. |
+| Reversão incompleta | A assinatura divergente da geração de destino bloqueou o rollback. A transação preservou as duas colunas da evolução, a geração ativa e os dois registros do histórico. O `update` seguinte reconheceu a evolução aplicada. |
+| Aplicação e reversão completas | Dois ciclos da mesma evolução preservaram as assinaturas históricas. Após cada rollback, o catálogo conferiu com a assinatura inicial e o histórico voltou a conter somente o changeset inicial. |
+
+Uma verificação adicional confirmou os comandos documentados com descoberta automática do JDK e do driver. `update-sql` gerou o SQL sem criar tabelas de aplicação. Após a instalação, `status` informou que o banco estava atualizado e o histórico manteve um único registro.
