@@ -1,8 +1,14 @@
 # Modelagem do banco de dados
 
+## Modelo vigente
+
+A F01-STORY-001 estabelece **24 tabelas de aplicação no schema único `scrapbook`**. O modelo vigente descreve o inventário, os relacionamentos e a evolução da instalação. [Modelo físico vigente da F01](../F01-base-da-aplicacao-e-ambientes/dev-db/modelo-vigente.md)
+
+## Histórico da modelagem
+
 Modelagem inicial: **2026-11-11**. Scripts correspondentes: **2026-11-12**. Modelo de referência para o Scrap Book, derivado do [PRD](../PRD.md), do [HLD](../HLD.md) e dos [guidelines SQL](../guidelines/sql.md).
 
-## Ordem de leitura
+### Ordem de leitura histórica
 
 | Documento | Conteúdo |
 | --- | --- |
@@ -10,7 +16,7 @@ Modelagem inicial: **2026-11-11**. Scripts correspondentes: **2026-11-12**. Mode
 | [Diagrama ER](DB-Diagrama.md) | Visão de negócio, relações por módulo e fluxos de consistência. |
 | [Modelo físico](DB-Modelo-Fisico.md) | Dicionário completo: campos, tipos, tamanhos, nulabilidade, PKs, FKs, CHECKs, índices e invariantes agregadas. |
 
-## Escopo e status
+### Escopo e status históricos
 
 São **33 tabelas em quatro schemas**: Identity, Events, Records e Notifications. Dessas, 21 representam domínio/coordenação e 12 são instâncias locais de Outbox, inbox e auditoria. Todas possuem PK simples inteira `id bigint GENERATED ALWAYS AS IDENTITY`.
 
@@ -18,7 +24,7 @@ A entrega original de 2026-11-11 continha **somente modelagem**. Por solicitaç�
 
 As regras aprovadas no produto/arquitetura são preservadas; os detalhamentos [P-01 a P-07](DB-Modelagem.md#decisões-de-detalhamento-propostas) foram usados como parâmetros desta base. Foram acrescentados os FPS racionais do original para impedir aumento de taxa na saída. Integrações, limites operacionais e procedimentos de privacidade pendentes continuam explícitos; a validação do schema não comprova AWS, desempenho ou recuperação.
 
-## Manutenção
+### Evolução histórica
 
 DP-STORY-002 acrescenta quatro colunas de lease/retry em upload_sessions por migration 049, preservando as 33 tabelas. [Evolução e recebimento](../fdd/FDD-Depoimento-em-Foto/FDD-Depoimento-em-Foto.md); dicionário, modelagem e diagrama identificam a extensão sem reescrever a base histórica de 47 changesets.
 
