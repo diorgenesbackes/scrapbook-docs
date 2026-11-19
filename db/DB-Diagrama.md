@@ -1,5 +1,7 @@
 # Diagramas de entidade e relacionamento
 
+> Registro histórico preservado. Consulte o [modelo físico vigente da F01](../F01-base-da-aplicacao-e-ambientes/dev-db/modelo-vigente.md) para o schema único e o inventário da reconstrução.
+
 [Modelagem](DB-Modelagem.md) · [Dicionário físico](DB-Modelo-Fisico.md) · [Índice](README.md)
 
 Data inicial: **2026-11-11**. Diagramas do modelo de referência. Scripts correspondentes foram criados em **2026-11-12** no [componente Liquibase](https://github.com/diorgenesbackes/scrapbook-liquibase/blob/main/README.md). O dicionário é a referência completa de colunas, FKs compostas, CHECKs e índices; os diagramas exibem somente um recorte dos atributos.

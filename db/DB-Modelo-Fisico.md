@@ -1,5 +1,7 @@
 # Modelo físico proposto do banco
 
+> Registro histórico preservado. Consulte o [modelo físico vigente da F01](../F01-base-da-aplicacao-e-ambientes/dev-db/modelo-vigente.md) para o schema único e o inventário da reconstrução.
+
 [Modelagem](DB-Modelagem.md) · [Diagramas](DB-Diagrama.md) · [Índice](README.md) · [SQL](../guidelines/sql.md)
 
 Data inicial: **2026-11-11**. Especificação declarativa de referência. **Adendo de 2026-11-12:** scripts/rollbacks correspondentes estão em [scrapbook-liquibase](https://github.com/diorgenesbackes/scrapbook-liquibase/blob/main/README.md), com validação local em PostgreSQL 18.6. Não há seed de produto, mapping EF ou aplicação em RDS. Os detalhamentos P-01 a P-07 da [modelagem](DB-Modelagem.md#decisões-de-detalhamento-propostas) parametrizam esta base; recursos e integrações pendentes permanecem explícitos.

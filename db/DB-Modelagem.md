@@ -1,5 +1,7 @@
 # Modelagem do banco de dados
 
+> Registro histórico preservado. Consulte o [modelo físico vigente da F01](../F01-base-da-aplicacao-e-ambientes/dev-db/modelo-vigente.md) para o schema único e o inventário da reconstrução.
+
 Evolução DP-STORY-002 (2026-11-15): upload_sessions recebe lease_token/lease_until pareados, attempt_count e next_attempt_at para reivindicação recuperável de recepção de foto. A migration incremental 049 preserva snapshots/janelas imutáveis e as 33 tabelas originais; não utiliza o job de preparação antes da confirmação. [Dicionário físico](DB-Modelo-Fisico.md#recordsupload_sessions), [FDD de foto](../fdd/FDD-Depoimento-em-Foto/FDD-Depoimento-em-Foto.md).
 
 [Índice](README.md) · [Dicionário físico](DB-Modelo-Fisico.md) · [Diagrama ER](DB-Diagrama.md)
