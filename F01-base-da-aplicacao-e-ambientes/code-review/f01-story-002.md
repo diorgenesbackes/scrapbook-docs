@@ -95,3 +95,48 @@ A suíte conferiu evento HTTP `1000` com timestamp, versão, ambiente, rota, mé
 | `python3 docker_stack.py --browser` | Código `0`, cenário Compose com as regressões e dez testes Playwright aprovados. A normalização de cor eliminou os avisos de `NO_COLOR` dos workers. |
 
 A execução cobriu as correções técnicas em ambiente local. Os ensaios manuais de leitores de tela, dispositivos físicos e matriz completa de navegadores seguem na etapa funcional.
+
+## Segunda revisão técnica
+
+**Parecer em 19/11/2026. Corrigir a seleção de endereços da identidade de desenvolvimento antes do push.**
+
+| Repositório | Base local `origin/dev` | Commit revisado |
+| --- | --- | --- |
+| `scrapbook-service` | `9a32dce` | `8a4a4ec` |
+| `scrapbook-ui` | `1ecfe5f` | `b129584` |
+| `scrapbook-infrastructure` | `f2b4388` | `e676dc5` |
+| `scrapbook-tests` | `175565b` | `96136d0` |
+| `scrapbook-docs` | `b45b319` | `21fddbd` |
+
+O cenário Compose usou o Liquibase `405538d` de `dev`. A revisão percorreu os commits de correção e seus consumidores. A documentação local da F01-STORY-001 e da F03 ficou fora do escopo.
+
+### P2 · A validação da identidade pode escolher um conjunto de endereços diferente do Kestrel
+
+`UsesOnlyLoopback` interpreta `preferHostingUrls` com `bool.TryParse`. O ASP.NET Core interpreta também `1` como verdadeiro. Quando os endpoints configurados são de loopback e os endereços do host incluem uma escuta ampla, essa diferença pode fazer a validação aceitar a identidade sem o opt-in enquanto o Kestrel prefere os endereços do host. Há uma segunda divergência da mesma lógica. A validação considera qualquer string de URLs não vazia como presença de endereço. Uma lista composta apenas por separadores fica vazia após a expansão, e o Kestrel volta aos endpoints configurados. A chamada a `All` sobre a lista vazia aceita a configuração antes de avaliá-los.
+
+Usar a mesma semântica de leitura e precedência do runtime na validação, contando os endereços efetivos após expandir as listas. Cobrir configurações mistas nos unitários. O achado anterior fica parcialmente resolvido. As verificações padrão do Compose passaram e a divergência foi identificada por comparação com o runtime fixado, por inspeção. [Opções da API, linhas 52–70](../../../scrapbook-service/ScrapBook.Api/Options/DevelopmentIdentityOptions.cs) · [Leitura de booleanos do ASP.NET Core](https://github.com/dotnet/aspnetcore/blob/v10.0.12/src/Hosting/Hosting/src/Internal/WebHostUtilities.cs#L7-L11) · [Construção dos endereços do host](https://github.com/dotnet/aspnetcore/blob/v10.0.12/src/Hosting/Hosting/src/GenericHost/GenericWebHostService.cs#L65-L107) · [Seleção do Kestrel](https://github.com/dotnet/aspnetcore/blob/v10.0.12/src/Servers/Kestrel/Core/src/Internal/AddressBinder.cs#L30-L60)
+
+### P3 · O adaptador classifica interrupção da resposta como JSON inválido
+
+O `catch` de `response.json()` devolve `invalid-json` para qualquer erro com o sinal ativo. A sondagem com o módulo real devolveu `invalid-json` tanto para um corpo cuja leitura foi interrompida quanto para JSON malformado. A tela de prontidão mostra indisponibilidade em ambos os casos. A diferença afeta a classificação técnica disponibilizada pelo adaptador a seus consumidores.
+
+Separar falha ao ler o corpo de erro ao interpretar JSON, preservando cancelamento. Introduzido pela centralização do transporte e confirmado com respostas sintéticas. [Adaptador HTTP, linha 23](../../../scrapbook-ui/src/lib/httpClient.ts) · [Integração HTTP](../../guidelines/frontend.md#6-integração-http-e-sessão)
+
+### Achados anteriores verificados
+
+O Compose confirmou preservação da credencial em três falhas de preparo, recuperação da prontidão após indisponibilidade do PostgreSQL, logs sanitizados de readiness e de proxy, evento HTTP estruturado e retomada após reinício. Também confirmou os modos padrão de recusa e aceite da identidade no contêiner. Os unitários confirmaram a recuperação do fallback React e a classificação básica das respostas. A inspeção confirmou `HealthResponse` em Domain, a centralização do transporte em `lib` e a dependência de inicialização da UI pela vitalidade da API. [Runner](../../../scrapbook-tests/docker_stack.py) · [Teste do fallback](../../../scrapbook-ui/src/components/ApplicationErrorBoundary.test.tsx)
+
+### Verificações da segunda revisão
+
+| Verificação | Resultado |
+| --- | --- |
+| `git diff --check origin/dev...HEAD` nos cinco repositórios | Código `0`, sem diagnósticos. |
+| `dotnet restore ScrapBook.sln --locked-mode --disable-build-servers` | Código `0`, zero avisos. |
+| `dotnet build ScrapBook.sln --no-restore --no-incremental --disable-build-servers` | Código `0`, zero avisos e zero erros. |
+| `dotnet format ScrapBook.sln --verify-no-changes --no-restore --severity info` | Código `0`, sem diagnósticos. |
+| `dotnet test ScrapBook.sln --no-build --no-restore --disable-build-servers` | Código `0`, 32 testes aprovados, zero falhas e zero pulados. |
+| `npm run lint`, `npm run build` e `npm test` | Código `0` nos três. Lint e build sem avisos, 10 testes aprovados. |
+| `python3 docker_stack.py --browser` | Código `0`, cenário integrado e 10 testes Playwright aprovados, sem avisos `NO_COLOR`. |
+| Sondagem isolada do adaptador HTTP | Código `0`. O reteste desativou o WebSocket incidental do Vite após o sandbox recusar sua abertura com `EPERM`. O resultado da classificação foi o mesmo nas duas execuções. |
+
+Linhas e branches seguem sem medição neste ciclo. O AGENTS.md vigente não define percentual mínimo.
