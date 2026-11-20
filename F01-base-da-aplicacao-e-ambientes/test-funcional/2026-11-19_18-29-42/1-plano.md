@@ -1,0 +1,17 @@
+# Plano de validação funcional da F01-STORY-002 após merge em dev
+
+A entrega avaliada é a F01-STORY-002 integrada na `dev` local. Cada cenário integrado usa um projeto Compose descartável, com portas de loopback, credenciais e dados sintéticos e volumes exclusivos. [História no Trello](https://trello.com/c/nv7cVIT2) · [Spec da F01](../../spec.md#7-estratégia-de-testes) · [Aceite da F01 no PRD](../../../PRD.md#9-critérios-de-aceitação)
+
+| Cenário | Fonte | Ação e evidência esperada |
+| --- | --- | --- |
+| CA1.1 · Banco vazio | Cartão CA1 e spec §1 e §5 | Iniciar API e UI com PostgreSQL vazio. A API deve ficar viva, o catálogo deve permanecer sem o schema `scrapbook` e a prontidão deve responder `503`. Preparar via Liquibase e conferir `200`, UI em pt-BR e publicações em loopback. |
+| CA1.2 · Ordem documentada | Cartão CA1 e spec §1 | Gerar o `.env` em diretório temporário, conferir as permissões e confirmar que repetir o comando preserva o arquivo. Em outro projeto Compose, iniciar PostgreSQL, aplicar Liquibase e então iniciar API e UI. Observar a página inicial e a checagem de disponibilidade. |
+| CA2.1 · Recuperação e persistência | Cartão CA2 e spec §5 e §7 | Parar PostgreSQL, observar `/health` em `200` e `/health/ready` em `503`. Recriar contêineres e exigir prontidão `200`, com uma conta sintética e arquivo sentinela do volume de chaves preservados. |
+| CA2.2 · Falha no preparo recorrente | PRD §6 F01 e spec §5 e §7 | Exercitar launcher ausente, senha divergente e falha sintética do migrador. Exigir erro sanitizado, credencial ativa preservada e prontidão após reinício. |
+| CA2.3 · Recusa e recuperação reais no Liquibase | PRD §6 e §9 F01 e spec §5 e §7 | Acrescentar uma tabela sintética ao catálogo do banco descartável e repetir o preparo. Exigir recusa, histórico preservado e diagnóstico com execução, ambiente, revisão e changesets aplicados. Remover a tabela de teste, reaplicar e confirmar prontidão. |
+| CA3.1 · Configuração e identidade padrão | Cartão CA3 e spec §3 e §5 | Conferir o default em teste unitário, recusa de configuração inválida, recusa de identidade em `Production` e política de opt-in do Compose. Confirmar que os diagnósticos omitem os valores sintéticos. |
+| CA4.1 · Teclado e estados | Cartão CA4, PRD §6 e §9 F01 e spec §7 | Abrir início e fallback. Verificar idioma, semântica, link de atalho, foco, reflow e axe. Confirmar mensagem de indisponibilidade e retentativa por teclado nos cinco perfis automatizados. |
+| CA4.2 · Recuperação real no navegador | Cartão CA4 e spec §1 e §5 | Com a mesma página aberta, verificar a prontidão, interromper PostgreSQL, acionar a checagem, restaurar PostgreSQL e repetir por teclado. Observar a mensagem completa de falha, a ação de retentativa e o retorno ao estado disponível. |
+| CA4.3 · Matriz manual | PRD §6 e §9 F01 e spec §7 | Registrar evidência separada das duas versões principais de Chrome, Safari, Edge e Firefox nas plataformas aplicáveis, dos dispositivos físicos, do contraste e do anúncio de estados por leitores de tela. |
+
+Executar `python3 docker_stack.py --browser` em `scrapbook-tests`. Reusar o isolamento do runner para exercitar a ordem documentada e a recuperação real na UI. Registrar a matriz efetivamente disponível no Mac e a diferença entre navegador de marca, motor e emulação móvel. [Runner e pré-requisitos](../../../../scrapbook-tests/README.md) · [Guia local](../../../../scrapbook-infrastructure/README.md)
