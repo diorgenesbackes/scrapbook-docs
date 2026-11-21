@@ -6,4 +6,6 @@ A trava temporal é avaliada a partir do corte anterior. Se a janela anterior ai
 
 A criação incorpora a mensagem personalizada ao hash idempotente canônico. A opção padrão mantém o formato do hash anterior, inclusive quando o cliente envia `null` explicitamente. `usesDefaultWelcomeMessage` permite ao cliente distinguir a opção padrão de um texto personalizado idêntico. As colunas já existem na base do Liquibase.
 
+A F05 pode consumir o código público estável, a capa padrão, a mensagem efetiva e a janela de Brasília com início dos envios, fechamento e tolerância para concluir. O detalhe da F03 é protegido pelo vínculo.
+
 [Contrato da F03](../spec.md#5-contratos-de-api) · [Revisão técnica](../code-review/f03-story-003.md)
