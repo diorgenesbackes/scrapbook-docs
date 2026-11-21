@@ -46,7 +46,7 @@ A leitura calcula a trava efetiva pelo relógio mesmo quando ainda estiver persi
 flowchart LR
     UI["React · eventos do responsável"] --> API["ASP.NET Core MVC · EventController"]
     API --> ID["Identidade autenticada · perfil local em Development"]
-    API --> APP["Application · EventService e EventOpeningService"]
+    API --> APP["Application · EventService, EventDetailsService e EventOpeningService"]
     APP --> D["Domain · contratos e portas"]
     D -. implementadas por .-> INF["Infrastructure · EF Core e repositórios"]
     INF --> DB["PostgreSQL · schema scrapbook"]
@@ -62,7 +62,7 @@ flowchart LR
 
 | Decisão | Contrato | Implicação |
 | --- | --- | --- |
-| Identidade local | O adaptador de autenticação da F01 só opera em `Development` local, desabilitado por padrão. O laboratório provisiona contas sintéticas ativas e uma identidade de teste por sessão ou execução controlada. O backend resolve o ID interno da conta a partir do principal autenticado. | As Services recebem a mesma identidade interna que F02 fornecerá. Requisições anônimas continuam sem acesso. Usar duas identidades isoladas para verificar autorização. |
+| Identidade local | O adaptador de autenticação da F01 só opera em `Development` local, desabilitado por padrão. O laboratório provisiona contas sintéticas ativas e uma identidade de teste por sessão ou execução controlada. O backend resolve o ID interno da conta a partir do principal autenticado. | As Services recebem a mesma identidade interna que F02 fornecerá. Requisições anônimas continuam sem acesso. Usar duas contas vinculadas e uma terceira sem vínculo para verificar autorização. |
 | Relógio e datas | Injetar `TimeProvider`. Converter o instante do servidor para `America/Sao_Paulo` ao comparar datas de negócio. Usar data/hora sem offset para marcos civis e UTC com offset para instantes técnicos. | O servidor decide bordas, inclusive ao obter o lock da linha após uma espera. Testes avançam o relógio sem mudar a hora do sistema. |
 | Autorização e concorrência | Membro do evento e versão da linha são verificados nas escritas de estado. A Service coordena uma transação curta com leitura da linha para atualização, reavalia o estado efetivo e persiste alterações e efeitos duráveis juntos. | Ambas as sessões conseguem ler a mesma versão. Uma escrita baseada em versão anterior recebe conflito. A F09 deve respeitar o mesmo controle ao aplicar a trava. |
 | Repetição de criação | Chave UUID v4 por tentativa e por conta criadora. Persistir hash da chave e da entrada canônica junto ao evento. Uma repetição autorizada com a mesma entrada recupera o evento existente, inclusive após edição posterior. O par fica retido enquanto existir o evento. | Duplo envio ou perda da resposta preserva um evento e um vínculo. Chave reutilizada com entrada diferente retorna conflito. |
@@ -102,7 +102,7 @@ Todos os recursos usam `/api/v1`, identificadores e versões como strings decima
 | `GET /api/v1/events` | `listEvents` | Conta autenticada. `cursor` opcional e `pageSize` de 1 a 50, padrão 20. Itens vêm do vínculo e são ordenados por ID decrescente. Cursor opaco vinculado à conta e à ordenação. | `200`, `items` e `nextCursor` nulo ao fim. Cada item contém `id`, `name`, `startsAt` e capa padrão. |
 | `POST /api/v1/events` | `createEvent` | Conta autenticada. `Idempotency-Key` obrigatório, contendo UUID v4. Corpo de criação abaixo. | `201` e `Location` no detalhe. Replay após commit retorna `200` com o mesmo ID e a representação autorizada atual. |
 | `GET /api/v1/events/{eventId}` | `getEvent` | Conta autenticada e vinculada. `eventId` é bigint positivo em string decimal. | `200` com representação, estado efetivo e controles de edição. |
-| `PUT /api/v1/events/{eventId}/details` | `replaceEventDetails` | Conta vinculada. `name`, `startsAt`, `welcomeMessage` nula ou texto e `expectedVersion` obrigatórios. | `200` com configuração e prazos vigentes. |
+| `PUT /api/v1/events/{eventId}/details` | `replaceEventDetails` | Conta vinculada. `name`, `startsAt`, `welcomeMessage` nula ou texto e `expectedVersion` obrigatórios. | `200` com configuração e prazos vigentes. Com versão válida e sem trava estrutural, um envio sem mudanças preserva a versão. |
 | `PUT /api/v1/events/{eventId}/opening-policy` | `replaceEventOpeningPolicy` | Conta vinculada. `mode`, `opensOn` nula ou data e `expectedVersion` obrigatórios. | `200` com política efetiva. Uma solicitação sem mudança de modo/data e com versão válida preserva a versão da política e a trilha. |
 
 ### Campos e exemplos
@@ -137,6 +137,7 @@ Representação de detalhe após criação.
   "timeZone": "America/Sao_Paulo",
   "cover": { "kind": "default" },
   "welcomeMessage": "Seja bem-vindo! Compartilhe uma lembrança deste evento.",
+  "usesDefaultWelcomeMessage": true,
   "submissionOpensAt": "2027-10-15T14:00:00",
   "submissionClosesAt": "2027-10-16T12:00:00",
   "completionDeadlineAt": "2027-10-16T13:00:00",
@@ -152,7 +153,7 @@ Representação de detalhe após criação.
 }
 ```
 
-`cover.kind` é `default` nesta entrega. `openingPolicy.state` aceita `flexible`, `scheduled_locked` e `immediate_once`. `contentState` aceita `closed` e `open`. `serverTime` é um instante UTC usado no contador. A interface trata `canEdit` e `canEditDetails` como a permissão do snapshot exibido. Uma escrita sempre revalida essa permissão.
+`cover.kind` é `default` nesta entrega. `usesDefaultWelcomeMessage` indica que o texto apresentado é o padrão e permite ao formulário reenviar `welcomeMessage: null`. `openingPolicy.state` aceita `flexible`, `scheduled_locked` e `immediate_once`. `contentState` aceita `closed` e `open`. `serverTime` é um instante UTC usado no contador. A interface trata `canEdit` e `canEditDetails` como a permissão do snapshot exibido. Uma escrita sempre revalida essa permissão.
 
 ### Tratamento de erros
 
