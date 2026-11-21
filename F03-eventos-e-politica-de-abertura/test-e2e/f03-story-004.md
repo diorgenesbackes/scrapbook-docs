@@ -4,4 +4,6 @@
 
 `python3 -B event_stack.py --browser` aprovou os 25 cenários de regressão de criação, edição e política de abertura na imagem normal do serviço.
 
+A reexecução integrada aprovou cinco cenários de abertura, 25 regressões de eventos e dez cenários da fundação, executados com `python3 -B docker_stack.py --browser`.
+
 [Validação funcional](../test-funcional/f03-story-004.md) · [Evidências de entrega](../delivery/f03-story-004.md)
