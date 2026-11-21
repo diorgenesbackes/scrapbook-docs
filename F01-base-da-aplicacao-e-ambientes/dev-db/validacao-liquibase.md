@@ -59,3 +59,7 @@ A execução direcionada passou com 4 testes. A suíte completa `python3 tests/t
 ## Teste de aceite do commit integrado em 19/11/2026
 
 O changelog `f01-story-001-base` do merge `1adeced61e418c3150d3e47d139091835250906c` foi executado em PostgreSQL 18.6 descartável com Liquibase 4.33.0. A suíte `python3 tests/test_baseline.py` passou com 18 testes, incluindo instalação, reaplicação, falha de changeset, privilégios, rollback e reinstalação. Das seis verificações complementares, três passaram e três divergiram do contrato. O `update` aceitou um enum preexistente, o rollback removeu a base vazia na presença de um enum alheio e a pré-validação aceitou uma concessão administrativa sobre a coluna de sistema `ctid`. [Plano](../test-funcional/2026-11-19_10-50-01/1-plano.md) · [Matriz e evidências](../test-funcional/2026-11-19_10-50-01/2-execucao.md)
+
+## Reteste da correção dos grants de coluna de sistema
+
+O candidato `76d360b` remove o filtro que excluía colunas de sistema da inspeção de privilégios. A suíte passou com 18 testes em PostgreSQL 18.6 descartável e Liquibase 4.33.0. O `update` recusou as concessões sobre `ctid` nas duas tabelas de controle, preservou o histórico e voltou a passar após as revogações. A instalação partindo de uma instância nova e o rollback em base vazia passaram. Os casos com enum alheio continuam registrados como pendência da proteção de catálogo. [Matriz e evidências do reteste](../test-funcional/2026-11-19_11-26-20/2-execucao.md)
