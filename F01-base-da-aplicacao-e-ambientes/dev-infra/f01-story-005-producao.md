@@ -1,0 +1,34 @@
+# F01-STORY-005 · Preparação manual de produção
+
+Configure a produção em `us-east-1`, na mesma conta AWS de homologação, com inventário e permissões próprios. Use as fronteiras de rede e segurança da F01 e confirme a conta e a região antes de qualquer alteração. Guarde o inventário de IDs, ARNs e domínios no registro operacional privado. [HLD](../../HLD.md#arquitetura-geral) · [Spec](../spec.md#ambiente-local-e-aws)
+
+| Recurso | Configuração de produção |
+| --- | --- |
+| Rede | VPC dedicada, sub-redes públicas para ALB e ECS e privadas para RDS, em duas zonas. Sem NAT na configuração inicial. Crie endpoint de gateway S3 com acesso limitado aos buckets do ambiente. Mantenha os grupos do ALB, da API, do migrador e do RDS separados. |
+| RDS | PostgreSQL Multi-AZ com standby, armazenamento criptografado, sem IP público, backup automático de 35 dias e restauração para um ponto no tempo disponível. Prepare schema e usuários com o bootstrap do Liquibase. A API usa `scrapbook_app` e o migrador usa `scrapbook_migrator`, com segredos distintos também em relação a homologação. |
+| ECS e ECR | Cluster, famílias de tarefas, roles de execução e de runtime e repositórios ECR imutáveis próprios. Configure a API como serviço Fargate `REPLICA` com reequilíbrio entre zonas habilitado e margem de rolling update para subir tarefas antes de retirar as antigas. Use IP público para saída e restrinja a porta 8080 ao grupo do ALB. O migrador fica sem entrada. |
+| ALB, WAF e Amplify | ALB público em duas zonas, HTTPS com ACM, redirecionamento de HTTP, Web ACL regional própria e target group IP em `8080` com sonda `/health/ready` e matcher `200`. Faça o listener público responder `404` em `/health` e `/health/*`. Crie um app Amplify de deploy manual com branch `main`, fallback de SPA e domínio HTTPS próprio. Configure origens distintas para UI e API. |
+| S3 e KMS | Buckets separados por finalidade e ambiente, bloqueio público nas quatro opções, ownership administrado pelo bucket e SSE-KMS com chave exclusiva do ambiente. Versione os originais das lembranças e restrinja políticas aos principals e prefixes de produção. |
+| Sinais | Crie grupos CloudWatch Logs separados para a API e o Liquibase com retenção de 180 dias. Configure o painel de prontidão, latência, 5xx, CPU e memória. Confira os alarmes de alvos saudáveis, latência, erros e falha de publicação e registre o destino efetivo das notificações. |
+
+Use o [roteiro de rede](f01-story-003-rede-rds.md#verificação-do-inventário) para coletar o inventário de produção com os identificadores de produção. Acrescente `--environment production` ao comando do validador. A verificação exige Multi-AZ, 35 dias e ponto de restauração disponível. Confirme no inventário que os IDs de VPC e RDS diferem dos de homologação. [Retenção de backup no RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.BackupRetention.html)
+
+Prepare o serviço da API com `desiredCount=0`. O workflow sobe duas tarefas após validar a migração concluída. Registre o alvo de escalabilidade depois da primeira ativação, com mínimo de duas tarefas, política de rastreamento conforme a medição de carga e teto coerente com a capacidade avaliada. Registrar o alvo com mínimo de dois pode iniciar as tarefas antecipadamente. Confira capacidade, tarefas, zonas e alvos depois da configuração. [Reequilíbrio de zonas no ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html) · [Registro do alvo de escalabilidade](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)
+
+Configure a tarefa da API com `ASPNETCORE_ENVIRONMENT=Production`, `DevelopmentIdentity__Enabled=false`, `Hosting__PublicUiOrigin` com a origem exata e `Database__RequireTls=true`. Injete `ConnectionStrings__ScrapBook` pelo ARN integral do segredo DML, com `SSL Mode=VerifyFull` e `Root Certificate=/app/certs/rds-us-east-1.pem`. Configure o migrador com o ARN integral de `LIQUIBASE_COMMAND_PASSWORD` e a URL privada do RDS na forma `jdbc:postgresql://HOST:5432/scrapbook?sslmode=verify-full&sslrootcert=/opt/scrapbook/certs/rds-us-east-1.pem`. As definições Fargate usam `awsvpc`, Linux `X86_64`, contêiner essencial, `awslogs` e os comandos de inicialização das imagens.
+
+Use a [configuração de homologação](f01-story-003-homologacao.md) como referência para o layout das tarefas, o fallback e o painel, substituindo as dimensões pelos recursos de produção. Revise o resultado da calibração de WAF com tráfego de IP compartilhado em homologação antes de usar os limites em produção.
+
+## Comprovar isolamento
+
+Execute os controles nos dois sentidos com identidades de operação aprovadas, sem poderes administrativos e com massa sintética identificada. Faça primeiro a operação permitida no ambiente de origem e confirme que o recurso do outro ambiente existe pela identidade própria dele. Registre data, operação, alias do alvo, resultado e evidência sanitizada. Preserve nomes internos, valores de segredos e conteúdo dos objetos no canal operacional.
+
+| Fronteira | Evidência esperada |
+| --- | --- |
+| OIDC e IAM | Environments GitHub separados e trust policies com repositório, ambiente e audiência exatos. Compare roles de implantação, execução e runtime, incluindo escopo de `iam:PassRole`, SSM, segredos e KMS. Confirme que uma identidade de um ambiente recebe `AccessDenied` ao acessar o recurso equivalente do outro. |
+| Secrets Manager | Faça a verificação de acesso a um segredo sintético sob as mesmas regras do ambiente. Use `GetSecretValue` com a saída limitada a `VersionId`, sem modo de depuração. Confirme sucesso no próprio ambiente e `AccessDeniedException` no outro. |
+| PostgreSQL | Compare VPC, endpoint e regras de entrada. A partir de cada tarefa de verificação autorizada, confirme primeiro `current_user` e `current_database()` no alvo próprio por TLS. Comprove que o alvo do outro ambiente é inacessível pela rede. Para testar a fronteira de credenciais, use uma sonda autorizada na VPC do alvo com credencial sintética do outro ambiente e exija falha de autenticação. |
+| S3 e KMS | Use objetos não sensíveis, um em cada bucket verificado, com SSE-KMS e versão registrada quando aplicável. Confirme leitura do próprio objeto e recusa ao ler o objeto existente no outro. Teste também acesso público anônimo aos mesmos objetos. Elimine a massa de teste conforme a política do bucket. |
+| API | Compare o SHA, digest e configuração da tarefa em execução com a evidência do deploy. Confirme `Production` e identidade local explicitamente desligada, além de prontidão interna e sondas inacessíveis ao público. |
+
+O provisionamento, os limites de capacidade e as evidências de isolamento real ficam no registro operacional da primeira publicação. [Sequência da publicação e recuperação](../delivery/f01-story-005-producao.md)
