@@ -8,22 +8,21 @@ Adaptação do fluxo do Expenses: `main`, `hlg`, `dev`, `feature/*`, `task/*`, `
 
 ## 1. Modelo adotado
 
-Cada história nasce de `main` e é integrada separadamente em `dev`, `hlg` e `main`:
+Toda demanda nova, incluindo hotfix, parte de `dev` atualizada. Cada destino recebe uma promoção seletiva.
 
 ```text
-main → feature/123 → task/123-t01
+dev → feature/123 → task/123-t01
                     task/123-t02
 
 task/123-t01 e task/123-t02 → feature/123
 feature/123 → dev → validação local do resultado integrado
-feature/123 → hlg → publicação em homologação
-feature/123 → main → publicação em produção
+commits aprovados de feature/123 → hlg → publicação em homologação
+commits aprovados de feature/123 → main → publicação em produção
 
-main → fix/789 → main
-       fix/789 → hlg e dev
+dev → fix/789 → promoção seletiva para main, hlg e dev
 ```
 
-As setas após a criação representam PRs. Não promover o conteúdo completo de uma branch de ambiente para outra. `dev` não tem ambiente implantado; sua validação ocorre por build/unitários e testes locais acionados conforme o impacto.
+As integrações seguem o ciclo local do projeto e as proteções do remoto. Cada promoção leva apenas a demanda e suas dependências aprovadas. Em `dev`, a validação ocorre por build, testes unitários e testes locais conforme o impacto.
 
 Não adicionar `develop` ou `release/*` por herança de outro modelo. `scrapbook-infrastructure` é a área explicitamente solicitada para configuração operacional; sua criação não altera a decisão de configurar a infraestrutura manualmente.
 
@@ -34,10 +33,10 @@ Não adicionar `develop` ou `release/*` por herança de outro modelo. `scrapbook
 | `main` | Base estável inicial | Produção; recebe história homologada ou hotfix. |
 | `hlg` | Base estável inicial | Seleção de histórias em homologação. |
 | `dev` | Base estável inicial | Integração sem deploy. |
-| `feature/<id-historia>` | `main` atualizada | Entrega completa promovida aos três destinos. |
+| `feature/<id-historia>` | `dev` atualizada | Entrega completa promovida aos três destinos. |
 | `task/<id-historia>-tNN` | Sua feature | Item de checklist, quando precisar de branch própria; integrado somente à história. |
-| `merge/<origem>-into-<destino>` | Destino | Resolver conflito de uma integração específica. |
-| `fix/<id-historia>` | `main` alinhada à produção | História de correção urgente propagada a main, hlg e dev. |
+| `merge/<origem>-into-<destino>` | Destino atualizado | Preparar uma promoção seletiva ou resolver conflitos da integração. |
+| `fix/<id-historia>` | `dev` atualizada | Correção urgente promovida seletivamente a `main`, `hlg` e `dev`. |
 
 Usar o ID da história no Trello, único e rastreável. T01/T02 identificam itens dentro do checklist daquela história; não são IDs de cards de tarefa. Substituir barras por hífens no nome da branch `merge/*`. História pequena pode trabalhar diretamente na feature; branch task é opcional e não justifica criar card separado.
 
@@ -65,9 +64,9 @@ T01 é único dentro da história; `task/123-t01` identifica sua eventual branch
 | --- | --- |
 | `task/*` → sua `feature/*` | Revisão e checks da subtarefa. |
 | `feature/*` → `dev` | História pronta para integração local. |
-| `feature/*` → `hlg` | Conteúdo integrado em dev, evidências e dependências identificadas. |
-| `feature/*` → `main` | Aceite de homologação e candidato conferido. |
-| `fix/*` → `main`, `hlg`, `dev` | Correção testada, com recuperação e propagação rastreáveis. |
+| Candidato da história → `hlg` | Conteúdo integrado em `dev`, com evidências e dependências aprovadas para o destino. |
+| Candidato da história → `main` | Aceite de homologação, autorização de publicação e candidato conferido. |
+| Candidato do hotfix → `main`, `hlg`, `dev` | Correção testada, com recuperação e propagação rastreáveis. |
 | `main` → ambientes/features ativas | Sincronização controlada da base estável. |
 | `merge/*` → destino indicado | Apenas sua integração específica. |
 
@@ -77,31 +76,33 @@ Merges em `hlg/main`, inclusive sincronizações e reversões, disparam publica�
 
 ## 4. Desenvolvimento e promoção
 
-Exemplos com árvore limpa e alterações locais preservadas:
+O exemplo parte de uma árvore limpa, com alterações locais preservadas.
 
 ```bash
 git status
-git fetch origin
-git switch main
-git pull --ff-only origin main
+git switch dev
+git pull --ff-only origin dev
 git switch -c feature/123
 git push -u origin feature/123
 ```
 
-Subtarefa após a feature existir:
+Para criar uma subtarefa quando a feature já tiver uma contraparte remota, sincronize a feature primeiro.
 
 ```bash
-git fetch origin
-git switch -c task/123-t01 origin/feature/123
+git switch feature/123
+git pull --ff-only origin feature/123
+git switch -c task/123-t01
 git push -u origin task/123-t01
 ```
 
 1. Integrar subtarefas à feature com resultado e validação.
-2. Abrir feature → dev e validar o resultado integrado localmente, sem presumir ambiente remoto.
-3. Abrir a mesma feature → hlg; o merge publica automaticamente em homologação.
+2. Integrar a feature em `dev` pelo ciclo local do projeto e validar o resultado em ambiente local.
+3. Preparar a promoção seletiva a `hlg`. O merge pode acionar a publicação em homologação.
 4. Acionar testes não unitários pertinentes e registrar revisão, versão e resultados.
 5. Corrigir na feature/task, promover novamente e renovar evidências afetadas.
-6. Conferir candidato main atual + história e dependências, registrar recuperação e abrir feature → main.
+6. Depois do aceite e da autorização de produção, preparar o candidato em `main` atualizada com a história e suas dependências aprovadas. Registrar a recuperação e seguir o fluxo de integração autorizado.
+
+Compare o histórico alcançável e o diff com o destino atualizado. Use a branch da demanda diretamente quando ela incluir apenas mudanças aprovadas para aquele destino. Se a branch carregar outros commits de `dev`, crie uma branch de promoção a partir do destino atualizado, aplique somente os commits aprovados em ordem e valide o resultado.
 
 Aceite se vincula ao conteúdo e artefatos avaliados. Commit posterior ou resolução de conflito exige revisão e revalidação do impacto.
 
@@ -137,7 +138,7 @@ git merge --no-ff --no-commit origin/feature/123
 
 Revisar arquivos, executar checks e abrir PR somente para dev. Para abortar um merge ainda em andamento, `git merge --abort`.
 
-Nunca promover essa branch intermediária a hlg/main: ela contém o destino original. Correção de negócio descoberta no conflito também deve entrar na feature canônica. Conflito com main deve preferencialmente ser resolvido ao atualizar a feature com main antes da validação final.
+Use a branch intermediária apenas para o destino em que foi criada. Resolva conflitos de `hlg` ou `main` na promoção específica do ambiente e valide o candidato resultante. Leve correções de negócio à branch da demanda para preservar a origem da mudança.
 
 ## 7. PRs, revisão e checks
 
@@ -222,11 +223,11 @@ Merge não comprova deploy bem-sucedido. A versão em produção é a identifica
 
 ## 10. Hotfix
 
-1. Conferir artefato em produção e alinhamento de main; não incluir mudanças ainda não publicadas por acidente.
-2. Criar fix a partir da base estável de main e limitar ao incidente.
-3. Executar checks e testes direcionados, registrar recuperação e integrar fix → main.
+1. Conferir o artefato ativo em produção e sua relação com `main`.
+2. Fazer `git switch dev` e `git pull --ff-only origin dev`, depois criar `fix/<id-historia>` e limitar a correção ao incidente.
+3. Com autorização de produção, atualizar `main` e preparar o candidato apenas com a correção e as dependências aprovadas. Usar uma branch de promoção a partir de `main` se for preciso isolar commits de `dev`. Executar os checks e testes direcionados no candidato, registrar a recuperação e integrar em `main`.
 4. Conferir o deploy automático e executar verificação controlada.
-5. Promover a mesma fix para hlg/dev e sincronizar main onde necessário.
+5. Integrar a correção em `hlg` e `dev`, atualizando cada destino e conferindo o conteúdo da promoção.
 6. Preservar evidências e encerrar a branch após propagação.
 
 Urgência reduz escopo, não elimina rastreabilidade. O hotfix não precisa aguardar outra história.
@@ -247,7 +248,9 @@ Imagem anterior precisa ser compatível com schema/configuração atuais. Git n�
 
 Reversão de código usa novo commit/PR, preservando histórico. Reverter merge exige escolha consciente de parent e plano para reintegrar uma correção futura.
 
-Itens de checklist podem ser concluídos após validar seu resultado e integrar a eventual branch task; feature somente termina após publicação e sincronização necessárias. Não excluir automaticamente feature ao primeiro merge em dev/hlg. Branch de conflito termina após seu destino específico.
+Antes do merge em `dev`, confira o checklist da história no Trello e marque apenas os itens com resultado entregue e validado. Quando houver branch de tarefa, confirme a integração à branch da história antes de marcar o item. Mantenha itens parciais, pendentes, bloqueados ou não aplicáveis desmarcados e registre o motivo quando pertinente. Atualize o checklist quando concluir e validar tarefas de etapas posteriores.
+
+A feature termina após a publicação e a sincronização necessárias. Não excluir automaticamente feature ao primeiro merge em dev/hlg. Branch de conflito termina após seu destino específico.
 
 ## 13. Critérios de adoção
 
