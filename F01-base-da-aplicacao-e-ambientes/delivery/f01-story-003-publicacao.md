@@ -1,6 +1,6 @@
 # F01-STORY-003 · Publicação e rastreabilidade em homologação
 
-Os workflows publicam somente após push em `hlg` nos repositórios de Liquibase, API e UI. Os principais recursos são preparados manualmente. A ativação de `main` pertence à F01-STORY-005. [História no Trello](https://trello.com/c/Ji6EyWMB) · [Preparação da homologação](../dev-infra/f01-story-003-homologacao.md)
+Nesta entrega, os workflows publicavam após push em `hlg` nos repositórios de Liquibase, API e UI. Os principais recursos são preparados manualmente. A F01-STORY-005 acrescenta a publicação por `main` em `publish.yml`. [História no Trello](https://trello.com/c/Ji6EyWMB) · [Preparação da homologação](../dev-infra/f01-story-003-homologacao.md) · [Publicação em produção](f01-story-005-producao.md)
 
 ## Configuração do GitHub e AWS
 
