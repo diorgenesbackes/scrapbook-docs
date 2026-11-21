@@ -2,6 +2,24 @@
 
 Os workflows de publicação usam `hlg` para homologação e `main` para produção. A produção requer aceite do candidato em homologação, autorização de publicação e a conclusão do inventário e dos controles de preparação. [Card](https://trello.com/c/2iFuwYcd) · [Preparação de produção](../dev-infra/f01-story-005-producao.md) · [Fluxo de promoção](../../guidelines/git-flow.md)
 
+[Revisão técnica](../code-review/f01-story-005.md) · [E2E](../test-e2e/f01-story-005.md) · [Validação funcional](../test-funcional/f01-story-005.md) · [Segurança](../test-security/f01-story-005.md) · [Carga local](../test-performance/f01-story-005.md)
+
+## Estado em 21/11/2026
+
+O candidato saiu de `dev` atualizada e foi promovido seletivamente. O conteúdo de `hlg` nos repositórios executáveis corresponde ao conteúdo validado em `dev`.
+
+| Repositório | `dev` validada | `hlg` confirmada | Publicação em homologação |
+| --- | --- | --- | --- |
+| Liquibase | `dec0142` | `a24958e` | Falhou na reserva da versão. [GitHub Actions](https://github.com/diorgenesbackes/scrapbook-liquibase/actions/runs/44910459117) |
+| API | `af71e5d` | `ed80847` | Falhou na reserva da versão. [GitHub Actions](https://github.com/diorgenesbackes/scrapbook-service/actions/runs/44910457981) |
+| UI | `bcae990` | `5ae3658` | Falhou na reserva da versão. [GitHub Actions](https://github.com/diorgenesbackes/scrapbook-ui/actions/runs/44910459228) |
+| Infraestrutura | `bd0b0e7` | `ff18605` | Provisionamento manual. |
+| Testes | `d0bc6f2` | `e60f4a5` | Suítes manuais aprovadas localmente. |
+
+Nos três repositórios de publicação, o job AWS foi pulado e a consulta aos environments retornou lista vazia. Os logs detalhados da reserva exigem permissão administrativa. Para retomar a homologação, a pessoa responsável deve verificar `RELEASE_SERIES`, as regras de criação de tags, cadastrar o environment `hlg` com os alvos e roles correspondentes e reexecutar os workflows na ordem Liquibase, API e UI. [Configuração de homologação](f01-story-003-publicacao.md#configuração-do-github-e-aws)
+
+A execução manual dos workflows de recuperação depende da presença do arquivo na branch padrão. Os ensaios de homologação, o aceite, a autorização de produção, o provisionamento AWS e a comprovação de isolamento e da versão ativa seguem pendentes. [Gatilho manual no GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_dispatch)
+
 ## Configurar os destinos
 
 Nos repositórios de Liquibase, API e UI, associe o environment GitHub `production` exclusivamente à branch `main`. Mantenha `hlg` exclusivo da branch `hlg`. Configure roles OIDC dedicadas para cada combinação de repositório e ambiente, com audiência `sts.amazonaws.com` e subject exato `repo:PROPRIETÁRIO/REPOSITÓRIO:environment:production` ou `:environment:hlg` conforme o destino. Restrinja as permissões aos recursos do respectivo ambiente. Use variáveis de publicação no environment correspondente, inclusive quando o nome da variável for idêntico nos dois ambientes. `RELEASE_SERIES` é compartilhada por repositório para reservar PATCH sem colisões. [OIDC no GitHub Actions](https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws)
