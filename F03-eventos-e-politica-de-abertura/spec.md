@@ -102,6 +102,7 @@ Todos os recursos usam `/api/v1`, identificadores e versões como strings decima
 | `GET /api/v1/events` | `listEvents` | Conta autenticada. `cursor` opcional e `pageSize` de 1 a 50, padrão 20. Itens vêm do vínculo e são ordenados por ID decrescente. Cursor opaco vinculado à conta e à ordenação. | `200`, `items` e `nextCursor` nulo ao fim. Cada item contém `id`, `name`, `startsAt` e capa padrão. |
 | `POST /api/v1/events` | `createEvent` | Conta autenticada. `Idempotency-Key` obrigatório, contendo UUID v4. Corpo de criação abaixo. | `201` e `Location` no detalhe. Replay após commit retorna `200` com o mesmo ID e a representação autorizada atual. |
 | `GET /api/v1/events/{eventId}` | `getEvent` | Conta autenticada e vinculada. `eventId` é bigint positivo em string decimal. | `200` com representação, estado efetivo e controles de edição. |
+| `GET /api/v1/events/{eventId}/opening-status` | `getEventOpeningStatus` | Conta autenticada e vinculada. Reconsultar política e vínculo a cada pedido. | `200` com estado, data de abertura e referência UTC, sem cache. |
 | `PUT /api/v1/events/{eventId}/details` | `replaceEventDetails` | Conta vinculada. `name`, `startsAt`, `welcomeMessage` nula ou texto e `expectedVersion` obrigatórios. | `200` com configuração e prazos vigentes. Com versão válida e sem trava estrutural, um envio sem mudanças preserva a versão. |
 | `PUT /api/v1/events/{eventId}/opening-policy` | `replaceEventOpeningPolicy` | Conta vinculada. `mode`, `opensOn` nula ou data e `expectedVersion` obrigatórios. | `200` com política efetiva. Uma solicitação sem mudança de modo/data e com versão válida preserva a versão da política e a trilha. |
 
@@ -169,7 +170,15 @@ Representação de detalhe após criação.
 | `413 REQUEST_TOO_LARGE`, `415 UNSUPPORTED_MEDIA_TYPE` | Limite de corpo ou tipo de entrada incompatível. | Aplicar o catálogo da API e preservar o formulário. |
 | `500 UNEXPECTED_ERROR`, `503 DEPENDENCY_UNAVAILABLE` | Falha interna ou indisponibilidade reconhecida. | Mensagem segura com correlação. Em criação com resultado incerto, manter a chave da tentativa. |
 
-O controle de galeria da F11 usará o mesmo cálculo de acesso. Enquanto bloqueada, a abertura de conteúdo retorna `403 EVENT_CONTENT_LOCKED` ao responsável vinculado. A autorização ocorre antes de ler o conteúdo ou emitir uma URL. Telemetria usa nome da operação, resultado, duração e correlação. Dados pessoais, payload, chaves de idempotência, códigos públicos utilizáveis e URLs privadas ficam fora dos logs.
+### Estado de abertura e autorização da galeria
+
+A rota de estado usa a mesma regra do detalhe e retorna exclusivamente `contentState`, `opensOn`, `opensAt` e `serverTime`. A data civil `opensOn` é usada para exibição. `opensAt` é o instante UTC equivalente à abertura da data em Brasília. Em modo imediato, os dois campos de data são nulos. `serverTime` é o instante UTC da decisão. A resposta protegida usa `Cache-Control: no-store`.
+
+A área de lembranças usa tempo monotônico ancorado no `serverTime`. Ao terminar o contador, a interface consulta a rota novamente e aguarda a confirmação do servidor. Ao trocar de evento, restaurar a página ou receber um aviso local de mudança de política, a interface cancela consultas pendentes e descarta o estado antigo. A página visível também reconsulta periodicamente. Quando a F02 oferecer troca de conta na mesma página, a sessão será parte da chave de montagem da área e da invalidação das consultas.
+
+A F11 deve resolver a conta e revalidar vínculo e política antes de consultar registros da galeria, metadados, reprodução ou emitir/renovar URLs. A consulta de estado feita pelo cliente serve à interface e a autorização é repetida em cada rota da galeria. Usar um escopo consistente entre autorização e leitura, com o evento vinculado como limite. Para evento inexistente ou sem vínculo, devolver `404 RESOURCE_NOT_FOUND`. Para evento vinculado ainda fechado, devolver `403 EVENT_CONTENT_LOCKED` antes do acesso aos registros. A interface da F11 deve cancelar leituras, interromper reprodução e limpar conteúdo e URLs sob seu controle no bloqueio ou ao mudar o escopo. Respeitar a validade residual já aprovada das URLs emitidas.
+
+Telemetria usa nome da operação, resultado, duração e correlação. Dados pessoais, payload, chaves de idempotência, códigos públicos utilizáveis e URLs privadas ficam fora dos logs.
 
 ## 6. Modelo de dados
 
