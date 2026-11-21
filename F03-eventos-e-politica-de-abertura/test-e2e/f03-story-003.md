@@ -7,4 +7,6 @@
 
 O primeiro passe identificou um seletor de texto que correspondia ao resumo e à área de texto. O teste passou a consultar o parágrafo do resumo. O reteste completo passou nas cinco configurações.
 
+A reexecução sobre a versão integrada aprovou novamente 25 cenários de eventos e 10 cenários da fundação com `python3 -B docker_stack.py --browser`.
+
 [Testes de aceite](../test-funcional/f03-story-003.md) · [Candidato](../delivery/f03-story-003.md)
