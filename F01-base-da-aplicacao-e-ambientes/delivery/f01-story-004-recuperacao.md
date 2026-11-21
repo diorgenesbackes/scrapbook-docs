@@ -21,7 +21,7 @@ Antes de acionar um workflow, preserve o artefato de evidência da tentativa que
 
 ## Acionar as recuperações
 
-Nos repositórios de API e UI, selecione `recover-hlg.yml` com ref `hlg`. Forneça o ID e a tentativa da publicação conhecida, seu SHA e sua versão. Na API, informe o ARN da definição observada no serviço. Na UI, informe o ID do job mais recente observado no Amplify, inclusive quando ele falhou. Preserve o workflow de recuperação e seu `release-evidence.json` com o registro do incidente.
+Nos repositórios de API e UI, selecione o workflow de recuperação na ref `hlg`. O arquivo se chama `recover-hlg.yml` no candidato da F01-STORY-004 e `recover.yml` a partir da F01-STORY-005. Forneça o ID e a tentativa da publicação conhecida, seu SHA e sua versão. Na API, informe o ARN da definição observada no serviço. Na UI, informe o ID do job mais recente observado no Amplify, inclusive quando ele falhou. Preserve o workflow de recuperação e seu `release-evidence.json` com o registro do incidente.
 
 - **API.** O workflow confere a execução de origem, a geração ativa e o digest da tag no ECR. Registra uma revisão com a configuração atual do serviço e a imagem conhecida. Confirma a definição em execução, o digest das tarefas e a prontidão de seus IPs privados no ALB.
 - **UI.** O workflow recupera o ZIP da tentativa conhecida e confere SHA-256, `release.json` e origens de UI/API. Publica o ZIP preservado e confirma a revisão servida. Se o ZIP ou a evidência tiver expirado, selecione outra publicação conhecida que ainda tenha ambos.
