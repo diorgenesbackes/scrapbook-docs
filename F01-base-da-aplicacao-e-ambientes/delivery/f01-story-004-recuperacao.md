@@ -1,6 +1,8 @@
 # F01-STORY-004 · Recuperação da publicação em homologação
 
-Os workflows manuais recuperam artefatos conhecidos da API e da UI. O workflow do Liquibase ensaia a reversão da instalação inicial em uma instância PostgreSQL descartável. A promoção ou publicação do candidato depende das evidências do ambiente real. [História no Trello](https://trello.com/c/eVGjsc6t) · [Publicação de referência](f01-story-003-publicacao.md) · [Spec da F01](../spec.md#3-decisões-técnicas)
+Os workflows manuais recuperam artefatos conhecidos da API e da UI. O workflow do Liquibase ensaia a reversão da instalação inicial em uma instância PostgreSQL descartável. A validação local autoriza a integração do candidato em `hlg`. A pessoa responsável pelo projeto conduz os ensaios e o aceite a partir dessa branch. [História no Trello](https://trello.com/c/eVGjsc6t) · [Publicação de referência](f01-story-003-publicacao.md) · [Spec da F01](../spec.md#3-decisões-técnicas)
+
+As evidências de desenvolvimento em 21/11/2026 cobrem o [code review](../code-review/f01-story-004.md), a [regressão E2E](../test-e2e/f01-story-004.md), a [validação funcional](../test-funcional/2026-11-21_10-12-11/2-execucao.md), a [segurança](../test-security/f01-story-004.md) e a [carga local](../test-performance/2026-11-21_10-12-11/2-execucao.md).
 
 ## Diagnosticar uma falha parcial
 
