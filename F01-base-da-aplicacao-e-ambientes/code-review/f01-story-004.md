@@ -19,3 +19,7 @@ O escopo inclui os caminhos de publicação reutilizados e os novos workflows ma
 | Publicação e recuperação | `deploy/verify_workflows.py` com respostas simuladas | Código 0. 27 cenários de publicação e 13 de recuperação passaram. |
 
 A revisão não encontrou novos desvios técnicos no escopo verificado após os retestes. O GitHub hospedado, as permissões efetivas da AWS e a disponibilidade de artefatos de homologação continuam pendentes. [Procedimento e requisitos de ativação](../delivery/f01-story-004-recuperacao.md)
+
+## Revalidação local em 21/11/2026
+
+A revisão anterior cobre o mesmo conteúdo de código dos commits integrados em `dev`. A conferência da promoção encontrou apenas os commits da F01-STORY-004 a integrar. Os comandos acima foram repetidos em `32cb2cd` (API), `8919ad1` (UI), `a460f08` (Liquibase) e `bfb23b7` (testes). Passaram 45 unitários da API, 10 da UI, 4 do verificador operacional e os 40 cenários simulados. A API compilou com zero warnings. O lint e o build da UI concluíram sem avisos reportados.
