@@ -1,0 +1,7 @@
+# Compartilhamento e impressão
+
+“Compartilhar com convidados” abre a S15 no detalhe do evento. A tela obtém o nome e o código pelas duas consultas autenticadas. A cópia anuncia “Link copiado.” e, se o navegador negar o acesso à área de transferência, move o foco para o endereço e seleciona seu conteúdo. A S16 mostra o QR e o mesmo endereço em texto depois da janela de envios, inclusive antes da abertura e após seu encerramento. [S15](../../design-system/screens/S15.md) · [S16](../../design-system/screens/S16.md)
+
+O build Amplify grava `UI_ORIGIN` em `VITE_PUBLIC_SITE_ORIGIN`. O QR usa esse endereço mesmo quando a tela é acessada por um alias. Sem uma origem configurada, somente loopback pode fornecer o endereço local. O workflow compara a origem registrada pelo build com a origem usada na publicação.
+
+`qrcode-generator` 2.0.4 (MIT, sem dependências transitivas) roda no navegador. Seu módulo separado tem 20,82 kB, ou 7,37 kB com gzip. A página carrega o módulo após obter os dados do evento. Prévia, SVG, PNG e impressão usam a mesma matriz com correção M, quatro módulos livres e preto sobre branco. O PNG tem pelo menos 1.024 pixels por lado. A impressão usa 60 mm por lado e exibe o nome e a URL. O Playwright valida a imagem com `jsqr` 1.4.0 (Apache-2.0), usado só nos testes. [Gerador](https://github.com/kazuhikoarase/qrcode-generator/blob/master/js/package.json) · [Decodificador](https://github.com/cozmo/jsQR)
