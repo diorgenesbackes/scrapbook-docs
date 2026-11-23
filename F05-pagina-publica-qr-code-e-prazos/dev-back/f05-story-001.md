@@ -1,6 +1,6 @@
 # F05-STORY-001 · Consulta pública e janela de contribuição
 
-`GET /api/v1/public-events/{code}` consulta por código opaco e envia `Cache-Control: no-store`. O PostgreSQL usa a restrição única vigente e projeta nome, boas-vindas, início e os três marcos da janela. A resposta usa a capa padrão e o fallback de boas-vindas da F03. O contrato foi entregue sobre o schema já aplicado. [Contrato HTTP](../spec.md#5-contratos-de-api)
+`GET /api/v1/public-events/{code}` consulta por código opaco e envia `Cache-Control: no-store`. A consulta filtra o código por igualdade, elegível para o índice único vigente, e projeta nome, boas-vindas, início e os três marcos da janela. A resposta usa a capa padrão e o fallback de boas-vindas da F03. O contrato foi entregue sobre o schema já aplicado. [Contrato HTTP](../spec.md#5-contratos-de-api)
 
 O formato inválido é recusado antes da consulta. Código inválido e código ausente no banco recebem o mesmo `404 RESOURCE_NOT_FOUND`, com a correlação da requisição. O limite da leitura é de dois segundos e seu cancelamento flui até EF Core. A perda do cliente continua sendo cancelamento. Uma falha transitória recebe `503 DEPENDENCY_UNAVAILABLE`.
 
