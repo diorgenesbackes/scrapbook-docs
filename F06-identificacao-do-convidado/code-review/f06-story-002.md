@@ -11,7 +11,7 @@ Em 24/11/2026, a revisão abrangeu o estado da S17, o armazenamento por evento, 
 | --- | --- |
 | `npm run lint` e `npm run build` | Exit 0, sem diagnósticos de lint, compilação ou bundler. |
 | `npm test` | 75 testes em 16 arquivos, sem coleta numérica de cobertura. |
-| Restore bloqueado pelo lockfile, build e unitários do backend | Exit 0. .NET 10.0.401, 125 testes, zero avisos ou erros no build. |
+| Restore em modo bloqueado, build e unitários do backend | Exit 0. .NET 10.0.401, 125 testes, zero avisos ou erros no build. |
 | `git diff --check` | Exit 0 no escopo revisado. |
 
 Sem achados técnicos remanescentes no escopo revisado.
