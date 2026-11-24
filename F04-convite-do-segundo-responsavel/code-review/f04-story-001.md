@@ -11,3 +11,5 @@
 Durante a revisão, os estados anterior e posterior da troca de convite passaram a ser registrados separadamente. O teste de validação de idempotência passou a enviar uma chave inválida em ASCII. O cabeçalho com texto acentuado era recusado pelo servidor HTTP antes da validação de UUID. [Contrato](../spec.md#5-contratos-de-api)
 
 A emissão normaliza a precisão do horário para microssegundos antes de devolver o vencimento. O unitário usa um relógio com precisão maior e verifica que a resposta inicial conserva o mesmo prazo depois de consultar ou repetir a emissão.
+
+Os checks passaram em 116 unitários do serviço e 47 da interface. O build .NET ficou com zero avisos e erros. `npm ci --offline` emitiu o aviso referente ao script opcional de `fsevents`. Lint, build e testes passaram. O pacote de publicação mantém a proteção da entrada do convite, e os 61 cenários simulados de publicação e recuperação continuaram aprovados.
