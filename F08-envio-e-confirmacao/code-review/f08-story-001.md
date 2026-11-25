@@ -5,3 +5,5 @@
 - A revisão reaproveita a identificação e a proteção de saída existentes. A interface distingue admissão, resultado incerto e confirmação, mantém a tentativa em memória e evita um novo UUID durante a recuperação. [Contrato de frontend](../dev-front/f08-story-001.md)
 
 A primeira integração encontrou um erro de binding dos instantes civis. A correção aplica `NpgsqlDbType.Timestamp` aos parâmetros civis e preserva os instantes UTC das operações e da Outbox. A revisão também simplificou a leitura de ativação e removeu um campo redundante da entidade da Outbox.
+
+O reteste no PostgreSQL confirmou a correção sob concorrência e rollback. Na `dev` integrada, o build do serviço teve zero avisos e zero erros e os 140 testes xUnit passaram. Lint, TypeScript, build e 122 testes Vitest passaram na UI. [Aceite integrado](../test-funcional/2026-11-25_10-24-40/2-execucao.md)
