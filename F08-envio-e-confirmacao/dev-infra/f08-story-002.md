@@ -1,0 +1,5 @@
+# F08-STORY-002 — S3 versionado e fila de recepção
+
+O template `config/media/photo-submissions.template.json` define bucket privado versionado, fila SQS e DLQ. A política da fila restringe os eventos ao bucket e à conta, e a notificação seleciona PUTs de `submissions/temporary/`. CORS lista as origens aprovadas para PUT. A política de execução limita operações a prefixos temporários e originais. O bucket usa SSE-KMS com chave própria por ambiente, rotação e retenção. A ingestão começa desativada e o template exporta a origem HTTPS do bucket para o CSP da UI. [Plano da F08](../plan.md)
+
+Nove testes de infraestrutura e `cfn-lint` passaram no commit `1b74a3a`, que acrescenta KMS ao `8dda194`. A fixture Moto em loopback confirmou PUT assinado, CORS da origem configurada, versões distintas e cópia e exclusão por versão. Para o ensaio local, a fixture publica um envelope sintético com a versão devolvida pelo PUT. O envelope nativo, a chave KMS no PUT e na cópia, o isolamento IAM e o CSP no ambiente publicado exigem verificação em homologação. [Aceite planejado](../test-funcional/2026-11-25_14-54-00/1-plano.md)
