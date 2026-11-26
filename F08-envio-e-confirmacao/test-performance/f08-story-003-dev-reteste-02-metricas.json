@@ -1,0 +1,1032 @@
+{
+  "admissao_por_evento": {
+    "A": {
+      "max_ms": 230.419,
+      "mediana_ms": 160.096,
+      "n": 100,
+      "p95_ms": 222.999,
+      "p99_ms": 229.921
+    },
+    "A/1": {
+      "max_ms": 230.419,
+      "mediana_ms": 159.143,
+      "n": 80,
+      "p95_ms": 222.999,
+      "p99_ms": 226.433
+    },
+    "A/10": {
+      "max_ms": 229.916,
+      "mediana_ms": 164.54,
+      "n": 20,
+      "p95_ms": 218.792,
+      "p99_ms": 227.691
+    },
+    "B": {
+      "max_ms": 235.277,
+      "mediana_ms": 156.692,
+      "n": 100,
+      "p95_ms": 220.529,
+      "p99_ms": 229.837
+    },
+    "B/1": {
+      "max_ms": 235.277,
+      "mediana_ms": 158.367,
+      "n": 80,
+      "p95_ms": 217.945,
+      "p99_ms": 227.532
+    },
+    "B/10": {
+      "max_ms": 229.782,
+      "mediana_ms": 145.612,
+      "n": 20,
+      "p95_ms": 229.18,
+      "p99_ms": 229.662
+    }
+  },
+  "ambiente": {
+    "JPEG_bytes": 351104,
+    "PNG_bytes": 922428,
+    "docker": "Ubuntu 24.04.4 LTS|aarch64|4|6197379072|29.5.2",
+    "host_cores": 12,
+    "host_utc": "2026-11-26T02:06:43.237404+00:00",
+    "k6": "k6 v2.3.0 (commit/devel, go1.27.1, darwin/arm64)",
+    "planned_transfer_bytes": 356588960,
+    "service_utc": "2026-11-26T02:06:12+00:00",
+    "snapshots": {
+      "scrapbook-docs": "1c0db3571729fbc9d197e1a2726715d400fef729",
+      "scrapbook-infrastructure": "8a0f2172c42063814e45b046a268a1581251f23a",
+      "scrapbook-liquibase": "a7cbec27d2255cfa43fa5a77ae72f0e3f1fc04f5",
+      "scrapbook-service": "d1bac2681359924ece865e302ef3b982db8f89d0",
+      "scrapbook-tests": "81d85ea4a900e1bd820d95937503ddcfbb833751",
+      "scrapbook-ui": "a46fc573b3274fe73609e01b1be22d9729ecca91"
+    }
+  },
+  "antes_da_injecao": {
+    "conjuntos_10_A": 20,
+    "conjuntos_10_B": 20,
+    "conjuntos_1_A": 80,
+    "conjuntos_1_B": 80,
+    "estados": {
+      "receiving": 200
+    },
+    "fatos_midia": 0,
+    "manifestos": 560,
+    "originais_preservados": 0,
+    "primeiro_fato": 0,
+    "recibos_s3": 0,
+    "registros_A": 100,
+    "registros_B": 100
+  },
+  "carga": {
+    "admissoes_por_evento": {
+      "A": {
+        "janela_inicios_ms": 19.902,
+        "janela_total_ms": 240.857,
+        "pico_em_andamento_estimado": 100,
+        "por_segundo_na_janela": 415.184
+      },
+      "B": {
+        "janela_inicios_ms": 19.115,
+        "janela_total_ms": 240.736,
+        "pico_em_andamento_estimado": 100,
+        "por_segundo_na_janela": 415.393
+      }
+    },
+    "contagens_por_evento_e_conjunto": {
+      "completion_state": {
+        "receiving": 200
+      },
+      "media_bytes_accepted": {
+        "A/1": 50941280,
+        "A/10": 127353200,
+        "B/1": 50941280,
+        "B/10": 127353200
+      },
+      "media_files_accepted": {
+        "A/1": 80,
+        "A/10": 200,
+        "B/1": 80,
+        "B/10": 200
+      },
+      "submissions_signalled": {
+        "A/1": 80,
+        "A/10": 20,
+        "B/1": 80,
+        "B/10": 20
+      },
+      "submissions_started": {
+        "A/1": 80,
+        "A/10": 20,
+        "B/1": 80,
+        "B/10": 20
+      }
+    },
+    "coortes": {
+      "admit_moment/1": {
+        "max_ms": 235.277,
+        "mediana_ms": 158.643,
+        "n": 160,
+        "p95_ms": 221.608,
+        "p99_ms": 227.501
+      },
+      "admit_moment/10": {
+        "max_ms": 229.916,
+        "mediana_ms": 156.692,
+        "n": 40,
+        "p95_ms": 229.18,
+        "p99_ms": 229.864
+      },
+      "authorize_moment/1": {
+        "max_ms": 200.691,
+        "mediana_ms": 144.226,
+        "n": 160,
+        "p95_ms": 182.399,
+        "p99_ms": 195.218
+      },
+      "authorize_moment/10": {
+        "max_ms": 197.472,
+        "mediana_ms": 4.234,
+        "n": 400,
+        "p95_ms": 152.592,
+        "p99_ms": 169.737
+      },
+      "complete_moment/1": {
+        "max_ms": 88.708,
+        "mediana_ms": 3.099,
+        "n": 160,
+        "p95_ms": 58.938,
+        "p99_ms": 76.564
+      },
+      "complete_moment/10": {
+        "max_ms": 6.483,
+        "mediana_ms": 2.34,
+        "n": 40,
+        "p95_ms": 5.356,
+        "p99_ms": 6.236
+      },
+      "consent_setup/1": {
+        "max_ms": 10.424,
+        "mediana_ms": 1.72,
+        "n": 160,
+        "p95_ms": 3.981,
+        "p99_ms": 9.897
+      },
+      "consent_setup/10": {
+        "max_ms": 2.731,
+        "mediana_ms": 1.502,
+        "n": 40,
+        "p95_ms": 2.034,
+        "p99_ms": 2.679
+      },
+      "submissão com transferência e conclusão/1": {
+        "max_ms": 1627.0,
+        "mediana_ms": 797.0,
+        "n": 160,
+        "p95_ms": 1603.15,
+        "p99_ms": 1620.46
+      },
+      "submissão com transferência e conclusão/10": {
+        "max_ms": 2330.0,
+        "mediana_ms": 2093.0,
+        "n": 40,
+        "p95_ms": 2323.25,
+        "p99_ms": 2329.22
+      },
+      "transfer_photo/1": {
+        "max_ms": 1298.138,
+        "mediana_ms": 494.022,
+        "n": 160,
+        "p95_ms": 1266.845,
+        "p99_ms": 1286.164
+      },
+      "transfer_photo/10": {
+        "max_ms": 1298.957,
+        "mediana_ms": 113.852,
+        "n": 400,
+        "p95_ms": 507.042,
+        "p99_ms": 1231.009
+      },
+      "transfer_photo/image/jpeg": {
+        "max_ms": 1286.406,
+        "mediana_ms": 139.689,
+        "n": 280,
+        "p95_ms": 1207.915,
+        "p99_ms": 1275.779
+      },
+      "transfer_photo/image/png": {
+        "max_ms": 1298.957,
+        "mediana_ms": 147.675,
+        "n": 280,
+        "p95_ms": 1215.499,
+        "p99_ms": 1274.369
+      }
+    },
+    "operacoes": {
+      "admit_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 235.921,
+          "mediana_ms": 159.078,
+          "n": 200,
+          "p95_ms": 223.758,
+          "p99_ms": 230.145
+        },
+        "janela_inicios_ms": 19.975,
+        "janela_total_ms": 240.93,
+        "latencia": {
+          "max_ms": 235.277,
+          "mediana_ms": 158.545,
+          "n": 200,
+          "p95_ms": 222.288,
+          "p99_ms": 229.921
+        },
+        "pico_em_andamento_estimado": 200,
+        "por_segundo_na_janela": 830.117,
+        "status": {
+          "201": 200
+        }
+      },
+      "authorize_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 200.692,
+          "mediana_ms": 5.282,
+          "n": 560,
+          "p95_ms": 169.294,
+          "p99_ms": 187.951
+        },
+        "janela_inicios_ms": 2254.175,
+        "janela_total_ms": 2259.537,
+        "latencia": {
+          "max_ms": 200.691,
+          "mediana_ms": 5.28,
+          "n": 560,
+          "p95_ms": 169.293,
+          "p99_ms": 187.95
+        },
+        "pico_em_andamento_estimado": 200,
+        "por_segundo_na_janela": 247.838,
+        "status": {
+          "200": 560
+        }
+      },
+      "complete_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 88.71,
+          "mediana_ms": 2.918,
+          "n": 200,
+          "p95_ms": 53.809,
+          "p99_ms": 71.517
+        },
+        "janela_inicios_ms": 2051.308,
+        "janela_total_ms": 2053.36,
+        "latencia": {
+          "max_ms": 88.708,
+          "mediana_ms": 2.916,
+          "n": 200,
+          "p95_ms": 53.807,
+          "p99_ms": 71.516
+        },
+        "pico_em_andamento_estimado": 15,
+        "por_segundo_na_janela": 97.401,
+        "status": {
+          "202": 200
+        }
+      },
+      "consent_setup": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 12.737,
+          "mediana_ms": 1.639,
+          "n": 200,
+          "p95_ms": 3.316,
+          "p99_ms": 12.076
+        },
+        "janela_inicios_ms": 82.217,
+        "janela_total_ms": 83.718,
+        "latencia": {
+          "max_ms": 10.424,
+          "mediana_ms": 1.638,
+          "n": 200,
+          "p95_ms": 3.316,
+          "p99_ms": 9.856
+        },
+        "pico_em_andamento_estimado": 6,
+        "por_segundo_na_janela": 2388.973,
+        "status": {
+          "200": 200
+        }
+      },
+      "transfer_photo": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 1299.454,
+          "mediana_ms": 144.13,
+          "n": 560,
+          "p95_ms": 1210.197,
+          "p99_ms": 1277.973
+        },
+        "janela_inicios_ms": 2061.885,
+        "janela_total_ms": 2076.517,
+        "latencia": {
+          "max_ms": 1298.957,
+          "mediana_ms": 143.994,
+          "n": 560,
+          "p95_ms": 1208.892,
+          "p99_ms": 1276.999
+        },
+        "pico_em_andamento_estimado": 197,
+        "por_segundo_na_janela": 269.682,
+        "status": {
+          "200": 560
+        }
+      }
+    },
+    "tentativas": {
+      "janela_inicios_ms": 20.925,
+      "janela_total_ms": 2337.346,
+      "pico_em_andamento_estimado": 200,
+      "por_segundo_na_janela": 85.567
+    },
+    "total": {
+      "data_received": 1465054,
+      "data_sent": 357477064,
+      "dropped_iterations": 0,
+      "http_reqs": 1720,
+      "iterations": 200,
+      "media_bytes_accepted": 356588960,
+      "media_files_accepted": 560,
+      "submissions_signalled": 200,
+      "submissions_started": 200
+    },
+    "transferencias_por_tipo": {
+      "image/jpeg/http_200": 280,
+      "image/png/http_200": 280
+    },
+    "verificacoes": {
+      "PUT criou versão temporária": {
+        "pass": 560
+      },
+      "admissão com manifesto ordenado": {
+        "pass": 200
+      },
+      "autorização PUT válida na fixture": {
+        "pass": 560
+      },
+      "conclusão aceita ou recibo mínimo": {
+        "pass": 200
+      }
+    }
+  },
+  "drenagem": [
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 0.135
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 5.251
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 10.354
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 15.443
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 20.555
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 25.663
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 30.778
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 35.924
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 41.024
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 46.171
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 51.322
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 56.441
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 61.543
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 66.637
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 71.761
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 76.865
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 82.012
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 87.125
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 92.242
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 97.345
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 102.446
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 107.535
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 112.682
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 117.782
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 146,
+        "validating": 43
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 171,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 120.111
+    }
+  ],
+  "evento_docker_moto": [
+    {
+      "ação": "oom",
+      "tempo_utc_s": 1795658788
+    },
+    {
+      "ação": "die",
+      "código": "137",
+      "tempo_utc_s": 1795658788
+    }
+  ],
+  "injecao_sqs": {
+    "detalhes_lotes_com_ocorrências": [
+      {
+        "aceitas": 0,
+        "lote": 48,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_encerrada_sem_resposta",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 49,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_encerrada_sem_resposta",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 50,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_encerrada_sem_resposta",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 51,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_encerrada_sem_resposta",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 52,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          },
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 53,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          },
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 54,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          },
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 55,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          },
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      },
+      {
+        "aceitas": 0,
+        "lote": 56,
+        "planejadas": 10,
+        "tentativas": [
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          },
+          {
+            "aceitas": 0,
+            "categoria": "conexão_indisponível",
+            "enviadas": 10,
+            "status_cli": 255
+          }
+        ]
+      }
+    ],
+    "lotes_com_reenvio": 5,
+    "notificacoes_sinteticas_previstas": 560,
+    "notificacoes_sinteticas_publicadas": 470,
+    "segundos_de_injecao": 5.271
+  },
+  "s3_temporario": {
+    "temporarias_incluindo_aquecimento": 571,
+    "versoes_com_tamanho_valido_incluindo_aquecimento": {
+      "JPEG": 285,
+      "PNG": 286
+    }
+  },
+  "status": {
+    "drenagem": "bloqueada por falta de memória no Moto",
+    "k6": 0,
+    "runner": 1
+  }
+}
