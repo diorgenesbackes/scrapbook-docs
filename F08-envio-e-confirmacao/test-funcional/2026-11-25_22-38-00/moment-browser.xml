@@ -1,0 +1,18 @@
+<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="35.475872">
+<testsuite name="moment-submission.spec.ts" timestamp="2026-11-26T01:45:47.300Z" hostname="chromium-desktop" tests="3" failures="0" skipped="0" time="17.425" errors="0">
+<testcase name="CA1 e CA4: revisão em ordem, transferência integral, recibo único e nova composição" classname="moment-submission.spec.ts" time="5.922">
+</testcase>
+<testcase name="CA3: impede confirmação integral e indica exclusivamente a posição inválida" classname="moment-submission.spec.ts" time="5.81">
+</testcase>
+<testcase name="CA2 e CA4: retoma somente a posição pendente com as credenciais originais" classname="moment-submission.spec.ts" time="5.693">
+</testcase>
+</testsuite>
+<testsuite name="moment-submission.spec.ts" timestamp="2026-11-26T01:45:47.300Z" hostname="android-emulado" tests="3" failures="0" skipped="0" time="17.384" errors="0">
+<testcase name="CA1 e CA4: revisão em ordem, transferência integral, recibo único e nova composição" classname="moment-submission.spec.ts" time="5.74">
+</testcase>
+<testcase name="CA3: impede confirmação integral e indica exclusivamente a posição inválida" classname="moment-submission.spec.ts" time="5.862">
+</testcase>
+<testcase name="CA2 e CA4: retoma somente a posição pendente com as credenciais originais" classname="moment-submission.spec.ts" time="5.782">
+</testcase>
+</testsuite>
+</testsuites>
