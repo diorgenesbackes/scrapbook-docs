@@ -5,7 +5,7 @@ O convidado pode enviar de uma a dez fotos de um momento com uma legenda comum, 
 | Repositório | SHA da branch da story | Dependência F08-STORY-002 |
 | --- | --- | --- |
 | `scrapbook-service` | `1d069665d99b2cebef6b07bb8d788de81b8f8d35` | `20097b0` |
-| `scrapbook-ui` | `3e3cde2f4b9d0a6a5b48de5bdc76c198fdf36d05` | `c8005e7` |
+| `scrapbook-ui` | `139b970d69b1ea44a626889567008506a51b0f7a` | `c8005e7` |
 | `scrapbook-tests` | `0370314648def4d92c4692ba2c5e5e7e39456570` | `068add6` |
 | `scrapbook-docs` | Revisão deste documento | `e415b9a` |
 
