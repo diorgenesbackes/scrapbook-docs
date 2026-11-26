@@ -25,3 +25,7 @@ A F08-STORY-003 entrou em `dev` após a F08-STORY-002. Todos os checks de PR pas
 | [`scrapbook-docs`](https://github.com/diorgenesbackes/scrapbook-docs/pull/5) | `1c0db3571729fbc9d197e1a2726715d400fef729` |
 
 A integração HTTP e as seis jornadas de navegador passaram. Foram exercitadas a conclusão na fronteira do prazo, a retomada da posição pendente, a rejeição integral e a conferência de oito versões privadas no armazenamento emulado. As dez jornadas de regressão de depoimentos passaram. [Aceite integrado](../test-funcional/2026-11-25_22-38-00/2-execucao.md)
+
+## Reteste da admissão em dev
+
+A admissão em lote baixou o p95 de 567,73 para 503,03 ms. A alteração seguinte restringiu a contenção à própria tentativa e o p95 final foi 222,29 ms em `d1bac2681359924ece865e302ef3b982db8f89d0`. A segunda rajada repetiu 200 admissões e 560 uploads, sem falhas HTTP. O emulador encerrou por falta de memória na fase posterior a essa rajada. A confirmação de todos os conjuntos nessa fase permanece por verificar. [Revisão das correções](../code-review/f08-story-003-admissao.md) · [Reteste final](../test-performance/f08-story-003-dev-reteste-02.md)
