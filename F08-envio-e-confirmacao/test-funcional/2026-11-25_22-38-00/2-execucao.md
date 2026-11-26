@@ -21,3 +21,7 @@ A execução de 25/11/2026 terminou com código 0 nas três verificações, com 
 Na primeira rodada de navegador, os quatro cenários de sucesso e retentativa passaram. O PNG de 12.001 × 1 foi rejeitado corretamente na posição 2 nos dois perfis, com `photo-invalid`. A asserção do ensaio esperava `photo-resource-budget` para essa amostra. A especificação exige uma causa estável e a posição, sem fixar classificação para essa dimensão. Para validar a causa de conteúdo com uma amostra explícita, o reteste usou um JPEG sintético sem o marcador de fim. O Chromium exibiu sua prévia e o servidor classificou o conteúdo como inválido.
 
 A validação ficou no ambiente local, com arquivos sintéticos e eventos de recebimento introduzidos na fila de Moto após cada PUT observado. Homologação ainda verifica o aviso oficial, S3/SQS reais, IAM, KMS, CORS e o atraso operacional do saneamento na AWS. A carga e a segurança são registradas nas etapas próprias. [Estratégia de testes](../../spec.md#7-estratégia-de-testes)
+
+## Reteste após as correções de admissão
+
+A suíte HTTP foi repetida com o serviço `d1bac2681359924ece865e302ef3b982db8f89d0`. Passaram as mesmas asserções de quantidade, ordem, retomada, idempotência, limite inclusivo, rejeição integral e limpeza. A execução encerrou em 47,888 s com código 0 e os recursos do laboratório foram removidos. [Revisão das correções](../../code-review/f08-story-003-admissao.md)
