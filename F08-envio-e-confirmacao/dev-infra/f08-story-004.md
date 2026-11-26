@@ -1,0 +1,7 @@
+# F08-STORY-004 — Recepção de vídeos no armazenamento
+
+O bucket privado versionado entrega `ObjectCreated:CompleteMultipartUpload` à fila de recepção, com o mesmo prefixo temporário usado pelo PUT. A role lista e cancela partes apenas no prefixo temporário. A listagem de multiparts abertos é limitada ao bucket da stack, e a aplicação passa o prefixo da chave exata e compara cada chave retornada. [Notificações S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html) · [Permissões S3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_s3.html)
+
+A imagem compila o FFmpeg 9.1 de fonte oficial com SHA-256 fixado e assinatura PGP conferida, disponibilizando `/usr/bin/ffprobe`. O build desabilita rede e habilita somente o protocolo de arquivo e os demultiplexadores de MP4, MOV e Matroska/WebM. O Compose disponibiliza até 512 MiB de armazenamento temporário para uma leitura por vez. A aplicação valida o conteúdo em processo limitado. O vídeo começa desabilitado e usa a configuração de mídia existente. [Plano da F08](../plan.md) · [Versão e assinatura](https://ffmpeg.org/download.html#releases)
+
+A fixture descartável `--video` calcula a partir dos bytes recebidos o checksum SHA-256 que o Moto 5.2.4.dev omite em `ListParts`. O runner local publica a evidência de recepção com a versão efetivamente criada e controla o instante do cenário. A validação de IAM, SSE-KMS, SigV4 e da notificação nativa continua prevista para homologação.

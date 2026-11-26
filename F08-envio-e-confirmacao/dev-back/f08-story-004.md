@@ -1,0 +1,9 @@
+# F08-STORY-004 — Admissão e confirmação de vídeo
+
+A API admite um vídeo MP4, MOV ou WebM para momento ou depoimento. O manifesto contém uma posição, MIME, tamanho e SHA-256 integral. A partir de 32 MiB, o arquivo é dividido em partes de 16 MiB, com a última parte ajustada ao tamanho restante. Cada digest de parte faz parte da identidade idempotente do manifesto. O limite total é 500.000.000 bytes.
+
+A identidade da tentativa restringe consultas, autorizações e conclusão ao evento e ao arquivo admitidos. O servidor reconhece somente partes informadas pelo S3 com número, tamanho e checksum do manifesto. A aplicação conclui o multipart com o conjunto completo. A prova de recepção vincula bucket, chave, versão, operação e instante. A comparação inclui 13h de Brasília e é feita antes de qualquer arredondamento de persistência. [Contrato da F08](../spec.md)
+
+O worker lê a versão fixada em fluxo, confere o SHA-256 integral e inspeciona o conteúdo com FFprobe isolado. A duração da faixa é conferida na linha do tempo dos pacotes. O orçamento de inspeção é 30 s por vídeo e 768 MiB de espaço de endereçamento por processo em Linux. A validação dos limites de 60 s e 300 s ocorre antes da cópia. A cópia privada é versionada e pode ser reaproveitada pelo checksum após um resultado incerto. O recibo é publicado depois do commit conjunto do registro, do original e dos eventos Outbox. [Evidência de recepção e confirmação](../spec.md#3-regras-de-negócio)
+
+A chave `PhotoSubmissions__VideoEnabled` controla novas admissões e autorizações de vídeo. Usa o armazenamento e a fila de mídia configurados por `PhotoSubmissions__Enabled`, com `PhotoSubmissions__VideoProbePath` apontando para `/usr/bin/ffprobe` por padrão. A migration de vídeo tem de estar ativa antes da nova imagem de serviço quando a ingestão de mídia estiver habilitada. [Migration](../dev-db/f08-story-004.md) · [Infraestrutura](../dev-infra/f08-story-004.md)
