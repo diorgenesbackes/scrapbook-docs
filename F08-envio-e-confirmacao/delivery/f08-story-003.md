@@ -29,3 +29,15 @@ A integração HTTP e as seis jornadas de navegador passaram. Foram exercitadas 
 ## Reteste da admissão em dev
 
 A admissão em lote baixou o p95 de 567,73 para 503,03 ms. A alteração seguinte restringiu a contenção à própria tentativa e o p95 final foi 222,29 ms em `d1bac2681359924ece865e302ef3b982db8f89d0`. A segunda rajada repetiu 200 admissões e 560 uploads, sem falhas HTTP. O emulador encerrou por falta de memória na fase posterior a essa rajada. A confirmação de todos os conjuntos nessa fase permanece por verificar. [Revisão das correções](../code-review/f08-story-003-admissao.md) · [Reteste final](../test-performance/f08-story-003-dev-reteste-02.md)
+
+## Promoção e publicação
+
+Os checks passaram e os três componentes técnicos foram confirmados em `hlg`.
+
+| PR de homologação | SHA em hlg |
+| --- | --- |
+| [`scrapbook-service`](https://github.com/diorgenesbackes/scrapbook-service/pull/6) | `25a2bb5add02ebb27bab7631c8775f0b4e3c4113` |
+| [`scrapbook-ui`](https://github.com/diorgenesbackes/scrapbook-ui/pull/4) | `d60f931d4df203218821ea79798c6c7dc5d596f5` |
+| [`scrapbook-tests`](https://github.com/diorgenesbackes/scrapbook-tests/pull/4) | `cbbf57e2689ab61b86598b004267f6efb69a0a05` |
+
+A publicação parou no job `reserve` da API e da interface. Os jobs de publicação ficaram pulados. A versão de banco para o ensaio continua a da F08-STORY-002. O aceite em AWS inclui a entrega da prova real e a confirmação de todos os conjuntos sob carga. [API](https://github.com/diorgenesbackes/scrapbook-service/actions/runs/45740643100) · [UI](https://github.com/diorgenesbackes/scrapbook-ui/actions/runs/45740663628) · [Base de mídia](f08-story-002.md#promoção-confirmada-em-hlg)
