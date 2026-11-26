@@ -1,0 +1,923 @@
+{
+  "admissao_por_evento": {
+    "A": {
+      "max_ms": 653.658,
+      "mediana_ms": 245.066,
+      "n": 100,
+      "p95_ms": 585.75,
+      "p99_ms": 647.507
+    },
+    "A/1": {
+      "max_ms": 653.658,
+      "mediana_ms": 245.066,
+      "n": 80,
+      "p95_ms": 564.547,
+      "p99_ms": 648.75
+    },
+    "A/10": {
+      "max_ms": 633.867,
+      "mediana_ms": 245.76,
+      "n": 20,
+      "p95_ms": 614.789,
+      "p99_ms": 630.051
+    },
+    "B": {
+      "max_ms": 601.869,
+      "mediana_ms": 242.178,
+      "n": 100,
+      "p95_ms": 567.119,
+      "p99_ms": 588.464
+    },
+    "B/1": {
+      "max_ms": 601.869,
+      "mediana_ms": 234.109,
+      "n": 80,
+      "p95_ms": 567.726,
+      "p99_ms": 591.172
+    },
+    "B/10": {
+      "max_ms": 449.771,
+      "mediana_ms": 247.588,
+      "n": 20,
+      "p95_ms": 392.398,
+      "p99_ms": 438.296
+    }
+  },
+  "ambiente": {
+    "JPEG_bytes": 351104,
+    "PNG_bytes": 922428,
+    "docker": "Ubuntu 24.04.4 LTS|aarch64|4|6197379072|29.5.2",
+    "host_cores": 12,
+    "host_utc": "2026-11-26T01:50:04.028987+00:00",
+    "k6": "k6 v2.3.0 (commit/devel, go1.27.1, darwin/arm64)",
+    "planned_transfer_bytes": 356588960,
+    "service_utc": "2026-11-26T01:49:33+00:00"
+  },
+  "antes_da_injecao": {
+    "conjuntos_10_A": 20,
+    "conjuntos_10_B": 20,
+    "conjuntos_1_A": 80,
+    "conjuntos_1_B": 80,
+    "estados": {
+      "receiving": 200
+    },
+    "fatos_midia": 0,
+    "manifestos": 560,
+    "originais_preservados": 0,
+    "primeiro_fato": 0,
+    "recibos_s3": 0,
+    "registros_A": 100,
+    "registros_B": 100
+  },
+  "carga": {
+    "admissoes_por_evento": {
+      "A": {
+        "janela_inicios_ms": 9.081,
+        "janela_total_ms": 660.698,
+        "pico_em_andamento_estimado": 100,
+        "por_segundo_na_janela": 151.355
+      },
+      "B": {
+        "janela_inicios_ms": 9.108,
+        "janela_total_ms": 608.917,
+        "pico_em_andamento_estimado": 100,
+        "por_segundo_na_janela": 164.226
+      }
+    },
+    "contagens_por_evento_e_conjunto": {
+      "completion_state": {
+        "receiving": 200
+      },
+      "media_bytes_accepted": {
+        "A/1": 50941280,
+        "A/10": 127353200,
+        "B/1": 50941280,
+        "B/10": 127353200
+      },
+      "media_files_accepted": {
+        "A/1": 80,
+        "A/10": 200,
+        "B/1": 80,
+        "B/10": 200
+      },
+      "submissions_signalled": {
+        "A/1": 80,
+        "A/10": 20,
+        "B/1": 80,
+        "B/10": 20
+      },
+      "submissions_started": {
+        "A/1": 80,
+        "A/10": 20,
+        "B/1": 80,
+        "B/10": 20
+      }
+    },
+    "coortes": {
+      "admit_moment/1": {
+        "max_ms": 653.658,
+        "mediana_ms": 242.419,
+        "n": 160,
+        "p95_ms": 567.726,
+        "p99_ms": 620.555
+      },
+      "admit_moment/10": {
+        "max_ms": 633.867,
+        "mediana_ms": 247.588,
+        "n": 40,
+        "p95_ms": 467.564,
+        "p99_ms": 626.035
+      },
+      "authorize_moment/1": {
+        "max_ms": 383.734,
+        "mediana_ms": 230.669,
+        "n": 160,
+        "p95_ms": 354.705,
+        "p99_ms": 371.205
+      },
+      "authorize_moment/10": {
+        "max_ms": 343.967,
+        "mediana_ms": 4.724,
+        "n": 400,
+        "p95_ms": 223.409,
+        "p99_ms": 302.498
+      },
+      "complete_moment/1": {
+        "max_ms": 98.115,
+        "mediana_ms": 3.419,
+        "n": 160,
+        "p95_ms": 30.782,
+        "p99_ms": 44.228
+      },
+      "complete_moment/10": {
+        "max_ms": 5.588,
+        "mediana_ms": 2.466,
+        "n": 40,
+        "p95_ms": 4.154,
+        "p99_ms": 5.102
+      },
+      "consent_setup/1": {
+        "max_ms": 11.73,
+        "mediana_ms": 1.967,
+        "n": 160,
+        "p95_ms": 8.486,
+        "p99_ms": 10.477
+      },
+      "consent_setup/10": {
+        "max_ms": 4.289,
+        "mediana_ms": 1.417,
+        "n": 40,
+        "p95_ms": 3.619,
+        "p99_ms": 4.288
+      },
+      "submissão com transferência e conclusão/1": {
+        "max_ms": 1893.0,
+        "mediana_ms": 991.0,
+        "n": 160,
+        "p95_ms": 1852.2,
+        "p99_ms": 1887.46
+      },
+      "submissão com transferência e conclusão/10": {
+        "max_ms": 2817.0,
+        "mediana_ms": 2667.0,
+        "n": 40,
+        "p95_ms": 2808.15,
+        "p99_ms": 2814.66
+      },
+      "transfer_photo/1": {
+        "max_ms": 1399.626,
+        "mediana_ms": 510.219,
+        "n": 160,
+        "p95_ms": 1324.944,
+        "p99_ms": 1377.627
+      },
+      "transfer_photo/10": {
+        "max_ms": 1403.177,
+        "mediana_ms": 165.656,
+        "n": 400,
+        "p95_ms": 531.637,
+        "p99_ms": 1274.206
+      },
+      "transfer_photo/image/jpeg": {
+        "max_ms": 1403.177,
+        "mediana_ms": 195.074,
+        "n": 280,
+        "p95_ms": 667.302,
+        "p99_ms": 1338.419
+      },
+      "transfer_photo/image/png": {
+        "max_ms": 1399.626,
+        "mediana_ms": 198.435,
+        "n": 280,
+        "p95_ms": 1242.479,
+        "p99_ms": 1341.906
+      }
+    },
+    "operacoes": {
+      "admit_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 654.924,
+          "mediana_ms": 246.399,
+          "n": 200,
+          "p95_ms": 569.553,
+          "p99_ms": 634.232
+        },
+        "janela_inicios_ms": 9.109,
+        "janela_total_ms": 660.698,
+        "latencia": {
+          "max_ms": 653.658,
+          "mediana_ms": 243.396,
+          "n": 200,
+          "p95_ms": 567.726,
+          "p99_ms": 634.003
+        },
+        "pico_em_andamento_estimado": 200,
+        "por_segundo_na_janela": 302.71,
+        "status": {
+          "201": 200
+        }
+      },
+      "authorize_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 383.736,
+          "mediana_ms": 5.746,
+          "n": 560,
+          "p95_ms": 323.342,
+          "p99_ms": 358.299
+        },
+        "janela_inicios_ms": 2766.783,
+        "janela_total_ms": 2770.157,
+        "latencia": {
+          "max_ms": 383.734,
+          "mediana_ms": 5.745,
+          "n": 560,
+          "p95_ms": 323.341,
+          "p99_ms": 358.298
+        },
+        "pico_em_andamento_estimado": 180,
+        "por_segundo_na_janela": 202.155,
+        "status": {
+          "200": 560
+        }
+      },
+      "complete_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 98.117,
+          "mediana_ms": 3.144,
+          "n": 200,
+          "p95_ms": 30.556,
+          "p99_ms": 43.496
+        },
+        "janela_inicios_ms": 2386.336,
+        "janela_total_ms": 2388.285,
+        "latencia": {
+          "max_ms": 98.115,
+          "mediana_ms": 3.143,
+          "n": 200,
+          "p95_ms": 30.554,
+          "p99_ms": 43.494
+        },
+        "pico_em_andamento_estimado": 8,
+        "por_segundo_na_janela": 83.742,
+        "status": {
+          "202": 200
+        }
+      },
+      "consent_setup": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 14.589,
+          "mediana_ms": 1.887,
+          "n": 200,
+          "p95_ms": 7.419,
+          "p99_ms": 13.085
+        },
+        "janela_inicios_ms": 108.022,
+        "janela_total_ms": 109.444,
+        "latencia": {
+          "max_ms": 11.73,
+          "mediana_ms": 1.885,
+          "n": 200,
+          "p95_ms": 7.393,
+          "p99_ms": 10.313
+        },
+        "pico_em_andamento_estimado": 6,
+        "por_segundo_na_janela": 1827.419,
+        "status": {
+          "200": 200
+        }
+      },
+      "transfer_photo": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 1403.31,
+          "mediana_ms": 195.962,
+          "n": 560,
+          "p95_ms": 1242.378,
+          "p99_ms": 1347.335
+        },
+        "janela_inicios_ms": 2386.238,
+        "janela_total_ms": 2397.853,
+        "latencia": {
+          "max_ms": 1403.177,
+          "mediana_ms": 195.776,
+          "n": 560,
+          "p95_ms": 1242.226,
+          "p99_ms": 1347.006
+        },
+        "pico_em_andamento_estimado": 188,
+        "por_segundo_na_janela": 233.542,
+        "status": {
+          "200": 560
+        }
+      }
+    },
+    "tentativas": {
+      "janela_inicios_ms": 9.937,
+      "janela_total_ms": 2818.854,
+      "pico_em_andamento_estimado": 200,
+      "por_segundo_na_janela": 70.951
+    },
+    "total": {
+      "data_received": 1465058,
+      "data_sent": 357477064,
+      "dropped_iterations": 0,
+      "http_reqs": 1720,
+      "iterations": 200,
+      "media_bytes_accepted": 356588960,
+      "media_files_accepted": 560,
+      "submissions_signalled": 200,
+      "submissions_started": 200
+    },
+    "transferencias_por_tipo": {
+      "image/jpeg/http_200": 280,
+      "image/png/http_200": 280
+    },
+    "verificacoes": {
+      "PUT criou versão temporária": {
+        "pass": 560
+      },
+      "admissão com manifesto ordenado": {
+        "pass": 200
+      },
+      "autorização PUT válida na fixture": {
+        "pass": 560
+      },
+      "conclusão aceita ou recibo mínimo": {
+        "pass": 200
+      }
+    }
+  },
+  "chromium_4g": {
+    "chromium": "158.0.8127.18",
+    "fixturesBytes": 922428,
+    "moment": [
+      {
+        "composerReadyMs": 2108,
+        "failure": null,
+        "previewsReadyMs": 424
+      },
+      {
+        "composerReadyMs": 2075,
+        "failure": null,
+        "previewsReadyMs": 426
+      },
+      {
+        "composerReadyMs": 2073,
+        "failure": null,
+        "previewsReadyMs": 425
+      },
+      {
+        "composerReadyMs": 2089,
+        "failure": null,
+        "previewsReadyMs": 421
+      },
+      {
+        "composerReadyMs": 2088,
+        "failure": null,
+        "previewsReadyMs": 439
+      }
+    ],
+    "public": [
+      {
+        "composerReadyMs": 2115,
+        "failure": null,
+        "previewsReadyMs": null
+      },
+      {
+        "composerReadyMs": 2061,
+        "failure": null,
+        "previewsReadyMs": null
+      },
+      {
+        "composerReadyMs": 2064,
+        "failure": null,
+        "previewsReadyMs": null
+      },
+      {
+        "composerReadyMs": 2063,
+        "failure": null,
+        "previewsReadyMs": null
+      },
+      {
+        "composerReadyMs": 2043,
+        "failure": null,
+        "previewsReadyMs": null
+      }
+    ],
+    "testimonial": [
+      {
+        "composerReadyMs": 2072,
+        "failure": null,
+        "previewsReadyMs": 96
+      },
+      {
+        "composerReadyMs": 2071,
+        "failure": null,
+        "previewsReadyMs": 98
+      },
+      {
+        "composerReadyMs": 2091,
+        "failure": null,
+        "previewsReadyMs": 97
+      },
+      {
+        "composerReadyMs": 2068,
+        "failure": null,
+        "previewsReadyMs": 93
+      },
+      {
+        "composerReadyMs": 2088,
+        "failure": null,
+        "previewsReadyMs": 95
+      }
+    ]
+  },
+  "drenagem": [
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 9,
+        "receiving": 102,
+        "validating": 89
+      },
+      "fatos_midia": 9,
+      "manifestos": 560,
+      "originais_preservados": 9,
+      "primeiro_fato": 2,
+      "recibos_s3": 317,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 0.113
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 11.087
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 16.189
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 21.288
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 26.38
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 31.474
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 36.578
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 41.673
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 46.795
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 51.903
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 57.012
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 62.107
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 67.212
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 72.308
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 77.417
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 82.501
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 87.604
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 92.691
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 97.798
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 102.948
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 108.058
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 113.175
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 118.282
+    },
+    {
+      "conjuntos_10_A": 20,
+      "conjuntos_10_B": 20,
+      "conjuntos_1_A": 80,
+      "conjuntos_1_B": 80,
+      "estados": {
+        "confirmed": 11,
+        "receiving": 91,
+        "validating": 98
+      },
+      "fatos_midia": 11,
+      "manifestos": 560,
+      "originais_preservados": 11,
+      "primeiro_fato": 2,
+      "recibos_s3": 351,
+      "registros_A": 100,
+      "registros_B": 100,
+      "segundos_apos_k6": 120.106
+    }
+  ],
+  "injecao_sqs": {
+    "notificacoes_sinteticas_publicadas": 560,
+    "segundos_de_injecao": 4.846
+  },
+  "s3_temporario": {
+    "temporarias_incluindo_aquecimento": 571,
+    "versoes_com_tamanho_valido_incluindo_aquecimento": {
+      "JPEG": 285,
+      "PNG": 286
+    }
+  }
+}

@@ -35,3 +35,20 @@ Todos os checks da F08-STORY-002 passaram e o GitHub confirmou os seis merge com
 | [`scrapbook-docs`](https://github.com/diorgenesbackes/scrapbook-docs/pull/4) | `3ad9c079001c301679ee315c7687eae33653f1c2` |
 
 A validação do resultado integrado usou a VM Colima dedicada. A integração de fotos e os quatro cenários de navegador passaram com o relógio da fixture alinhado ao contêiner. [Aceite integrado](../test-funcional/2026-11-25_22-32-28/2-execucao.md) · [E2E](../test-e2e/f08-story-002-dev.md) · [Revisão defensiva](../test-security/f08-story-002-dev.md)
+
+## Promoção confirmada em hlg
+
+Os checks e os merges abaixo foram confirmados no GitHub. A promoção preservou as árvores técnicas verificadas em `dev` e levou o redrive revisado. O cartão avançou para To Deploy.
+
+| PR de homologação | SHA em hlg |
+| --- | --- |
+| [`scrapbook-liquibase`](https://github.com/diorgenesbackes/scrapbook-liquibase/pull/4) | `9e0043d93f721bef4aa3717a527f6acbd3c480a1` |
+| [`scrapbook-infrastructure`](https://github.com/diorgenesbackes/scrapbook-infrastructure/pull/3) | `f89fc1ca928371dc8475846c9549e8ce14bb6e16` |
+| [`scrapbook-service`](https://github.com/diorgenesbackes/scrapbook-service/pull/3) | `898f894a0e16fce42a77d38d780903bc1c8a59b3` |
+| [`scrapbook-ui`](https://github.com/diorgenesbackes/scrapbook-ui/pull/3) | `230a70c62189da910df037c6aafc3bd30d69b471` |
+| [`scrapbook-tests`](https://github.com/diorgenesbackes/scrapbook-tests/pull/3) | `a6a3ab9c58ffe9433f13f1eb48180f86d49bad11` |
+| [`scrapbook-docs`](https://github.com/diorgenesbackes/scrapbook-docs/pull/8) | `e0fad17b8e50f59d141931d221b79995b3d3b092` |
+
+A publicação parou no job `reserve`. Os jobs de publicação do Liquibase, API e UI ficaram pulados. [Liquibase](https://github.com/diorgenesbackes/scrapbook-liquibase/actions/runs/45739168705) · [API](https://github.com/diorgenesbackes/scrapbook-service/actions/runs/45739179109) · [UI](https://github.com/diorgenesbackes/scrapbook-ui/actions/runs/45739191005)
+
+Para retomar a publicação, conferir a reserva de versão e a configuração de `hlg`. Após aplicar o Liquibase, a API requer o marcador de catálogo `f08-story-002-photo-receipts`. A validação de mídia no ambiente inclui a notificação nativa, CORS, IAM/KMS, o escopo da role de redrive e a limpeza por versão. [Publicação da base](../../F01-base-da-aplicacao-e-ambientes/delivery/f01-story-003-publicacao.md) · [Revisão defensiva](../test-security/f08-story-002-dev.md)

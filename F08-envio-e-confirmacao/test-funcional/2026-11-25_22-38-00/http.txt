@@ -1,0 +1,8 @@
+test_moment_photo_submission (__main__.VmClockMomentTests.test_moment_photo_submission) ... Relógio do serviço 2026-11-26T01:39:01Z; relógio do host 2026-11-26T01:39:30.930949+00:00.
+Ordem, recepção parcial, confirmação integral e limpeza conferidas.
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 44.756s
+
+OK

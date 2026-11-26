@@ -1,0 +1,13 @@
+# Plano de aceite integrado da F08-STORY-003
+
+Validar localmente o conjunto de fotos em Chromium com viewport de 320 px, Android emulado, HTTP, PostgreSQL 18.6, Liquibase e S3/SQS versionados emulados por Moto. Cada teste do navegador usa um evento descartável próprio, mídia sintética e aviso de teste. O laboratório tem portas em loopback e o relógio inicial da aplicação parte da hora do contêiner. [Cartão](https://trello.com/c/nvB32cdj) · [Especificação](../../spec.md) · [PRD](../../../PRD.md#f08-envio-e-confirmação-1)
+
+| Critério | Cenário | Resultado esperado |
+| --- | --- | --- |
+| CA1 | Admitir uma e dez fotos. Recusar manifesto vazio ou com onze fotos, UUIDs repetidos, posições fora da ordem ou repetidas, foto acima de 20.000.000 bytes e legenda com 501 escalares. Revisar duas fotos e uma legenda comum pelo navegador. | Aceita os conjuntos válidos e até 500 escalares. Persiste a mesma ordem, tipos, checksums e legenda da revisão. |
+| CA2 | Reconhecer uma foto e interromper a transferência da segunda pelo navegador. Consultar estado e acionar **Tentar novamente**. Tentar autorização fora do evento, para chave desconhecida e para foto já reconhecida. | Exibe progresso em bytes e só lista a posição pendente. Reutiliza a admissão e a credencial, autoriza apenas a pendente e preserva a posição reconhecida. |
+| CA3 | Entregar a última evidência exatamente às 13h e, em outro conjunto, 1 ms depois. Separadamente, enviar uma foto inválida e exercitar a rejeição por posição no navegador. | Usa o último recebimento aceito. Confirma o conjunto válido às 13h inclusive. Rejeita ou expira o conjunto incompleto, tardio ou com foto inválida, informa a posição e não grava registro confirmado nem fato de mídia. |
+| CA4 | Confirmar conjuntos válidos com recibo genérico. Repetir pedido e evidência. Conferir bytes e versões dos originais, Outbox e elegibilidade de limpeza. | Um recibo com horário de Brasília e sem conteúdo, um registro por tentativa, primeiro fato por evento, fato de mídia por foto, originais em ordem, prévias liberadas e limpeza das versões temporárias elegíveis. |
+| Regressão | Repetir os runners de depoimento em texto e foto no candidato integrado. | Preserva consentimento, prazos, recuperação, confirmação, persistência, privacidade e Outbox dos dois formatos anteriores. |
+
+O aceite de homologação cobre o aviso oficial, IAM/KMS, CORS e a origem dos eventos reais na AWS, os prazos de recepção com S3 real e o atraso operacional do saneamento. As etapas de carga e segurança têm registros próprios. [Estratégia de testes](../../spec.md#7-estratégia-de-testes)
