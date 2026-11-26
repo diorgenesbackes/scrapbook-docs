@@ -1,0 +1,682 @@
+{
+  "profile": {
+    "virtualUsers": 200,
+    "attemptsPerEvent": 100,
+    "putPayloadBytes": 59636384,
+    "commonApiP95LimitMs": 500,
+    "k6Version": "2.3.0"
+  },
+  "initial": {
+    "operationsMs": {
+      "mixed_prepare_consent": {
+        "total": 2,
+        "p50": 12.646,
+        "p95": 21.165,
+        "p99": 21.923,
+        "max": 22.112,
+        "status": {
+          "200": 2
+        },
+        "error_code": {}
+      },
+      "mixed_admit": {
+        "total": 200,
+        "p50": 258.654,
+        "p95": 572.304,
+        "p99": 603.408,
+        "max": 619.367,
+        "status": {
+          "201": 200
+        },
+        "error_code": {}
+      },
+      "mixed_authorize": {
+        "total": 170,
+        "p50": 227.34,
+        "p95": 274.756,
+        "p99": 281.096,
+        "max": 281.498,
+        "status": {
+          "200": 170
+        },
+        "error_code": {}
+      },
+      "mixed_transfer": {
+        "total": 170,
+        "p50": 234.999,
+        "p95": 280.338,
+        "p99": 286.887,
+        "max": 294.725,
+        "status": {
+          "200": 170
+        },
+        "error_code": {}
+      },
+      "mixed_completion": {
+        "total": 150,
+        "p50": 5.185,
+        "p95": 127.907,
+        "p99": 149.341,
+        "max": 163.16,
+        "status": {
+          "202": 150
+        },
+        "error_code": {}
+      },
+      "mixed_status": {
+        "total": 1021,
+        "p50": 3.763,
+        "p95": 12000.829,
+        "p99": 12001.13,
+        "max": 12001.322,
+        "status": {
+          "0": 95,
+          "200": 926
+        },
+        "error_code": {
+          "1050": 95
+        }
+      }
+    },
+    "peakLogicalAttemptsInFlight": 200,
+    "peakLogicalAttemptsByEvent": {
+      "0": 100,
+      "1": 100
+    },
+    "startSpanMs": 12.433,
+    "lastAttemptElapsedS": 28.321383,
+    "peakHttpPutRequests": 111,
+    "putSpanS": 0.604466,
+    "journeys": [
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "audio",
+        "total": 2
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "photo",
+        "total": 10
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "video",
+        "total": 3
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "audio",
+        "total": 10
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "photo",
+        "total": 20
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "video",
+        "total": 10
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "video",
+        "total": 20
+      }
+    ],
+    "receiptTimeMs": {
+      "total": 105,
+      "p50": 4110.0,
+      "p95": 11065.8,
+      "p99": 12105.84,
+      "max": 13962
+    },
+    "receiptTimeByFormatMs": {
+      "audio": {
+        "total": 12,
+        "p50": 5777.0,
+        "p95": 9086.25,
+        "p99": 9607.65,
+        "max": 9738
+      },
+      "photo": {
+        "total": 30,
+        "p50": 8048.0,
+        "p95": 12011.95,
+        "p99": 13426.37,
+        "max": 13962
+      },
+      "text": {
+        "total": 50,
+        "p50": 304.0,
+        "p95": 472.8,
+        "p99": 593.93,
+        "max": 615
+      },
+      "video": {
+        "total": 13,
+        "p50": 6049.0,
+        "p95": 10526.2,
+        "p99": 11470.84,
+        "max": 11707
+      }
+    },
+    "checks": {
+      "passed": 795,
+      "failed": 95
+    },
+    "httpFailures": {
+      "failed": 95,
+      "succeeded": 1618,
+      "fraction": 0.05545826036193812
+    },
+    "requests": {
+      "count": 1713,
+      "rate": 60.42158606134325
+    },
+    "iterations": {
+      "count": 200,
+      "rate": 7.054475897413106
+    },
+    "resources": {
+      "moto": {
+        "samples": 32,
+        "unavailable": 23,
+        "maxMemoryMiB": 5085.18,
+        "maxCPUPercent": 64.36
+      },
+      "postgres": {
+        "samples": 28,
+        "unavailable": 27,
+        "maxMemoryMiB": 175.8,
+        "maxCPUPercent": 43.28
+      },
+      "service": {
+        "samples": 31,
+        "unavailable": 24,
+        "maxMemoryMiB": 192.2,
+        "maxCPUPercent": 127.99
+      }
+    },
+    "runnerExitCode": 1
+  },
+  "integratedDev": {
+    "operationsMs": {
+      "mixed_prepare_consent": {
+        "total": 2,
+        "p50": 14.326,
+        "p95": 23.216,
+        "p99": 24.006,
+        "max": 24.204,
+        "status": {
+          "200": 2
+        },
+        "error_code": {}
+      },
+      "mixed_admit": {
+        "total": 200,
+        "p50": 251.923,
+        "p95": 434.345,
+        "p99": 585.548,
+        "max": 586.313,
+        "status": {
+          "201": 200
+        },
+        "error_code": {}
+      },
+      "mixed_authorize": {
+        "total": 170,
+        "p50": 219.998,
+        "p95": 273.46,
+        "p99": 277.86,
+        "max": 283.015,
+        "status": {
+          "200": 170
+        },
+        "error_code": {}
+      },
+      "mixed_transfer": {
+        "total": 170,
+        "p50": 199.347,
+        "p95": 266.182,
+        "p99": 272.479,
+        "max": 273.281,
+        "status": {
+          "200": 170
+        },
+        "error_code": {}
+      },
+      "mixed_completion": {
+        "total": 150,
+        "p50": 5.051,
+        "p95": 116.772,
+        "p99": 130.921,
+        "max": 155.573,
+        "status": {
+          "202": 150
+        },
+        "error_code": {}
+      },
+      "mixed_status": {
+        "total": 740,
+        "p50": 3.101,
+        "p95": 6.081,
+        "p99": 7.489,
+        "max": 13.858,
+        "status": {
+          "200": 740
+        },
+        "error_code": {}
+      }
+    },
+    "peakLogicalAttemptsInFlight": 200,
+    "peakLogicalAttemptsByEvent": {
+      "0": 100,
+      "1": 100
+    },
+    "startSpanMs": 12.096,
+    "lastAttemptElapsedS": 12.859596,
+    "peakHttpPutRequests": 112,
+    "putSpanS": 0.508019,
+    "journeys": [
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "0",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_completed",
+        "event": "1",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "0",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_confirmed",
+        "event": "1",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_started",
+        "event": "0",
+        "format": "video",
+        "total": 20
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "audio",
+        "total": 20
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "photo",
+        "total": 35
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "text",
+        "total": 25
+      },
+      {
+        "metric": "mixed_started",
+        "event": "1",
+        "format": "video",
+        "total": 20
+      }
+    ],
+    "receiptTimeMs": {
+      "total": 200,
+      "p50": 6590.5,
+      "p95": 12052.35,
+      "p99": 12757.35,
+      "max": 12852
+    },
+    "receiptTimeByFormatMs": {
+      "audio": {
+        "total": 40,
+        "p50": 8605.0,
+        "p95": 12071.35,
+        "p99": 12585.4,
+        "max": 12679
+      },
+      "photo": {
+        "total": 70,
+        "p50": 7784.0,
+        "p95": 11538.35,
+        "p99": 12251.73,
+        "max": 12792
+      },
+      "text": {
+        "total": 50,
+        "p50": 285.5,
+        "p95": 505.1,
+        "p99": 558.32,
+        "max": 574
+      },
+      "video": {
+        "total": 40,
+        "p50": 8174.0,
+        "p95": 12724.7,
+        "p99": 12814.95,
+        "max": 12852
+      }
+    },
+    "checks": {
+      "passed": 890,
+      "failed": 0
+    },
+    "httpFailures": {
+      "failed": 0,
+      "succeeded": 1432,
+      "fraction": 0
+    },
+    "requests": {
+      "count": 1432,
+      "rate": 111.06485993922301
+    },
+    "iterations": {
+      "count": 200,
+      "rate": 15.511851946818856
+    },
+    "resources": {
+      "moto": {
+        "samples": 24,
+        "unavailable": 0,
+        "maxMemoryMiB": 186.4,
+        "maxCPUPercent": 23.03
+      },
+      "postgres": {
+        "samples": 24,
+        "unavailable": 0,
+        "maxMemoryMiB": 177.1,
+        "maxCPUPercent": 56.74
+      },
+      "service": {
+        "samples": 24,
+        "unavailable": 0,
+        "maxMemoryMiB": 207.5,
+        "maxCPUPercent": 147.94
+      }
+    },
+    "database": {
+      "records": [
+        [
+          "A",
+          "audio",
+          "confirmed",
+          "20"
+        ],
+        [
+          "A",
+          "photo",
+          "confirmed",
+          "35"
+        ],
+        [
+          "A",
+          "text",
+          "confirmed",
+          "25"
+        ],
+        [
+          "A",
+          "video",
+          "confirmed",
+          "20"
+        ],
+        [
+          "B",
+          "audio",
+          "confirmed",
+          "20"
+        ],
+        [
+          "B",
+          "photo",
+          "confirmed",
+          "35"
+        ],
+        [
+          "B",
+          "text",
+          "confirmed",
+          "25"
+        ],
+        [
+          "B",
+          "video",
+          "confirmed",
+          "20"
+        ]
+      ],
+      "facts": [
+        [
+          "event.first-record-confirmed.v1",
+          "2"
+        ],
+        [
+          "record.media-confirmed.v1",
+          "170"
+        ]
+      ]
+    },
+    "receipts": {
+      "syntheticEvents": 170
+    },
+    "admissionLogs": {
+      "apiP95Ms": 342.224,
+      "nginxP95Ms": 400.9,
+      "samplesPerComponent": 200
+    },
+    "runnerExitCode": 0
+  }
+}
