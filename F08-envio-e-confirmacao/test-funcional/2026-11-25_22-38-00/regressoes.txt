@@ -1,0 +1,31 @@
+test_photo_submission (__main__.LegacyPhotoTests.test_photo_submission) ... Relógio do serviço 2026-11-26T01:43:28Z; relógio do host 2026-11-26T01:43:58.438590+00:00.
+Foto PNG de 922428 bytes, evidência até recibo observado: 1014 ms.
+
+Running 4 tests using 1 worker
+
+  ✓  1 [chromium-desktop] › photo-submissions/photo-submission.spec.ts:154:1 › CA1–CA2: seleciona e revisa foto, transfere bytes por teclado e reinicia após o recibo (9.4s)
+  ✓  2 [chromium-desktop] › photo-submissions/photo-submission.spec.ts:197:1 › CA2–CA3: retoma foto capturada pela mesma tentativa e recebe confirmação após fechar a janela (5.7s)
+  ✓  3 [android-emulado] › photo-submissions/photo-submission.spec.ts:154:1 › CA1–CA2: seleciona e revisa foto, transfere bytes por teclado e reinicia após o recibo (9.3s)
+  ✓  4 [android-emulado] › photo-submissions/photo-submission.spec.ts:197:1 › CA2–CA3: retoma foto capturada pela mesma tentativa e recebe confirmação após fechar a janela (5.7s)
+
+  4 passed (31.0s)
+Manifesto, versões S3, prazo, isolamento, recibo e Outbox conferidos.
+ok
+test_existing_text (__main__.LegacyTextTests.test_existing_text) ...
+Running 6 tests using 1 worker
+
+  ✓  1 [chromium-desktop] › submissions/submission.spec.ts:80:3 › confirma o texto com ação explícita e entrega recibo sem conteúdo (501ms)
+  ✓  2 [chromium-desktop] › submissions/submission.spec.ts:103:3 › recupera recibo após perder a resposta e fechar a janela (253ms)
+  ✓  3 [chromium-desktop] › submissions/submission.spec.ts:132:3 › renova a concordância vencida e protege o rascunho ao sair (520ms)
+  ✓  4 [android-emulado] › submissions/submission.spec.ts:80:3 › confirma o texto com ação explícita e entrega recibo sem conteúdo (482ms)
+  ✓  5 [android-emulado] › submissions/submission.spec.ts:103:3 › recupera recibo após perder a resposta e fechar a janela (317ms)
+  ✓  6 [android-emulado] › submissions/submission.spec.ts:132:3 › renova a concordância vencida e protege o rascunho ao sair (521ms)
+
+  6 passed (3.3s)
+Depoimento em texto confirmado no navegador e regressões de prazo, concorrência e Outbox conferidas.
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 93.741s
+
+OK
