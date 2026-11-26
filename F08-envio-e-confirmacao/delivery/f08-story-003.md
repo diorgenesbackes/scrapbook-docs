@@ -11,4 +11,17 @@ O convidado pode enviar de uma a dez fotos de um momento com uma legenda comum, 
 
 As branches `feature/F08-STORY-003` partem das versões publicadas da F08-STORY-002, que incluem os contratos de evidência, armazenamento versionado e migração. A ordem de integração é F08-STORY-002 seguida de F08-STORY-003. [Entrega da dependência](f08-story-002.md)
 
-A sessão do MCP do GitHub aguarda credencial. A integração para `dev` e a promoção para `hlg` seguem por PR. O cartão permanece em Doing enquanto a dependência e a integração estão pendentes. Na versão integrada, executar a fixture completa, o E2E, o aceite funcional, a carga e as verificações defensivas antes da promoção.
+O candidato local aguardou a integração da dependência e a autenticação do MCP do GitHub. A validação da versão integrada e a promoção para `hlg` seguem pelo fluxo de PRs.
+
+## Integração confirmada em dev
+
+A F08-STORY-003 entrou em `dev` após a F08-STORY-002. Todos os checks de PR passaram. Liquibase e infraestrutura usam os SHAs integrados da dependência para o ensaio local.
+
+| PR | SHA em dev |
+| --- | --- |
+| [`scrapbook-service`](https://github.com/diorgenesbackes/scrapbook-service/pull/2) | `c8c7ed9e2c46bceab965f646fd4a844112b3a166` |
+| [`scrapbook-ui`](https://github.com/diorgenesbackes/scrapbook-ui/pull/2) | `a46fc573b3274fe73609e01b1be22d9729ecca91` |
+| [`scrapbook-tests`](https://github.com/diorgenesbackes/scrapbook-tests/pull/2) | `81d85ea4a900e1bd820d95937503ddcfbb833751` |
+| [`scrapbook-docs`](https://github.com/diorgenesbackes/scrapbook-docs/pull/5) | `1c0db3571729fbc9d197e1a2726715d400fef729` |
+
+A integração HTTP e as seis jornadas de navegador passaram. Foram exercitadas a conclusão na fronteira do prazo, a retomada da posição pendente, a rejeição integral e a conferência de oito versões privadas no armazenamento emulado. As dez jornadas de regressão de depoimentos passaram. [Aceite integrado](../test-funcional/2026-11-25_22-38-00/2-execucao.md)
