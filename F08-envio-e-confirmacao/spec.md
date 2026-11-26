@@ -165,7 +165,7 @@ Para mídia, omitir `text` e informar `files` e, se houver, `caption`. Cada item
 }
 ```
 
-Exemplo de recibo retornado apenas após o commit. Para `authorized` ou `receiving`, o status informa `completionDeadlineAt` e posições pendentes. Para `validating`, informa a etapa. Para `rejected` ou `expired`, informa código e, quando pertinente, os erros por posição, sem conteúdo ou metadados de armazenamento.
+Exemplo de recibo retornado apenas após o commit. Para `authorized` ou `receiving`, o status informa `completionDeadlineAt` e posições pendentes quando aplicável. No conjunto de fotos, `reconciling` indica a verificação de recebimentos após o limite de transferência e mantém a consulta ativa. Para `validating`, o status informa a etapa. Para `rejected` ou `expired`, informa código e, quando pertinente, os erros por posição, sem conteúdo ou metadados de armazenamento.
 
 ```json
 {
