@@ -1,0 +1,389 @@
+{
+  "admissao_por_evento": {
+    "A": {
+      "max_ms": 539.476,
+      "mediana_ms": 222.315,
+      "n": 100,
+      "p95_ms": 503.378,
+      "p99_ms": 539.049
+    },
+    "A/1": {
+      "max_ms": 539.476,
+      "mediana_ms": 217.749,
+      "n": 80,
+      "p95_ms": 517.452,
+      "p99_ms": 539.136
+    },
+    "A/10": {
+      "max_ms": 472.571,
+      "mediana_ms": 243.729,
+      "n": 20,
+      "p95_ms": 366.522,
+      "p99_ms": 451.361
+    },
+    "B": {
+      "max_ms": 530.234,
+      "mediana_ms": 225.418,
+      "n": 100,
+      "p95_ms": 503.028,
+      "p99_ms": 525.164
+    },
+    "B/1": {
+      "max_ms": 530.234,
+      "mediana_ms": 231.887,
+      "n": 80,
+      "p95_ms": 509.046,
+      "p99_ms": 526.188
+    },
+    "B/10": {
+      "max_ms": 502.724,
+      "mediana_ms": 208.935,
+      "n": 20,
+      "p95_ms": 442.757,
+      "p99_ms": 490.731
+    }
+  },
+  "ambiente": {
+    "JPEG_bytes": 351104,
+    "PNG_bytes": 922428,
+    "docker": "Ubuntu 24.04.4 LTS|aarch64|4|6197379072|29.5.2",
+    "host_cores": 12,
+    "host_utc": "2026-11-26T01:57:53.167938+00:00",
+    "k6": "k6 v2.3.0 (commit/devel, go1.27.1, darwin/arm64)",
+    "planned_transfer_bytes": 356588960,
+    "service_utc": "2026-11-26T01:57:22+00:00",
+    "snapshots": {
+      "scrapbook-docs": "1c0db3571729fbc9d197e1a2726715d400fef729",
+      "scrapbook-infrastructure": "8a0f2172c42063814e45b046a268a1581251f23a",
+      "scrapbook-liquibase": "a7cbec27d2255cfa43fa5a77ae72f0e3f1fc04f5",
+      "scrapbook-service": "47a671b7b8fb32888d53cbcee1dc349b47c2c204",
+      "scrapbook-tests": "81d85ea4a900e1bd820d95937503ddcfbb833751",
+      "scrapbook-ui": "a46fc573b3274fe73609e01b1be22d9729ecca91"
+    }
+  },
+  "antes_da_injecao": {
+    "conjuntos_10_A": 20,
+    "conjuntos_10_B": 20,
+    "conjuntos_1_A": 80,
+    "conjuntos_1_B": 80,
+    "estados": {
+      "receiving": 200
+    },
+    "fatos_midia": 0,
+    "manifestos": 560,
+    "originais_preservados": 0,
+    "primeiro_fato": 0,
+    "recibos_s3": 0,
+    "registros_A": 100,
+    "registros_B": 100
+  },
+  "carga": {
+    "admissoes_por_evento": {
+      "A": {
+        "janela_inicios_ms": 9.386,
+        "janela_total_ms": 548.553,
+        "pico_em_andamento_estimado": 100,
+        "por_segundo_na_janela": 182.298
+      },
+      "B": {
+        "janela_inicios_ms": 9.39,
+        "janela_total_ms": 539.882,
+        "pico_em_andamento_estimado": 100,
+        "por_segundo_na_janela": 185.226
+      }
+    },
+    "contagens_por_evento_e_conjunto": {
+      "completion_state": {
+        "receiving": 200
+      },
+      "media_bytes_accepted": {
+        "A/1": 50941280,
+        "A/10": 127353200,
+        "B/1": 50941280,
+        "B/10": 127353200
+      },
+      "media_files_accepted": {
+        "A/1": 80,
+        "A/10": 200,
+        "B/1": 80,
+        "B/10": 200
+      },
+      "submissions_signalled": {
+        "A/1": 80,
+        "A/10": 20,
+        "B/1": 80,
+        "B/10": 20
+      },
+      "submissions_started": {
+        "A/1": 80,
+        "A/10": 20,
+        "B/1": 80,
+        "B/10": 20
+      }
+    },
+    "coortes": {
+      "admit_moment/1": {
+        "max_ms": 539.476,
+        "mediana_ms": 222.315,
+        "n": 160,
+        "p95_ms": 513.713,
+        "p99_ms": 533.847
+      },
+      "admit_moment/10": {
+        "max_ms": 502.724,
+        "mediana_ms": 227.903,
+        "n": 40,
+        "p95_ms": 441.25,
+        "p99_ms": 490.964
+      },
+      "authorize_moment/1": {
+        "max_ms": 336.616,
+        "mediana_ms": 221.883,
+        "n": 160,
+        "p95_ms": 317.162,
+        "p99_ms": 333.255
+      },
+      "authorize_moment/10": {
+        "max_ms": 293.245,
+        "mediana_ms": 4.077,
+        "n": 400,
+        "p95_ms": 222.289,
+        "p99_ms": 270.754
+      },
+      "complete_moment/1": {
+        "max_ms": 75.075,
+        "mediana_ms": 3.071,
+        "n": 160,
+        "p95_ms": 55.8,
+        "p99_ms": 63.218
+      },
+      "complete_moment/10": {
+        "max_ms": 8.742,
+        "mediana_ms": 2.542,
+        "n": 40,
+        "p95_ms": 4.809,
+        "p99_ms": 7.934
+      },
+      "consent_setup/1": {
+        "max_ms": 16.25,
+        "mediana_ms": 1.885,
+        "n": 160,
+        "p95_ms": 3.435,
+        "p99_ms": 15.517
+      },
+      "consent_setup/10": {
+        "max_ms": 2.582,
+        "mediana_ms": 1.565,
+        "n": 40,
+        "p95_ms": 2.358,
+        "p99_ms": 2.579
+      },
+      "submissão com transferência e conclusão/1": {
+        "max_ms": 1668.0,
+        "mediana_ms": 928.0,
+        "n": 160,
+        "p95_ms": 1179.15,
+        "p99_ms": 1192.05
+      },
+      "submissão com transferência e conclusão/10": {
+        "max_ms": 2427.0,
+        "mediana_ms": 2385.5,
+        "n": 40,
+        "p95_ms": 2425.05,
+        "p99_ms": 2426.61
+      },
+      "transfer_photo/1": {
+        "max_ms": 1180.685,
+        "mediana_ms": 481.089,
+        "n": 160,
+        "p95_ms": 637.564,
+        "p99_ms": 650.817
+      },
+      "transfer_photo/10": {
+        "max_ms": 647.47,
+        "mediana_ms": 137.929,
+        "n": 400,
+        "p95_ms": 495.696,
+        "p99_ms": 624.466
+      },
+      "transfer_photo/image/jpeg": {
+        "max_ms": 647.47,
+        "mediana_ms": 144.288,
+        "n": 280,
+        "p95_ms": 607.195,
+        "p99_ms": 634.918
+      },
+      "transfer_photo/image/png": {
+        "max_ms": 1180.685,
+        "mediana_ms": 146.432,
+        "n": 280,
+        "p95_ms": 611.88,
+        "p99_ms": 649.649
+      }
+    },
+    "operacoes": {
+      "admit_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 540.189,
+          "mediana_ms": 224.709,
+          "n": 200,
+          "p95_ms": 503.848,
+          "p99_ms": 533.631
+        },
+        "janela_inicios_ms": 9.393,
+        "janela_total_ms": 548.553,
+        "latencia": {
+          "max_ms": 539.476,
+          "mediana_ms": 223.816,
+          "n": 200,
+          "p95_ms": 503.028,
+          "p99_ms": 530.322
+        },
+        "pico_em_andamento_estimado": 200,
+        "por_segundo_na_janela": 364.596,
+        "status": {
+          "201": 200
+        }
+      },
+      "authorize_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 336.617,
+          "mediana_ms": 4.957,
+          "n": 560,
+          "p95_ms": 279.725,
+          "p99_ms": 320.068
+        },
+        "janela_inicios_ms": 2286.343,
+        "janela_total_ms": 2289.967,
+        "latencia": {
+          "max_ms": 336.616,
+          "mediana_ms": 4.955,
+          "n": 560,
+          "p95_ms": 279.724,
+          "p99_ms": 320.067
+        },
+        "pico_em_andamento_estimado": 182,
+        "por_segundo_na_janela": 244.545,
+        "status": {
+          "200": 560
+        }
+      },
+      "complete_moment": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 75.077,
+          "mediana_ms": 2.926,
+          "n": 200,
+          "p95_ms": 53.842,
+          "p99_ms": 61.651
+        },
+        "janela_inicios_ms": 2000.606,
+        "janela_total_ms": 2002.661,
+        "latencia": {
+          "max_ms": 75.075,
+          "mediana_ms": 2.925,
+          "n": 200,
+          "p95_ms": 53.842,
+          "p99_ms": 61.65
+        },
+        "pico_em_andamento_estimado": 10,
+        "por_segundo_na_janela": 99.867,
+        "status": {
+          "202": 200
+        }
+      },
+      "consent_setup": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 18.196,
+          "mediana_ms": 1.806,
+          "n": 200,
+          "p95_ms": 3.218,
+          "p99_ms": 17.386
+        },
+        "janela_inicios_ms": 94.28,
+        "janela_total_ms": 95.594,
+        "latencia": {
+          "max_ms": 16.25,
+          "mediana_ms": 1.805,
+          "n": 200,
+          "p95_ms": 3.218,
+          "p99_ms": 15.426
+        },
+        "pico_em_andamento_estimado": 6,
+        "por_segundo_na_janela": 2092.182,
+        "status": {
+          "200": 200
+        }
+      },
+      "transfer_photo": {
+        "inclui_bloqueio_cliente": {
+          "max_ms": 1181.515,
+          "mediana_ms": 145.582,
+          "n": 560,
+          "p95_ms": 612.742,
+          "p99_ms": 645.352
+        },
+        "janela_inicios_ms": 1957.906,
+        "janela_total_ms": 2043.485,
+        "latencia": {
+          "max_ms": 1180.685,
+          "mediana_ms": 145.41,
+          "n": 560,
+          "p95_ms": 611.88,
+          "p99_ms": 645.091
+        },
+        "pico_em_andamento_estimado": 179,
+        "por_segundo_na_janela": 274.042,
+        "status": {
+          "200": 560
+        }
+      }
+    },
+    "tentativas": {
+      "janela_inicios_ms": 10.858,
+      "janela_total_ms": 2436.021,
+      "pico_em_andamento_estimado": 200,
+      "por_segundo_na_janela": 82.101
+    },
+    "total": {
+      "data_received": 1465040,
+      "data_sent": 357477064,
+      "dropped_iterations": 0,
+      "http_reqs": 1720,
+      "iterations": 200,
+      "media_bytes_accepted": 356588960,
+      "media_files_accepted": 560,
+      "submissions_signalled": 200,
+      "submissions_started": 200
+    },
+    "transferencias_por_tipo": {
+      "image/jpeg/http_200": 280,
+      "image/png/http_200": 280
+    },
+    "verificacoes": {
+      "PUT criou versão temporária": {
+        "pass": 560
+      },
+      "admissão com manifesto ordenado": {
+        "pass": 200
+      },
+      "autorização PUT válida na fixture": {
+        "pass": 560
+      },
+      "conclusão aceita ou recibo mínimo": {
+        "pass": 200
+      }
+    }
+  },
+  "s3_temporario": {
+    "temporarias_incluindo_aquecimento": 571,
+    "versoes_com_tamanho_valido_incluindo_aquecimento": {
+      "JPEG": 285,
+      "PNG": 286
+    }
+  },
+  "status": {
+    "drenagem": "inconclusiva",
+    "k6": 99,
+    "sqs_send_message_batch": 255
+  }
+}
