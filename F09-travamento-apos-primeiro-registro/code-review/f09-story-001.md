@@ -17,4 +17,6 @@ A revisão independente conferiu a transação de trava, a ordem dos locks, o v�
 | Testes | `ed85c3c262651606ff717a889e847586ea55d32c` | Descoberta Playwright, análise sintática Python e ensaio HTTP com PostgreSQL e Moto. |
 | Infraestrutura | `422811c6d27bde6da2ee9fef1a4162c436b348fb` | Nove testes unitários de configuração e ensaio SNS/SQS com filtragem e entrega raw. |
 
-O `git diff --check` passou nos cinco repositórios alterados. O primeiro ensaio Chromium aprovou o cenário de convites. O cenário de configuração encontrou um seletor ambíguo antes de confirmar o registro. O seletor corrigido aguarda o reteste nos SHAs integrados em `dev`.
+O `git diff --check` passou nos cinco repositórios alterados. O primeiro ensaio Chromium aprovou o cenário de convites. O cenário de configuração encontrou um seletor ambíguo antes de confirmar o registro. O seletor foi corrigido antes da integração em `dev`.
+
+O reteste dos dois cenários Chromium passou. Em Test, a revisão defensiva encontrou a possibilidade de uma correlação vazia no primeiro fato. A revisão técnica da correção confirmou que o ingresso gera um UUID para esse caso e que, em fatos históricos elegíveis, o publicador e o consumidor derivam a mesma correlação estável do `messageId`. O build terminou com zero warnings, os 330 testes .NET passaram e o check do GitHub foi aprovado. [Evidência E2E](../test-e2e/f09-story-001.md) · [PR da correção](https://github.com/diorgenesbackes/scrapbook-service/pull/13)
