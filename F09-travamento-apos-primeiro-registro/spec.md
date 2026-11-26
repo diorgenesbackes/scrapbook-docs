@@ -106,7 +106,7 @@ As rotas preservam autenticação, revalidação do vínculo ou do token conform
 | Operação | Entrada e autorização | Efeito do travamento |
 | --- | --- | --- |
 | `GET /api/v1/events/{eventId}` | Conta vinculada e ID decimal do evento. | `200` com `canEditDetails: false` após a trava. `openingPolicy.canEdit` usa a regra da F03. |
-| `PUT /api/v1/events/{eventId}/details` | Conta vinculada, DTO da F03 e `expectedVersion`. | `409 EVENT_LOCKED` com versão atual. Uma versão anterior recebe `409 EVENT_VERSION_CONFLICT`; a nova consulta revela as permissões atuais. |
+| `PUT /api/v1/events/{eventId}/details` | Conta vinculada, DTO da F03 e `expectedVersion`. | `409 EVENT_LOCKED` quando a escrita usa a versão atual de um evento travado. Uma versão anterior recebe `409 EVENT_VERSION_CONFLICT`. A consulta posterior revela a versão e as permissões atuais. |
 | `PUT /api/v1/events/{eventId}/opening-policy` | Conta vinculada e DTO da F03 com versão. | `200` para alteração ainda permitida. `409 EVENT_OPENING_LOCKED` para uma alteração fora da regra temporal. Conflito de versão mantém a semântica existente. |
 | `GET /api/v1/events/{eventId}/invitations/current` | Conta vinculada. | `200` com `state: "locked"` e `invitation: null`. |
 | `POST /api/v1/events/{eventId}/invitations` | Conta vinculada e chave idempotente conforme F04. | Nova emissão ou substituição recebe `409 INVITATION_EVENT_LOCKED`. Repetição de uma emissão invalidada mantém o tratamento de convite indisponível do contrato atual. |
