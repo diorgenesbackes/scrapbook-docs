@@ -7,3 +7,9 @@ A integração em loopback verificou que segredo divergente, evento diferente e 
 A inspeção encontrou um impedimento de recuperação da DLQ em `8a0f217`. A fila de recibos nega publicação sem o ARN e a conta do bucket. O redrive nativo exige `sqs:SendMessage` no destino, em chamada mediada pelo SQS em nome da identidade operacional. A promoção considera a correção dessa política antes da ativação de fotos. [Redrive no SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-dead-letter-queue-redrive.html)
 
 IAM, KMS, entrega nativa, acesso público efetivo, isolamento do decoder e redrive exigem verificação no ambiente de homologação. [Validação local anterior](f08-story-002.md)
+
+## Correção e reteste
+
+A correção permite o retorno mediado pelo SQS em nome de uma role operacional dedicada, com a mesma conta e escopo de duas filas. A configuração é opcional. Sem a role, a fila mantém a origem S3 prevista. A política rejeita envio direto da role operacional e mantém a role da tarefa separada, inclusive diante de variações de capitalização. O encaminhamento automático à DLQ usa as mesmas propriedades das filas.
+
+A revisão independente executou 136 asserções offline com a configuração habilitada e desabilitada, identidades e fontes divergentes, precedência das negativas e os limites de origem e destino. Passaram também os nove testes da infraestrutura e `cfn-lint` 1.61.0. A matriz local verifica as condições declaradas. Em homologação, comprovar a entrega nativa, a transferência à DLQ após as tentativas, o retorno da mesma prova pelo operador e a recusa de publicação direta. [PR da correção](https://github.com/diorgenesbackes/scrapbook-infrastructure/pull/2)
