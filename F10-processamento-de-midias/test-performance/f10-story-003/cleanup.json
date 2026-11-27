@@ -1,0 +1,10 @@
+{
+  "remaining": {
+    "containers": 0,
+    "volumes": 0,
+    "networks": 0,
+    "provider": 0,
+    "moto": 0
+  },
+  "clean": true
+}
