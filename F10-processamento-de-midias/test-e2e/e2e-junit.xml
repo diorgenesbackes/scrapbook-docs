@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites tests="4" failures="0" skipped="0" errors="0" time="33.838016">
+  <testsuite name="chromium-desktop / photo-submission.spec.ts" tests="2" failures="0" skipped="0" errors="0" time="17.958">
+    <testcase name="CA1–CA2: seleciona e revisa foto, transfere bytes por teclado e reinicia após o recibo" classname="photo-submission.spec.ts" time="9.469" />
+    <testcase name="CA2–CA3: retoma foto capturada pela mesma tentativa e recebe confirmação após fechar a janela" classname="photo-submission.spec.ts" time="8.489" />
+  </testsuite>
+  <testsuite name="android-emulado / photo-submission.spec.ts" tests="2" failures="0" skipped="0" errors="0" time="15.008">
+    <testcase name="CA1–CA2: seleciona e revisa foto, transfere bytes por teclado e reinicia após o recibo" classname="photo-submission.spec.ts" time="9.221" />
+    <testcase name="CA2–CA3: retoma foto capturada pela mesma tentativa e recebe confirmação após fechar a janela" classname="photo-submission.spec.ts" time="5.787" />
+  </testsuite>
+</testsuites>

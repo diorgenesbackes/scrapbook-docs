@@ -1,0 +1,10 @@
+test_defensive_photo_controls (__main__.MediaSecurityChecks.test_defensive_photo_controls) ... S3 local recusou leitura anônima do original e dos dois JPEGs. Versão posterior divergente não substituiu a entrada confirmada. JPEGs sem EXIF/XMP/IPTC.
+Recibo autorizado retornou HTTP 200 e no-store. Outro bearer ou evento não revelou estado, horário ou referência privada.
+Evento divergente e mensagem sem fato persistido rejeitados. Um trabalho e uma admissão concluída. Logs emitiram somente o código seguro nos casos negativos, sem valores protegidos examinados.
+Checksum discordante resultou em MEDIA_SOURCE_INTEGRITY e zero variantes prontas para o arquivo. Original e recibo preservados.
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 65.216s
+
+OK
