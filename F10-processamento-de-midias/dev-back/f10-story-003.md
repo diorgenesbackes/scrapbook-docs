@@ -1,0 +1,15 @@
+# F10-STORY-003 — Preparação privada de vídeos confirmados
+
+[Cartão no Trello](https://trello.com/c/HesFEO9d) · [Especificação da F10](../spec.md) · [Preparação de áudio](f10-story-002.md)
+
+Os vídeos confirmados pela F08 usam a mesma orquestração, fila e reconciliação do áudio. A intenção persiste o perfil de saída, a chave da tentativa e a versão e o SHA-256 da entrada privada. A recuperação usa a mesma janela de submissão e confere a associação antes de processar um resultado. Áudio e vídeo compartilham as duas vagas de preparação e validação por réplica.
+
+O perfil calcula o aspecto de exibição a partir da razão de pixel e da rotação. As dimensões ficam dentro do raster orientado e do limite de paisagem, retrato ou quadrado. O perfil usa dimensões pares, pixel quadrado, H.264 QVBR de qualidade 7 e pico de 5 Mb/s. A rotação da fonte é aplicada na conversão. AAC-LC a 48 kHz preserva saída mono ou estéreo conforme a faixa selecionada. A saída fica muda quando o vídeo de origem não tem áudio. [Configuração QVBR](https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html) · [Ajuste sem ampliação](https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling-fit-without-upscaling.html)
+
+A cadência de saída é explícita e limitada a 30 fps. Quando as amostras de entrada mostram cadência variável, o limite usa a cadência mais baixa observada entre quadros. O algoritmo do MediaConvert pode descartar ou repetir quadros para ajustar os instantes à grade de saída. Ele evita interpolação. Como o provedor só gera CFR, a homologação verifica a cadência e a duração nas fontes VFR reais. [VFR no MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variable-frame-rate-inputs.html) · [Conversão de cadência](https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-video-frame-rates.html)
+
+O original é lido pela versão da F08. Entradas ISO passam por preparação autocontida com referências externas desabilitadas. A role do provedor lê apenas o prefixo de estágio. O estágio WebM usa a combinação de faixas compatível ou remultiplexação quando necessária. A homologação verifica os contêineres e codecs da F08 com arquivos sintéticos aceitos pelo contrato de mídia. [Referências externas MP4/MOV](https://docs.aws.amazon.com/mediaconvert/latest/ug/mp4-mov-external-references.html)
+
+Antes de publicar a variante, a aplicação confere a versão esperada, o checksum, o contêiner, as faixas, as dimensões, a proporção, a cadência, a duração e as tags de localização. A prontidão exige a tentativa e a versão do perfil vigentes. Resultado incompleto permanece em reconciliação. Falha definitiva registra a etapa para a F13 e preserva o original e o recibo F08.
+
+A entrega usa as colunas de vídeo já existentes em `file_variants`. A ativação requer o áudio F10 e o recebimento de vídeo F08 configurados. `MediaAudioProcessing__VideoEnabled` começa desabilitada. [Infraestrutura e configuração](../dev-infra/f10-story-003.md)
