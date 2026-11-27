@@ -1,0 +1,32 @@
+{
+  "samplesBeforeAndThroughAllCommits": 8,
+  "clockOffsetMidpointsBeforeAndThroughAllCommitsMs": [
+    -30307.973,
+    -30271.255
+  ],
+  "clockOffsetBoundsBeforeAndThroughAllCommitsMs": [
+    -30350.708,
+    -30192.879
+  ],
+  "elapsedSecondsOfFirstObservationOfAllCommits": 3.925,
+  "elapsedSecondsOfFirstPostDrainClockSampleNearHost": 9.441,
+  "confidenceConditions": [
+    "Intervalo estimado assume o desvio da VM dentro do envelope amostrado até observar os 40 commits.",
+    "O limite independente por observação usa somente o TimeProvider derivado do monotônico do host e o polling."
+  ],
+  "estimatedConfirmToCommitMs": {
+    "observations": 40,
+    "estimatedLowerBound": {
+      "p50": 954.658,
+      "p95": 1204.139,
+      "p99": 1344.322,
+      "max": 1344.322
+    },
+    "estimatedUpperBound": {
+      "p50": 1112.487,
+      "p95": 1361.968,
+      "p99": 1502.151,
+      "max": 1502.151
+    }
+  }
+}

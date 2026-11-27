@@ -1,0 +1,26 @@
+F10-STORY-002 · evidência sanitizada · 27/11/2026
+
+Laboratório em loopback · 1 aprovado · 33,992 s · exit 0
+Recibos legítimos sem cache. Três consultas de outro escopo retornaram HTTP 404 sem dados protegidos.
+Dois originais, duas entradas e dois derivados lidos pela versão e checksum. Seis leituras anônimas recusadas.
+Derivados de referência M4A/AAC sem tags de localização visíveis pelo ffprobe.
+Os logs da API e do proxy ficaram sem os marcadores verificados de códigos, sessão, autoria, consentimento, chaves e assinaturas.
+
+xUnit · 147 aprovados · 0 falhas · 0 skips · exit 0
+MediaAdmissionServiceTests 18
+MediaAudioCallbackCodecTests 18
+MediaAudioPreparationServiceTests 52
+MediaAudioProcessingOptionsTests 16
+MediaConvertProviderTests 15
+S3MediaAudioStorageTests 25
+SqsMediaAudioResultConsumerTests 3
+As duas fixtures de rejeição de localização, convencional e QuickTime, passaram.
+
+Infraestrutura inicial · 21 aprovados · exit 0
+Os quatro cenários MediaTranscodingTemplateTests e os quatro MediaProcessingTemplateTests passaram na versão inicial.
+
+Infraestrutura corrigida · 21 aprovados · 1,717 s · exit 0
+SHA b8c825736a5e065d78bd122c384ff373107d6182.
+Baseline: relação de confiança sem as condições examinadas e 0/4 valores kms:ViaService no formato documentado.
+Reteste: relação de confiança com o ARN da fila exata e a conta da stack. Os 4/4 valores kms:ViaService usam o formato documentado.
+O diff contém o template de transcodificação e seus testes estáticos. git diff --check exit 0.

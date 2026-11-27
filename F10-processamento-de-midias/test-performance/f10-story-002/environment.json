@@ -1,0 +1,84 @@
+{
+  "git": {
+    "scrapbook-service": "d7a6a4ba34cbf83ed6976ea2c55713c8f3fdef1e",
+    "scrapbook-infrastructure": "b7bf2f746a2122b5511f1867bc2b9d2e384a3c58",
+    "scrapbook-tests": "6338f1efec19c7ccbd5fe12f09e8ba7c224f9554",
+    "scrapbook-liquibase": "8c1f47395a2e6564b6bca8da781c94e5d439a9f3",
+    "scrapbook-ui": "57f4e63f9a6378ecde532d53b4d204ac935021ff",
+    "scrapbook-docs": "d3c9700ddef5cf1ab4b02e287b24bc99a69f5510"
+  },
+  "dockerContext": "colima-scrapbook-f10-validation",
+  "vmCpus": 4,
+  "vmMemoryBytes": 6197440512,
+  "vmArch": "aarch64",
+  "hostHardware": {
+    "Chip": "Apple M4 Pro",
+    "Total Number of Cores": "12 (8 Performance and 4 Efficiency)",
+    "Memory": "24 GB"
+  },
+  "postgres": "18.6 (Debian 18.6-1.pgdg13+2)",
+  "trackCommitTimestamp": "on",
+  "dotnetRuntime": [
+    "Microsoft.AspNetCore.App 10.0.12 [/usr/share/dotnet/shared/Microsoft.AspNetCore.App]",
+    "Microsoft.NETCore.App 10.0.12 [/usr/share/dotnet/shared/Microsoft.NETCore.App]"
+  ],
+  "docker": "Docker version 29.8.2, build 7fc2dff9bc",
+  "compose": "Docker Compose version 5.6.0",
+  "python": "3.13.15",
+  "awsCli": "aws-cli/2.37.10 Python/3.14.8 Darwin/25.6.0 source/arm64",
+  "ffmpegHost": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffmpegService": "ffmpeg version 9.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "liquibase": "Liquibase Open Source 4.33.0 by Liquibase",
+  "replicas": 2,
+  "audioWorkersPerReplica": 2,
+  "ingress": "Nginx em loopback para a API principal; trabalhadores nas duas réplicas.",
+  "applicationClock": "TimeProvider de teste versionado no checkout do candidato, âncora UTC + monotônico do host; atualização por pwrite no mesmo inode a cada ~25 ms.",
+  "fixtureSourceSha256": "92603a89eeba8a832e7189fe25afa7f0698109ba718fe6d9cde32a6641c0bdcf",
+  "runnerSha256": {
+    "run-audio-burst.py": "1d523f99f1a859a7864ece2679b2a486fa411fc4a376f2e3a032e94f0bbe20d1",
+    "provider-timing.py": "c547e5d95c5300dfcd58c85b3b0dc0fa58235e2d1f724aa482c94511bdc6461c",
+    "audio-snapshot.sql": "54303336fb87375ce34c6ac6882409131976573e13418f5c15b673325690cb25"
+  },
+  "inputs": [
+    {
+      "format": "mp3",
+      "count": 8,
+      "bytes": 24467,
+      "codec": "mp3",
+      "durationSeconds": 3.0,
+      "sha256": "57966994fc3c1b491de7703279e29a72286b3a4cb73c8887235f30b574f6acaa"
+    },
+    {
+      "format": "m4a",
+      "count": 8,
+      "bytes": 27629,
+      "codec": "aac",
+      "durationSeconds": 3.0,
+      "sha256": "0a88faab8a136b9097b14bddd92ce7742dab8c1514ac09b88143f8bb5ec1d7f9"
+    },
+    {
+      "format": "wav",
+      "count": 8,
+      "bytes": 264678,
+      "codec": "pcm_s16le",
+      "durationSeconds": 3.0,
+      "sha256": "86ce8cac06f33fcae21d69cc4bab502157d25bdf5044d1e06781e83415f15f99"
+    },
+    {
+      "format": "ogg",
+      "count": 8,
+      "bytes": 8669,
+      "codec": "vorbis",
+      "durationSeconds": 3.0,
+      "sha256": "8ff5b25bd7c042c9ecc1cd4aae57cf83f86aba73c9c26d3d12fd3701d11caab7"
+    },
+    {
+      "format": "webm",
+      "count": 8,
+      "bytes": 28782,
+      "codec": "opus",
+      "durationSeconds": 3.008,
+      "sha256": "8787125acef053aef0b502ad520f12591d18ca2a2714cb29d6af802aa9d62288"
+    }
+  ]
+}
