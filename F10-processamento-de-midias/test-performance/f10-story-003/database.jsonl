@@ -1,0 +1,16 @@
+{"seconds": 0.1, "queryMs": 99.426, "confirmed": 0, "ready": 0, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 0.44, "queryMs": 88.804, "confirmed": 0, "ready": 0, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 0.777, "queryMs": 83.69, "confirmed": 2, "ready": 0, "failed": 0, "waitingAdmission": 2, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 1.127, "queryMs": 96.701, "confirmed": 9, "ready": 0, "failed": 0, "waitingAdmission": 0, "pending": 8, "running": 1, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 1.47, "queryMs": 82.956, "confirmed": 11, "ready": 0, "failed": 0, "waitingAdmission": 2, "pending": 0, "running": 4, "reconciling": 5, "unknown": 2, "failureFacts": 0}
+{"seconds": 1.824, "queryMs": 96.979, "confirmed": 14, "ready": 9, "failed": 0, "waitingAdmission": 3, "pending": 0, "running": 2, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 2.163, "queryMs": 78.809, "confirmed": 18, "ready": 11, "failed": 0, "waitingAdmission": 0, "pending": 7, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 2.505, "queryMs": 87.264, "confirmed": 18, "ready": 11, "failed": 0, "waitingAdmission": 0, "pending": 3, "running": 2, "reconciling": 2, "unknown": 0, "failureFacts": 0}
+{"seconds": 2.837, "queryMs": 81.423, "confirmed": 18, "ready": 16, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 1, "reconciling": 1, "unknown": 1, "failureFacts": 0}
+{"seconds": 3.167, "queryMs": 72.069, "confirmed": 18, "ready": 18, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 3.505, "queryMs": 85.189, "confirmed": 18, "ready": 18, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 3.842, "queryMs": 76.762, "confirmed": 18, "ready": 18, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 4.175, "queryMs": 77.348, "confirmed": 18, "ready": 18, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 4.521, "queryMs": 94.137, "confirmed": 18, "ready": 18, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 4.868, "queryMs": 87.815, "confirmed": 18, "ready": 18, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}
+{"seconds": 5.229, "queryMs": 104.817, "confirmed": 18, "ready": 18, "failed": 0, "waitingAdmission": 0, "pending": 0, "running": 0, "reconciling": 0, "unknown": 0, "failureFacts": 0}

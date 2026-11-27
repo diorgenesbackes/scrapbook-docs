@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites tests="2" failures="0" skipped="0" errors="0" time="12.40227">
+  <testsuite tests="2" failures="0" skipped="0" time="11.833" errors="0" name="video-submissions/video-submission.spec.ts" hostname="chromium-desktop">
+    <testcase time="6.08" name="CA1 e CA4 · envia short.mov em testimonial e recebe recibo" classname="video-submission.spec.ts" />
+    <testcase time="5.753" name="CA1 e CA4 · envia short.webm em moment e recebe recibo" classname="video-submission.spec.ts" />
+  </testsuite>
+</testsuites>

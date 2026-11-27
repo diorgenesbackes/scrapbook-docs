@@ -1,0 +1,125 @@
+{
+  "git": {
+    "scrapbook-service": "78abe427054ee420cab27da00b1a772534e390b9",
+    "scrapbook-infrastructure": "1578ca0db337c58b0ce546e4ea252b89527443f1",
+    "scrapbook-tests": "e19c13af9726e5605b3f7595e6a7d0637e11ecd1",
+    "scrapbook-docs": "99044c55707eeab1f0539e5adab523d19e335734",
+    "scrapbook-ui": "57f4e63f9a6378ecde532d53b4d204ac935021ff",
+    "scrapbook-liquibase": "8c1f47395a2e6564b6bca8da781c94e5d439a9f3"
+  },
+  "dockerContext": "colima-scrapbook-f10-validation",
+  "vmCpus": 4,
+  "vmMemoryBytes": 6197452800,
+  "vmArchitecture": "aarch64",
+  "apiReplicas": 2,
+  "python": "3.13.15",
+  "docker": "Docker version 29.8.2, build 7fc2dff9bc",
+  "compose": "Docker Compose version 5.6.0",
+  "awsCli": "aws-cli/2.37.10 Python/3.14.8 Darwin/25.6.0 source/arm64",
+  "ffmpegHost": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "liquibase": "Liquibase Open Source 4.33.0 by Liquibase",
+  "postgres": "18.6 (Debian 18.6-1.pgdg13+2)",
+  "dotnetRuntime": [
+    "Microsoft.AspNetCore.App 10.0.12 [/usr/share/dotnet/shared/Microsoft.AspNetCore.App]",
+    "Microsoft.NETCore.App 10.0.12 [/usr/share/dotnet/shared/Microsoft.NETCore.App]"
+  ],
+  "ffmpegService": "ffmpeg version 9.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "workload": [
+    {
+      "name": "mp4-landscape",
+      "container": "mp4",
+      "bytes": 1403204,
+      "inputDurationSeconds": 6.0,
+      "inputStreams": [
+        {
+          "codec_name": "h264",
+          "width": 640,
+          "height": 360,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "codec_name": "aac",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "referenceDurationSeconds": 6.0,
+      "referenceBytes": 1370361,
+      "catalogKey": {
+        "file": "mp4-landscape.mp4",
+        "width": 640,
+        "height": 360,
+        "rate": "25",
+        "rotation": "DEGREE_0",
+        "channels": 1
+      }
+    },
+    {
+      "name": "mov-portrait",
+      "container": "mov",
+      "bytes": 1326210,
+      "inputDurationSeconds": 9.0,
+      "inputStreams": [
+        {
+          "codec_name": "h264",
+          "width": 480,
+          "height": 270,
+          "r_frame_rate": "24/1",
+          "side_data_list": [
+            {
+              "rotation": 90
+            }
+          ]
+        }
+      ],
+      "referenceDurationSeconds": 9.0,
+      "referenceBytes": 1288038,
+      "catalogKey": {
+        "file": "mov-portrait.mp4",
+        "width": 270,
+        "height": 480,
+        "rate": "24",
+        "rotation": "DEGREES_270",
+        "channels": 0
+      }
+    },
+    {
+      "name": "webm-square",
+      "container": "webm",
+      "bytes": 4326241,
+      "inputDurationSeconds": 12.008,
+      "inputStreams": [
+        {
+          "codec_name": "vp9",
+          "width": 480,
+          "height": 480,
+          "r_frame_rate": "60/1"
+        },
+        {
+          "codec_name": "opus",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "referenceDurationSeconds": 12.0,
+      "referenceBytes": 3600987,
+      "catalogKey": {
+        "file": "webm-square.mp4",
+        "width": 480,
+        "height": 480,
+        "rate": "30",
+        "rotation": "DEGREE_0",
+        "channels": 1
+      }
+    }
+  ],
+  "pollSeconds": 0.25,
+  "observationSeconds": 300,
+  "maxBytes": 100000000,
+  "providerFixtureSha256": "0f6b2cc2be682e42c35b756d2eaab76e0f3c36602ecb6eb46230e86faa9d0c20",
+  "runnerSha256": {
+    "run-video-burst.py": "b654acba23f8205d5ba62e38ac61c336589f63392b46b7c453682ffb7a56b240",
+    "video-snapshot.sql": "82047eacf8c5eb53fb7ea887305216c73714af962c3560f9d8492258298f7b5f",
+    "measure.py": "e40b2036a4583996350d70397c805b16d8efaa66a36f13930400f784d1b541a9"
+  }
+}
