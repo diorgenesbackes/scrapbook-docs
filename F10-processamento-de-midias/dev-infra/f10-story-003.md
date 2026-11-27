@@ -1,0 +1,7 @@
+# F10-STORY-003 — Recursos e permissões para vídeo
+
+O vídeo reutiliza a fila do MediaConvert e a role de conversão da F10-STORY-002. O resultado usa a regra EventBridge e a fila SQS existentes. A preparação usa uma chave exclusiva por tentativa sob `submissions/transcode-input/`, com escrita condicional pela API. A role do MediaConvert lê o estágio e grava somente sob `submissions/transcode-output/`. O vínculo de confiança da role restringe conta e fila. [Infraestrutura da F10-STORY-002](f10-story-002.md)
+
+O Compose disponibiliza 3 GiB de scratch gravável por réplica. O orçamento cobre dois estágios de até 1.012.000.000 bytes cada, um vídeo F08 de até 500.000.000 bytes e um áudio F08 de até 50.000.000 bytes. Uma verificação de saída ocupa uma das mesmas vagas do estágio. A tarefa em homologação precisa de pelo menos 3 GiB livres no diretório temporário gravável. [Compose](../../../scrapbook-infrastructure/compose.yaml)
+
+A flag opcional `MediaAudioProcessing__VideoEnabled` depende de `MediaAudioProcessing__Enabled` e `PhotoSubmissions__VideoEnabled`. A ativação em AWS depende da validação do contrato do MediaConvert, da matriz de entradas e da execução representativa sob a quota do ambiente. A consulta AWS da sessão retornou `NoCredentials`. Os testes locais do Compose e da fixture de mídia têm seu próprio registro de execução.
