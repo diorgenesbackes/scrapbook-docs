@@ -1,0 +1,14 @@
+{"elapsedSeconds": 0.002, "api1": {"capacityKiB": 524288, "usedKiB": 0}, "api2": {"capacityKiB": 524288, "usedKiB": 0}}
+{"elapsedSeconds": 1.076, "api1": {"capacityKiB": 524288, "usedKiB": 0}, "api2": {"capacityKiB": 524288, "usedKiB": 0}}
+{"elapsedSeconds": 2.179, "api1": {"capacityKiB": 524288, "usedKiB": 0}, "api2": {"capacityKiB": 524288, "usedKiB": 0}}
+{"elapsedSeconds": 3.266, "api1": {"capacityKiB": 524288, "usedKiB": 252}, "api2": {"capacityKiB": 524288, "usedKiB": 504}}
+{"elapsedSeconds": 4.371, "api1": {"capacityKiB": 524288, "usedKiB": 0}, "api2": {"capacityKiB": 524288, "usedKiB": 252}}
+{"elapsedSeconds": 5.451, "api1": {"capacityKiB": 524288, "usedKiB": 252}, "api2": {"capacityKiB": 524288, "usedKiB": 756}}
+{"elapsedSeconds": 6.545, "api1": {"capacityKiB": 524288, "usedKiB": 504}, "api2": {"capacityKiB": 524288, "usedKiB": 756}}
+{"elapsedSeconds": 7.646, "api1": {"capacityKiB": 524288, "usedKiB": 504}, "api2": {"capacityKiB": 524288, "usedKiB": 504}}
+{"elapsedSeconds": 8.736, "api1": {"capacityKiB": 524288, "usedKiB": 252}, "api2": {"capacityKiB": 524288, "usedKiB": 504}}
+{"elapsedSeconds": 9.84, "api1": {"capacityKiB": 524288, "usedKiB": 756}, "api2": {"capacityKiB": 524288, "usedKiB": 0}}
+{"elapsedSeconds": 10.932, "api1": {"capacityKiB": 524288, "usedKiB": 756}, "api2": {"capacityKiB": 524288, "usedKiB": 504}}
+{"elapsedSeconds": 12.04, "api1": {"capacityKiB": 524288, "usedKiB": 504}, "api2": {"capacityKiB": 524288, "usedKiB": 252}}
+{"elapsedSeconds": 13.14, "api1": {"capacityKiB": 524288, "usedKiB": 504}, "api2": {"capacityKiB": 524288, "usedKiB": 504}}
+{"elapsedSeconds": 14.232, "api1": {"capacityKiB": 524288, "usedKiB": 252}, "api2": {"capacityKiB": 524288, "usedKiB": 504}}

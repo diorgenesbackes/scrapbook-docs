@@ -1,0 +1,6 @@
+Rodada interrompida por OOM global na VM de teste. O kernel matou moto_server.
+total-vm: 5106820 KiB
+anon-rss: 5063084 KiB
+file-rss: 0 KiB
+shmem-rss: 0 KiB
+Depois da perda do Moto, a leitura final do PostgreSQL foi preservada e os contêineres, volumes e rede da rodada foram removidos.

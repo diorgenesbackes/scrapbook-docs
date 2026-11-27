@@ -1,0 +1,446 @@
+{
+  "readiness": {
+    "now": 1795792935.220046,
+    "confirmed": 90,
+    "ready": 90,
+    "variants": 180,
+    "failed": 0,
+    "jobPending": 0,
+    "jobRunning": 0,
+    "unadmitted": 0,
+    "jobsRetried": 0,
+    "mediaOutboxUnpublished": 0,
+    "connections": 37,
+    "records": {
+      "confirmed": 80
+    },
+    "lastConfirmedCommit": 1795792933.742954,
+    "lastReadyCommit": 1795792934.602722,
+    "monotonicLowerCommitLatencyMs": {
+      "n": 90,
+      "min": 0.0,
+      "p50": 0.0,
+      "p95": 1005.107,
+      "p99": 1005.123,
+      "max": 1005.123
+    },
+    "monotonicUpperCommitLatencyMs": {
+      "n": 90,
+      "min": 1201.138,
+      "p50": 2323.708,
+      "p95": 3428.919,
+      "p99": 3435.256,
+      "max": 3435.256
+    },
+    "monotonicWithin300Seconds": 90,
+    "within300SecondsDatabaseClock": 90,
+    "within300Seconds": 90,
+    "denominator": 90,
+    "pctReadyWithin300Seconds": 100.0,
+    "confirmationToPublicationCommitMs": {
+      "n": 90,
+      "min": 441.26,
+      "p50": 1136.068,
+      "p95": 1642.252,
+      "p99": 1889.256,
+      "max": 1889.256
+    },
+    "commitToCommitMs": {
+      "n": 90,
+      "min": 399.634,
+      "p50": 1111.525,
+      "p95": 1599.24,
+      "p99": 1857.228,
+      "max": 1857.228
+    },
+    "confirmToConfirmCommitMs": {
+      "n": 90,
+      "min": 4.197,
+      "p50": 26.267,
+      "p95": 46.19,
+      "p99": 54.616,
+      "max": 54.616
+    },
+    "s3OriginalsAlongsideWarmup": 91,
+    "s3DerivedAlongsideWarmup": 182,
+    "s3UniqueDerivedKeysAlongsideWarmup": 182,
+    "k6Code": 0,
+    "elapsedIncludingDrainSeconds": 16.139
+  },
+  "http": {
+    "milliseconds": {
+      "admit": {
+        "n": 80,
+        "min": 55.523,
+        "p50": 80.382,
+        "p95": 104.432,
+        "p99": 118.375,
+        "max": 118.375
+      },
+      "authorize": {
+        "n": 90,
+        "min": 3.826,
+        "p50": 181.586,
+        "p95": 218.372,
+        "p99": 233.047,
+        "max": 233.047
+      },
+      "completion": {
+        "n": 80,
+        "min": 2.192,
+        "p50": 18.147,
+        "p95": 127.481,
+        "p99": 162.348,
+        "max": 162.348
+      },
+      "consent": {
+        "n": 80,
+        "min": 36.651,
+        "p50": 91.906,
+        "p95": 118.428,
+        "p99": 129.515,
+        "max": 129.515
+      },
+      "status": {
+        "n": 419,
+        "min": 1.579,
+        "p50": 5.852,
+        "p95": 13.481,
+        "p99": 19.405,
+        "max": 22.138
+      },
+      "total_until_receipt": {
+        "n": 80,
+        "min": 2863,
+        "p50": 8244,
+        "p95": 13855,
+        "p99": 14753,
+        "max": 14753
+      },
+      "transfer": {
+        "n": 90,
+        "min": 10.042,
+        "p50": 280.257,
+        "p95": 478.263,
+        "p99": 489.451,
+        "max": 489.451
+      }
+    },
+    "httpStatus": {
+      "consent": {
+        "200": 80
+      },
+      "admit": {
+        "201": 80
+      },
+      "authorize": {
+        "200": 90
+      },
+      "transfer": {
+        "200": 90
+      },
+      "completion": {
+        "202": 80
+      },
+      "status": {
+        "200": 419
+      }
+    },
+    "counts": [
+      {
+        "metric": "photo_completed",
+        "event": "1",
+        "category": "moment",
+        "input": "",
+        "count": 5
+      },
+      {
+        "metric": "photo_completed",
+        "event": "1",
+        "category": "testimonial",
+        "input": "",
+        "count": 35
+      },
+      {
+        "metric": "photo_completed",
+        "event": "2",
+        "category": "moment",
+        "input": "",
+        "count": 5
+      },
+      {
+        "metric": "photo_completed",
+        "event": "2",
+        "category": "testimonial",
+        "input": "",
+        "count": 35
+      },
+      {
+        "metric": "photo_confirmed",
+        "event": "1",
+        "category": "moment",
+        "input": "",
+        "count": 5
+      },
+      {
+        "metric": "photo_confirmed",
+        "event": "1",
+        "category": "testimonial",
+        "input": "",
+        "count": 35
+      },
+      {
+        "metric": "photo_confirmed",
+        "event": "2",
+        "category": "moment",
+        "input": "",
+        "count": 5
+      },
+      {
+        "metric": "photo_confirmed",
+        "event": "2",
+        "category": "testimonial",
+        "input": "",
+        "count": 35
+      },
+      {
+        "metric": "photo_started",
+        "event": "1",
+        "category": "moment",
+        "input": "",
+        "count": 5
+      },
+      {
+        "metric": "photo_started",
+        "event": "1",
+        "category": "testimonial",
+        "input": "",
+        "count": 35
+      },
+      {
+        "metric": "photo_started",
+        "event": "2",
+        "category": "moment",
+        "input": "",
+        "count": 5
+      },
+      {
+        "metric": "photo_started",
+        "event": "2",
+        "category": "testimonial",
+        "input": "",
+        "count": 35
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "1",
+        "category": "moment",
+        "input": "large",
+        "count": 3
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "1",
+        "category": "moment",
+        "input": "medium",
+        "count": 3
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "1",
+        "category": "moment",
+        "input": "small",
+        "count": 4
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "1",
+        "category": "testimonial",
+        "input": "large",
+        "count": 11
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "1",
+        "category": "testimonial",
+        "input": "medium",
+        "count": 12
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "1",
+        "category": "testimonial",
+        "input": "small",
+        "count": 12
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "2",
+        "category": "moment",
+        "input": "large",
+        "count": 3
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "2",
+        "category": "moment",
+        "input": "medium",
+        "count": 3
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "2",
+        "category": "moment",
+        "input": "small",
+        "count": 4
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "2",
+        "category": "testimonial",
+        "input": "large",
+        "count": 11
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "2",
+        "category": "testimonial",
+        "input": "medium",
+        "count": 12
+      },
+      {
+        "metric": "photo_uploaded",
+        "event": "2",
+        "category": "testimonial",
+        "input": "small",
+        "count": 12
+      }
+    ],
+    "peakLogicalAttempts": 80,
+    "spanOfStartsSeconds": 0.0061,
+    "elapsedSeconds": 14.7532
+  },
+  "httpTotal": 839,
+  "containers": {
+    "api1": {
+      "n": 8,
+      "peakCpuPercent": 180.54,
+      "peakMemoryMiB": 283.9
+    },
+    "api2": {
+      "n": 8,
+      "peakCpuPercent": 184.58,
+      "peakMemoryMiB": 198.9
+    },
+    "postgres": {
+      "n": 8,
+      "peakCpuPercent": 48.2,
+      "peakMemoryMiB": 193.1
+    },
+    "nginx": {
+      "n": 8,
+      "peakCpuPercent": 1.03,
+      "peakMemoryMiB": 5.25
+    },
+    "moto": {
+      "n": 8,
+      "peakCpuPercent": 35.08,
+      "peakMemoryMiB": 460.4
+    }
+  },
+  "monitoring": {
+    "errors": []
+  },
+  "tmpfs": {
+    "api1": {
+      "n": 14,
+      "capacityKiB": 524288,
+      "peakUsedKiB": 756
+    },
+    "api2": {
+      "n": 14,
+      "capacityKiB": 524288,
+      "peakUsedKiB": 756
+    }
+  },
+  "sqs": {
+    "n": 8,
+    "last": {
+      "elapsedSeconds": 14.001,
+      "f08Receipt": {
+        "visible": 0,
+        "inFlight": 0,
+        "delayed": 0
+      },
+      "f10Confirmation": {
+        "visible": 0,
+        "inFlight": 0,
+        "delayed": 0
+      }
+    },
+    "peak": {
+      "f08Receipt": {
+        "visible": 0,
+        "inFlight": 0,
+        "delayed": 0
+      },
+      "f10Confirmation": {
+        "visible": 0,
+        "inFlight": 0,
+        "delayed": 0
+      }
+    }
+  },
+  "postgres": {
+    "n": 14,
+    "initial": {
+      "confirmed": 0,
+      "ready": 0,
+      "variants": 0,
+      "failed": 0,
+      "jobPending": 0,
+      "jobRunning": 0,
+      "unadmitted": 0,
+      "jobsRetried": 0,
+      "mediaOutboxUnpublished": 0,
+      "connections": 9,
+      "records": null,
+      "elapsedSeconds": 0.094,
+      "postgresClockMinusHostEpochMs": -4.902
+    },
+    "lastPolled": {
+      "confirmed": 90,
+      "ready": 87,
+      "variants": 174,
+      "failed": 0,
+      "jobPending": 0,
+      "jobRunning": 3,
+      "unadmitted": 0,
+      "jobsRetried": 0,
+      "mediaOutboxUnpublished": 0,
+      "connections": 37,
+      "records": {
+        "confirmed": 80
+      },
+      "elapsedSeconds": 14.509,
+      "postgresClockMinusHostEpochMs": -5.305
+    },
+    "peak": {
+      "confirmed": 90,
+      "ready": 87,
+      "variants": 174,
+      "failed": 0,
+      "jobPending": 6,
+      "jobRunning": 4,
+      "unadmitted": 4,
+      "jobsRetried": 0,
+      "mediaOutboxUnpublished": 3,
+      "connections": 37
+    },
+    "peakRecordValidating": 66
+  },
+  "receipts": {
+    "publishedEvidence": 90,
+    "transport": "S3 PUT observado por versão e tamanho em Moto, seguido de evidência enviada à fila SQS com instante de observação na VM."
+  }
+}
