@@ -1,0 +1,43 @@
+{
+  "logs_api": {
+    "linhas": 151,
+    "severidades": {
+      "Warning": 4,
+      "Information": 143,
+      "Error": 1,
+      "Critical": 1
+    },
+    "codigos": {
+      "MEDIA_QUEUE_UNAVAILABLE": 1,
+      "MEDIA_AUDIO_QUEUE_UNAVAILABLE": 1
+    },
+    "status_http": {
+      "200": 111,
+      "201": 15,
+      "202": 12
+    },
+    "ocorrencias_privadas": {
+      "assinatura": 0,
+      "credencial": 0,
+      "objeto": 0,
+      "codigo-evento": 0,
+      "identidade-conteudo": 0
+    }
+  },
+  "postgres": {
+    "tentativas": 8,
+    "variantes_prontas": 7,
+    "arquivos_com_falha": 1,
+    "arquivos_disponiveis": 7,
+    "falhas_sem_objeto_promovido": 1,
+    "perfis_com_chave_e_intencao": 8,
+    "entradas_fixadas_e_coerentes": 8
+  },
+  "fila_resultado": {
+    "ApproximateNumberOfMessages": 0,
+    "ApproximateNumberOfMessagesNotVisible": 0,
+    "ApproximateNumberOfMessagesDelayed": 0
+  },
+  "exit_code": 0,
+  "tempo_total_s": 69.917
+}

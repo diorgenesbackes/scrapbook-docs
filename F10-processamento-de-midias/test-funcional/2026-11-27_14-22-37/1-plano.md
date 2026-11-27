@@ -1,0 +1,15 @@
+# Plano de validação funcional da F10-STORY-002
+
+[Cartão e critérios CA1 a CA4](https://trello.com/c/I4MI0oAu) · [Spec F10](../../spec.md) · [Plano F10](../../plan.md) · [Aceite da F10 no PRD](../../../PRD.md#f10-processamento-de-mídias-2)
+
+O ensaio usa as revisões integradas em `dev` em checkouts fixados, PostgreSQL descartável com migrations Liquibase, API e UI da aplicação, armazenamento e filas no Moto e um adaptador local do contrato do MediaConvert. Os eventos, identidades e áudios são sintéticos. A identidade de desenvolvimento, os serviços emulados e o relógio do laboratório ficam restritos à execução local. A dependência de confirmação é a F08-STORY-005. A admissão em F10 depende da F10-STORY-001.
+
+| Critério | Cenário e ação | Resultado esperado e prova |
+| --- | --- | --- |
+| CA1 · F08 e F10 | Confirmar as amostras mono MP3, M4A, WAV, OGG e WebM no fluxo público, consultar a preparação e comparar o objeto confirmado. | Uma variante `playback` privada com extensão `.m4a`, `audio/mp4`, AAC, duração perto de 3 s, versão e SHA-256. O WebM chega ao provedor pela entrada Ogg ou WAV. O original permanece íntegro e privado. |
+| CA2 · F10 | Converter os arquivos usando as entradas preparadas e reter um resultado enquanto o convidado consulta o recibo. | O SHA-256 e a versão que o provedor lê coincidem com a entrada persistida. Chave opaca, perfil e instante de submissão precedem o resultado. Fila recebe os eventos no formato EventBridge. A consulta e o replay F08 devolvem o mesmo recibo sem cache. |
+| CA3 · F10 | Aceitar a requisição de criação, enfileirar resultado em duplicidade e encerrar a conexão antes da resposta. | O resultado converge para uma tentativa persistida e uma variante pronta. As chamadas permitidas na janela idempotente reutilizam chave e configuração. Fora da janela, uma nova submissão exige prova conclusiva sobre a anterior. |
+| CA4 · F08, F10 e F13 | Reter o artefato, liberá-lo ou substituir o conteúdo por bytes inválidos, com versão e evento `COMPLETE`. | A variante só fica disponível após a verificação. Reentrega conserva uma única variante pronta. A saída inválida fica indisponível e produz um fato definitivo correlacionado para a F13. O recibo e o original continuam íntegros. |
+| Regressão · F08-STORY-005 | Selecionar/revisar áudio WebM e retomar o PUT de WAV após interrupção em Chromium desktop e Android emulado. | Os dois fluxos exibem recibo durável e a interface omite dados de mídia após a confirmação. A retomada reutiliza a tentativa e confirma após o prazo com prova de recebimento às 13h de Brasília. A preparação termina nas quatro confirmações. |
+
+O adaptador lê a entrada privada, verifica a requisição e publica um M4A sintético de referência. A validação da saída é feita pela aplicação. O adaptador limita a evidência sobre combinações de entrada ao caminho local até a submissão. A execução com MediaConvert, EventBridge e IAM reais é necessária para ativar o perfil em homologação. O player pertence à F11 e a emissão do alerta final à F13.

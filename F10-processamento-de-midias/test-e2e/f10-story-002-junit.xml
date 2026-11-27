@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites tests="4" failures="0" skipped="0" errors="0" time="24.453173">
+  <testsuite tests="2" failures="0" skipped="0" errors="0" time="11.846" name="audio-submission.spec.ts" hostname="chromium-320px">
+    <testcase name="CA1 e CA3 · envia tone.webm selecionado e recebe somente o recibo" classname="audio-submission.spec.ts" time="6.082" />
+    <testcase name="CA2 e CA3 · retoma o PUT na mesma tentativa e aguarda a confirmação persistida" classname="audio-submission.spec.ts" time="5.764" />
+  </testsuite>
+  <testsuite tests="2" failures="0" skipped="0" errors="0" time="11.783" name="audio-submission.spec.ts" hostname="chromium-android">
+    <testcase name="CA1 e CA3 · envia tone.webm selecionado e recebe somente o recibo" classname="audio-submission.spec.ts" time="5.882" />
+    <testcase name="CA2 e CA3 · retoma o PUT na mesma tentativa e aguarda a confirmação persistida" classname="audio-submission.spec.ts" time="5.901" />
+  </testsuite>
+</testsuites>
