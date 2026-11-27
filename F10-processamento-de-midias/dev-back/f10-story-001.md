@@ -8,3 +8,5 @@
 - Falhas transitórias consomem até cinco tentativas. A falha final registra o fato correlacionado para F13. Tanto a projeção de execução quanto o sinal de falha se vinculam ao arquivo, preservando recibo e original. O contrato de leitura é interno à aplicação.
 
 Na revisão unitária da implementação e dos testes, o build concluiu sem warnings e os 432 casos passaram, incluindo 76 novos. A cobertura coletada foi de 53,2% das linhas executáveis alteradas e 89,0% no serviço de preparação. Os adaptadores de banco, mensageria e subprocesso têm exercícios complementares em integração.
+
+A revisão acrescentou reconciliação de publicação SNS com base no recibo de admissão persistido e validação de filas distintas na inicialização. O build final passou com zero warnings e os 447 testes passaram. [Relatório técnico](../code-review/f10-story-001.md)
