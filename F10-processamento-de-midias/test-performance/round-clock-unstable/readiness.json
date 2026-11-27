@@ -1,0 +1,50 @@
+{
+  "now": 1795792649.344104,
+  "confirmed": 90,
+  "ready": 84,
+  "variants": 168,
+  "failed": 0,
+  "jobPending": 0,
+  "jobRunning": 6,
+  "unadmitted": 0,
+  "jobsRetried": 9,
+  "mediaOutboxUnpublished": 0,
+  "connections": 6,
+  "records": {
+    "confirmed": 80
+  },
+  "lastConfirmedCommit": 1795792349.269698,
+  "lastReadyCommit": 1795792355.279801,
+  "within300Seconds": 84,
+  "denominator": 90,
+  "pctReadyWithin300Seconds": 93.333,
+  "confirmationToPublicationCommitMs": {
+    "n": 84,
+    "min": 496.257,
+    "p50": 1313.056,
+    "p95": 11253.855,
+    "p99": 37160.043,
+    "max": 37160.043
+  },
+  "commitToCommitMs": {
+    "n": 84,
+    "min": 494.581,
+    "p50": 1306.807,
+    "p95": 39383.192,
+    "p99": 39981.061,
+    "max": 39981.061
+  },
+  "confirmToConfirmCommitMs": {
+    "n": 90,
+    "min": -29229.742,
+    "p50": 2.022,
+    "p95": 10.024,
+    "p99": 23.821,
+    "max": 23.821
+  },
+  "s3OriginalsAlongsideWarmup": 91,
+  "s3DerivedAlongsideWarmup": 206,
+  "s3UniqueDerivedKeysAlongsideWarmup": 206,
+  "k6Code": 0,
+  "elapsedIncludingDrainSeconds": 342.976
+}

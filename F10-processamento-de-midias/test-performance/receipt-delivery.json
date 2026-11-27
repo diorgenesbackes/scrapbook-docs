@@ -1,0 +1,4 @@
+{
+  "publishedEvidence": 90,
+  "transport": "S3 PUT observado por versão e tamanho em Moto, seguido de evidência enviada à fila SQS com instante de observação na VM."
+}
