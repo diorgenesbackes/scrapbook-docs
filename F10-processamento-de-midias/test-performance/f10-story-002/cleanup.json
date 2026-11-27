@@ -1,0 +1,10 @@
+{
+  "resourcesRemaining": {
+    "composeContainers": 0,
+    "composeVolumes": 0,
+    "composeNetworks": 0,
+    "fixtureProvider": 0,
+    "fixtureMoto": 0
+  },
+  "clean": true
+}

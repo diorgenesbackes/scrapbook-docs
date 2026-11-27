@@ -1,0 +1,559 @@
+{
+  "confirmed": 40,
+  "ready": 40,
+  "failed": 0,
+  "pending": 0,
+  "running": 0,
+  "reconciling": 0,
+  "unknown": 0,
+  "unadmitted": 0,
+  "failureFacts": 0,
+  "callbackDedupeRows": 40,
+  "connections": 40,
+  "planned": 40,
+  "clientsStarted": 40,
+  "payloadBytes": 2833800,
+  "clientReceipts": 40,
+  "receiptEpochMatches": 40,
+  "exactlyOneAttemptAndVariant": 40,
+  "confirmationContextMatches": 40,
+  "originalsVersioned": 40,
+  "fixtureCorrelations": 40,
+  "providerJobs": 40,
+  "providerCreateCalls": 40,
+  "fixtureCompleteEventsEnqueued": 80,
+  "providerGetJobCalls": 120,
+  "providerListJobsCalls": 0,
+  "webmPrivatelyNormalized": 8,
+  "within300Seconds": 0,
+  "within300SecondsObservedMonotonic": 40,
+  "denominator": 40,
+  "dbOffsetMidpointMs": {
+    "n": 18,
+    "min": -30307.973,
+    "p50": -30300.707,
+    "p95": 28.8,
+    "p99": 28.8,
+    "max": 28.8
+  },
+  "dbOffsetBoundMs": [
+    -30350.708,
+    70.18
+  ],
+  "estimatedCommitBoundsMs": {
+    "confirmToReadyEstimatedLowerMs": {
+      "n": 40,
+      "min": 0,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0
+    },
+    "confirmToReadyEstimatedUpperMs": {
+      "n": 40,
+      "min": 649.123,
+      "p50": 1112.487,
+      "p95": 1361.968,
+      "p99": 1502.151,
+      "max": 1502.151
+    }
+  },
+  "signing": {
+    "signedSeconds": {
+      "n": 40,
+      "min": 630,
+      "p50": 630,
+      "p95": 630,
+      "p99": 630,
+      "max": 630
+    },
+    "signedClockMinusFixtureMs": {
+      "n": 40,
+      "min": -31186.928,
+      "p50": -31141.281,
+      "p95": -31097.942,
+      "p99": -31097.099,
+      "max": -31097.099
+    },
+    "expiryDeltaMs": {
+      "n": 40,
+      "min": 1080.881,
+      "p50": 1107.155,
+      "p95": 1165.553,
+      "p99": 1165.553,
+      "max": 1165.553
+    }
+  },
+  "monitoringPeaks": {
+    "pending": 5,
+    "running": 4,
+    "reconciling": 13,
+    "unknown": 2,
+    "unadmitted": 10,
+    "connections": 40
+  },
+  "lookupsWarmupExcluded": {
+    "list": 0,
+    "get": 3
+  },
+  "elapsedSeconds": 4.038,
+  "ms": {
+    "confirmToAttemptMs": {
+      "n": 40,
+      "min": 267.837,
+      "p50": 567.142,
+      "p95": 699.788,
+      "p99": 735.076,
+      "max": 735.076
+    },
+    "attemptToSubmitIntentMs": {
+      "n": 40,
+      "min": 25.559,
+      "p50": 58.38,
+      "p95": 129.131,
+      "p99": 141.747,
+      "max": 141.747
+    },
+    "confirmToReadyMs": {
+      "n": 40,
+      "min": -29701.585,
+      "p50": -29238.221,
+      "p95": -28988.74,
+      "p99": -28848.557,
+      "max": -28848.557
+    },
+    "commitToReadyMs": {
+      "n": 40,
+      "min": 628.705,
+      "p50": 1091.109,
+      "p95": 1341.618,
+      "p99": 1471.128,
+      "max": 1471.128
+    },
+    "confirmToConfirmCommitMs": {
+      "n": 40,
+      "min": -30336.166,
+      "p50": -30322.646,
+      "p95": -30310.133,
+      "p99": -30307.185,
+      "max": -30307.185
+    },
+    "confirmToObservedReadyMs": {
+      "n": 40,
+      "min": 754.246,
+      "p50": 1378.973,
+      "p95": 1747.055,
+      "p99": 1895.919,
+      "max": 1895.919
+    },
+    "createFixtureMs": {
+      "n": 40,
+      "min": 9.633,
+      "p50": 27.145,
+      "p95": 63.882,
+      "p99": 102.834,
+      "max": 102.834
+    },
+    "completeFixtureMs": {
+      "n": 40,
+      "min": 6.743,
+      "p50": 19.384,
+      "p95": 51.655,
+      "p99": 76.142,
+      "max": 76.142
+    }
+  },
+  "byFormat": {
+    "mp3": {
+      "confirmed": 8,
+      "ready": 8,
+      "ms": {
+        "confirmToAttemptMs": {
+          "n": 8,
+          "min": 399.323,
+          "p50": 530.419,
+          "p95": 679.743,
+          "p99": 679.743,
+          "max": 679.743
+        },
+        "attemptToSubmitIntentMs": {
+          "n": 8,
+          "min": 25.559,
+          "p50": 53.07,
+          "p95": 85.836,
+          "p99": 85.836,
+          "max": 85.836
+        },
+        "confirmToReadyMs": {
+          "n": 8,
+          "min": -29608.101,
+          "p50": -29216.92,
+          "p95": -29094.935,
+          "p99": -29094.935,
+          "max": -29094.935
+        },
+        "commitToReadyMs": {
+          "n": 8,
+          "min": 710.443,
+          "p50": 1102.224,
+          "p95": 1218.157,
+          "p99": 1218.157,
+          "max": 1218.157
+        },
+        "confirmToConfirmCommitMs": {
+          "n": 8,
+          "min": -30329.619,
+          "p50": -30318.544,
+          "p95": -30310.922,
+          "p99": -30310.922,
+          "max": -30310.922
+        },
+        "confirmToObservedReadyMs": {
+          "n": 8,
+          "min": 837.581,
+          "p50": 1307.03,
+          "p95": 1621.689,
+          "p99": 1621.689,
+          "max": 1621.689
+        },
+        "createFixtureMs": {
+          "n": 8,
+          "min": 9.633,
+          "p50": 18.68,
+          "p95": 36.837,
+          "p99": 36.837,
+          "max": 36.837
+        },
+        "completeFixtureMs": {
+          "n": 8,
+          "min": 6.743,
+          "p50": 13.05,
+          "p95": 30.387,
+          "p99": 30.387,
+          "max": 30.387
+        }
+      }
+    },
+    "m4a": {
+      "confirmed": 8,
+      "ready": 8,
+      "ms": {
+        "confirmToAttemptMs": {
+          "n": 8,
+          "min": 490.049,
+          "p50": 571.592,
+          "p95": 707.705,
+          "p99": 707.705,
+          "max": 707.705
+        },
+        "attemptToSubmitIntentMs": {
+          "n": 8,
+          "min": 77.898,
+          "p50": 87.075,
+          "p95": 129.131,
+          "p99": 129.131,
+          "max": 129.131
+        },
+        "confirmToReadyMs": {
+          "n": 8,
+          "min": -29406.325,
+          "p50": -29170.802,
+          "p95": -28995.295,
+          "p99": -28995.295,
+          "max": -28995.295
+        },
+        "commitToReadyMs": {
+          "n": 8,
+          "min": 919.945,
+          "p50": 1157.245,
+          "p95": 1327.351,
+          "p99": 1327.351,
+          "max": 1327.351
+        },
+        "confirmToConfirmCommitMs": {
+          "n": 8,
+          "min": -30332.462,
+          "p50": -30326.27,
+          "p95": -30313.058,
+          "p99": -30313.058,
+          "max": -30313.058
+        },
+        "confirmToObservedReadyMs": {
+          "n": 8,
+          "min": 1084.667,
+          "p50": 1461.951,
+          "p95": 1747.055,
+          "p99": 1747.055,
+          "max": 1747.055
+        },
+        "createFixtureMs": {
+          "n": 8,
+          "min": 11.449,
+          "p50": 42.316,
+          "p95": 90.927,
+          "p99": 90.927,
+          "max": 90.927
+        },
+        "completeFixtureMs": {
+          "n": 8,
+          "min": 7.958,
+          "p50": 19.384,
+          "p95": 76.142,
+          "p99": 76.142,
+          "max": 76.142
+        }
+      }
+    },
+    "wav": {
+      "confirmed": 8,
+      "ready": 8,
+      "ms": {
+        "confirmToAttemptMs": {
+          "n": 8,
+          "min": 458.731,
+          "p50": 582.16,
+          "p95": 641.129,
+          "p99": 641.129,
+          "max": 641.129
+        },
+        "attemptToSubmitIntentMs": {
+          "n": 8,
+          "min": 25.995,
+          "p50": 50.898,
+          "p95": 141.747,
+          "p99": 141.747,
+          "max": 141.747
+        },
+        "confirmToReadyMs": {
+          "n": 8,
+          "min": -29564.744,
+          "p50": -29410.278,
+          "p95": -29089.853,
+          "p99": -29089.853,
+          "max": -29089.853
+        },
+        "commitToReadyMs": {
+          "n": 8,
+          "min": 768.076,
+          "p50": 921.704,
+          "p95": 1238.376,
+          "p99": 1238.376,
+          "max": 1238.376
+        },
+        "confirmToConfirmCommitMs": {
+          "n": 8,
+          "min": -30332.82,
+          "p50": -30328.229,
+          "p95": -30307.185,
+          "p99": -30307.185,
+          "max": -30307.185
+        },
+        "confirmToObservedReadyMs": {
+          "n": 8,
+          "min": 889.158,
+          "p50": 1272.991,
+          "p95": 1772.266,
+          "p99": 1772.266,
+          "max": 1772.266
+        },
+        "createFixtureMs": {
+          "n": 8,
+          "min": 10.162,
+          "p50": 22.223,
+          "p95": 41.246,
+          "p99": 41.246,
+          "max": 41.246
+        },
+        "completeFixtureMs": {
+          "n": 8,
+          "min": 6.809,
+          "p50": 17.934,
+          "p95": 37.153,
+          "p99": 37.153,
+          "max": 37.153
+        }
+      }
+    },
+    "ogg": {
+      "confirmed": 8,
+      "ready": 8,
+      "ms": {
+        "confirmToAttemptMs": {
+          "n": 8,
+          "min": 267.837,
+          "p50": 487.501,
+          "p95": 735.076,
+          "p99": 735.076,
+          "max": 735.076
+        },
+        "attemptToSubmitIntentMs": {
+          "n": 8,
+          "min": 53.07,
+          "p50": 55.7,
+          "p95": 109.646,
+          "p99": 109.646,
+          "max": 109.646
+        },
+        "confirmToReadyMs": {
+          "n": 8,
+          "min": -29629.193,
+          "p50": -29242.763,
+          "p95": -28988.74,
+          "p99": -28988.74,
+          "max": -28988.74
+        },
+        "commitToReadyMs": {
+          "n": 8,
+          "min": 690.961,
+          "p50": 1091.109,
+          "p95": 1341.618,
+          "p99": 1341.618,
+          "max": 1341.618
+        },
+        "confirmToConfirmCommitMs": {
+          "n": 8,
+          "min": -30336.166,
+          "p50": -30330.358,
+          "p95": -30313.202,
+          "p99": -30313.202,
+          "max": -30313.202
+        },
+        "confirmToObservedReadyMs": {
+          "n": 8,
+          "min": 837.581,
+          "p50": 1431.847,
+          "p95": 1735.14,
+          "p99": 1735.14,
+          "max": 1735.14
+        },
+        "createFixtureMs": {
+          "n": 8,
+          "min": 11.942,
+          "p50": 34.349,
+          "p95": 102.834,
+          "p99": 102.834,
+          "max": 102.834
+        },
+        "completeFixtureMs": {
+          "n": 8,
+          "min": 8.764,
+          "p50": 29.541,
+          "p95": 65.379,
+          "p99": 65.379,
+          "max": 65.379
+        }
+      }
+    },
+    "webm": {
+      "confirmed": 8,
+      "ready": 8,
+      "ms": {
+        "confirmToAttemptMs": {
+          "n": 8,
+          "min": 347.474,
+          "p50": 624.727,
+          "p95": 699.788,
+          "p99": 699.788,
+          "max": 699.788
+        },
+        "attemptToSubmitIntentMs": {
+          "n": 8,
+          "min": 52.069,
+          "p50": 58.193,
+          "p95": 141.584,
+          "p99": 141.584,
+          "max": 141.584
+        },
+        "confirmToReadyMs": {
+          "n": 8,
+          "min": -29701.585,
+          "p50": -29309.685,
+          "p95": -28848.557,
+          "p99": -28848.557,
+          "max": -28848.557
+        },
+        "commitToReadyMs": {
+          "n": 8,
+          "min": 628.705,
+          "p50": 1012.274,
+          "p95": 1471.128,
+          "p99": 1471.128,
+          "max": 1471.128
+        },
+        "confirmToConfirmCommitMs": {
+          "n": 8,
+          "min": -30336.06,
+          "p50": -30321.959,
+          "p95": -30307.536,
+          "p99": -30307.536,
+          "max": -30307.536
+        },
+        "confirmToObservedReadyMs": {
+          "n": 8,
+          "min": 754.246,
+          "p50": 1378.973,
+          "p95": 1895.919,
+          "p99": 1895.919,
+          "max": 1895.919
+        },
+        "createFixtureMs": {
+          "n": 8,
+          "min": 15.434,
+          "p50": 19.28,
+          "p95": 58.416,
+          "p99": 58.416,
+          "max": 58.416
+        },
+        "completeFixtureMs": {
+          "n": 8,
+          "min": 7.388,
+          "p50": 12.84,
+          "p95": 40.513,
+          "p99": 40.513,
+          "max": 40.513
+        }
+      }
+    }
+  },
+  "published": 40,
+  "batches": 5,
+  "queuesBefore": {
+    "f08-receipt": {
+      "ApproximateNumberOfMessages": 0,
+      "ApproximateNumberOfMessagesNotVisible": 0,
+      "ApproximateNumberOfMessagesDelayed": 0
+    },
+    "f10-fact": {
+      "ApproximateNumberOfMessages": 0,
+      "ApproximateNumberOfMessagesNotVisible": 0,
+      "ApproximateNumberOfMessagesDelayed": 0
+    },
+    "f10-result": {
+      "ApproximateNumberOfMessages": 0,
+      "ApproximateNumberOfMessagesNotVisible": 0,
+      "ApproximateNumberOfMessagesDelayed": 0
+    }
+  },
+  "queuesAfter": {
+    "f08-receipt": {
+      "ApproximateNumberOfMessages": 0,
+      "ApproximateNumberOfMessagesNotVisible": 0,
+      "ApproximateNumberOfMessagesDelayed": 0
+    },
+    "f10-fact": {
+      "ApproximateNumberOfMessages": 0,
+      "ApproximateNumberOfMessagesNotVisible": 0,
+      "ApproximateNumberOfMessagesDelayed": 0
+    },
+    "f10-result": {
+      "ApproximateNumberOfMessages": 0,
+      "ApproximateNumberOfMessagesNotVisible": 0,
+      "ApproximateNumberOfMessagesDelayed": 0
+    }
+  },
+  "clockInterpretation": {
+    "within300Seconds": "Subtração direta de relógios distintos, inválida nesta execução devido à defasagem do PostgreSQL.",
+    "within300SecondsObservedMonotonic": "Critério do ensaio. Usa o instante de confirmação ancorado no host e limite de observação da prontidão.",
+    "estimatedCommitBoundsMs": "Envelope bruto de toda a série, incluindo a correção de relógio posterior à rajada. Consulte clock-analysis.json para o envelope até a observação de todos os commits."
+  }
+}
