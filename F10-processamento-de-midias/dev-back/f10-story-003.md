@@ -12,6 +12,10 @@ A cadência de saída é explícita e limitada a 30 fps. Quando as amostras de e
 
 O original é lido pela versão da F08. Entradas ISO passam por preparação autocontida com referências externas desabilitadas. A role do provedor lê apenas o prefixo de estágio. O estágio WebM usa a combinação de faixas compatível ou remultiplexação quando necessária. A homologação verifica os contêineres e codecs da F08 com arquivos sintéticos aceitos pelo contrato de mídia. [Referências externas MP4/MOV](https://docs.aws.amazon.com/mediaconvert/latest/ug/mp4-mov-external-references.html)
 
+O estágio usa as primeiras faixas que a F08 reconhece. A duração do perfil considera a apresentação das faixas escolhidas. Uma segunda faixa mais longa fica no original e não prolonga a variante. O estágio de WebM respeita o limite efetivo da F08, incluindo o atraso de codificação do Opus.
+
+O MediaConvert requer progressivo com crominância 4:2:2 ou 4:2:0 para rotação. Quando a fonte rotacionada precisa de adaptação, o estágio converte para H.264 progressivo 4:2:0 e preserva orientação, raster e cadência. Vídeo entrelaçado usa desentrelaçamento por quadro. A preparação respeita os limites de 25 s de CPU, 60 s de tempo e 512 MB. Se não for possível adaptar dentro desses limites, o trabalho preserva o recibo e registra a falha de preparação. [Restrições de rotação](https://docs.aws.amazon.com/mediaconvert/latest/ug/auto-rotate-requirements.html)
+
 Antes de publicar a variante, a aplicação confere a versão esperada, o checksum, o contêiner, as faixas, as dimensões, a proporção, a cadência, a duração e as tags de localização. A prontidão exige a tentativa e a versão do perfil vigentes. Resultado incompleto permanece em reconciliação. Falha definitiva registra a etapa para a F13 e preserva o original e o recibo F08.
 
 A entrega usa as colunas de vídeo já existentes em `file_variants`. A ativação requer o áudio F10 e o recebimento de vídeo F08 configurados. `MediaAudioProcessing__VideoEnabled` começa desabilitada. [Infraestrutura e configuração](../dev-infra/f10-story-003.md)
