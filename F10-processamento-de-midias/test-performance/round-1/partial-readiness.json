@@ -1,0 +1,220 @@
+{
+  "now": 1795792037.938815,
+  "confirmed": 22,
+  "ready": 18,
+  "variants": 36,
+  "failed": 0,
+  "jobPending": 3,
+  "jobRunning": 0,
+  "unadmitted": 1,
+  "jobsRetried": 3,
+  "mediaOutboxUnpublished": 1,
+  "connections": 38,
+  "records": {
+    "confirmed": 22,
+    "validating": 57,
+    "rejected": 1
+  },
+  "lastConfirmedCommit": 1795791904.374123,
+  "lastReadyCommit": 1795791904.386439,
+  "samples": [
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 852.641,
+      "dbCommitToReadyMs": 850.226,
+      "confirmationToCommitMs": 2.415,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "processing",
+      "confirmToReadyMs": null,
+      "dbCommitToReadyMs": null,
+      "confirmationToCommitMs": 5.394,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 1292.898,
+      "dbCommitToReadyMs": 1289.14,
+      "confirmationToCommitMs": 3.758,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "pending",
+      "confirmToReadyMs": null,
+      "dbCommitToReadyMs": null,
+      "confirmationToCommitMs": 7.383,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 831.247,
+      "dbCommitToReadyMs": 829.699,
+      "confirmationToCommitMs": 1.548,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 1166.285,
+      "dbCommitToReadyMs": 1164.237,
+      "confirmationToCommitMs": 2.048,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "processing",
+      "confirmToReadyMs": null,
+      "dbCommitToReadyMs": null,
+      "confirmationToCommitMs": 1.651,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 1281.578,
+      "dbCommitToReadyMs": 1274.54,
+      "confirmationToCommitMs": 7.038,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 922.002,
+      "dbCommitToReadyMs": 913.522,
+      "confirmationToCommitMs": 8.48,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 939.932,
+      "dbCommitToReadyMs": 934.868,
+      "confirmationToCommitMs": 5.064,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 932.324,
+      "dbCommitToReadyMs": 928.729,
+      "confirmationToCommitMs": 3.595,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 835.637,
+      "dbCommitToReadyMs": 834.336,
+      "confirmationToCommitMs": 1.301,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 1305.087,
+      "dbCommitToReadyMs": 1300.723,
+      "confirmationToCommitMs": 4.364,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 622.06,
+      "dbCommitToReadyMs": 619.657,
+      "confirmationToCommitMs": 2.403,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 765.378,
+      "dbCommitToReadyMs": 758.805,
+      "confirmationToCommitMs": 6.573,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 1560.065,
+      "dbCommitToReadyMs": 1558.251,
+      "confirmationToCommitMs": 1.814,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 843.277,
+      "dbCommitToReadyMs": 841.566,
+      "confirmationToCommitMs": 1.711,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 894.339,
+      "dbCommitToReadyMs": 891.937,
+      "confirmationToCommitMs": 2.402,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 864.871,
+      "dbCommitToReadyMs": 854.473,
+      "confirmationToCommitMs": 10.398,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 811.759,
+      "dbCommitToReadyMs": 806.667,
+      "confirmationToCommitMs": 5.092,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 2,
+      "category": "testimonial",
+      "state": "available",
+      "confirmToReadyMs": 1200.126,
+      "dbCommitToReadyMs": 1198.147,
+      "confirmationToCommitMs": 1.979,
+      "confirmedClockPresent": true
+    },
+    {
+      "event": 1,
+      "category": "testimonial",
+      "state": "processing",
+      "confirmToReadyMs": null,
+      "dbCommitToReadyMs": null,
+      "confirmationToCommitMs": 5.168,
+      "confirmedClockPresent": true
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "milliseconds": {
+    "admit": {
+      "n": 80,
+      "min": 55.523,
+      "p50": 80.382,
+      "p95": 104.432,
+      "p99": 118.375,
+      "max": 118.375
+    },
+    "authorize": {
+      "n": 90,
+      "min": 3.826,
+      "p50": 181.586,
+      "p95": 218.372,
+      "p99": 233.047,
+      "max": 233.047
+    },
+    "completion": {
+      "n": 80,
+      "min": 2.192,
+      "p50": 18.147,
+      "p95": 127.481,
+      "p99": 162.348,
+      "max": 162.348
+    },
+    "consent": {
+      "n": 80,
+      "min": 36.651,
+      "p50": 91.906,
+      "p95": 118.428,
+      "p99": 129.515,
+      "max": 129.515
+    },
+    "status": {
+      "n": 419,
+      "min": 1.579,
+      "p50": 5.852,
+      "p95": 13.481,
+      "p99": 19.405,
+      "max": 22.138
+    },
+    "total_until_receipt": {
+      "n": 80,
+      "min": 2863,
+      "p50": 8244,
+      "p95": 13855,
+      "p99": 14753,
+      "max": 14753
+    },
+    "transfer": {
+      "n": 90,
+      "min": 10.042,
+      "p50": 280.257,
+      "p95": 478.263,
+      "p99": 489.451,
+      "max": 489.451
+    }
+  },
+  "httpStatus": {
+    "consent": {
+      "200": 80
+    },
+    "admit": {
+      "201": 80
+    },
+    "authorize": {
+      "200": 90
+    },
+    "transfer": {
+      "200": 90
+    },
+    "completion": {
+      "202": 80
+    },
+    "status": {
+      "200": 419
+    }
+  },
+  "counts": [
+    {
+      "metric": "photo_completed",
+      "event": "1",
+      "category": "moment",
+      "input": "",
+      "count": 5
+    },
+    {
+      "metric": "photo_completed",
+      "event": "1",
+      "category": "testimonial",
+      "input": "",
+      "count": 35
+    },
+    {
+      "metric": "photo_completed",
+      "event": "2",
+      "category": "moment",
+      "input": "",
+      "count": 5
+    },
+    {
+      "metric": "photo_completed",
+      "event": "2",
+      "category": "testimonial",
+      "input": "",
+      "count": 35
+    },
+    {
+      "metric": "photo_confirmed",
+      "event": "1",
+      "category": "moment",
+      "input": "",
+      "count": 5
+    },
+    {
+      "metric": "photo_confirmed",
+      "event": "1",
+      "category": "testimonial",
+      "input": "",
+      "count": 35
+    },
+    {
+      "metric": "photo_confirmed",
+      "event": "2",
+      "category": "moment",
+      "input": "",
+      "count": 5
+    },
+    {
+      "metric": "photo_confirmed",
+      "event": "2",
+      "category": "testimonial",
+      "input": "",
+      "count": 35
+    },
+    {
+      "metric": "photo_started",
+      "event": "1",
+      "category": "moment",
+      "input": "",
+      "count": 5
+    },
+    {
+      "metric": "photo_started",
+      "event": "1",
+      "category": "testimonial",
+      "input": "",
+      "count": 35
+    },
+    {
+      "metric": "photo_started",
+      "event": "2",
+      "category": "moment",
+      "input": "",
+      "count": 5
+    },
+    {
+      "metric": "photo_started",
+      "event": "2",
+      "category": "testimonial",
+      "input": "",
+      "count": 35
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "1",
+      "category": "moment",
+      "input": "large",
+      "count": 3
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "1",
+      "category": "moment",
+      "input": "medium",
+      "count": 3
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "1",
+      "category": "moment",
+      "input": "small",
+      "count": 4
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "1",
+      "category": "testimonial",
+      "input": "large",
+      "count": 11
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "1",
+      "category": "testimonial",
+      "input": "medium",
+      "count": 12
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "1",
+      "category": "testimonial",
+      "input": "small",
+      "count": 12
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "2",
+      "category": "moment",
+      "input": "large",
+      "count": 3
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "2",
+      "category": "moment",
+      "input": "medium",
+      "count": 3
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "2",
+      "category": "moment",
+      "input": "small",
+      "count": 4
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "2",
+      "category": "testimonial",
+      "input": "large",
+      "count": 11
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "2",
+      "category": "testimonial",
+      "input": "medium",
+      "count": 12
+    },
+    {
+      "metric": "photo_uploaded",
+      "event": "2",
+      "category": "testimonial",
+      "input": "small",
+      "count": 12
+    }
+  ],
+  "peakLogicalAttempts": 80,
+  "spanOfStartsSeconds": 0.0061,
+  "elapsedSeconds": 14.7532
+}

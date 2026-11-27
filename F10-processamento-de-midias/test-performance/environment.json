@@ -1,0 +1,41 @@
+{
+  "dockerContext": "colima-scrapbook-f10-validation",
+  "dockerCpus": 4,
+  "dockerMemoryBytes": 6197374976,
+  "architecture": "aarch64",
+  "replicas": 2,
+  "maxParallelPhotosPerReplica": 2,
+  "inputs": [
+    {
+      "name": "large",
+      "bytes": 5073996,
+      "sha256": "b9fab3ab531035f7e111f51cbc38e7c6a5c7c3ea00097f08c35e54dc2a5b30b9"
+    },
+    {
+      "name": "medium",
+      "bytes": 1135883,
+      "sha256": "133fae9ceb95a5659e64635effad67e9b9be59ae45a4d7c959548fb08a909064"
+    },
+    {
+      "name": "small",
+      "bytes": 277571,
+      "sha256": "ad0a12b7c414523d3b5f9d35d91c90a474f618509505f9530f4c00e7593c2a17"
+    }
+  ],
+  "motoFixture": "Cópia de metadados restrita ao contexto de list_object_versions",
+  "applicationVideoEnabled": false,
+  "applicationClock": "host monotonic + UTC anchor",
+  "commitTracking": "on",
+  "versions": {
+    "scrapbook-ui": "57f4e63f9a6378ecde532d53b4d204ac935021ff",
+    "scrapbook-tests": "a99d9b681788cd81f14e3c0427992f9febb86fa6",
+    "scrapbook-service": "e9b6fe481d2b1cbd2a2e85fbe2ba6e60aa8dee9d",
+    "scrapbook-liquibase": "8c1f47395a2e6564b6bca8da781c94e5d439a9f3",
+    "scrapbook-infrastructure": "4a2c7e10f5f3b4a3982eab0b4c337a39d3b3f2f1"
+  },
+  "runner": {
+    "photo-burst.js": "da6199a9a793bfd36fe5e0b0177107563639225a2f6bbb085b2e10cab4953ae8",
+    "run-photo-burst.py": "daeae2d42c51acb2292a98bf6855e550be4ce996da4dfb6caa8a9e1241cf54d3"
+  },
+  "motoFixtureSha256": "f574b9b47a01682b6377c0f4a5534ad8e69c0e3600a770ccb08fd5972d3a365a"
+}
