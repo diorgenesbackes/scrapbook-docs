@@ -860,6 +860,10 @@ Requisitos: FR-020. PK: `pk_processing_jobs_id`. Metadados: padrão mutável.
 | `last_error_code` | `varchar(80)` | Sim | Falha sanitizada. |
 | `lease_token` | `uuid` | Sim | Token da posse atual; escrita condicionada ao token. |
 | `lease_until` | `timestamptz` | Sim | Prazo da posse; preenchido junto do token. |
+| `confirmation_message_id` | `uuid` | Sim | Identidade do fato de confirmação da F08. |
+| `confirmation_correlation_id` | `uuid` | Sim | Correlação técnica do fato de confirmação. |
+| `confirmed_at` | `timestamptz` | Sim | Instante da confirmação medido a partir do fato original. |
+| `retry_cycle` | `integer` | Não | Ciclo da execução operacional, a partir de 1. |
 
 **Relacionamentos físicos**
 
@@ -873,6 +877,7 @@ Requisitos: FR-020. PK: `pk_processing_jobs_id`. Metadados: padrão mutável.
 | --- | --- |
 | `ck_processing_jobs_state` | kind/state válidos; profile_version >= 1; attempt_count >= 0; profile é objeto JSON; lease em par. |
 | `ck_processing_jobs_completion` | completed/failed exigem completed_at; demais estados mantêm completed_at nulo. Conjunto de saídas é validado em ct_processing_jobs_completion. |
+| `ck_processing_jobs_confirmation` | Os três campos da confirmação são preenchidos juntos. O ciclo é maior ou igual a 1. |
 
 **Chaves candidatas e índices**
 
@@ -905,6 +910,7 @@ Requisitos: FR-020. PK: `pk_processing_attempts_id`. Metadados: padrão mutável
 | `output_prefix` | `text` | Não | Prefixo exclusivo de saída; sem PII, sem URL assinada. |
 | `state` | `varchar(24)` | Não | created, submitted, running, succeeded, failed ou unknown. |
 | `started_at` | `timestamptz` | Não | Início técnico. |
+| `provider_submit_started_at` | `timestamptz` | Sim | Instante gravado antes da chamada ao MediaConvert para fixar o orçamento idempotente. |
 | `finished_at` | `timestamptz` | Sim | Fim observado. |
 | `error_code` | `varchar(80)` | Sim | Código seguro. |
 
@@ -921,6 +927,7 @@ Requisitos: FR-020. PK: `pk_processing_attempts_id`. Metadados: padrão mutável
 | `ck_processing_attempts_state` | provider/state válidos; number >= 1; succeeded/failed exigem finished_at; finished_at >= started_at. |
 | `ck_processing_attempts_prefix` | output_prefix não vazio, sem URL; prefixo/chaves finais respeitam 1024 bytes. |
 | `ck_processing_attempts_provider` | provider_job_id e provider_job_hash em par; hash possui 32 bytes; mediaconvert em submitted/running/succeeded exige ID externo conhecido. |
+| `ck_processing_attempts_provider_submit_started_at` | Instante de submissão permitido para MediaConvert, a partir de `started_at`. |
 
 **Chaves candidatas e índices**
 
