@@ -5,3 +5,5 @@ O template F10 configura uma assinatura do fato `record.media-confirmed.v1` num 
 A atualização da stack F08 adiciona o contexto KMS do prefixo de derivados. A política F10 permite à role da tarefa ler versões originais, verificar versões derivadas e criar variantes sob `submissions/derived/` com escrita condicional. Para testar a operação, a identidade de homologação deve confirmar a leitura da versão registrada, a ausência de acesso anônimo e o escopo de KMS e SQS no ambiente real. [Escrita condicional no S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes-enforce.html)
 
 A suíte local de configuração passou com 17 testes, incluindo quatro novos para roteamento, redrive, acesso por versão, escrita condicional e KMS. O teste de reserva de release emitiu o aviso esperado ao criar os cinco remotos Git vazios de fixture. Os scripts de publicação passaram em `bash -n`.
+
+A fila aceita envios do SNS configurado. Na recuperação planejada da F10-STORY-004, o operador volta a publicar o fato canônico por esse tópico, preservando a identidade. A política da F10 restringe a entrega direta à fila.
