@@ -1,0 +1,11 @@
+{
+  "expected": {
+    "original": 90,
+    "derived": 180
+  },
+  "verified": {
+    "original": 90,
+    "derived": 180
+  },
+  "rejected": {}
+}

@@ -1,0 +1,68 @@
+{
+  "now": 1795792935.220046,
+  "confirmed": 90,
+  "ready": 90,
+  "variants": 180,
+  "failed": 0,
+  "jobPending": 0,
+  "jobRunning": 0,
+  "unadmitted": 0,
+  "jobsRetried": 0,
+  "mediaOutboxUnpublished": 0,
+  "connections": 37,
+  "records": {
+    "confirmed": 80
+  },
+  "lastConfirmedCommit": 1795792933.742954,
+  "lastReadyCommit": 1795792934.602722,
+  "monotonicLowerCommitLatencyMs": {
+    "n": 90,
+    "min": 0.0,
+    "p50": 0.0,
+    "p95": 1005.107,
+    "p99": 1005.123,
+    "max": 1005.123
+  },
+  "monotonicUpperCommitLatencyMs": {
+    "n": 90,
+    "min": 1201.138,
+    "p50": 2323.708,
+    "p95": 3428.919,
+    "p99": 3435.256,
+    "max": 3435.256
+  },
+  "monotonicWithin300Seconds": 90,
+  "within300SecondsDatabaseClock": 90,
+  "within300Seconds": 90,
+  "denominator": 90,
+  "pctReadyWithin300Seconds": 100.0,
+  "confirmationToPublicationCommitMs": {
+    "n": 90,
+    "min": 441.26,
+    "p50": 1136.068,
+    "p95": 1642.252,
+    "p99": 1889.256,
+    "max": 1889.256
+  },
+  "commitToCommitMs": {
+    "n": 90,
+    "min": 399.634,
+    "p50": 1111.525,
+    "p95": 1599.24,
+    "p99": 1857.228,
+    "max": 1857.228
+  },
+  "confirmToConfirmCommitMs": {
+    "n": 90,
+    "min": 4.197,
+    "p50": 26.267,
+    "p95": 46.19,
+    "p99": 54.616,
+    "max": 54.616
+  },
+  "s3OriginalsAlongsideWarmup": 91,
+  "s3DerivedAlongsideWarmup": 182,
+  "s3UniqueDerivedKeysAlongsideWarmup": 182,
+  "k6Code": 0,
+  "elapsedIncludingDrainSeconds": 16.139
+}
