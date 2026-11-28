@@ -17,6 +17,7 @@ A entrega recupera confirmações verificáveis anteriores à ativação, preser
 - 36 testes Liquibase passaram na primeira revisão. Os cinco cenários de recuperação passaram na última revisão, incluindo o isolamento dos grants e o rollback preservando evidências. As 23 verificações de infraestrutura também passaram.
 - 10 jornadas Chromium. Cenários de histórico, redrive, reabertura, limpeza, estados da F11 e ciclos F13 passaram. [E2E](../test-e2e/f10-story-004-dev.md) · [Aceite funcional](../test-funcional/2026-11-28_13-52-21/2-execucao.md)
 - Três cenários defensivos de autorização, isolamento por evento, auditoria e limpeza da versão registrada. [Segurança defensiva](../test-security/f10-story-004-dev-security.md)
+- As 80 fotos históricas e as 12 novas ficaram prontas. Todas as novas concluíram com histórico pendente. O p95 das novas foi de 1,064 s no perfil local, como cota superior de prontidão. [Carga local](../test-performance/f10-story-004/f10-story-004-dev.md)
 
 ## Aceite em homologação
 

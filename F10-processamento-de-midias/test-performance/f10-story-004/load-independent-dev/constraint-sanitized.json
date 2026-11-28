@@ -1,0 +1,14 @@
+{
+  "checkConstraint": "ck_processing_attempts_state",
+  "violations": 5,
+  "terminalTransitionStates": {
+    "succeeded": 5
+  },
+  "finishedMinusStartedSeconds": [
+    -30.605849,
+    -30.5899,
+    -30.620951,
+    -30.620683,
+    -30.59294
+  ]
+}
