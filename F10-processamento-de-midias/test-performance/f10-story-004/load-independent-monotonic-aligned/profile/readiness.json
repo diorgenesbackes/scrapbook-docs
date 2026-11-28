@@ -1,0 +1,163 @@
+{
+  "profile": {
+    "python": "3.13.15",
+    "target": "loopback",
+    "events": 2,
+    "replicas": 2,
+    "liveOnlyPhotoSlotsPerReplica": 1,
+    "historyEligiblePhotoSlotsPerReplica": 1,
+    "media": "JPEG 32×32",
+    "bytesPerFile": 793,
+    "historySendsPerEvent": 8,
+    "historyFilesPerSend": 5,
+    "liveSendsPerEvent": 6,
+    "liveFilesPerSend": 1,
+    "windowSeconds": 300,
+    "observationPollSeconds": 0.5,
+    "percentileMethod": "nearest-rank",
+    "historyStart": "início da chamada da página CLI no relógio monotônico",
+    "liveStart": "confirmedAt da F08 pelo TimeProvider monotônico da fixture",
+    "ready": "primeira observação monotônica da promoção no PostgreSQL",
+    "readyLatencyInterpretation": "limite superior que inclui a consulta e observação",
+    "overlap": "vista consistente com trabalho admitido antes da rajada e ainda pendente"
+  },
+  "historyReceipts": 16,
+  "historyOutstandingBeforeLiveRelease": 80,
+  "liveNotificationBurstSeconds": 0.261,
+  "historyScan": [
+    {
+      "examined": 40,
+      "changed": 40,
+      "rejected": 0,
+      "deferred": 0
+    },
+    {
+      "examined": 40,
+      "changed": 40,
+      "rejected": 0,
+      "deferred": 0
+    }
+  ],
+  "liveReceipts": 12,
+  "measurementSeconds": 4.876,
+  "liveConfirmedWithAdmittedHistoryOutstanding": 12,
+  "liveReadyWithAdmittedHistoryOutstanding": 12,
+  "history": {
+    "expected": 80,
+    "observed": 80,
+    "notConfirmed": 0,
+    "notAdmitted": 0,
+    "readyWithinWindow": 80,
+    "readyAfterWindow": 0,
+    "failed": 0,
+    "pendingAtWindow": 0,
+    "pendingBeforeWindow": 0,
+    "readyWithinWindowPercent": 100.0,
+    "readyLatencySeconds": {
+      "n": 80,
+      "p50": 2.463124,
+      "p95": 4.301119,
+      "p99": 4.807747,
+      "max": 4.807747
+    },
+    "byEvent": {
+      "A": {
+        "expected": 40,
+        "observed": 40,
+        "notConfirmed": 0,
+        "notAdmitted": 0,
+        "readyWithinWindow": 40,
+        "readyAfterWindow": 0,
+        "failed": 0,
+        "pendingAtWindow": 0,
+        "pendingBeforeWindow": 0,
+        "readyWithinWindowPercent": 100.0,
+        "readyLatencySeconds": {
+          "n": 40,
+          "p50": 2.463124,
+          "p95": 4.301119,
+          "p99": 4.807747,
+          "max": 4.807747
+        }
+      },
+      "B": {
+        "expected": 40,
+        "observed": 40,
+        "notConfirmed": 0,
+        "notAdmitted": 0,
+        "readyWithinWindow": 40,
+        "readyAfterWindow": 0,
+        "failed": 0,
+        "pendingAtWindow": 0,
+        "pendingBeforeWindow": 0,
+        "readyWithinWindowPercent": 100.0,
+        "readyLatencySeconds": {
+          "n": 40,
+          "p50": 2.463011,
+          "p95": 4.301006,
+          "p99": 4.807634,
+          "max": 4.807634
+        }
+      }
+    }
+  },
+  "live": {
+    "expected": 12,
+    "observed": 12,
+    "notConfirmed": 0,
+    "notAdmitted": 0,
+    "readyWithinWindow": 12,
+    "readyAfterWindow": 0,
+    "failed": 0,
+    "pendingAtWindow": 0,
+    "pendingBeforeWindow": 0,
+    "readyWithinWindowPercent": 100.0,
+    "readyLatencySeconds": {
+      "n": 12,
+      "p50": 0.820683,
+      "p95": 1.063683,
+      "p99": 1.063683,
+      "max": 1.063683
+    },
+    "byEvent": {
+      "A": {
+        "expected": 6,
+        "observed": 6,
+        "notConfirmed": 0,
+        "notAdmitted": 0,
+        "readyWithinWindow": 6,
+        "readyAfterWindow": 0,
+        "failed": 0,
+        "pendingAtWindow": 0,
+        "pendingBeforeWindow": 0,
+        "readyWithinWindowPercent": 100.0,
+        "readyLatencySeconds": {
+          "n": 6,
+          "p50": 0.733779,
+          "p95": 1.063683,
+          "p99": 1.063683,
+          "max": 1.063683
+        }
+      },
+      "B": {
+        "expected": 6,
+        "observed": 6,
+        "notConfirmed": 0,
+        "notAdmitted": 0,
+        "readyWithinWindow": 6,
+        "readyAfterWindow": 0,
+        "failed": 0,
+        "pendingAtWindow": 0,
+        "pendingBeforeWindow": 0,
+        "readyWithinWindowPercent": 100.0,
+        "readyLatencySeconds": {
+          "n": 6,
+          "p50": 0.882683,
+          "p95": 1.038683,
+          "p99": 1.038683,
+          "max": 1.038683
+        }
+      }
+    }
+  }
+}

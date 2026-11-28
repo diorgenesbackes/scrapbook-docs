@@ -1,0 +1,41 @@
+{
+  "probeComplete": true,
+  "samples": 150,
+  "sampleIntervalSeconds": 0.25,
+  "maxVmSampleGapSeconds": 0.260461,
+  "maxHostReceiveGapSeconds": 0.260987,
+  "maxPairSpanSeconds": 1.2e-05,
+  "minStepSeconds": -30.692493,
+  "maxStepSeconds": 30.679662,
+  "rangeSeconds": 30.692494,
+  "stepDetectionThresholdSeconds": 0.1,
+  "stepsAboveThreshold": [
+    {
+      "secondsSinceStartAtHostReceipt": 8.959607,
+      "stepSeconds": 30.675049
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 9.214892,
+      "stepSeconds": -30.679882
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 18.913549,
+      "stepSeconds": 30.679662
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 19.164978,
+      "stepSeconds": -30.673577
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 28.98741,
+      "stepSeconds": 30.673849
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 29.238254,
+      "stepSeconds": -30.692493
+    }
+  ],
+  "runnerExitCode": 0,
+  "runnerStartUtc": "2026-11-28T17:13:36.773925+00:00",
+  "runnerElapsedSeconds": 37.393
+}
