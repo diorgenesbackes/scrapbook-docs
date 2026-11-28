@@ -1,0 +1,7 @@
+# Consultas autorizadas da F11-STORY-001
+
+A primeira entrega expõe `GET /api/v1/events/{eventId}/gallery` e `GET /api/v1/events/{eventId}/gallery/{itemId}`. As duas operações reutilizam o guard de identidade e a avaliação da abertura da F03. O serviço verifica o vínculo e a política antes da consulta e refaz a leitura da autorização antes de liberar o resultado. Uma mudança para fechado produz `EVENT_CONTENT_LOCKED`; a ausência de vínculo e o identificador fora do evento usam `RESOURCE_NOT_FOUND`. As respostas usam `Cache-Control: no-store`.
+
+A página ordena pelo instante civil de recebimento, ID do registro e posição do arquivo. O cursor conserva a precisão do PostgreSQL e usa Data Protection vinculado a conta, evento, filtro e ordenação. A consulta lê um item a mais para detectar a próxima página e limita a verificação de variantes a esse conjunto. O catálogo reutiliza os índices existentes. A fixture confirma continuidade entre duas réplicas com o key ring compartilhado.
+
+Texto confirmado tem detalhe próprio. Para mídia, a projeção considera seleção do perfil ativo, artefato derivado versionado e tentativa bem-sucedida. O agregado de inconsistência de variante usa contador sem dimensões privadas. A primeira story representa o estado da mídia na galeria. A concessão de URL e as variantes visuais entram na F11-STORY-002. [Especificação](../spec.md) · [Cartão](https://trello.com/c/pg91oOJY)

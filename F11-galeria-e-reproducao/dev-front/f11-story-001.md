@@ -1,0 +1,5 @@
+# Galeria e detalhe de texto da F11-STORY-001
+
+A rota `/meus-eventos/{eventId}/lembrancas` usa o estado da F03 como condição de montagem da galeria. O evento fechado preserva data e contagem regressiva. No evento aberto, os filtros Tudo, Depoimentos e Momentos paginam a lista em lotes de até dez itens. As mídias mostram preparação, disponibilidade ou indisponibilidade conforme a projeção do serviço.
+
+Abrir e voltar de um depoimento conserva página, filtro, rolagem e foco enquanto o acesso estiver válido. O corpo é renderizado como texto. A perda de autorização cancela a consulta, desmonta as lembranças e descarta os resultados atrasados. Os sinais disponíveis incluem mudança de evento, sessão inválida, fechamento, atualizações de política e revalidação ao retomar uma aba. A identidade de laboratório continua condicionada à configuração explícita de Development. [Especificação](../spec.md) · [S28](../../design-system/screens/S28.md) · [S29](../../design-system/screens/S29.md) · [S30](../../design-system/screens/S30.md)
