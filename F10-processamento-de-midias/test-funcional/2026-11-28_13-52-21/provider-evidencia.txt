@@ -1,0 +1,26 @@
+F10-STORY-004 · Sonda de reconciliação sem entrega de callback
+Serviço 3834529e86e1123a4c3119c67be5395478ea6612 · Testes 4a720663ae2f1a398ba941bb2f7c10a6cc674822
+Rodada inicial, saída 1
+test_result_without_notification (__main__.ProviderAndRecoveryTests.test_result_without_notification) ... ID conhecido: GetJob promoveu a saída com o mesmo job e a mesma tentativa.
+AssertionError: A resposta perdida não preservou a tentativa em reconciliação.
+Ran 1 test in 74.604s
+FAILED (failures=1)
+
+Reteste instrumentado, saída 1
+test_result_without_notification (__main__.ProviderAndRecoveryTests.test_result_without_notification) ... ID conhecido: GetJob promoveu a saída com o mesmo job e a mesma tentativa.
+Estado da segunda contribuição: ('available', 'completed', 'succeeded', 'ready', True, True)
+Estados observados na segunda contribuição: [('available', 'completed', 'succeeded', 'ready', True, True)]
+Fila de resultado (visíveis, em trânsito, retidas): (0, 0, 4)
+Jobs (chamadas CreateJob, status, saída versionada): [(1, 'COMPLETE', True), (2, 'COMPLETE', True)]
+AssertionError: Lists differ: [1, 1] != [1, 2]
+Ran 1 test in 31.407s
+FAILED (failures=1)
+
+Rodada HTTP 503, saída 0
+test_structured_ambiguity_without_callback (__main__.StructuredAmbiguityTests.test_structured_ambiguity_without_callback) ... HTTP 503 deixou o arquivo processing/reconciling/unknown, sem ID de provedor.
+ListJobs e GetJob recuperaram o mesmo job depois de 45 s. A fila reteve os dois callbacks e houve um único CreateJob.
+Rastro do provedor (instantes sintéticos UTC): [{'operation': 'CreateJob', 'instant': '2026-11-28T17:19:47+00:00'}, {'operation': 'ListJobs', 'instant': '2026-11-28T17:20:33+00:00'}, {'operation': 'GetJob', 'instant': '2026-11-28T17:20:33+00:00'}]
+Fila de resultado (visíveis, em trânsito, retidas): (0, 0, 2)
+Jobs (chamadas CreateJob, status, saída versionada): [(1, 'COMPLETE', True)]
+Ran 1 test in 28.610s
+OK
