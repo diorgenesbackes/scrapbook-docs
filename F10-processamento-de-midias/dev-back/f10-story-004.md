@@ -8,7 +8,7 @@ A reabertura exige falha definitiva, perfil ativo, ciclo esperado e confirmaçã
 
 ## Comando operacional
 
-Aplique a geração `f10-story-004-media-recovery`. Provisione um login PostgreSQL exclusivo, com `CONNECT` no banco e associação à role `scrapbook_media_operator` com `INHERIT TRUE, SET FALSE`. Passe a conexão privada em `ConnectionStrings__ScrapBookMediaRecovery`. Habilite o processo explicitamente com `MediaRecovery__Enabled=true`. Defina `MediaRecovery__HistoryBeforeUtc` com o mesmo instante fixo da ativação no serviço e no runner, em ISO 8601 com `Z` ou `+00:00`. Para limpeza, passe também `PhotoSubmissions__Bucket`, `PhotoSubmissions__Region` e credenciais da role de limpeza do ambiente.
+Aplique a geração `f10-story-004-media-recovery`. Provisione um login PostgreSQL exclusivo, com `CONNECT` no banco e associação à role `scrapbook_media_operator` com `INHERIT TRUE, SET FALSE`. Passe a conexão privada em `ConnectionStrings__ScrapBookMediaRecovery`. Habilite o processo explicitamente com `MediaRecovery__Enabled=true`. Defina `MediaRecovery__HistoryBeforeUtc` com o mesmo instante fixo da ativação no serviço e no runner, em ISO 8601 com `Z` ou `+00:00`. Para limpeza, passe também `PhotoSubmissions__Bucket` e `PhotoSubmissions__Region`. Na AWS, identifique o objeto elegível em `MediaRecovery__CleanupObjectId` e use a role temporária autorizada para a chave e a versão comprovadas.
 
 ```text
 dotnet ScrapBook.Api.dll media-recover history EVENTO CURSOR LIMITE INCIDENTE REVISAO
@@ -19,7 +19,7 @@ dotnet ScrapBook.Api.dll media-recover cleanup EVENTO CURSOR LIMITE INCIDENTE RE
 
 Use o código do incidente e o SHA da correção. A ausência de `--apply` simula a operação. A simulação de redrive e reabertura pode registrar o diagnóstico na auditoria, sem avançar o trabalho. Em lotes, comece com cursor `0`, limite entre 1 e 100 e use o `nextId` retornado. Revise as contagens antes de aplicar. Quando um item ficar deferido, revisite o trecho a partir do cursor anterior em outra execução. Aplique com `--apply` ao final do comando. A auditoria registra ação, resultado, operador, causa e revisão.
 
-A limpeza aguarda 24 horas após o encerramento da tentativa. Se houver uma versão registrada no objeto, usa apenas essa versão. Para um artefato planejado, a listagem deve comprovar uma única versão antiga da chave exata. A intenção `cleanup_jobs` registra a versão antes de qualquer exclusão. O lease permite retomar com a mesma versão após interrupção. Referências prontas de qualquer perfil, originais e recibos ficam fora da seleção. A revisão de casos com versões não registradas e ambíguas fica com a operação. [Modelo de dados](../spec.md#6-modelo-de-dados)
+A limpeza aguarda 24 horas após o encerramento da tentativa. Se houver uma versão registrada no objeto, usa apenas essa versão. Para um artefato planejado, a listagem deve comprovar uma única versão antiga da chave exata. A intenção `cleanup_jobs` registra a versão antes de qualquer exclusão. O lease permite retomar com a mesma versão após interrupção. Referências prontas de qualquer perfil, originais e recibos ficam fora da seleção. A revisão de casos com versões não registradas e ambíguas fica com a operação. Quem provisiona a role AWS confirma o par antes da autorização. A operação executa um objeto por vez na AWS e remove a autorização após a aplicação. Mantenha o privilégio de editar a política com o responsável pelo provisionamento. O laboratório emulado permite validar lotes. [Modelo de dados](../spec.md#6-modelo-de-dados)
 
 ## Reconciliação do provedor
 
