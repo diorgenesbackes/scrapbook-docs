@@ -1,0 +1,193 @@
+{
+  "probeComplete": true,
+  "samples": 1057,
+  "sampleIntervalSeconds": 0.25,
+  "maxVmSampleGapSeconds": 0.259508,
+  "maxHostReceiveGapSeconds": 0.260414,
+  "maxPairSpanSeconds": 5.8e-05,
+  "minStepSeconds": -30.728979,
+  "maxStepSeconds": 30.726698,
+  "rangeSeconds": 30.729185,
+  "stepDetectionThresholdSeconds": 0.1,
+  "stepsAboveThreshold": [
+    {
+      "secondsSinceStartAtHostReceipt": 1.512183,
+      "stepSeconds": 30.675551
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 1.763866,
+      "stepSeconds": -30.676586
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 21.406085,
+      "stepSeconds": 30.672821
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 21.657264,
+      "stepSeconds": -30.676516
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 31.444515,
+      "stepSeconds": 30.676473
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 31.700206,
+      "stepSeconds": -30.674716
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 41.52871,
+      "stepSeconds": 30.674535
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 41.779469,
+      "stepSeconds": -30.670866
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 51.559791,
+      "stepSeconds": 30.670962
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 51.810006,
+      "stepSeconds": -30.676066
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 71.428773,
+      "stepSeconds": 30.677453
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 71.67919,
+      "stepSeconds": -30.677344
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 81.47047,
+      "stepSeconds": 30.677343
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 81.722079,
+      "stepSeconds": -30.726688
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 91.546952,
+      "stepSeconds": 30.726698
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 91.797226,
+      "stepSeconds": -30.677071
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 101.389273,
+      "stepSeconds": 30.677056
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 101.639569,
+      "stepSeconds": -30.678154
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 111.484022,
+      "stepSeconds": 30.678149
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 111.736337,
+      "stepSeconds": -30.677522
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 121.573549,
+      "stepSeconds": 30.677522
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 121.827959,
+      "stepSeconds": -30.673414
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 131.427358,
+      "stepSeconds": 30.673236
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 131.6786,
+      "stepSeconds": -30.677756
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 141.531527,
+      "stepSeconds": 30.677789
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 141.782685,
+      "stepSeconds": -30.728979
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 161.46614,
+      "stepSeconds": 30.673546
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 161.716691,
+      "stepSeconds": -30.674958
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 171.570151,
+      "stepSeconds": 30.674738
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 171.822528,
+      "stepSeconds": -30.670915
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 181.419664,
+      "stepSeconds": 30.671273
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 181.670466,
+      "stepSeconds": -30.67099
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 191.51519,
+      "stepSeconds": 30.670846
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 191.765665,
+      "stepSeconds": -30.673868
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 201.593904,
+      "stepSeconds": 30.673887
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 201.845602,
+      "stepSeconds": -30.678285
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 211.441371,
+      "stepSeconds": 30.678267
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 211.691297,
+      "stepSeconds": -30.672886
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 221.535427,
+      "stepSeconds": 30.673062
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 221.790443,
+      "stepSeconds": -30.676459
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 241.475929,
+      "stepSeconds": 30.6758
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 241.72608,
+      "stepSeconds": -30.675373
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 261.438659,
+      "stepSeconds": 30.674659
+    },
+    {
+      "secondsSinceStartAtHostReceipt": 261.689946,
+      "stepSeconds": -30.678752
+    }
+  ],
+  "runnerExitCode": 1,
+  "runnerStartUtc": "2026-11-28T17:07:14.211527+00:00",
+  "runnerElapsedSeconds": 266.214
+}
