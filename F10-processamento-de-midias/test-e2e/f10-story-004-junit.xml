@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name="F10-STORY-004 · Regressões F08 → F10" tests="10" failures="0" errors="0" skipped="0" time="64.584">
+  <testsuite name="chromium-desktop" tests="2" failures="0" errors="0" skipped="0" time="15.100">
+    <testcase name="CA1–CA2: seleciona e revisa foto, transfere bytes por teclado e reinicia após o recibo" classname="photo-submissions/photo-submission.spec.ts" time="9.4" />
+    <testcase name="CA2–CA3: retoma foto capturada pela mesma tentativa e recebe confirmação após fechar a janela" classname="photo-submissions/photo-submission.spec.ts" time="5.7" />
+  </testsuite>
+  <testsuite name="android-emulado" tests="2" failures="0" errors="0" skipped="0" time="14.900">
+    <testcase name="CA1–CA2: seleciona e revisa foto, transfere bytes por teclado e reinicia após o recibo" classname="photo-submissions/photo-submission.spec.ts" time="9.2" />
+    <testcase name="CA2–CA3: retoma foto capturada pela mesma tentativa e recebe confirmação após fechar a janela" classname="photo-submissions/photo-submission.spec.ts" time="5.7" />
+  </testsuite>
+  <testsuite name="audio-submission.spec.ts" tests="2" failures="0" errors="0" skipped="0" time="11.629">
+    <testcase name="CA1 e CA3 · envia tone.webm selecionado e recebe somente o recibo" classname="audio-submission.spec.ts" time="5.867" />
+    <testcase name="CA2 e CA3 · retoma o PUT na mesma tentativa e aguarda a confirmação persistida" classname="audio-submission.spec.ts" time="5.762" />
+  </testsuite>
+  <testsuite name="audio-submission.spec.ts" tests="2" failures="0" errors="0" skipped="0" time="11.677">
+    <testcase name="CA1 e CA3 · envia tone.webm selecionado e recebe somente o recibo" classname="audio-submission.spec.ts" time="5.873" />
+    <testcase name="CA2 e CA3 · retoma o PUT na mesma tentativa e aguarda a confirmação persistida" classname="audio-submission.spec.ts" time="5.804" />
+  </testsuite>
+  <testsuite name="video-submission.spec.ts" tests="2" failures="0" errors="0" skipped="0" time="11.278">
+    <testcase name="CA1 e CA4 · envia short.mov em testimonial e recebe recibo" classname="video-submission.spec.ts" time="5.686" />
+    <testcase name="CA1 e CA4 · envia short.webm em moment e recebe recibo" classname="video-submission.spec.ts" time="5.592" />
+  </testsuite>
+</testsuites>
