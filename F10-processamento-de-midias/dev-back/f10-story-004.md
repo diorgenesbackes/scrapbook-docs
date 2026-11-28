@@ -1,6 +1,6 @@
 # F10-STORY-004 — Recuperação operacional de mídias
 
-O runner usa o fato canônico da Outbox ou o comprovante persistido da F08, incluindo a identidade determinística por arquivo, o instante de confirmação e o original versionado com checksum. Registra casos inconclusivos sem modificar o trabalho existente. A varredura pagina por ID e usa um instante fixo de ativação em UTC. Cada réplica reserva uma das duas vagas de foto e uma das duas vagas de áudio/vídeo para confirmações normais. A vaga flexível consulta o tráfego novo primeiro. [Especificação](../spec.md) · [Cartão](https://trello.com/c/dLVALXU9)
+O runner usa o fato canônico da Outbox ou o comprovante persistido da F08, incluindo a identidade determinística por arquivo, o instante de confirmação e o original versionado com checksum. Registra casos inconclusivos sem modificar o trabalho existente. A varredura pagina por ID e usa um instante fixo de ativação em UTC. Cada réplica reserva uma das duas vagas de foto e uma das duas vagas de áudio/vídeo para confirmações normais. Na vaga flexível, duas rodadas dão preferência a confirmações novas e uma dá preferência ao histórico. A Outbox publica primeiro os fatos confirmados a partir da ativação, e o consumidor aplica o mesmo corte ao classificar os trabalhos. [Especificação](../spec.md) · [Cartão](https://trello.com/c/dLVALXU9)
 
 O redrive mantém o `messageId`, o estado persistido e o ciclo da falha. Até 30 dias inclusive, um fato canônico pode admitir trabalho ausente. Após a janela, a operação só restaura a deduplicação se o efeito persistido tiver a identidade comprovada. Se a Outbox tiver sido arquivada, o runner cruza o trabalho, o recibo e o original antes de reconstruir a proteção. Retenha a deduplicação por pelo menos 37 dias desde a confirmação e enquanto existir estado recuperável. Preserve essa proteção também durante a reentrega nativa de mensagens. [Retenção e reprocessamento](../../guidelines/mensageria.md)
 
@@ -8,7 +8,7 @@ A reabertura exige falha definitiva, perfil ativo, ciclo esperado e confirmaçã
 
 ## Comando operacional
 
-Aplique a geração `f10-story-004-media-recovery`. Provisione um login PostgreSQL exclusivo, com `CONNECT` no banco e associação à role `scrapbook_media_operator` com `INHERIT TRUE, SET FALSE`. Passe a conexão privada em `ConnectionStrings__ScrapBookMediaRecovery`. Habilite o processo explicitamente com `MediaRecovery__Enabled=true`. Defina `MediaRecovery__HistoryBeforeUtc` com o instante fixo da ativação, em ISO 8601 com `Z` ou `+00:00`. Para limpeza, passe também `PhotoSubmissions__Bucket`, `PhotoSubmissions__Region` e credenciais da role de limpeza do ambiente.
+Aplique a geração `f10-story-004-media-recovery`. Provisione um login PostgreSQL exclusivo, com `CONNECT` no banco e associação à role `scrapbook_media_operator` com `INHERIT TRUE, SET FALSE`. Passe a conexão privada em `ConnectionStrings__ScrapBookMediaRecovery`. Habilite o processo explicitamente com `MediaRecovery__Enabled=true`. Defina `MediaRecovery__HistoryBeforeUtc` com o mesmo instante fixo da ativação no serviço e no runner, em ISO 8601 com `Z` ou `+00:00`. Para limpeza, passe também `PhotoSubmissions__Bucket`, `PhotoSubmissions__Region` e credenciais da role de limpeza do ambiente.
 
 ```text
 dotnet ScrapBook.Api.dll media-recover history EVENTO CURSOR LIMITE INCIDENTE REVISAO
